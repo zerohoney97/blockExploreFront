@@ -10,14 +10,25 @@ import useMobile from "@app/_hooks/useMobile";
 import PcDropDownMenu from "./content/PcDropDownMenu";
 import MobileHeader from "./content/MobileHeader";
 import PcHeader from "./content/PcHeader";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter();
+
   const isMobile = useMobile();
   // const [isRendered, setIsRendered] = useState<boolean>(false);
   // useEffect(() => {
   //   setIsRendered(true);
   // }, []);
-  return <>{isMobile ? <MobileHeader /> : <PcHeader />}</>;
+  return (
+    <>
+      {isMobile ? (
+        <MobileHeader router={router} />
+      ) : (
+        <PcHeader router={router} />
+      )}
+    </>
+  );
 };
 
 export default Header;

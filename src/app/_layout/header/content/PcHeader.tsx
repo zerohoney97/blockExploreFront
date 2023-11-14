@@ -1,14 +1,24 @@
 "use client";
 import React, { useState } from "react";
 import PcDropDownMenu from "./PcDropDownMenu";
+import { IDropMenuProps, IPcDropMenu } from "../interface";
 
-const PcHeader = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<string>("");
+const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
+  const [openMenuName, setOpenMenuName] = useState<string>("");
   const dropDownMenu = {
     blockchain: ["Transactions", "Pending Transactions", "View Blocks"],
     token: ["Top Tokens", "Token Transfers"],
     NFT: ["Top NFTs", "NFT Transfers"],
   };
+
+  const openMenuNameHandler = (name: string) => {
+    if (openMenuName === name) {
+      setOpenMenuName("");
+    } else {
+      setOpenMenuName(name);
+    }
+  };
+
   return (
     <div className="w-full min-h-[60px]  h-fit relative ">
       <div className=" w-full min-h-[60px] h-full flex justify-between items-center relative z-10 bg-white  ">
@@ -22,20 +32,31 @@ const PcHeader = () => {
         </div>
         <div className="w-3/6 h-full">
           <ul className="flex justify-center items-center">
-            <li className="cursor-pointer  flex flex-col justify-start items-start ml-5 mr-5">
+            <li
+              className="cursor-pointer  flex flex-col justify-start items-start ml-5 mr-5"
+              onClick={() => {
+                router.push("/main");
+              }}
+            >
               Home{" "}
             </li>
             <PcDropDownMenu
               label="Blcokchain"
               dropDownMenuArr={dropDownMenu["blockchain"]}
+              openMenuName={openMenuName}
+              openMenuNameHandler={openMenuNameHandler}
             />
             <PcDropDownMenu
               label="Tokens"
               dropDownMenuArr={dropDownMenu["token"]}
+              openMenuName={openMenuName}
+              openMenuNameHandler={openMenuNameHandler}
             />
             <PcDropDownMenu
               label="NFTs"
               dropDownMenuArr={dropDownMenu["NFT"]}
+              openMenuName={openMenuName}
+              openMenuNameHandler={openMenuNameHandler}
             />
           </ul>
         </div>

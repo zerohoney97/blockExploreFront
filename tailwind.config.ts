@@ -8,24 +8,39 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        "slide-up-fade-in": "slideUpFadeIn 1s ease-out",
+      },
+      keyframes: {
+        slideUpFadeIn: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(5px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors : {
-        white : "#FFFFFF",
-        black : "#000000",
-        gray : "#e9ecef",
-        aqua : "#00FFFF",
-        yellow: '#DFFA0F',
-        main_background_color : "#091E36",
-        main_search_bar : "#0670A6",
-        body_border : "#DDEEF7",
-        body_time_color : "#A0A0A0",
-        body_link_text_color : "#0784C3",
-        footer : "#F8F9FA",
-        footer_text : "#6C757D",
+      colors: {
+        white: "#FFFFFF",
+        black: "#000000",
+        gray: "#e9ecef",
+        aqua: "#00FFFF",
+        yellow: "#DFFA0F",
+        main_background_color: "#091E36",
+        main_search_bar: "#0670A6",
+        body_border: "#DDEEF7",
+        body_time_color: "#A0A0A0",
+        body_link_text_color: "#0784C3",
+        footer: "#F8F9FA",
+        footer_text: "#6C757D",
       },
       textColor: {
         test: {
@@ -33,15 +48,10 @@ const config: Config = {
         },
         itemDetail: {
           textLabelColor: "#6C757D",
-          inventoryKeyColor:'#6c757d'
+          inventoryKeyColor: "#6c757d",
         },
       },
-      keyframes: {
-        slideDown: {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(0)" },
-        },
-      },
+
       //
       backgroundColor: {
         modalBackgroundColor: "rgba(0, 0, 0, 0.5);",
@@ -52,12 +62,11 @@ const config: Config = {
         itemTable: "300px",
       },
       screens: {
-       
         md: { min: "768px", max: "990px" },
         lg: { min: "990px" },
       },
 
-      // 
+      //
     },
   },
   plugins: [],
