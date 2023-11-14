@@ -117,7 +117,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
                   value: "131231312",
                 },
               ]}
-              // laste
+              lastThName="Quantity"
             />
           )}
           {toggleLabelNum === "Holders" && (

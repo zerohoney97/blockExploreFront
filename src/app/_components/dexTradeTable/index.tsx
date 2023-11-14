@@ -60,7 +60,7 @@ const TxListWrap: React.FC<DexListProps> = ({ dexList }) => {
               <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
                 Swapped Rate
               </th>
-              <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
+              <th className="min-w-[150px] flex justify-start items-center text-sm font-medium">
                 Txn Value ($)
               </th>
               <th className="min-w-[50px] flex justify-start items-center text-sm font-medium">

@@ -9,11 +9,11 @@ const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
     usePagination<IholdersList>(holdersList);
 
   return (
-    <div className="mt-5 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px]">
-      <div className="overflow-x-scroll">
+    <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md h-auto bg-white max-h-[600px]">
+      <div className="overflow-x-auto h-auto max-h-[500px]">
         <table className="w-full">
           <thead>
-            <tr className="h-8 border-b border-gray text-sm flex">
+            <tr className="h-8 border-b border-gray flex">
               <th className="min-w-[60px] flex items-center justify-center font-medium">Rank</th>
               <th className="min-w-[200px] flex items-center font-medium">Address</th>
               <th className="min-w-[200px] flex items-center font-medium">Quantity</th>

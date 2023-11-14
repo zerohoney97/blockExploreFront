@@ -4,55 +4,43 @@ import { TxItemProps } from "./interface";
 
 const TxItem: React.FC<TxItemProps> = ({ TxItem, toggleHandler }) => {
   return (
-    <div className="w-[300%] h-14 border-b border-gray flex relative ">
-      <div className="w-[5%] flex  items-center justify-center p-2 relative">
+    <tr className="h-14 border-b border-gray text-sm">
+      <td className="min-w-[60px] flex items-center justify-center p-2 relative">
         <div className="relative">
           <img
             src="https://i.pinimg.com/originals/ce/9c/4e/ce9c4e4f06e724a10b3766845f93a051.png"
             alt="detail"
-            className="w-5 h-5 cursor-pointer "
+            className="w-5 h-5 cursor-pointer"
             onClick={toggleHandler}
           />
         </div>
-      </div>
+      </td>
 
-      <div
-        className=" w-[20%]   truncate  p-2"
-        style={{
-          lineHeight: "2.3rem",
-        }}
-      >
+      <td className="min-w-[200px]" style={{ lineHeight: "2.3rem" }}>
         {TxItem.txHash}
-      </div>
-      <div className=" w-[10%] flex justify-center items-center  p-2 ">
+      </td>
+      <td className="min-w-[120px] items-center">
+        <span className="bg-gray max-w-[95px] p-1 rounded">
         {TxItem.method}
-      </div>
-      <div className=" w-[10%] flex justify-center items-center  p-2  ">
+        </span>
+        
+      </td>
+      <td className="min-w-[100px] items-center">
         {TxItem.block}
-      </div>
-      <div className=" w-[10%] flex justify-center items-center p-2  ">
+      </td>
+      <td className="min-w-[100px] items-center">
         {TxItem.age}
-      </div>
-      <div
-        className=" w-[20%]   truncate p-2"
-        style={{
-          lineHeight: "2.3rem",
-        }}
-      >
+      </td>
+      <td className="min-w-[200px]" style={{ lineHeight: "2.3rem" }}>
         {TxItem.from}
-      </div>
-      <div
-        className=" w-[20%]   truncate p-2"
-        style={{
-          lineHeight: "2.3rem",
-        }}
-      >
+      </td>
+      <td className="min-w-[200px]" style={{ lineHeight: "2.3rem" }}>
         {TxItem.to}
-      </div>
-      <div className=" w-[10%] flex justify-center items-center p-2  ">
+      </td>
+      <td className="min-w-[100px] items-center">
         {TxItem.value}
-      </div>
-    </div>
+      </td>
+    </tr>
   );
 };
 
