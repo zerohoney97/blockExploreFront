@@ -170,46 +170,6 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
                   value: "$3,000,000,000.01"
               
                 },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
               ]}
             />
           )}

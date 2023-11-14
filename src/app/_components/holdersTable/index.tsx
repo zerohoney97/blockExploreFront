@@ -4,31 +4,33 @@ import HoldersList from "./holdersContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination/Pagiation";
 
+// const HolderListWrap: React.FC<HoldersListProps> = ({ holderList }) => {
 const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
   const { maxPage, page, pageHandler, pageTxList } =
     usePagination<IholdersList>(holdersList);
 
   return (
-    <div className="h-auto max-h-[600px] py-1 px-2 bg-white rounded-lg shadow-md w-11/12 overflow-hidden">
-      <div className="overflow-x-scroll">
-        <table className="w-full">
-          <thead>
-            <tr className="h-8 border-b border-gray flex">
-              <th className="min-w-[60px] flex items-center justify-center">Rank</th>
-              <th className="min-w-[200px] flex items-center">Address</th>
-              <th className="min-w-[200px] flex items-center">Quantity</th>
-              <th className="min-w-[150px] flex items-center">Percentage</th>
-              <th className="min-w-[200px] flex items-center">Value</th>
-            </tr>
-          </thead>
-          <tbody className="align-middle whitespace-no-wrap">
-            <HoldersList holdersList={holdersList} />
-          </tbody>
-        </table>
+    <div className=" h-auto  max-h-[600px]  py-1 px-2 bg-white rounded-lg  shadow-md w-11/12">
+      <div className=" overflow-x-auto mr-2 ">
+        <div className="w-[300%] h-8 border-b border-gray flex ">
+          <div className="w-[5%] flex items-center ">Rank</div>
+          <div className=" w-[20%] flex items-center  ">
+            Address
+          </div>
+          <div className=" w-[10%] flex items-center  ">
+            Quantity
+          </div>
+          <div className=" w-[10%] flex items-center  ">
+            Percentage
+          </div>
+          <div className=" w-[10%] flex items-center  ">
+            Value
+          </div>
+        </div>
+        <HoldersList holdersList={holdersList} />
       </div>
-      <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
+        <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
     </div>
   );
 };
-
 export default HolderListWrap;

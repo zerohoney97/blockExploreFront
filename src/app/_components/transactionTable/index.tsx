@@ -35,12 +35,12 @@ const TxListWrap: React.FC<TxListProps> = ({ txList }) => {
   };
 
   return (
-    <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px]">
+    <div className="mt-10  h-auto  max-h-[600px]">
       <div className=" overflow-x-auto h-auto  max-h-[500px]">
         <div className="w-[300%] h-8 border-b border-gray flex ">
           <div className="w-[5%] flex justify-center items-center ">?</div>
-          <div className=" w-[20%] flex justify-start ml-3 items-center  ">
-            Txn Info
+          <div className=" w-[20%] flex justify-center items-center  ">
+            Txn Hash
           </div>
           <div className=" w-[10%] flex justify-center items-center  ">
             Method
@@ -49,9 +49,13 @@ const TxListWrap: React.FC<TxListProps> = ({ txList }) => {
             Block
           </div>
           <div className=" w-[10%] flex justify-center items-center  ">Age</div>
-          <div className=" w-[20%] flex justify-start ml-3 items-center  ">From</div>
-          <div className=" w-[20%] flex justify-start ml-3 items-center  ">To</div>
-          <div className=" w-[10%] flex justify-start items-center  ">Value</div>
+          <div className=" w-[20%] flex justify-center items-center  ">
+            From
+          </div>
+          <div className=" w-[20%] flex justify-center items-center  ">To</div>
+          <div className=" w-[10%] flex justify-center items-center  ">
+            Value
+          </div>
         </div>
         <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
 

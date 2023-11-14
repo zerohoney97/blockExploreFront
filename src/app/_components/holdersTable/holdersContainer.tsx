@@ -10,10 +10,13 @@ const HoldersContainer: React.FC<HoldersListProps> = ({ holdersList }) => {
   const { maxPage, page, pageHandler, pageTxList } = usePagiNation(holdersList);
   return (
     <div>
-      {pageTxList &&
-        pageTxList.map((ele) => (
-          <HoldersItem HoldersItem={ele} key={ele.rank} />
-        ))}
+      <div>
+        {pageTxList &&
+        pageTxList .map((ele) => (
+            <HoldersItem HoldersItem={ele} key={ele.rank} />
+          ))}
+      </div>
+     
     </div>
   );
 };
