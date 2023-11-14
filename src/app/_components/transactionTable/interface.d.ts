@@ -1,12 +1,12 @@
 export interface ItxList {
-    txHash: string;
-    method: string;
-    block: string;
-    from: string;
-    to: string;
-    value: string;
-    age: string;
-  }
+  txHash: string;
+  method: string;
+  block: string;
+  from: string;
+  to: string;
+  value: string;
+  age: string;
+}
 export interface ItokenList {
   txHash: string;
   age: string;
@@ -19,6 +19,7 @@ export interface ItokenList {
 
 export interface TxListProps {
   txList: ItxList[];
+  lastThName: string;
 }
 
 export interface TxListWrapProps {
@@ -46,9 +47,8 @@ export interface IAdditionalInfoProps {
   toggleHandler: () => void;
 }
 
-
-export interface IPageNationProps{
-  page:number
-  pageHandler:(selectedNumber:number)=>void
-  maxPage:number
+export interface IPageNationProps {
+  page: number;
+  pageHandler: (selectedNumber: number) => void;
+  maxPage: number;
 }

@@ -23,7 +23,6 @@ const NftTxDetail: React.FC<INftTxDetailProps> = ({ params }) => {
     method: "Transfer",
     txHash: "0x123fjafk231s",
     value: index.toString(),
-
   }));
 
   const [toggleLabelNum, setToggleLabelNum] = useState<string | null>(
@@ -37,7 +36,7 @@ const NftTxDetail: React.FC<INftTxDetailProps> = ({ params }) => {
   const componentHandler = (label: string) => {
     if (label === "Transfers") {
       console.log("Transfers");
-      return <TxListWrap txList={tempDataArr} />;
+      return <TxListWrap txList={tempDataArr} lastThName="Item" />;
     } else if (label === "Info") {
       return <NFTInfo />;
     } else if (label === "Inventory") {

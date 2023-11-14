@@ -9,7 +9,7 @@ import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination/Pagiation";
 
-const TxListWrap: React.FC<TxListProps> = ({ txList }) => {
+const TxListWrap: React.FC<TxListProps> = ({ txList, lastThName }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
   const { maxPage, page, pageHandler, pageTxList } =
@@ -49,9 +49,15 @@ const TxListWrap: React.FC<TxListProps> = ({ txList }) => {
             Block
           </div>
           <div className=" w-[10%] flex justify-center items-center  ">Age</div>
-          <div className=" w-[20%] flex justify-start ml-3 items-center  ">From</div>
-          <div className=" w-[20%] flex justify-start ml-3 items-center  ">To</div>
-          <div className=" w-[10%] flex justify-start items-center  ">Value</div>
+          <div className=" w-[20%] flex justify-start ml-3 items-center  ">
+            From
+          </div>
+          <div className=" w-[20%] flex justify-start ml-3 items-center  ">
+            To
+          </div>
+          <div className=" w-[10%] flex justify-start items-center  ">
+            {lastThName}
+          </div>
         </div>
         <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
 
