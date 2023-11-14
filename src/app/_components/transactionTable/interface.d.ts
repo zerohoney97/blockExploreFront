@@ -1,13 +1,13 @@
-// interface ItxList {
-//     txHash: string;
-//     method: string;
-//     block: string;
-//     from: string;
-//     to: string;
-//     value: string;
-//     age: string;
-//   }
 export interface ItxList {
+    txHash: string;
+    method: string;
+    block: string;
+    from: string;
+    to: string;
+    value: string;
+    age: string;
+  }
+export interface ItokenList {
   txHash: string;
   block: string;
   method: string;

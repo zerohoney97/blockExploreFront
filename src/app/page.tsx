@@ -4,8 +4,6 @@ import React from "react";
 
 // 성현
 // import Image from 'next/image'
-import LatestBlocks from "./_components/mainComponent";
-import DetailWrap from "./_components/itemDetail";
 import TabWrap from "./_components/tabComponent/TabWrap";
 
 export default function Main() {
