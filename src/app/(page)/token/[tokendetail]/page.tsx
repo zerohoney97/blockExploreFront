@@ -1,65 +1,71 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Title from "@app/_components/itemTitle";
-import ItemTable from "@app/_components/itemTable";
 import OverviewCard from "./_contents/OverviewCard";
 import MarketCard from "./_contents/MarketCard";
 import OtherInfoCard from "./_contents/OtherInfoCard";
 import TxList from "@app/_components/transactionTable";
 import HoldersList from "@app/_components/holdersTable";
+import DexList from "@app/_components/dexTradeTable";
 import TapButton from "@app/_components/tabComponent/Tab";
-import TapWrap from "@app/_components/tabComponent/TabWrap";
-import { TokenDataProps } from "../Interface";
-import { usePathname } from "next/navigation";
 import { ITokenDetailProps } from "../Interface";
 import InfoTapContent from "./_contents/InfoTapContent";
+import TokenItemTable from "./_contents/TokenItemTable";
 
 const Page: React.FC<ITokenDetailProps> = ({ params }) => {
   const [toggleLabelNum, setToggleLabelNum] = useState<string | null>(null);
-
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const toggleHandler = (label: string) => {
     setToggleLabelNum(label);
   };
   useEffect(() => {
-    console.log(params.tokenDetail);
+    console.log(params);
   }, []);
+
+  
 
   return (
     <div className="bg-mainBackGroundColor flex flex-col p-5">
       <div className="flex items-center border-b border-gray w-11/12">
         <div className="flex items-center">
           <Title title="Token" />
-          <span className="ml-2">{params.tokenDetail}</span>
+          <span className="ml-2">{params.tokendetail}</span>
         </div>
       </div>
-      <ItemTable>
-        <OverviewCard
-          title="Overview"
-          MaxTotalSupply="MAX TOTAL SUPPLY"
-          holders="HOLDERS"
-          totaltransfers="TOTAL TRANSFERS"
-        />
-      </ItemTable>
-
-      <ItemTable>
-        <MarketCard
-          title="Market"
-          price="PRICE"
-          fully="FULLY DILUTED MARKET CAP"
-          CIRCULATING="CIRCULATING SUPPLY MARKET CAP"
-        />
-      </ItemTable>
-      <ItemTable>
-        <OtherInfoCard
-          title="Other Info"
-          contract="TOKEN CONTRACT (WITH 6 DECIMALS)"
-        />
-      </ItemTable>
+      <div className="flex flex-wrap">
+        <div className="w-full  md:w-1/2 lg:w-1/3">
+          <TokenItemTable>
+            <OverviewCard
+              title="Overview"
+              MaxTotalSupply="MAX TOTAL SUPPLY"
+              holders="HOLDERS"
+              totaltransfers="TOTAL TRANSFERS"
+            />
+          </TokenItemTable>
+        </div>
+        <div className="w-full  md:w-1/2 lg:w-1/3">
+        <TokenItemTable>
+          <MarketCard
+            title="Market"
+            price="PRICE"
+            fully="FULLY DILUTED MARKET CAP"
+            CIRCULATING="CIRCULATING SUPPLY MARKET CAP"
+          />
+        </TokenItemTable>
+        </div>
+        <div className="w-full lg:w-1/3">
+        <TokenItemTable>
+          <OtherInfoCard
+            title="Other Info"
+            contract="TOKEN CONTRACT (WITH 6 DECIMALS)"
+          />
+        </TokenItemTable>
+      </div>
+      </div>
       <div>
         <div>
-          <div className="flex w-auto overflow-x-scroll flex-nowrap py-5 ">
+          <div className="flex w-auto overflow-x-scroll flex-nowrap p-5 ">
             <TapButton
               label="Transfers"
               toggleLabelNum={toggleLabelNum}
@@ -75,21 +81,11 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
               toggleLabelNum={toggleLabelNum}
               toggleHandler={toggleHandler}
             />
-            {/* <TapButton
+            <TapButton
               label="Dex Trades"
               toggleLabelNum={toggleLabelNum}
               toggleHandler={toggleHandler}
             />
-            <TapButton
-              label="Contract"
-              toggleLabelNum={toggleLabelNum}
-              toggleHandler={toggleHandler}
-            />
-            <TapButton
-              label="Analytics"
-              toggleLabelNum={toggleLabelNum}
-              toggleHandler={toggleHandler}
-            /> */}
           </div>
           {toggleLabelNum === "Info" && (
             <InfoTapContent
@@ -120,95 +116,42 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
                   txHash: "0x123123123fhfhsfhbb23",
                   value: "131231312",
                 },
-                {
-                  age: "123",
-                  block: "231234",
-                  from: "0x213155151412312321",
-                  method: "Transfer",
-                  to: "0x124124131312125513",
-                  txHash: "0x123123123fhfhsfhbb23",
-                  value: "131231312",
-                },
-                {
-                  age: "123",
-                  block: "231234",
-                  from: "0x213155151412312321",
-                  method: "Transfer",
-                  to: "0x124124131312125513",
-                  txHash: "0x123123123fhfhsfhbb23",
-                  value: "131231312",
-                },
-                {
-                  age: "123",
-                  block: "231234",
-                  from: "0x213155151412312321",
-                  method: "Transfer",
-                  to: "0x124124131312125513",
-                  txHash: "0x123123123fhfhsfhbb23",
-                  value: "131231312",
-                },
-                {
-                  age: "123",
-                  block: "231234",
-                  from: "0x213155151412312321",
-                  method: "Transfer",
-                  to: "0x124124131312125513",
-                  txHash: "0x123123123fhfhsfhbb23",
-                  value: "131231312",
-                },
               ]}
+              // laste
             />
           )}
           {toggleLabelNum === "Holders" && (
             <HoldersList
               holdersList={[
                 {
-                  rank :"1",
+                  rank: "1",
                   address: "sssssssssss",
                   quantity: "3,000,000,000.012501",
                   percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
+                  value: "$3,000,000,000.01",
                 },
                 {
-                  rank :"1",
+                  rank: "1",
                   address: "sssssssssss",
                   quantity: "3,000,000,000.012501",
                   percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
+                  value: "$3,000,000,000.01",
                 },
+              ]}
+            />
+          )}
+          {toggleLabelNum === "Dex Trades" && (
+            <DexList
+              dexList={[
                 {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
+                  txHash: "0xdc238ae149",
+                  age: "26 secs ago",
+                  action: "Buy",
+                  tokenAmountOut: "4,537.272737 ",
+                  tokenAmountIn: "2.2196161432973 ",
+                  swappedRate: "2,044.17000241 ",
+                  txnValue: "$4,537.27",
+                  dex: "유니스왑",
                 },
               ]}
             />

@@ -1,35 +1,36 @@
 
 export interface IdexList {
     txHash: string;
-    method: string;
-    block: string;
-    from: string;
-    to: string;
-    value: string;
     age: string;
+    action: string;
+    tokenAmountOut: string;
+    tokenAmountIn: string;
+    swappedRate: string;
+    txnValue: string;
+    dex : string
   }
   
   export interface DexListProps {
     dexList: IdexList[];
   }
   
-  export interface TxListWrapProps {
-    pageTxList: ItxList[] | null;
+  export interface DexListWrapProps {
+    pageTxList: IdexList[] | null;
     toggleHandler: () => void;
   }
   
-  export interface TxItemProps {
-    TxItem: ItxList;
+  export interface DexItemProps {
+    DexItem: IdexList;
     toggleHandler: () => void;
   }
   
   export interface IAddInfo {
     status: string;
+    transactionAction: string;
     transactionFee: string;
     gasInfo: string;
     nonce: string;
     gasLimit: string;
-    blockNum: string;
     position: string;
   }
   

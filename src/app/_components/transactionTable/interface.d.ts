@@ -9,10 +9,10 @@ export interface ItxList {
 }
 export interface ItokenList {
   txHash: string;
-  age: string;
-  action: string;
-  tokenAmountOut: string;
-  tokenAmountIn: string;
+  block: string;
+  method: string;
+  to: string;
+  from: string;
   value: string;
   age: string;
 }
