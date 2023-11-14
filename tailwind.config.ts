@@ -51,6 +51,11 @@ const config: Config = {
       minWidth: {
         itemTable: "300px",
       },
+      screens: {
+       
+        md: { min: "768px", max: "990px" },
+        lg: { min: "990px" },
+      },
 
       // 
     },

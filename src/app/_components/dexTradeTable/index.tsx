@@ -18,15 +18,16 @@ const TxListWrap: React.FC<DexListProps> = ({ dexList }) => {
   useEffect(() => {
     setAddInfoModal(document.getElementById("portal"));
   }, [isToggled]);
+  
 
   // 실제에서는 react-query로 가져올 예정
   const [addInfoTempData, setAddInfoTempData] = useState<IAddInfo>({
     status: "Success",
-    transactionFee: "0.0000000000231",
-    gasInfo: "293840",
-    gasLimit: "318840",
-    nonce: "0",
-    blockNum: "18497",
+    transactionAction: "2.219616143297300157",
+    transactionFee: "0.00478866704634 ETH ",
+    gasInfo: "168,776 ",
+    gasLimit: "312,905 ",
+    nonce: "9",
     position: "18",
   });
 
@@ -35,25 +36,42 @@ const TxListWrap: React.FC<DexListProps> = ({ dexList }) => {
   };
 
   return (
-    <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px]">
-      <div className=" overflow-x-auto h-auto  max-h-[500px]">
-        <div className="w-[300%] h-8 border-b border-gray flex ">
-          <div className="w-[5%] flex justify-center items-center ">?</div>
-          <div className=" w-[20%] flex justify-start ml-3 items-center  ">
-            Txn Info
-          </div>
-          <div className=" w-[10%] flex justify-center items-center  ">
-            Method
-          </div>
-          <div className=" w-[10%] flex justify-center items-center  ">
-            Block
-          </div>
-          <div className=" w-[10%] flex justify-center items-center  ">Age</div>
-          <div className=" w-[20%] flex justify-start ml-3 items-center  ">From</div>
-          <div className=" w-[20%] flex justify-start ml-3 items-center  ">To</div>
-          <div className=" w-[10%] flex justify-start items-center  ">Value</div>
-        </div>
-        <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
+    <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md h-auto bg-white max-h-[600px]">
+      <div className="overflow-x-auto h-auto max-h-[500px]">
+        <table className="w-full">
+          <thead>
+            <tr className="h-8 border-b border-gray flex ">
+              <th className="min-w-[60px] flex items-center justify-center text-sm font-medium">?</th>
+              <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
+                Txn Hash
+              </th>
+              <th className="min-w-[200px] flex items-center text-sm font-medium">
+                Age
+              </th>
+              <th className="min-w-[100px] flex items-center text-sm font-medium">
+                Action
+              </th>
+              <th className="min-w-[200px] flex items-center text-sm font-medium">
+                Token Amount (Out)
+              </th>
+              <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
+                Token Amount (In)
+              </th>
+              <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
+                Swapped Rate
+              </th>
+              <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
+                Txn Value ($)
+              </th>
+              <th className="min-w-[50px] flex justify-start items-center text-sm font-medium">
+                Dex
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <DexList pageTxList={pageTxList} toggleHandler={toggleHandler} />
+          </tbody>
+        </table>
 
         {isToggled && addInfoModal
           ? createPortal(
@@ -63,7 +81,7 @@ const TxListWrap: React.FC<DexListProps> = ({ dexList }) => {
               />,
               addInfoModal
             )
-          : ""}
+          : null}
       </div>
       <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
     </div>

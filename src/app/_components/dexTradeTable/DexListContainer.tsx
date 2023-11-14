@@ -1,11 +1,20 @@
-"use client"
-import React from 'react'
-import { IdexList,DexListWrapProps} from './interface'
+"use client";
+import React from "react";
+import { IdexList, DexListWrapProps } from "./interface";
+import DexItem from "./DexItem";
 
-const DexListContainer = () => {
+const DexListContainer: React.FC<DexListWrapProps> = ({
+  pageTxList,
+  toggleHandler,
+}) => {
   return (
-    <div>DexListContainer</div>
-  )
-}
+    <div>
+      {pageTxList &&
+        (pageTxList as IdexList[]).map((ele) => (
+          <DexItem DexItem={ele} toggleHandler={toggleHandler} key={ele.txHash} />
+        ))}
+    </div>
+  );
+};
 
-export default DexListContainer
+export default DexListContainer;

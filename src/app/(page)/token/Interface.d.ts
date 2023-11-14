@@ -9,11 +9,11 @@ export interface TokenDataProps {
 }
 
 export interface ITokenDetail {
-  tokenDetail: string;
+  tokendetail: string;
 }
 
 export interface ITokenDetailProps {
-  params: { tokenDetail: string };
+  params: { tokendetail: string };
 }
 export interface HoldersDataProps {
   rank: ?string;

@@ -7,6 +7,7 @@ export interface IdexList {
     tokenAmountIn: string;
     swappedRate: string;
     txnValue: string;
+    dex : string
   }
   
   export interface DexListProps {

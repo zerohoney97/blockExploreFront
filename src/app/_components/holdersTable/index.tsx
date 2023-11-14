@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HoldersListProps, IholdersList } from "./interface";
-import HoldersList from "./holdersContainer";
+import HoldersList from "./HoldersContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination/Pagiation";
 
@@ -13,7 +13,7 @@ const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
       <div className="overflow-x-scroll">
         <table className="w-full">
           <thead>
-            <tr className="h-8 border-b border-gray flex">
+            <tr className="h-8 border-b border-gray text-sm flex">
               <th className="min-w-[60px] flex items-center justify-center font-medium">Rank</th>
               <th className="min-w-[200px] flex items-center font-medium">Address</th>
               <th className="min-w-[200px] flex items-center font-medium">Quantity</th>
