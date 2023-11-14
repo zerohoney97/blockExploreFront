@@ -9,7 +9,7 @@ const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
     usePagination<IholdersList>(holdersList);
 
   return (
-    <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md h-auto bg-white max-h-[600px]">
+    <div className="mt-10 lg:w-2/3 m-auto rounded-lg shadow-md h-auto bg-white max-h-[600px]">
       <div className="overflow-x-auto h-auto max-h-[500px]">
         <table className="w-full">
           <thead>
