@@ -1,0 +1,18 @@
+import React from 'react'
+import LatestBlocksItem from './LatestBlocksItem'
+import { IBlocksListProps } from '../interface'
+
+
+const LatestBlocksList:React.FC<IBlocksListProps> = ({blocksList}) => {
+  return (
+    <ul className='h-[482px] overflow-scroll w-full'>
+      {blocksList.map((item, index)=>(
+        <>
+          <LatestBlocksItem blocksItem ={item} />
+        </>
+      ))}
+    </ul>
+  )
+}
+
+export default LatestBlocksList
