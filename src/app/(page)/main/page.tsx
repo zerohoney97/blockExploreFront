@@ -5,6 +5,11 @@ import LatestBlocksList from "./_contents/LatestBlocksList";
 import LatestTransactionsList from "./_contents/LatestTransactionsList";
 import EthereumOverview from "./_contents/EthereumOverview";
 import SearchBar from "./_contents/SearchBar";
+import LatestBlocksButton from "./_contents/LatestBlocksButton";
+import LatestTransactionsButton from "./_contents/LatestTransactionsButton";
+
+// import MainLatestWrapButton from "@app/_components/mainLatestWrapButton";
+
 
 const MainPage = () => {
   const overviewTransactionsData = {
@@ -123,12 +128,18 @@ const MainPage = () => {
       <SearchBar />
       <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
 
-      <MainLatestWrap title='Blocks' buttonName='BLOCKS'>
+      {/* <MainLatestWrap title='Blocks' buttonName='BLOCKS'> */}
+      
+      <MainLatestWrap title='Blocks'>
         <LatestBlocksList blocksList={blocksData} />
+        <LatestBlocksButton buttonName="BLOCKS" />
       </MainLatestWrap>
       
-      <MainLatestWrap title='Transactions' buttonName='TRANSACTIONS'>
+      {/* <MainLatestWrap title='Transactions' buttonName='TRANSACTIONS'> */}
+
+      <MainLatestWrap title='Transactions'>
         <LatestTransactionsList transactionslist={transactionsData} />
+        <LatestTransactionsButton buttonName = "TRANSACTIONS" />
       </MainLatestWrap>
 
     </div>

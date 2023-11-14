@@ -52,3 +52,7 @@ export interface IPageNationProps{
   pageHandler:(selectedNumber:number)=>void
   maxPage:number
 }
+
+export interface LatestWrapButtonProps {
+  buttonName : string
+}

@@ -7,7 +7,13 @@ const MainLatestWrapButton:React.FC<latestWrapButtonProps> = ({buttonName}) => {
   const router = useRouter();
   const routeHandler = () => {
     console.log(buttonName);
-    router.push(`/main/${buttonName.toLowerCase()}`);
+
+    {buttonName == "BLOCKS" 
+    ? 
+    router.push("/main/blocks")
+    : 
+    router.push("/main/transactions")
+    }
   }
 
   return (
@@ -17,9 +23,15 @@ const MainLatestWrapButton:React.FC<latestWrapButtonProps> = ({buttonName}) => {
     url을 어떻게 완성시켰는가
     어떠한 로직으로 만들었냐 
 
-    상위 컴포넌트에서 현재 컴포넌트로 "BLOCKS" 이라는 값을 받고, 버튼을 눌렀을 때 BLOCKS 을 소문자로 변경한 후, 
-    그 값을 이동하려는 경로에 동적으로 생성한후,
-    라우터를 사용하여 해당 경로로 이동합니다.
+    상위 컴포넌트에서 현재 컴포넌트로 "BLOCKS" 이라는 값을 받고, 
+    버튼을 눌렀을 때 BLOCKS 을 소문자로 변경한 후, 
+    그 값을 이동하려는 경로에 넣고 해당 경로로 이동합니다.
+
+
+
+
+    
+    버튼이름과 url이 다를경우에 어떻게 할거냐.
     
     */
     <>
