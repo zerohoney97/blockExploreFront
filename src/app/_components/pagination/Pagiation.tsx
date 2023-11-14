@@ -1,5 +1,5 @@
 import React from "react";
-import { IPageNationProps } from "../transactionTable/ineterface";
+import { IPageNationProps } from "../transactionTable/interface";
 
 const Pagination: React.FC<IPageNationProps> = ({
   page,

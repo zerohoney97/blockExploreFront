@@ -1,5 +1,5 @@
 export interface latestWrapProps {
   title: string;
-  button: string;
+  buttonName: string;
   children: React.ReactNode;
 }

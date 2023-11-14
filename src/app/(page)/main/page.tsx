@@ -123,11 +123,11 @@ const MainPage = () => {
       <SearchBar />
       <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
 
-      <MainLatestWrap title='Blocks' button='BLOCKS'>
+      <MainLatestWrap title='Blocks' buttonName='BLOCKS'>
         <LatestBlocksList blocksList={blocksData} />
       </MainLatestWrap>
       
-      <MainLatestWrap title='Transactions' button='TRANSACTIONS'>
+      <MainLatestWrap title='Transactions' buttonName='TRANSACTIONS'>
         <LatestTransactionsList transactionslist={transactionsData} />
       </MainLatestWrap>
 

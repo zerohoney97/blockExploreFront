@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { IAdditionalInfoProps } from "./ineterface";
+import { IAdditionalInfoProps } from "./interface";
 
 const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
   addInfoTempData,

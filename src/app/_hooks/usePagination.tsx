@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ItxList } from "@app/_components/transactionTable/ineterface";
+import { ItxList } from "@app/_components/transactionTable/interface";
 import { Iitem } from "@app/(page)/nft/collections/interface";
 const usePagination = <T,>(txList: T[]) => {
   const [page, setPage] = useState<number>(1);

@@ -8,7 +8,7 @@ import OverViewInfo from "./_contents/OverViewInfo";
 import MarketInfo from "./_contents/MarketInfo";
 import OtherInfo from "./_contents/OtherInfo";
 import TxListWrap from "@app/_components/transactionTable";
-import { ItxList } from "@app/_components/transactionTable/ineterface";
+import { ItxList } from "@app/_components/transactionTable/interface";
 import TabWrap from "@app/_components/tabComponent/TabWrap";
 import TabButton from "@app/_components/tabComponent/Tab";
 import NFTInfo from "./_contents/Info";
