@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { IholdersList, HoldersListProps } from "./interface";
-import HoldersItem from "./holdersItem";
+import HoldersItem from "./HoldersItem";
 import Pagination from "@app/_components/pagination/Pagiation";
 import usePagiNation from "@app/_hooks/usePagination";
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HoldersListProps, IholdersList } from "./interface";
-import HoldersList from "./holdersContainer";
+import HoldersList from "./HoldersContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination/Pagiation";
 
@@ -10,24 +10,22 @@ const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
     usePagination<IholdersList>(holdersList);
 
   return (
-    <div className=" h-auto  max-h-[600px]  py-1 px-2 bg-white rounded-lg  shadow-md w-11/12">
-      <div className=" overflow-x-auto mr-2 ">
-        <div className="w-[300%] h-8 border-b border-gray flex ">
-          <div className="w-[5%] flex items-center ">Rank</div>
-          <div className=" w-[20%] flex items-center  ">
-            Address
-          </div>
-          <div className=" w-[10%] flex items-center  ">
-            Quantity
-          </div>
-          <div className=" w-[10%] flex items-center  ">
-            Percentage
-          </div>
-          <div className=" w-[10%] flex items-center  ">
-            Value
-          </div>
-        </div>
-        <HoldersList holdersList={holdersList} />
+    <div className="mt-10 lg:w-2/3 m-auto rounded-lg shadow-md h-auto bg-white max-h-[600px]">
+      <div className="overflow-x-auto h-auto max-h-[500px]">
+        <table className="w-full">
+          <thead>
+            <tr className="h-8 border-b border-gray flex">
+              <th className="min-w-[60px] flex items-center justify-center font-medium">Rank</th>
+              <th className="min-w-[200px] flex items-center font-medium">Address</th>
+              <th className="min-w-[200px] flex items-center font-medium">Quantity</th>
+              <th className="min-w-[150px] flex items-center font-medium">Percentage</th>
+              <th className="min-w-[200px] flex items-center font-medium">Value</th>
+            </tr>
+          </thead>
+          <tbody className="align-middle whitespace-no-wrap">
+            <HoldersList holdersList={holdersList} />
+          </tbody>
+        </table>
       </div>
         <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
     </div>

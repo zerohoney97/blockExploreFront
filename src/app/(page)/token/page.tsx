@@ -103,9 +103,9 @@ const tokenData = [
 const page = () => {
   const pagination = usePagination(tokenData);
   return (
-    <div className="box-border flex flex-col p-3 bg-mainBackGroundColor">
+    <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
+      <div className="w-full  ">
       <Title title="Token Tracker(ERC-20)" />
-      <div className="flex flex-col m-auto h-auto min-w-itemTable w-11/12 bg-white rounded-xl max-w-xl mt-5  p-5 ">
         <ItemTable>
           <table>
             <TokenHerader />
@@ -125,7 +125,7 @@ const page = () => {
           pageHandler={pagination.pageHandler}
         />
       </div>
-    </div>
+      </div>
   );
 };
 

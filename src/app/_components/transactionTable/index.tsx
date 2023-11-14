@@ -9,7 +9,7 @@ import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination/Pagiation";
 
-const TxListWrap: React.FC<TxListProps> = ({ txList }) => {
+const TxListWrap: React.FC<TxListProps> = ({ txList, lastThName }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
   const { maxPage, page, pageHandler, pageTxList } =
@@ -35,29 +35,39 @@ const TxListWrap: React.FC<TxListProps> = ({ txList }) => {
   };
 
   return (
-    <div className="mt-10  h-auto  max-h-[600px]">
-      <div className=" overflow-x-auto h-auto  max-h-[500px]">
-        <div className="w-[300%] h-8 border-b border-gray flex ">
-          <div className="w-[5%] flex justify-center items-center ">?</div>
-          <div className=" w-[20%] flex justify-center items-center  ">
-            Txn Hash
-          </div>
-          <div className=" w-[10%] flex justify-center items-center  ">
-            Method
-          </div>
-          <div className=" w-[10%] flex justify-center items-center  ">
-            Block
-          </div>
-          <div className=" w-[10%] flex justify-center items-center  ">Age</div>
-          <div className=" w-[20%] flex justify-center items-center  ">
-            From
-          </div>
-          <div className=" w-[20%] flex justify-center items-center  ">To</div>
-          <div className=" w-[10%] flex justify-center items-center  ">
-            Value
-          </div>
-        </div>
-        <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
+    <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px]">
+      <div className="overflow-x-auto h-auto  max-h-[500px]">
+        <table className="w-full">
+          <thead>
+            <tr className="h-8 border-b border-gray flex ">
+              <th className="min-w-[60px] flex items-center justify-center font-medium">?</th>
+              <th className="min-w-[200px] flex justify-start items-center font-medium">
+                Txn Info
+              </th>
+              <th className="min-w-[120px] flex items-center font-medium">
+                Method
+              </th>
+              <th className="min-w-[100px] flex items-center  font-medium">
+                Block
+              </th>
+              <th className="min-w-[100px] flex items-center font-medium">
+                Age
+                </th>
+              <th className="min-w-[200px] flex items-center font-medium">
+                From
+              </th>
+              <th className="min-w-[200px] flex items-center font-medium">
+                To
+              </th>
+              <th className="min-w-[100px] flex justify-start items-center  font-medium">
+                {lastThName}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
+          </tbody>
+        </table>
 
         {isToggled && addInfoModal
           ? createPortal(
