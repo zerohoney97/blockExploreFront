@@ -132,7 +132,6 @@ export default function Main() {
 
   return (
     <>
-    1
       {/* 무헌 */}
       {/* <div>
         <TxList txList={data}></TxList>
