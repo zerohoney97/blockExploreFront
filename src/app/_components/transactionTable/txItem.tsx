@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { TxItemProps } from "./ineterface";
+import { TxItemProps } from "./interface";
 
 const TxItem: React.FC<TxItemProps> = ({ TxItem, toggleHandler }) => {
   return (

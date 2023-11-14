@@ -2,10 +2,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { IAddInfo, ItxList, TxListProps } from "./ineterface";
+import { IAddInfo, ItxList, TxListProps } from "./interface";
 import { createPortal } from "react-dom";
-import AdditionalInfo from "./additionalInfo";
-import TxList from "./txListContainer";
+import AdditionalInfo from "./AdditionalInfo";
+import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination/Pagiation";
 
