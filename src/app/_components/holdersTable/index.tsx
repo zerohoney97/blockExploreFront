@@ -4,6 +4,7 @@ import HoldersList from "./HoldersContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination/Pagiation";
 
+// const HolderListWrap: React.FC<HoldersListProps> = ({ holderList }) => {
 const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
   const { maxPage, page, pageHandler, pageTxList } =
     usePagination<IholdersList>(holdersList);
@@ -26,9 +27,8 @@ const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
           </tbody>
         </table>
       </div>
-      <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
+        <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
     </div>
   );
 };
-
 export default HolderListWrap;

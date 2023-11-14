@@ -28,4 +28,4 @@ const HoldersItem: React.FC<HoldersItemProps> = ({ HoldersItem }) => {
   );
 };
 
-export default HoldersItem;
+export default holdersItem

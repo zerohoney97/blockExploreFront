@@ -110,50 +110,6 @@ export default function Main() {
     },
   ];
 
-  // 성현 테스트용 객체
-  const count = [
-    {
-      block_Height: 1,
-      block_Time: 3,
-      fee_Recipient: "rsync-builder",
-      transactions_In_This_Block: 147,
-      transactions_Time: 12,
-      block_Reward: 0.04742,
-    },
-    {
-      block_Height: 2,
-      block_Time: 15,
-      fee_Recipient: "Lido: Execution Layer Rewards Vault",
-      transactions_In_This_Block: 134,
-      transactions_Time: 29,
-      block_Reward: 0.02665,
-    },
-    {
-      block_Height: 3,
-      block_Time: 15,
-      fee_Recipient: "Lido: Execution Layer Rewards Vault",
-      transactions_In_This_Block: 134,
-      transactions_Time: 29,
-      block_Reward: 0.02665,
-    },
-    {
-      block_Height: 2,
-      block_Time: 15,
-      fee_Recipient: "Lido: Execution Layer Rewards Vault",
-      transactions_In_This_Block: 134,
-      transactions_Time: 29,
-      block_Reward: 0.02665,
-    },
-    {
-      block_Height: 3,
-      block_Time: 15,
-      fee_Recipient: "Lido: Execution Layer Rewards Vault",
-      transactions_In_This_Block: 134,
-      transactions_Time: 29,
-      block_Reward: 0.02665,
-    },
-  ];
-
   // const count = [
   //   {
   //     component_name: "Blocks",
@@ -176,6 +132,7 @@ export default function Main() {
 
   return (
     <>
+    1
       {/* 무헌 */}
       {/* <div>
         <TxList txList={data}></TxList>

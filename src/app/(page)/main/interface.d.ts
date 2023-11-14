@@ -71,3 +71,10 @@ export interface ITransactionFrom {
 export interface ITransactionTo{
   toAddress : string
 }
+
+export interface ILatestBlocksButtonProps{
+  buttonName : string
+}
+export interface ILatestTransactionsButtonProps{
+  buttonName : string
+}

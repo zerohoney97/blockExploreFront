@@ -14,11 +14,11 @@
   
   export interface HoldersWrapProps {
     holdersList: IholdersList[] | null;
-
+    toggleHandler: () => void;
   }
   
   export interface HoldersItemProps {
     HoldersItem: IholdersList;
-
+    toggleHandler: () => void;
   }
   
