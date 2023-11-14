@@ -21,10 +21,10 @@ const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
         </div>
         <div className="flex flex-col w-full text-sm h-1/5 border-b justify-center">
           <div className="">Status:</div>
-          <div className="flex w-full justify-between">
-            <span>{addInfoTempData.status}</span>
-            <span>{addInfoTempData.blockNum} Block Confirmation</span>
-          </div>
+        </div>
+        <div className="flex flex-col w-full text-sm h-1/5 border-b justify-center">
+          <div className="">TransactionAction:</div>
+          <span>{addInfoTempData.transactionAction}ETH</span>
         </div>
         <div className="flex flex-col w-full text-sm h-1/5 border-b justify-center">
           <div className="">TransactionFee:</div>
@@ -40,7 +40,7 @@ const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
               {addInfoTempData.gasInfo} gas used from {addInfoTempData.gasLimit}{" "}
               limit
             </div>
-            <div>@0.0000000000000000004843ETH(0.000004834Gwei)</div>
+            <div>@0.00000004843ETH(0.000004834Gwei)</div>
           </div>
         </div>
         <div className="flex flex-col w-full text-sm h-1/5 border-b justify-center">

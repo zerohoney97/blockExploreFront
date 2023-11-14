@@ -2,18 +2,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { IAddInfo, ItxList, TxListProps } from "./interface";
+import { IAddInfo, IdexList, DexListProps } from "./interface";
 import { createPortal } from "react-dom";
 import AdditionalInfo from "./AdditionalInfo";
-import TxList from "./TxListContainer";
+import DexList from "./DexListContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination/Pagiation";
 
-const TxListWrap: React.FC<TxListProps> = ({ txList }) => {
+const TxListWrap: React.FC<DexListProps> = ({ dexList }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
   const { maxPage, page, pageHandler, pageTxList } =
-    usePagination<ItxList>(txList);
+    usePagination<IdexList>(dexList);
 
   useEffect(() => {
     setAddInfoModal(document.getElementById("portal"));

@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useEffect, useState } from "react";
-import { ItxList, TxListWrapProps } from "./ineterface";
-import TxItem from "./TxItem";
+import { ItxList, TxListWrapProps } from "./interface";
+import TxItem from "./txItem";
 import Pagination from "../pagination/Pagiation";
 import usePagiNation from "@app/_hooks/usePagination";
 

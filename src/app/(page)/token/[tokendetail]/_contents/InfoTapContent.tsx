@@ -9,7 +9,7 @@ interface InfoTapContentProps {
 
 const InfoTapContent: React.FC<InfoTapContentProps>  = ({VolumeContent,MarketContent,CirculatingContent}) => {
   return (
-    <div className=" py-1 px-2 bg-white rounded-lg mb-4 shadow-md w-11/12">
+    <div className="mt-5 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px] py-2 px-2">
       <div>
         <div className="text-sm font-medium mb-3">OVERVIEW</div>
         <div className="text-xs  mb-3">

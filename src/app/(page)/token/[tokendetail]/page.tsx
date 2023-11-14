@@ -15,6 +15,7 @@ import { TokenDataProps } from "../Interface";
 import { usePathname } from "next/navigation";
 import { ITokenDetailProps } from "../Interface";
 import InfoTapContent from "./_contents/InfoTapContent";
+import TokenItemTable from "./_contents/TokenItemTable";
 
 const Page: React.FC<ITokenDetailProps> = ({ params }) => {
   const [toggleLabelNum, setToggleLabelNum] = useState<string | null>(null);
@@ -34,29 +35,29 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
           <span className="ml-2">{params.tokenDetail}</span>
         </div>
       </div>
-      <ItemTable>
+      <TokenItemTable>
         <OverviewCard
           title="Overview"
           MaxTotalSupply="MAX TOTAL SUPPLY"
           holders="HOLDERS"
           totaltransfers="TOTAL TRANSFERS"
         />
-      </ItemTable>
+      </TokenItemTable>
 
-      <ItemTable>
+      <TokenItemTable>
         <MarketCard
           title="Market"
           price="PRICE"
           fully="FULLY DILUTED MARKET CAP"
           CIRCULATING="CIRCULATING SUPPLY MARKET CAP"
         />
-      </ItemTable>
-      <ItemTable>
+      </TokenItemTable>
+      <TokenItemTable>
         <OtherInfoCard
           title="Other Info"
           contract="TOKEN CONTRACT (WITH 6 DECIMALS)"
         />
-      </ItemTable>
+      </TokenItemTable>
       <div>
         <div>
           <div className="flex w-auto overflow-x-scroll flex-nowrap py-5 ">
@@ -75,12 +76,12 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
               toggleLabelNum={toggleLabelNum}
               toggleHandler={toggleHandler}
             />
-            {/* <TapButton
+            <TapButton
               label="Dex Trades"
               toggleLabelNum={toggleLabelNum}
               toggleHandler={toggleHandler}
             />
-            <TapButton
+            {/* <TapButton
               label="Contract"
               toggleLabelNum={toggleLabelNum}
               toggleHandler={toggleHandler}
@@ -120,42 +121,6 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
                   txHash: "0x123123123fhfhsfhbb23",
                   value: "131231312",
                 },
-                {
-                  age: "123",
-                  block: "231234",
-                  from: "0x213155151412312321",
-                  method: "Transfer",
-                  to: "0x124124131312125513",
-                  txHash: "0x123123123fhfhsfhbb23",
-                  value: "131231312",
-                },
-                {
-                  age: "123",
-                  block: "231234",
-                  from: "0x213155151412312321",
-                  method: "Transfer",
-                  to: "0x124124131312125513",
-                  txHash: "0x123123123fhfhsfhbb23",
-                  value: "131231312",
-                },
-                {
-                  age: "123",
-                  block: "231234",
-                  from: "0x213155151412312321",
-                  method: "Transfer",
-                  to: "0x124124131312125513",
-                  txHash: "0x123123123fhfhsfhbb23",
-                  value: "131231312",
-                },
-                {
-                  age: "123",
-                  block: "231234",
-                  from: "0x213155151412312321",
-                  method: "Transfer",
-                  to: "0x124124131312125513",
-                  txHash: "0x123123123fhfhsfhbb23",
-                  value: "131231312",
-                },
               ]}
             />
           )}
@@ -163,52 +128,38 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
             <HoldersList
               holdersList={[
                 {
-                  rank :"1",
+                  rank: "1",
                   address: "sssssssssss",
                   quantity: "3,000,000,000.012501",
                   percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
+                  value: "$3,000,000,000.01",
                 },
                 {
-                  rank :"1",
+                  rank: "1",
                   address: "sssssssssss",
                   quantity: "3,000,000,000.012501",
                   percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
+                  value: "$3,000,000,000.01",
+                },
+              ]}
+            />
+          )}
+          {toggleLabelNum === "Dex Trades" && (
+            <HoldersList
+              holdersList={[
+                {
+                  rank: "1",
+                  address: "sssssssssss",
+                  quantity: "3,000,000,000.012501",
+                  percentage: "7.4957% ",
+                  value: "$3,000,000,000.01",
                 },
                 {
-                  rank :"1",
+                  rank: "1",
                   address: "sssssssssss",
                   quantity: "3,000,000,000.012501",
                   percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
-                },
-                {
-                  rank :"1",
-                  address: "sssssssssss",
-                  quantity: "3,000,000,000.012501",
-                  percentage: "7.4957% ",
-                  value: "$3,000,000,000.01"
-              
+                  value: "$3,000,000,000.01",
                 },
               ]}
             />
