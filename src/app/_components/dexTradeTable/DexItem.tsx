@@ -3,7 +3,7 @@ import { DexItemProps } from './interface';
 
 const DexItem: React.FC<DexItemProps> = ({ DexItem, toggleHandler }) => {
     return (
-        <tr className="h-14 border-b border-gray text-sm">
+        <tr className="h-14 border-b border-gray">
           <td className="min-w-[60px] flex items-center justify-center p-2 relative">
             <div className="relative">
               <img
@@ -32,7 +32,7 @@ const DexItem: React.FC<DexItemProps> = ({ DexItem, toggleHandler }) => {
           <td className="min-w-[200px] " style={{ lineHeight: "2.3rem" }}>
             {DexItem.swappedRate}
           </td>
-          <td className="min-w-[200px] items-center">
+          <td className="min-w-[150px] items-center">
             {DexItem.txnValue}
           </td>
         </tr> 

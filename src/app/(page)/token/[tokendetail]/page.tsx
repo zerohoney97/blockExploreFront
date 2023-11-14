@@ -44,7 +44,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
             />
           </TokenItemTable>
         </div>
-        <div className="w-full  md:w-1/2 lg:w-1/3">
+        <div className="w-full md:w-1/2 lg:w-1/3">
         <TokenItemTable>
           <MarketCard
             title="Market"
@@ -117,7 +117,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
                   value: "131231312",
                 },
               ]}
-              // laste
+              lastThName="Quantity"
             />
           )}
           {toggleLabelNum === "Holders" && (
