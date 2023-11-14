@@ -23,6 +23,7 @@ const NftTxDetail: React.FC<INftTxDetailProps> = ({ params }) => {
     method: "Transfer",
     txHash: "0x123fjafk231s",
     value: index.toString(),
+
   }));
 
   const [toggleLabelNum, setToggleLabelNum] = useState<string | null>(
