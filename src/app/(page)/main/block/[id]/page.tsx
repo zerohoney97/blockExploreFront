@@ -3,7 +3,7 @@ import React from 'react'
 import { useParams } from 'next/navigation'
 
 
-const page = () => {
+const Page = () => {
   const param = useParams();
   console.log(param);
   return (
@@ -11,4 +11,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

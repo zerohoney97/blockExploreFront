@@ -11,7 +11,7 @@ interface IOverviewTransactionsDataProps {
   overviewTransactionsData: IOverviewTransactionsData;
 }
 
-const OverviewTransactions: React.FC<IOverviewTransactionsDataProps> = ({
+const MainOverviewTransactions: React.FC<IOverviewTransactionsDataProps> = ({
   overviewTransactionsData,
 }) => {
   const {
@@ -21,7 +21,13 @@ const OverviewTransactions: React.FC<IOverviewTransactionsDataProps> = ({
     priorityFee,
   } = overviewTransactionsData;
   return (
-    <div className='flex w-11/12 m-auto mt-[20px] pt-[10px] pb-[20px] border-gray border-b-[1px]'>
+    // <div className='flex w-11/12 m-auto border-gray sm:border-b-[1px] 
+    // sm:mt-[20px] sm:pb-[20px] 
+    // md:border-r-[1px] md: ml-[20px]  md:mt-[20px] md:mb-[20px] 
+    // lg:ml-[20px] lg:border-r-[1px] lg:mt-[20px] lg:mb-[20px]'>
+
+<div className='flex p-5 w-11/12 m-auto border-gray sm:border-b-[1px]  md:border-r-[1px] md:py-0  lg:border-r-[1px] lg:py-0'>
+
       <div className='w-[40px]'>
         <span className='flex justify-center'>🎅</span>
       </div>
@@ -39,8 +45,9 @@ const OverviewTransactions: React.FC<IOverviewTransactionsDataProps> = ({
           <span className='text-zinc-400 text-xs'> (${priorityFee})</span>
         </p>
       </div>
+
     </div>
   );
 };
 
-export default OverviewTransactions;
+export default MainOverviewTransactions;

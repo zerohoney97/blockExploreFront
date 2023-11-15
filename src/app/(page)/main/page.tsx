@@ -123,6 +123,7 @@ const MainPage = () => {
   return (
     <div className='bg-[#FBFBFC]'>
       <SearchBarWrap />
+      
       <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
       
       <MainLatestWrap title='Blocks'>

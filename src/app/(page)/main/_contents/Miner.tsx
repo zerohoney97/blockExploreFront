@@ -2,7 +2,7 @@ import React from 'react'
 import { IMinerProps } from '../interface'
 import Link from 'next/link'
 
-const Miner:React.FC<IMinerProps> = ({feeRecipient}) => {
+const MainMiner:React.FC<IMinerProps> = ({feeRecipient}) => {
   return (
     <p>
         Fee Recipient
@@ -11,4 +11,4 @@ const Miner:React.FC<IMinerProps> = ({feeRecipient}) => {
   )
 }
 
-export default Miner
+export default MainMiner

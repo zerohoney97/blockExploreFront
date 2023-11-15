@@ -1,5 +1,5 @@
 import React from "react";
-import NftItem from "./nftItem";
+import NftItem from "./NftItem";
 
 const NftTable = () => {
   return (
