@@ -109,27 +109,7 @@ export default function Main() {
       age: 29,
     },
   ];
-
-  // const count = [
-  //   {
-  //     component_name: "Blocks",
-  //     component_count : 1,
-
-  //     component1_1 : "Block",
-  //     component1_2 : "1",
-  //     component1_3: 16,
-  //     component1_2 : "1",
-  //     component1_3: 16,
-
-  //     component2_1 : "Fee Recipient",
-  //     component2_2 : "Titan Builder",
-
-  //     component3_1 : "102 txns", // transactions in this Block
-  //     component3_2 : "in 12 secs",
-  //     component3_3 : "0.2503"
-  //   }
-  // ];
-
+  
   return (
     <>
       {/* 무헌 */}
