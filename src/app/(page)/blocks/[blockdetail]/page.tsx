@@ -3,6 +3,9 @@ import React, { useEffect } from "react";
 import { IBlocksDetailProps } from "../interface";
 import { BlockCard } from "../_contents/Card";
 import Title from "@app/_components/itemTitle";
+import BlockInfo from "./_contents/Info";
+import BlockDiffcultyInfo from "./_contents/DiffcultyInfo";
+import BlockGasInfo from "./_contents/GasInfo";
 const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
   useEffect(() => {
     console.log(params);
@@ -17,7 +20,9 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
       </div>
       <div>
         <BlockCard>
-
+          <BlockInfo />
+          <BlockDiffcultyInfo/>
+          <BlockGasInfo/>
         </BlockCard>
       </div>
     </div>
