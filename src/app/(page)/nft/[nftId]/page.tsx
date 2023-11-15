@@ -13,8 +13,12 @@ import TabWrap from "@app/_components/tabComponent/TabWrap";
 import TabButton from "@app/_components/tabComponent/Tab";
 import NFTInfo from "./_contents/Info";
 import NFTInventory from "./_contents/Inventory";
-import NftDetailTableWrap from "./_contents/NftDetailTableWrap";
+import NftDetailTableWrap from "./_contents/DetailTableWrap";
 import useHydration from "@app/_hooks/useHydration";
+import NftDetailContainer from "./_contents/DetailContainer";
+import NFTDetailHeaderContainer from "./_contents/DetailHeaderContainer";
+import NFTDetailHeader from "./_contents/DetailHeader";
+import NFTDetailFooterContainer from "./_contents/DetailFooterContainer";
 
 const NftTxDetail: React.FC<INftTxDetailProps> = ({ params }) => {
   const isRendered = useHydration();
@@ -57,17 +61,25 @@ const NftTxDetail: React.FC<INftTxDetailProps> = ({ params }) => {
           <div className="w-20 h-8 m-6 border-2 border-white bg-white rounded-xl font-bold flex justify-center items-center text-sm">
             ERC-721
           </div>
-          <div className="w-full h-auto lg:flex">
-            <NftDetailTableWrap>
-              <OverViewInfo />
-            </NftDetailTableWrap>
-            <NftDetailTableWrap>
-              <MarketInfo />
-            </NftDetailTableWrap>
-            <NftDetailTableWrap>
-              <OtherInfo />
-            </NftDetailTableWrap>
-          </div>
+          <NftDetailContainer>
+            <NFTDetailHeaderContainer>
+              <NFTDetailHeader>
+                <NftDetailTableWrap>
+                  <OverViewInfo />
+                </NftDetailTableWrap>
+              </NFTDetailHeader>
+              <NFTDetailHeader>
+                <NftDetailTableWrap>
+                  <MarketInfo />
+                </NftDetailTableWrap>
+              </NFTDetailHeader>
+            </NFTDetailHeaderContainer>
+            <NFTDetailFooterContainer>
+              <NftDetailTableWrap>
+                <OtherInfo />
+              </NftDetailTableWrap>
+            </NFTDetailFooterContainer>
+          </NftDetailContainer>
 
           <div className="w-full flex overflow-x-auto flex-nowrap py-5 px-5">
             <TabButton

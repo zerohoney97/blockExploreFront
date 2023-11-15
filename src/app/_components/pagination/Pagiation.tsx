@@ -26,7 +26,7 @@ const Pagination: React.FC<IPageNationProps> = ({
       >
         {"<"}
       </div>
-      <div className="m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg">
+      <div className="m-2 flex justify-center items-center border-gray border-2 py-1 px-2 min-w-[120px] bg-searchBarBackGroundColor rounded-lg">
         Page {page} of {maxPage}
       </div>
       <div
