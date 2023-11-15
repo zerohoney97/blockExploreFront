@@ -20,6 +20,8 @@ export interface ItokenList {
 export interface TxListProps {
   txList: ItxList[];
   lastThName: string;
+  maxHeight?:string
+  pageStack?:number
 }
 
 export interface TxListWrapProps {

@@ -17,7 +17,7 @@ const CollectionItem: React.FC<Iitem> = ({
   type,
 }) => {
   return (
-    <ul className="flex w-[350%] h-16 border-b border-gray">
+    <ul className="flex w-[1250px] h-16 border-b border-gray">
       <li className="flex justify-center items-center   w-[3%]">{number}</li>
       <li className="flex justify-center items-center   w-[5%]">
         {" "}
@@ -34,7 +34,10 @@ const CollectionItem: React.FC<Iitem> = ({
         <li className="truncate">{name}</li>
       </Link>
 
-      <li className="flex justify-center items-center   w-[12%]"> {type}</li>
+      <li className="flex justify-center items-center   w-[12%]">
+        {" "}
+        <span className=" border-2 border-gray p-1 rounded-lg text-xs">{type}</span>
+      </li>
       <li className="flex justify-center items-center    w-[10%]"> {volume}</li>
       <li className="flex justify-center items-center     w-[9%]"> {change}</li>
       <li className="flex justify-center items-center    w-[8%]">

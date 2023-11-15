@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ItxList } from "@app/_components/transactionTable/interface";
-import { Iitem } from "@app/(page)/nft/collections/interface";
-const usePagination = <T,>(txList: T[]) => {
+import { Iitem } from "@app/(page)/nft/interface";
+const usePagination = <T,>(txList: T[], pageStack = 25) => {
   const [page, setPage] = useState<number>(1);
   const [pageTxList, setPageTxList] = useState<T[]>([]);
   const [maxPage, setMaxPage] = useState<number>(0);
@@ -12,11 +12,11 @@ const usePagination = <T,>(txList: T[]) => {
     }
   };
   useEffect(() => {
-    setMaxPage(Math.ceil((txList?.length as number) / 25));
+    setMaxPage(Math.ceil((txList?.length as number) / pageStack));
     if (page === maxPage) {
-      setPageTxList(txList?.slice((page - 1) * 25));
+      setPageTxList(txList?.slice((page - 1) * pageStack));
     } else {
-      setPageTxList(txList?.slice((page - 1) * 25, page * 25));
+      setPageTxList(txList?.slice((page - 1) * pageStack, page * pageStack));
     }
   }, [page, maxPage]);
   return {

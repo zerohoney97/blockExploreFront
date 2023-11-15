@@ -11,15 +11,13 @@ import PcDropDownMenu from "./content/PcDropDownMenu";
 import MobileHeader from "./content/MobileHeader";
 import PcHeader from "./content/PcHeader";
 import { useRouter } from "next/navigation";
+import useHydration from "@app/_hooks/useHydration";
 
 const Header = () => {
   const router = useRouter();
 
   const isMobile = useMobile();
-  // const [isRendered, setIsRendered] = useState<boolean>(false);
-  // useEffect(() => {
-  //   setIsRendered(true);
-  // }, []);
+  const isRendered = useHydration();
   return (
     <>
       {isMobile ? (
