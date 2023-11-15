@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* <Header /> */}
+      
       <body className={inter.className}  suppressHydrationWarning={true}>
         {children}
         <div className="relative" id="portal"></div>

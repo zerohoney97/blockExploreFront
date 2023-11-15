@@ -40,12 +40,14 @@ const TxListWrap: React.FC<TxListProps> = ({
   const toggleHandler = () => {
     setIsToggled(!isToggled);
   };
-
+  useEffect(() => {
+    console.log(maxHeight);
+  }, [maxHeight]);
   return (
     <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md max-w-[1250px]  h-auto bg-white  max-h-[${maxHeight}]`}
+      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md max-w-[1250px]  h-auto bg-white max-h-[${maxHeight}]`}
     >
-      <div className="overflow-x-auto  h-auto  max-h-[500px]">
+      <div className={`overflow-x-auto  h-auto  max-h-[${maxHeight}]`}>
         <table className="w-full m-auto">
           <thead>
             <tr className="h-8 border-b border-gray flex ">

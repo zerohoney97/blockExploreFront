@@ -1,14 +1,29 @@
 "use client";
 import React, { useState } from "react";
 import PcDropDownMenu from "./PcDropDownMenu";
-import { IDropMenuProps, IPcDropMenu } from "../interface";
+import {
+  IDropDownMenuData,
+  IDropDownMenuDataObj,
+  IDropMenuProps,
+  IPcDropMenu,
+} from "../interface";
 
 const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const [openMenuName, setOpenMenuName] = useState<string>("");
-  const dropDownMenu = {
-    blockchain: ["Transactions", "Pending Transactions", "View Blocks"],
-    token: ["Top Tokens", "Token Transfers"],
-    NFT: ["Top NFTs", "NFT Transfers"],
+  const dropDownMenu: IDropDownMenuDataObj = {
+    blockchain: [
+      { name: "Transactions", url: "transaction" },
+      { name: "Pending Transactions", url: "transaction" },
+      { name: "View Blocks", url: "block" },
+    ],
+    token: [
+      { name: "Top Tokens", url: "token" },
+      { name: "Token Transfers", url: "token" },
+    ],
+    NFT: [
+      { name: "Top NFTs", url: "nft" },
+      { name: "NFT Transfers", url: "nft" },
+    ],
   };
 
   const openMenuNameHandler = (name: string) => {

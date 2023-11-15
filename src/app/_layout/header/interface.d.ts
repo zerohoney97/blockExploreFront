@@ -27,3 +27,13 @@ export interface IMobileDropMenuProps {
   isMenuOpen: boolean;
   router: NextRouter;
 }
+
+export interface IDropDownMenuData {
+  name: string;
+  url: string;
+}
+export interface IDropDownMenuDataObj {
+  blockchain: IDropDownMenuData[];
+  token: IDropDownMenuData[];
+  NFT: IDropDownMenuData[];
+}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { IPcDropMenu } from "../interface";
+import { IDropDownMenuData, IPcDropMenu } from "../interface";
+import Link from "next/link";
 const PcDropDownMenu: React.FC<IPcDropMenu> = ({
   label,
   dropDownMenuArr,
@@ -30,8 +31,12 @@ const PcDropDownMenu: React.FC<IPcDropMenu> = ({
         {openMenuName === label && (
           <div className={`w-full relative animate-slide-up-fade-in `}>
             <ul className="bg-white shadow-md rounded-b-lg border-2 border-white border-t-blue-500 w-52 absolute h-auto top-0 p-3">
-              {dropDownMenuArr.map((ele: string, index: number) => {
-                return <li key={index} className="mt-2">{ele} </li>;
+              {dropDownMenuArr.map((ele: IDropDownMenuData, index: number) => {
+                return (
+                  <li key={index} className="mt-2">
+                    <Link href={`/${ele.url}`}>{ele.name}</Link>
+                  </li>
+                );
               })}
             </ul>
           </div>
