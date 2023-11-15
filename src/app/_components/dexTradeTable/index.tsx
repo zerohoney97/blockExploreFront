@@ -83,7 +83,7 @@ const TxListWrap: React.FC<DexListProps> = ({ dexList }) => {
             )
           : null}
       </div>
-      <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
+      <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage}  />
     </div>
   );
 };

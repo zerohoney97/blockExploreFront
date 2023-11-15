@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import { ItxList } from "@app/_components/transactionTable/interface";
 import { Iitem } from "@app/(page)/nft/interface";

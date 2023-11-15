@@ -7,7 +7,7 @@ const TokenContent: React.FC<{ data: TokenDataProps }> = ({ data }) => {
 
   return (
     <tr className='border-b border-gray text-sm '>
-      <td className='py-3  min-w-[100px] flex justify-center'>{data.number}</td>
+      <td className='py-3 px-4 min-w-[80px]'>{data.number}</td>
       <td>
         <Link href={tokenDetailPath}>
           <div className='flex items-center min-w-[250px]'>
