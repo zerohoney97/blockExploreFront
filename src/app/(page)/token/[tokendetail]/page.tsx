@@ -12,6 +12,7 @@ import TapButton from "@app/_components/tabComponent/Tab";
 import { ITokenDetailProps } from "../Interface";
 import InfoTapContent from "./_contents/InfoTapContent";
 import TokenItemTable from "./_contents/TokenItemTable";
+import ItemDetail from "@app/_components/itemDetail"
 
 const Page: React.FC<ITokenDetailProps> = ({ params }) => {
   const [toggleLabelNum, setToggleLabelNum] = useState<string | null>(null);
@@ -27,7 +28,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
 
   return (
     <div className="bg-mainBackGroundColor flex flex-col p-5">
-      <div className="flex items-center border-b border-gray w-11/12">
+      <div className="flex items-center border-b border-gray w-11/12  max-w-[1200px]">
         <div className="flex items-center">
           <Title title="Token" />
           <span className="ml-2">{params.tokendetail}</span>

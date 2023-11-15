@@ -4,17 +4,17 @@ import { HoldersItemProps } from "./interface";
 const HoldersItem: React.FC<HoldersItemProps> = ({ HoldersItem }) => {
   return (
     <tr className="h-14 border-b border-gray">
-    <td className="min-w-[60px] flex items-center justify-center p-2 relative">
+    <td className="w-[100px]  flex items-center justify-center p-2 relative">
         {HoldersItem.rank}
       </td>
       <td
-         className="min-w-[200px]" style={{ lineHeight: "2.3rem" }}>
+         className="min-w-[350px]" style={{ lineHeight: "2.3rem" }}>
         {HoldersItem.address}
       </td>
-      <td className="min-w-[200px] items-center">
+      <td className="min-w-[300px] items-center">
         {HoldersItem.quantity}
       </td>
-      <td className="min-w-[150px] items-center">
+      <td className="min-w-[200px] items-center">
         {HoldersItem.percentage}
       </td>
       <td className="min-w-[200px] items-center">

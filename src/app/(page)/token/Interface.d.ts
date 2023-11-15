@@ -2,7 +2,7 @@ export interface TokenDataProps {
     number:? string;
     tokenName: string ;
     unit:string;
-    process: string;
+    price: string;
     change: string;
     volume: string;
     holders:string

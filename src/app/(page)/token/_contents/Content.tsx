@@ -7,21 +7,21 @@ const TokenContent: React.FC<{ data: TokenDataProps }> = ({ data }) => {
 
   return (
     <tr className='border-b border-gray text-sm '>
-      <td className='py-3  min-w-[50px]'>{data.number}</td>
+      <td className='py-3  min-w-[100px] flex justify-center'>{data.number}</td>
       <td>
         <Link href={tokenDetailPath}>
-          <div className='flex items-center  min-w-[200px]'>
+          <div className='flex items-center min-w-[250px]'>
             <span className='font-semibold'> {data.tokenName} </span>
             <span className='text-xs'>{data.unit}</span>
           </div>
         </Link>
       </td>
-      <td className=' min-w[100px]'>{data.process}</td>
+      <td className=' min-w[300px]'>{data.price} ETH</td>
       <td className={`${data.change.includes('+') ? 'text-green-500 w-32' : 'text-red-500 w-32'}`}>
         {data.change}
       </td>
-      <td className=' min-w-[150px]'>{data.volume}</td>
-      <td className=' min-w-[100px]'>{data.holders}</td>
+      <td className=' min-w-[200px]'>{data.volume}</td>
+      <td className=' min-w-[200px]'>{data.holders}</td>
     </tr>
   );
 }
