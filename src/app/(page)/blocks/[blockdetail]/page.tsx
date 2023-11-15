@@ -12,7 +12,7 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
       <div className="flex items-center w-11/12  max-w-[1200px]">
         <div className="flex items-center">
           <Title title="Block" />
-          <span className="ml-2">{params.blockdetail}</span>
+          <span className="ml-2 text-black/40">#{params.blockdetail}</span>
         </div>
       </div>
       <div>
