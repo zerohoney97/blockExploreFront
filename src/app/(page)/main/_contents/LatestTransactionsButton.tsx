@@ -3,7 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { ILatestTransactionsButtonProps } from '../interface'
 
-const LatestTransactionsButton:React.FC<ILatestTransactionsButtonProps> = ({buttonName}) => {
+const MainLatestTransactionsButton:React.FC<ILatestTransactionsButtonProps> = ({buttonName}) => {
     const router = useRouter();
     const routeHandler = () => {
         router.push(`/main/transactions`);
@@ -13,4 +13,4 @@ const LatestTransactionsButton:React.FC<ILatestTransactionsButtonProps> = ({butt
   )
 }
 
-export default LatestTransactionsButton
+export default MainLatestTransactionsButton

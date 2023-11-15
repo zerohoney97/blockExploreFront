@@ -2,7 +2,7 @@ import React from "react";
 import { ITransactionFrom } from "../interface";
 import Link from "next/link";
 
-const TransactionFrom: React.FC<ITransactionFrom> = ({ fromAddress }) => {
+const MainTransactionFrom: React.FC<ITransactionFrom> = ({ fromAddress }) => {
   const truncate = (transaction: string) => {
     return transaction.slice(0, 8) + "..." + transaction.slice(-8);
   };
@@ -20,4 +20,4 @@ const TransactionFrom: React.FC<ITransactionFrom> = ({ fromAddress }) => {
   );
 };
 
-export default TransactionFrom;
+export default MainTransactionFrom;

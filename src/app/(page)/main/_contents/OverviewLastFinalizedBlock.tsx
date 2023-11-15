@@ -9,10 +9,11 @@ interface IOverviewLastFinalizedBlockDataProps{
   overviewLastFinalizedBlockData : IOverviewLastFinalizedBlockData
 }
 
-const OverviewLastFinalizedBlock:React.FC<IOverviewLastFinalizedBlockDataProps> = ({overviewLastFinalizedBlockData}) => {
+const MainOverviewLastFinalizedBlock:React.FC<IOverviewLastFinalizedBlockDataProps> = ({overviewLastFinalizedBlockData}) => {
   const {lastFinalizedBlock, lastSafeBlock} = overviewLastFinalizedBlockData;
   return (
-    <div className='flex w-11/12 m-auto mt-[20px] mb-[20px] pt-[10px] pb-[10px] '>
+    <div className='flex p-5 w-11/12 m-auto'>
+
       <div className='w-[40px]'>
         <span className='flex justify-center'>🤶</span>
       </div>
@@ -28,8 +29,9 @@ const OverviewLastFinalizedBlock:React.FC<IOverviewLastFinalizedBlockDataProps> 
           {lastSafeBlock}
         </p>
       </div>
+
     </div>
   )
 }
 
-export default OverviewLastFinalizedBlock
+export default MainOverviewLastFinalizedBlock

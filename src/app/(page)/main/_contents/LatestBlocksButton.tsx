@@ -3,7 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation';
 import { ILatestBlocksButtonProps } from '../interface';
 
-const LatestBlocksButton:React.FC<ILatestBlocksButtonProps> = ({buttonName}) => {
+const MainLatestBlocksButton:React.FC<ILatestBlocksButtonProps> = ({buttonName}) => {
     const router = useRouter();
     const routeHandler = () => {
         router.push(`/main/blocks/`);
@@ -15,4 +15,4 @@ const LatestBlocksButton:React.FC<ILatestBlocksButtonProps> = ({buttonName}) => 
   )
 }
 
-export default LatestBlocksButton
+export default MainLatestBlocksButton
