@@ -9,7 +9,7 @@ import usePagiNation from "@app/_hooks/usePagination";
 const TxList: React.FC<TxListWrapProps> = ({ pageTxList, toggleHandler }) => {
 
   return (
-      <div>
+      <div >
         {pageTxList &&
           (pageTxList as ItxList[]).map((ele) => (
             <TxItem

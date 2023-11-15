@@ -4,7 +4,7 @@ import { TxItemProps } from "./interface";
 
 const TxItem: React.FC<TxItemProps> = ({ TxItem, toggleHandler }) => {
   return (
-    <tr className="h-14 border-b border-gray text-sm">
+    <tr className="h-14 border-b  border-gray text-sm">
       <td className="min-w-[60px] flex items-center justify-center p-2 relative">
         <div className="relative">
           <img

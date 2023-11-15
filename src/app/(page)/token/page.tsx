@@ -100,7 +100,7 @@ const tokenData = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const pagination = usePagination(tokenData);
   return (
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
@@ -129,4 +129,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

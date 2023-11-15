@@ -36,11 +36,13 @@ const TxListWrap: React.FC<TxListProps> = ({ txList, lastThName }) => {
 
   return (
     <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px]">
-      <div className="overflow-x-auto h-auto  max-h-[500px]">
-        <table className="w-full">
+      <div className="overflow-x-auto  h-auto  max-h-[500px]">
+        <table className="w-full m-auto">
           <thead>
             <tr className="h-8 border-b border-gray flex ">
-              <th className="min-w-[60px] flex items-center justify-center font-medium">?</th>
+              <th className="min-w-[60px] w-auto flex items-center justify-center font-medium">
+                ?
+              </th>
               <th className="min-w-[200px] flex justify-start items-center font-medium">
                 Txn Info
               </th>
@@ -52,7 +54,7 @@ const TxListWrap: React.FC<TxListProps> = ({ txList, lastThName }) => {
               </th>
               <th className="min-w-[100px] flex items-center font-medium">
                 Age
-                </th>
+              </th>
               <th className="min-w-[200px] flex items-center font-medium">
                 From
               </th>
