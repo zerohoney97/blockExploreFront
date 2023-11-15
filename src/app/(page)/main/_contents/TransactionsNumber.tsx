@@ -2,7 +2,7 @@ import React from "react";
 import { ITransactionsNumberProps } from "../interface";
 import Link from "next/link";
 
-const TransactionsNumber: React.FC<ITransactionsNumberProps> = ({
+const MainTransactionsNumber: React.FC<ITransactionsNumberProps> = ({
   transactionsInThisBlock,
   transactionsTime,
   blockHeight,
@@ -19,4 +19,4 @@ const TransactionsNumber: React.FC<ITransactionsNumberProps> = ({
   );
 };
 
-export default TransactionsNumber;
+export default MainTransactionsNumber;

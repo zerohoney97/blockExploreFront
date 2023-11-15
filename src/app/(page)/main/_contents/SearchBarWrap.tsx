@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 
-const SearchBarWrap = () => {
+const MainSearchBarWrap = () => {
   return (
     <div className='bg-blue-900 h-[250px] w-full flex justify-center'>
       <SearchBar />
@@ -9,4 +9,4 @@ const SearchBarWrap = () => {
   );
 };
 
-export default SearchBarWrap;
+export default MainSearchBarWrap;

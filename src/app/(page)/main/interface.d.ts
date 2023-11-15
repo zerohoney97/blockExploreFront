@@ -78,3 +78,18 @@ export interface ILatestBlocksButtonProps{
 export interface ILatestTransactionsButtonProps{
   buttonName : string
 }
+
+export interface IOverviewTransactionsData{
+  totalTransactionsCounter : number,
+  transactionsPerSecond : number,
+  baseFee : number,
+  priorityFee : number,
+}
+export interface IOverviewLastFinalizedBlockData{
+  lastFinalizedBlock : number,
+  lastSafeBlock : number
+}
+export interface IOverviewProps{
+  overviewTransactionsData : IOverviewTransactionsData,
+  overviewLastFinalizedBlockData : IOverviewLastFinalizedBlockData
+}

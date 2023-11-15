@@ -3,7 +3,7 @@ import LatestTransactionsItem from './LatestTransactionsItem'
 import { ITransactionsListProps } from '../interface'
 
 
-const LatestTransactionsList:React.FC<ITransactionsListProps> = ({transactionslist}) => {
+const MainLatestTransactionsList:React.FC<ITransactionsListProps> = ({transactionslist}) => {
   return (
     <ul className='h-[482px] overflow-scroll w-full'>
       {transactionslist.map((item, index)=>(
@@ -15,4 +15,4 @@ const LatestTransactionsList:React.FC<ITransactionsListProps> = ({transactionsli
   )
 }
 
-export default LatestTransactionsList
+export default MainLatestTransactionsList

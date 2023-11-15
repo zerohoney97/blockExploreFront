@@ -5,7 +5,7 @@ import TransactionsNumber from "./TransactionsNumber";
 import MainEthValue from "@app/_components/mainEthValue";
 import { IBlocksItemProps } from "../interface";
 
-const LatestBlocksItem: React.FC<IBlocksItemProps> = ({ blocksItem }) => {
+const MainLatestBlocksItem: React.FC<IBlocksItemProps> = ({ blocksItem }) => {
   const {
     blockHeight,
     blockTime,
@@ -28,4 +28,4 @@ const LatestBlocksItem: React.FC<IBlocksItemProps> = ({ blocksItem }) => {
   );
 };
 
-export default LatestBlocksItem;
+export default MainLatestBlocksItem;

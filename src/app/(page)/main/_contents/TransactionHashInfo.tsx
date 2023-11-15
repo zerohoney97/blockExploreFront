@@ -2,7 +2,7 @@ import React from "react";
 import { ITransactionHashInfoProps } from "../interface";
 import Link from "next/link";
 
-const TransactionHashInfo: React.FC<ITransactionHashInfoProps> = ({
+const MainTransactionHashInfo: React.FC<ITransactionHashInfoProps> = ({
   transactionHash,
   transactionTime,
 }) => {
@@ -25,4 +25,4 @@ const TransactionHashInfo: React.FC<ITransactionHashInfoProps> = ({
   );
 };
 
-export default TransactionHashInfo;
+export default MainTransactionHashInfo;

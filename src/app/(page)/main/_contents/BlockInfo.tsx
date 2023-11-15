@@ -3,7 +3,7 @@ import { IBlockInfoProps } from '../interface'
 
 import Link from 'next/link';
 
-const BlockInfo:React.FC<IBlockInfoProps>
+const MainBlockInfo:React.FC<IBlockInfoProps>
 = ({blockHeight, blockTime}) => {
 
   return (
@@ -16,4 +16,4 @@ const BlockInfo:React.FC<IBlockInfoProps>
   )
 }
 
-export default BlockInfo
+export default MainBlockInfo
