@@ -5,6 +5,7 @@ import TxAction from "./Action";
 import TxTransfer from "./Transfer";
 import TxTransferToken from "./TransferToken";
 import TxTransferNFT from "./TransferNFT";
+import TxGasInfo from "./GasInfo";
 
 const TxOverViewMain = () => {
   return (
@@ -14,6 +15,7 @@ const TxOverViewMain = () => {
       <TxTransfer />
       <TxTransferToken />
       <TxTransferNFT />
+      <TxGasInfo/>
     </ItemTableWrap>
   );
 };

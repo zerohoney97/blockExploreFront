@@ -49,7 +49,9 @@ const config: Config = {
         itemDetail: {
           textLabelColor: "#6C757D",
           inventoryKeyColor: "#6c757d",
+          txGasInfoColor:'#212529'
         },
+        
       },
 
       //
