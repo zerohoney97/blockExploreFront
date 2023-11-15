@@ -18,7 +18,7 @@ const DetailWrap: React.FC<IDetailWrapDataList> = ({ detailWrapDataList }) => {
   };
 
   return (
-    <div className="flex flex-col m-auto h-auto shadow-md w-5/6  break-all bg-white rounded-md max-w-xl   p-5 mb-3 ">
+    <div className="flex flex-col m-auto shadow-md w-5/6  break-all bg-white rounded-md max-w-xl p-5 mb-3 h-[240px] ">
       {detailWrapDataList.map(({ contents, label, toggleContent }, index) => (
         <DetailWrapContent
           contents={contents}
