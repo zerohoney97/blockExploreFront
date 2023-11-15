@@ -15,6 +15,7 @@ export interface ITokenDetail {
 export interface ITokenDetailProps {
   params: { tokendetail: string };
 }
+
 export interface HoldersDataProps {
   rank: ?string;
   address: string;

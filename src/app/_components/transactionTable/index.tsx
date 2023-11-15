@@ -42,9 +42,7 @@ const TxListWrap: React.FC<TxListProps> = ({
   };
 
   return (
-    <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md max-w-[1250px]  h-auto bg-white  max-h-[${maxHeight}]`}
-    >
+    <div className={`mt-10 w-11/12 m-auto rounded-lg shadow-md max-w-[1250px]  h-auto bg-white  max-h-[${maxHeight}]`}>
       <div className="overflow-x-auto  h-auto  max-h-[500px]">
         <table className="w-full m-auto">
           <thead>

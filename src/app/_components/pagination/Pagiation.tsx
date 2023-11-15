@@ -7,7 +7,7 @@ const Pagination: React.FC<IPageNationProps> = ({
   maxPage,
 }) => {
   return (
-    <div className="w-full h-20  flex justify-center items-center">
+    <div className="w-full h-20  flex justify-center items-center text-sm">
       <div
         className="m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg  "
         onClick={() => {
