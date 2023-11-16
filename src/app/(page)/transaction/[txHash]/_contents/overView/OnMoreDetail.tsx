@@ -11,9 +11,7 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
       {/* 애니메이션 */}
       <div
         className={`${
-          mordeDetailToggle
-            ? "h-[300px] relative"
-            : "h-0 overflow-hidden "
+          mordeDetailToggle ? " relative sm:h-[400px] lg:h-[300px]" : "h-0 overflow-hidden "
         } transition-all  z-0`}
       >
         <div className="w-full h-72 min-h-72 flex flex-col">
@@ -49,7 +47,7 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
             <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
               Input Data:
             </div>
-            <div className=" w-2/3 flex flex-col">
+            <div className="  flex flex-col sm:w-full sm:m-auto lg:w-2/3  ">
               <TxInputData />
             </div>
           </div>

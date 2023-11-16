@@ -100,7 +100,7 @@ const config: Config = {
         itemTable: "300px",
       },
       screens: {
-        sm: { min: "300px", max: "768px" },
+        sm: {  max: "768px" },
         md: { min: "768px", max: "990px" },
         lg: { min: "990px" },
       },
