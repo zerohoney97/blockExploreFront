@@ -1,5 +1,5 @@
 import React from "react";
-import { INftTxDetailInventoryProps } from "../interface";
+import { INftTxDetailInventoryProps } from "../../interface";
 import ItemTableWrap from "@app/_components/itemTable";
 
 const NFTInventoryItem: React.FC<INftTxDetailInventoryProps> = ({

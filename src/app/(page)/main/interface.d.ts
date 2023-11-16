@@ -3,50 +3,39 @@ export interface IBlockInfoProps {
   blockTime: number;
 }
 
-export interface IBlocksItem {
+interface IBlocksItem {
   blockHeight: number;
   blockTime: number;
   feeRecipient: string;
   transactionsInThisBlock: number;
   transactionsTime: number;
   blockReward: number;
+}
+interface ITransactionsItem {
+  transactionHash: string;
+  transactionTime: number;
+  fromAddress: string;
+  toAddress: string;
+  ethAmount: number;
 }
 export interface IBlocksItemProps {
   blocksItem: IBlocksItem;
 }
-
-export interface IBlocksList {
-  blockHeight: number;
-  blockTime: number;
-  feeRecipient: string;
-  transactionsInThisBlock: number;
-  transactionsTime: number;
-  blockReward: number;
+interface ITransactionsItemProps {
+  transactionsData: ITransactionsItem;
 }
+
+export interface MainLatestResponsiveWrapProps{
+  blocksData : IBlocksItem[],
+  transactionsData : ITransactionsItem[]
+}
+
 export interface IBlocksListProps {
-    blocksList: IBlocksList[];
+  blocksList: IBlocksItem[];
 }
 
-export interface ITransactionsItem {
-  transactionHash: string;
-  transactionTime: number;
-  fromAddress: string;
-  toAddress: string;
-  ethAmount: number;
-}
-export interface ITransactionsItemProps {
-  transactionsItem: ITransactionsItem;
-}
-
-export interface ITransactionsList {
-  transactionHash: string;
-  transactionTime: number;
-  fromAddress: string;
-  toAddress: string;
-  ethAmount: number;
-}
 export interface ITransactionsListProps {
-  transactionslist: ITransactionsList[];
+  transactionslist: ITransactionsItem[];
 }
 
 export interface IMinerProps {
@@ -59,37 +48,63 @@ export interface ITransactionsNumberProps {
   blockHeight: number;
 }
 
-export interface ITransactionHashInfoProps{
-  transactionHash : string,
-  transactionTime : number
+export interface ITransactionHashInfoProps {
+  transactionHash: string;
+  transactionTime: number;
 }
 
 export interface ITransactionFrom {
-  fromAddress : string
+  fromAddress: string;
 }
 
-export interface ITransactionTo{
-  toAddress : string
+export interface ITransactionTo {
+  toAddress: string;
 }
 
-export interface ILatestBlocksButtonProps{
-  buttonName : string
+export interface ILatestBlocksButtonProps {
+  buttonName: string;
 }
-export interface ILatestTransactionsButtonProps{
-  buttonName : string
+export interface ILatestTransactionsButtonProps {
+  buttonName: string;
 }
 
-export interface IOverviewTransactionsData{
-  totalTransactionsCounter : number,
-  transactionsPerSecond : number,
-  baseFee : number,
-  priorityFee : number,
+interface IOverviewTransactionsData {
+  totalTransactionsCounter: number;
+  transactionsPerSecond: number;
+  baseFee: number;
+  priorityFee: number;
 }
-export interface IOverviewLastFinalizedBlockData{
-  lastFinalizedBlock : number,
-  lastSafeBlock : number
+interface IOverviewLastFinalizedBlockData {
+  lastFinalizedBlock: number;
+  lastSafeBlock: number;
 }
-export interface IOverviewProps{
-  overviewTransactionsData : IOverviewTransactionsData,
-  overviewLastFinalizedBlockData : IOverviewLastFinalizedBlockData
+export interface IOverviewProps {
+  overviewTransactionsData: IOverviewTransactionsData;
+  overviewLastFinalizedBlockData: IOverviewLastFinalizedBlockData;
+}
+
+export interface IOverviewTransactionsDataProps {
+  overviewTransactionsData: IOverviewTransactionsData;
+}
+
+export interface IGasPriceIndicatorProps {
+  baseFee: number;
+  priorityFee: number;
+}
+
+export interface ITransactionsVolumeProps {
+  totalTransactionsCounter: number;
+  transactionsPerSecond: number;
+}
+
+interface IOverviewLastFinalizedBlockData {
+  lastFinalizedBlock: number;
+  lastSafeBlock: number;
+}
+interface IOverviewLastFinalizedBlockDataProps {
+  overviewLastFinalizedBlockData: IOverviewLastFinalizedBlockData;
+}
+
+export interface IMainFinalizedBlockProps {
+  lastFinalizedBlock: number;
 }

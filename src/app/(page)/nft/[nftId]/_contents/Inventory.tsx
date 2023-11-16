@@ -2,7 +2,7 @@
 import ItemTableWrap from "@app/_components/itemTable";
 import usePagination from "@app/_hooks/usePagination";
 import React from "react";
-import { INftTxDetailInventory } from "../interface";
+import { INftTxDetailInventory } from "../../interface";
 import NFTInventoryItem from "./InventoryItem";
 const NFTInventory = () => {
   const tempNftData: INftTxDetailInventory[] = Array.from(

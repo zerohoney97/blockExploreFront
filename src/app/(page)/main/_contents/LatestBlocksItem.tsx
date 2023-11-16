@@ -15,14 +15,16 @@ const MainLatestBlocksItem: React.FC<IBlocksItemProps> = ({ blocksItem }) => {
     blockReward,
   } = blocksItem;
   return (
-    <li className="bg-white w-11/12 m-auto border-gray text-sm border-b-[1px] last:border-b-0 py-[15px]">
+    <li className="bg-white w-11/12 m-auto border-gray text-sm border-b-[1px] last:border-b-0 py-[15px] md:flex lg:flex">
       <BlockInfo blockHeight={blockHeight} blockTime={blockTime} />
-      <Miner feeRecipient={feeRecipient} />
-      <TransactionsNumber
-        blockHeight={blockHeight}
-        transactionsInThisBlock={transactionsInThisBlock}
-        transactionsTime={transactionsTime}
-      />
+      <div className="sm:inline">
+        <Miner feeRecipient={feeRecipient} />
+        <TransactionsNumber
+          blockHeight={blockHeight}
+          transactionsInThisBlock={transactionsInThisBlock}
+          transactionsTime={transactionsTime}
+        />
+      </div>
       <MainEthValue ethValue={blockReward} />
     </li>
   );

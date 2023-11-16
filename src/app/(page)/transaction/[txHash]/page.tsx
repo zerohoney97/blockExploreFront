@@ -27,7 +27,7 @@ const Page = () => {
   };
   return (
     <div>
-      <ItemTitle title="Transaction Details" />
+      <ItemTitle title="Transaction Details"  />
       <TabWrap>
         <TabButton
           label="Over View"

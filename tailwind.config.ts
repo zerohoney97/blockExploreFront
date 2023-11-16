@@ -10,6 +10,9 @@ const config: Config = {
     extend: {
       animation: {
         "slide-up-fade-in": "slideUpFadeIn 1s ease-out",
+        'change-height-zero-to-auto':'changeHeightZeroToAuto 1s ease-out',
+        'change-height-to-auto':'changeHeightToAuto 1s ease-out',
+        'change-position':'changePosition 1s ease-out',
       },
       keyframes: {
         slideUpFadeIn: {
@@ -20,6 +23,33 @@ const config: Config = {
           "100%": {
             opacity: "1",
             transform: "translateY(0)",
+          },
+        },
+        changeHeightZeroToAuto: {
+          "0%": {
+            height: "0px",
+            overflow: "hidden",
+          },
+          "100%": {
+            height: "auto",
+          },
+        },
+        changeHeightToAuto: {
+          "0%": {
+            height: "64px",
+            overflow: "hidden",
+          },
+          "100%": {
+            height: "auto",
+          },
+        },
+        changePosition: {
+          "0%": {
+            positions: "absolute",
+            top: "-17px",
+          },
+          "100%": {
+            position: "relative",
           },
         },
       },
@@ -49,20 +79,28 @@ const config: Config = {
         itemDetail: {
           textLabelColor: "#6C757D",
           inventoryKeyColor: "#6c757d",
+          txGasInfoColor: "#212529",
         },
       },
-
+      borderColor: {
+        txDetail: {
+          moreDetailBorderRight: "#ADB5BD",
+        },
+      },
       //
       backgroundColor: {
         modalBackgroundColor: "rgba(0, 0, 0, 0.5);",
         mainBackGroundColor: "#fafbfd",
         searchBarBackGroundColor: "rgb(248,249,250)",
+        txDetail: {
+          inputData: "#e9ecef",
+        },
       },
       minWidth: {
         itemTable: "300px",
       },
       screens: {
-        sm : { max:"768px"},
+        sm: {  max: "768px" },
         md: { min: "768px", max: "990px" },
         lg: { min: "990px" },
       },

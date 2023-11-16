@@ -1,12 +1,8 @@
 import React from "react";
 
-import MainLatestWrap from "@app/_components/mainLatestWrap";
-import LatestBlocksList from "./_contents/LatestBlocksList";
-import LatestTransactionsList from "./_contents/LatestTransactionsList";
-import EthereumOverview from "./_contents/EthereumOverview";
 import SearchBarWrap from "./_contents/SearchBarWrap";
-import LatestBlocksButton from "./_contents/LatestBlocksButton";
-import LatestTransactionsButton from "./_contents/LatestTransactionsButton";
+import EthereumOverview from "./_contents/EthereumOverview";
+import LatestResponsiveWrap from "./_contents/LatestResponsiveWrap";
 
 const MainPage = () => {
   const overviewTransactionsData = {
@@ -37,7 +33,15 @@ const MainPage = () => {
       blockReward: 0.642,
     },
     {
-      blockHeight: 1,
+      blockHeight: 3,
+      blockTime: 9,
+      feeRecipient: "demian",
+      transactionsInThisBlock: 321,
+      transactionsTime: 36,
+      blockReward: 0.856,
+    },
+    {
+      blockHeight: 4,
       blockTime: 3,
       feeRecipient: "rsync-builder",
       transactionsInThisBlock: 147,
@@ -45,7 +49,7 @@ const MainPage = () => {
       blockReward: 0.04742,
     },
     {
-      blockHeight: 2,
+      blockHeight: 5,
       blockTime: 6,
       feeRecipient: "lucid",
       transactionsInThisBlock: 284,
@@ -53,21 +57,14 @@ const MainPage = () => {
       blockReward: 0.642,
     },
     {
-      blockHeight: 1,
-      blockTime: 3,
-      feeRecipient: "rsync-builder",
-      transactionsInThisBlock: 147,
-      transactionsTime: 12,
-      blockReward: 0.04742,
+      blockHeight: 6,
+      blockTime: 9,
+      feeRecipient: "demian",
+      transactionsInThisBlock: 321,
+      transactionsTime: 36,
+      blockReward: 0.856,
     },
-    {
-      blockHeight: 2,
-      blockTime: 6,
-      feeRecipient: "lucid",
-      transactionsInThisBlock: 284,
-      transactionsTime: 24,
-      blockReward: 0.642,
-    },
+
   ];
   const transactionsData = [
     {
@@ -121,22 +118,14 @@ const MainPage = () => {
   ];
 
   return (
-    <div className='bg-[#FBFBFC]'>
+    <>
       <SearchBarWrap />
       
       <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
+
+      <LatestResponsiveWrap blocksData={blocksData} transactionsData={transactionsData} />
       
-      <MainLatestWrap title='Blocks'>
-        <LatestBlocksList blocksList={blocksData} />
-        <LatestBlocksButton buttonName="BLOCKS" />
-      </MainLatestWrap>
-
-      <MainLatestWrap title='Transactions'>
-        <LatestTransactionsList transactionslist={transactionsData} />
-        <LatestTransactionsButton buttonName = "TRANSACTIONS" />
-      </MainLatestWrap>
-
-    </div>
+    </>
   );
 };
 
