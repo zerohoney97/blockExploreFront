@@ -3,50 +3,39 @@ export interface IBlockInfoProps {
   blockTime: number;
 }
 
-export interface IBlocksItem {
+interface IBlocksItem {
   blockHeight: number;
   blockTime: number;
   feeRecipient: string;
   transactionsInThisBlock: number;
   transactionsTime: number;
   blockReward: number;
+}
+interface ITransactionsItem {
+  transactionHash: string;
+  transactionTime: number;
+  fromAddress: string;
+  toAddress: string;
+  ethAmount: number;
 }
 export interface IBlocksItemProps {
   blocksItem: IBlocksItem;
 }
-
-export interface IBlocksList {
-  blockHeight: number;
-  blockTime: number;
-  feeRecipient: string;
-  transactionsInThisBlock: number;
-  transactionsTime: number;
-  blockReward: number;
+interface ITransactionsItemProps {
+  transactionsData: ITransactionsItem;
 }
+
+export interface MainLatestResponsiveWrapProps{
+  blocksData : IBlocksItem[],
+  transactionsData : ITransactionsItem[]
+}
+
 export interface IBlocksListProps {
-  blocksList: IBlocksList[];
+  blocksList: IBlocksItem[];
 }
 
-export interface ITransactionsItem {
-  transactionHash: string;
-  transactionTime: number;
-  fromAddress: string;
-  toAddress: string;
-  ethAmount: number;
-}
-export interface ITransactionsItemProps {
-  transactionsItem: ITransactionsItem;
-}
-
-export interface ITransactionsList {
-  transactionHash: string;
-  transactionTime: number;
-  fromAddress: string;
-  toAddress: string;
-  ethAmount: number;
-}
 export interface ITransactionsListProps {
-  transactionslist: ITransactionsList[];
+  transactionslist: ITransactionsItem[];
 }
 
 export interface IMinerProps {
@@ -103,20 +92,19 @@ export interface IGasPriceIndicatorProps {
   priorityFee: number;
 }
 
-export interface ITransactionsVolumeProps{
-  totalTransactionsCounter: number,
-  transactionsPerSecond: number
+export interface ITransactionsVolumeProps {
+  totalTransactionsCounter: number;
+  transactionsPerSecond: number;
 }
 
-interface IOverviewLastFinalizedBlockData{
-  lastFinalizedBlock : number,
-  lastSafeBlock : number
+interface IOverviewLastFinalizedBlockData {
+  lastFinalizedBlock: number;
+  lastSafeBlock: number;
 }
-interface IOverviewLastFinalizedBlockDataProps{
-  overviewLastFinalizedBlockData : IOverviewLastFinalizedBlockData
-}
-
-export interface IMainFinalizedBlockProps{
-  lastFinalizedBlock : number
+interface IOverviewLastFinalizedBlockDataProps {
+  overviewLastFinalizedBlockData: IOverviewLastFinalizedBlockData;
 }
 
+export interface IMainFinalizedBlockProps {
+  lastFinalizedBlock: number;
+}

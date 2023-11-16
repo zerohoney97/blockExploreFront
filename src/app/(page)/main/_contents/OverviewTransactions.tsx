@@ -15,11 +15,7 @@ const MainOverviewTransactions: React.FC<IOverviewTransactionsDataProps> = ({
     priorityFee,
   } = overviewTransactionsData;
   return (
-    // sm:mt-[20px] sm:pb-[20px] 
-    // md:ml-[20px]  md:mt-[20px] md:mb-[20px] 
-    // lg:ml-[20px] lg:mt-[20px] lg:mb-[20px]'>
-
-    <div className='flex w-11/12 m-auto border-gray sm:py-[20px] md:p-5 lg:p-5 sm:border-b-[1px] md:border-r-[1px] md:py-0  lg:border-r-[1px] lg:py-0'>
+    <div className='border-gray flex sm:w-11/12 md:w-[330px] lg:w-[400px] m-auto sm:border-b-[1px] sm:pl-0 sm:p-5'>
 
       <MainTransactionsIndicator />
       <MainTransactionsVolume totalTransactionsCounter={totalTransactionsCounter} transactionsPerSecond={transactionsPerSecond} />

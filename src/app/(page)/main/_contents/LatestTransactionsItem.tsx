@@ -5,13 +5,15 @@ import TransactionTo from './TransactionTo'
 import { ITransactionsItemProps } from '../interface'
 import MainEthValue from '@app/_components/mainEthValue'
 
-const MainLatestTransactionsItem:React.FC<ITransactionsItemProps> = ({transactionsItem}) => {
-  const {transactionHash, transactionTime, fromAddress, toAddress, ethAmount} = transactionsItem;
+const MainLatestTransactionsItem:React.FC<ITransactionsItemProps> = ({transactionsData}) => {
+  const {transactionHash, transactionTime, fromAddress, toAddress, ethAmount} = transactionsData;
   return (
-    <li className='bg-white text-sm w-11/12 m-auto border-gray border-b-[1px] last:border-b-0 py-[15px]'>
+    <li className='bg-white text-sm w-11/12 m-auto border-gray border-b-[1px] last:border-b-0 py-[15px] md:flex lg:flex'>
       <TransactionHashInfo transactionHash = {transactionHash} transactionTime= {transactionTime} />
-      <TransactionFrom fromAddress={fromAddress} />
-      <TransactionTo toAddress ={toAddress} />
+      <div className="sm:inline">
+        <TransactionFrom fromAddress={fromAddress} />
+        <TransactionTo toAddress ={toAddress} />
+      </div>
       <MainEthValue ethValue ={ethAmount} />
     </li>
   )

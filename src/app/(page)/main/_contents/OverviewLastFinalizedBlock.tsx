@@ -7,7 +7,7 @@ import { IOverviewLastFinalizedBlockDataProps } from '../interface'
 const MainOverviewLastFinalizedBlock:React.FC<IOverviewLastFinalizedBlockDataProps> = ({overviewLastFinalizedBlockData}) => {
   const {lastFinalizedBlock, lastSafeBlock} = overviewLastFinalizedBlockData;
   return (
-    <div className='flex w-11/12 m-auto sm:py-[20px] md:p-5 lg:p-5'>
+    <div className='flex sm:w-11/12 md:w-[330px] lg:w-[400px] m-auto sm:p-5 sm:pl-0'>
       <MainBlockIndicator />
       <MainFinalizedBlock lastFinalizedBlock={lastFinalizedBlock} />
       <MainSafeBlock lastSafeBlock = {lastSafeBlock} />

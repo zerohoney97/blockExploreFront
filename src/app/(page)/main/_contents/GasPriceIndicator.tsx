@@ -6,10 +6,10 @@ const MainGasPriceIndicator: React.FC<IGasPriceIndicatorProps> = ({
   priorityFee,
 }) => {
   return (
-    <div className='w-1/4 whitespace-nowrap text-xs'>
+    <div className='whitespace-nowrap ml-auto sm:text-xs md:text-[12px] lg:text-[15px]'>
       <p className='text-zinc-400'>MED GAS PRICE</p>
       <p>
-        {baseFee} Gwei
+        <span className="md:text-[15px] lg:text-[20px]">{baseFee} Gwei</span>
         <span className='text-zinc-400'> (${priorityFee})</span>
       </p>
     </div>
