@@ -16,10 +16,12 @@ const blocksData =[
     Txn: "500",
     feeRecipient: "Recipient A",
     gasUsed: "30000",
+    gasUsedPercent:50,
     gasLimit: "50000",
     baseFee: "20",
     reward: "100",
     burntFees: "50",
+    burntFeesPercent:90
   },
   {
     block: "18545456",
