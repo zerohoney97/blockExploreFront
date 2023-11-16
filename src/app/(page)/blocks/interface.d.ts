@@ -4,10 +4,12 @@ export interface BlocksDataProps {
     Txn: string;
     feeRecipient: string;
     gasUsed: string;
+    gasUsedPercent?:number
     gasLimit: string;
     baseFee: string;
     reward: string;
     burntFees: string;
+    burntFeesPercent:number
   }
 
   export interface IBlocksDetail {
