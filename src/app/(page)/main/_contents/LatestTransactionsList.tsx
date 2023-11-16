@@ -8,7 +8,7 @@ const MainLatestTransactionsList:React.FC<ITransactionsListProps> = ({transactio
     <ul className='h-[482px] overflow-scroll w-full'>
       {transactionslist.map((item, index)=>(
         <>
-          <LatestTransactionsItem transactionsItem ={item} />
+          <LatestTransactionsItem transactionsData ={item} />
         </>
       ))}
     </ul>
