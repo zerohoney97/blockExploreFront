@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import LogContentWrap from "./ContentWrap";
 
 const TxLogsMain = () => {
   return (
-    <div>TxLogsMain</div>
-  )
-}
+    <div className="">
+      <LogContentWrap />
+    </div>
+  );
+};
 
-export default TxLogsMain
+export default TxLogsMain;
