@@ -1,32 +1,46 @@
 import React from "react";
+import { IBlocksDetailProps } from "../../interface";
+import BlockCardText from "./CardText";
 
-interface InfoProps {
-  blockHeight: string;
-  status: string;
-  timeStamp: string;
-  proposedOn: string;
-  withdrawals: string;
-}
-
-const Info = () => {
+const Info: React.FC<IBlocksDetailProps> = (
+  { blockHeight, 
+    status,
+    timeStamp,
+    proposedOn,
+    transaction,
+    withdrawals
+  }) => {
   return (
     <div className="w-11/12 border-b border-gray">
-      <div className="my-3 flex">
-        <div>Block Height: </div>
-        <span></span>
-      </div>
-      <div className="my-3">
-        <div>Status</div>
-      </div>
-      <div className="my-3">
-        <div>Propose On</div>
-      </div>
-      <div className="my-3">
-        <div>Transaction</div>
-      </div>
-      <div className="my-3">
-        <div>Withdrawls</div>
-      </div>
+      <BlockCardText
+      title="Block Height:"
+      content={blockHeight}
+      />
+      <BlockCardText
+      title="Status:"
+      content={status}
+      />
+      <BlockCardText
+      title="Timestamp:"
+      content={timeStamp}
+      />
+      <BlockCardText
+      title="Propose On:"
+      content={blockHeight}
+      />
+      <BlockCardText
+      title="Block Height:"
+      content={proposedOn}
+      />
+      <BlockCardText
+      title="Transaction:"
+      content={transaction}
+      />
+     
+      <BlockCardText
+      title="Withdrawls:"
+      content={withdrawals}
+      />
     </div>
   );
 };

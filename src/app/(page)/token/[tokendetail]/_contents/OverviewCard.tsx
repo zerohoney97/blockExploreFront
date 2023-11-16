@@ -1,5 +1,4 @@
 import React from 'react'
-import TokenCardContent from '../../_contents/CardContent'
 
 interface TokenCardProps {
     title: string

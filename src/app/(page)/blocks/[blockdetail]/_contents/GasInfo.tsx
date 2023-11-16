@@ -1,24 +1,27 @@
 import React from "react";
+import { IBlocksGasProps } from "../../interface";
+import BlockCardText from "./CardText";
 
-const GasInfo = () => {
+
+const GasInfo: React.FC<IBlocksGasProps> = ({
+  gasUsed,
+  gasUsedPercent,
+  gasLimit,
+  baseFeePerGas,
+  burntFee,
+  extraData,
+}) => {
   return (
     <div className="w-11/12 border-b border-gray">
-      <div className="my-3">
-        <div>Gas Used</div>
-        <div>sdsdsdsd</div>
-      </div>
-      <div className="my-3">
-        <div>Gas Limit</div>
-      </div>
-      <div className="my-3">
-        <div>Base Fee Per Gas</div>
-      </div>
-      <div className="my-3">
-        <div>Burnt Fee</div>
-      </div>
-      <div className="my-3">
-        <div>Extra Data</div>
-      </div>
+        <BlockCardText title="Gas Used:" content={gasUsed}>
+          {gasUsedPercent && (
+            <span className="text-xs">({gasUsedPercent}%)</span>
+          )}
+        </BlockCardText>
+      <BlockCardText title="Gas Limit:" content={gasLimit} />
+      <BlockCardText title="Base Fee Per Gas:" content={baseFeePerGas} />
+      <BlockCardText title="Burnt Fee:" content={burntFee} />
+      <BlockCardText title="Extra Data:" content={extraData} />
     </div>
   );
 };
