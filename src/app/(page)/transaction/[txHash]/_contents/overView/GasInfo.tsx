@@ -6,7 +6,7 @@ const TxGasInfo = () => {
   return (
     <div className="w-full h-auto flex flex-col border-b border-gray pb-5 ">
       <div className="flex flex-col">
-        <div className="lg:flex">
+        <div className="lg:flex lg:items-center">
           <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px] ">
             Value:
           </div>
@@ -15,7 +15,7 @@ const TxGasInfo = () => {
             <div className="">0 ETH</div>
           </div>
         </div>
-        <div className="lg:flex">
+        <div className="lg:flex lg:items-center">
           {" "}
           <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Transaction Fee:
@@ -28,7 +28,7 @@ const TxGasInfo = () => {
             </div>
           </div>
         </div>
-        <div className="lg:flex">
+        <div className="lg:flex lg:items-center">
           <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Gas Fee:
           </div>
