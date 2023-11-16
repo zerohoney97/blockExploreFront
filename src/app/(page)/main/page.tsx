@@ -121,20 +121,22 @@ const MainPage = () => {
   ];
 
   return (
-    <div className='bg-[#FBFBFC]'>
+    <div>
       <SearchBarWrap />
       
       <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
       
-      <MainLatestWrap title='Blocks'>
-        <LatestBlocksList blocksList={blocksData} />
-        <LatestBlocksButton buttonName="BLOCKS" />
-      </MainLatestWrap>
 
-      <MainLatestWrap title='Transactions'>
-        <LatestTransactionsList transactionslist={transactionsData} />
-        <LatestTransactionsButton buttonName = "TRANSACTIONS" />
-      </MainLatestWrap>
+      <div className="w-11/12 m-auto lg:flex lg:justify-between">
+        <MainLatestWrap title='Blocks'>
+          <LatestBlocksList blocksList={blocksData} />
+          <LatestBlocksButton buttonName="BLOCKS" />
+        </MainLatestWrap>
+        <MainLatestWrap title='Transactions'>
+          <LatestTransactionsList transactionslist={transactionsData} />
+          <LatestTransactionsButton buttonName = "TRANSACTIONS" />
+        </MainLatestWrap>
+      </div>
 
     </div>
   );

@@ -24,7 +24,7 @@ export interface IBlocksList {
   blockReward: number;
 }
 export interface IBlocksListProps {
-    blocksList: IBlocksList[];
+  blocksList: IBlocksList[];
 }
 
 export interface ITransactionsItem {
@@ -59,37 +59,64 @@ export interface ITransactionsNumberProps {
   blockHeight: number;
 }
 
-export interface ITransactionHashInfoProps{
-  transactionHash : string,
-  transactionTime : number
+export interface ITransactionHashInfoProps {
+  transactionHash: string;
+  transactionTime: number;
 }
 
 export interface ITransactionFrom {
-  fromAddress : string
+  fromAddress: string;
 }
 
-export interface ITransactionTo{
-  toAddress : string
+export interface ITransactionTo {
+  toAddress: string;
 }
 
-export interface ILatestBlocksButtonProps{
-  buttonName : string
+export interface ILatestBlocksButtonProps {
+  buttonName: string;
 }
-export interface ILatestTransactionsButtonProps{
-  buttonName : string
+export interface ILatestTransactionsButtonProps {
+  buttonName: string;
 }
 
-export interface IOverviewTransactionsData{
-  totalTransactionsCounter : number,
-  transactionsPerSecond : number,
-  baseFee : number,
-  priorityFee : number,
+interface IOverviewTransactionsData {
+  totalTransactionsCounter: number;
+  transactionsPerSecond: number;
+  baseFee: number;
+  priorityFee: number;
 }
-export interface IOverviewLastFinalizedBlockData{
+interface IOverviewLastFinalizedBlockData {
+  lastFinalizedBlock: number;
+  lastSafeBlock: number;
+}
+export interface IOverviewProps {
+  overviewTransactionsData: IOverviewTransactionsData;
+  overviewLastFinalizedBlockData: IOverviewLastFinalizedBlockData;
+}
+
+export interface IOverviewTransactionsDataProps {
+  overviewTransactionsData: IOverviewTransactionsData;
+}
+
+export interface IGasPriceIndicatorProps {
+  baseFee: number;
+  priorityFee: number;
+}
+
+export interface ITransactionsVolumeProps{
+  totalTransactionsCounter: number,
+  transactionsPerSecond: number
+}
+
+interface IOverviewLastFinalizedBlockData{
   lastFinalizedBlock : number,
   lastSafeBlock : number
 }
-export interface IOverviewProps{
-  overviewTransactionsData : IOverviewTransactionsData,
+interface IOverviewLastFinalizedBlockDataProps{
   overviewLastFinalizedBlockData : IOverviewLastFinalizedBlockData
 }
+
+export interface IMainFinalizedBlockProps{
+  lastFinalizedBlock : number
+}
+
