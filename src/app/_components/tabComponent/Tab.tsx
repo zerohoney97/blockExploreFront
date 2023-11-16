@@ -13,15 +13,15 @@ const TabButton: React.FC<TabButtonProps> = ({
   label,
 }) => {
   const isActiveCSS =
-    "bg-green-500/60 text-xs text-081D35 py-1 px-2  w-auto  rounded m-1 flex justify-center items-center";
+    "bg-green-500/60  text-xs text-081D35 py-2 px-5  w-auto  rounded m-1 flex justify-center items-center";
   const isNotActiveCSS =
-    "bg-gray text-081D35 text-xs  w-auto py-1 px-2  rounded m-1 flex justify-center items-center";
+    "bg-gray text-081D35 text-xs  w-auto py-2 px-5  rounded m-1 flex justify-center items-center";
   useEffect(() => {
     console.log(toggleLabelNum);
   }, [toggleLabelNum]);
   return (
     <button
-      className={toggleLabelNum === label ? isActiveCSS : isNotActiveCSS }
+      className={toggleLabelNum === label ? isActiveCSS : isNotActiveCSS}
       onClick={() => {
         toggleHandler(label);
       }}
