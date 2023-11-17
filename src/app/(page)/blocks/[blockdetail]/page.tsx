@@ -6,31 +6,46 @@ import Title from "@app/_components/itemTitle";
 import BlockInfo from "./_contents/Info";
 import BlockDiffcultyInfo from "./_contents/DiffcultyInfo";
 import BlockGasInfo from "./_contents/GasInfo";
-import BlockMoreInfo from "./_contents/MoreInfo";
 import MoreInfo from "./_contents/MoreInfo";
 const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
   useEffect(() => {
     console.log(params);
   }, []);
+
+  const Ca = "0x13d1639cd9b11872b12594d7bf708c8f5cfeb183c126962b19af8ce7e9f99dd3"
+
   return (
     <div className="bg-mainBackGroundColor flex flex-col p-5">
       <div className="flex items-center w-11/12  max-w-[1200px]">
         <div className="flex items-center">
           <Title title="Block" />
-          <span className="ml-2 text-black/40">#{params.blockdetail}</span>
+          <span className="ml-2 text-black/40 ">#{params.blockdetail}</span>
         </div>
       </div>
       <div>
         <BlockCard>
-          <BlockInfo />
-          <BlockDiffcultyInfo />
+          <BlockInfo
+            blockHeight={params.blockdetail}
+            status=""
+            timeStamp="5 mins ago (Nov-17-2023 02:27:35 AM +UTC)"
+            slot="7780337"
+            epoch="243135"
+            transaction="125"
+            withdrawals="16"
+          />
+          <BlockDiffcultyInfo
+            feeRecipient={`${Ca.slice(0,4)} ... ${Ca.slice(-4)}`}
+            reward="0.062845414849980248 ETH ( + 0.819979037944046248 - 0.757133623094066)"
+            totalDifficulty="58,750,003,716,598,352,816,469"
+            size="50,281 bytes"
+          />
           <BlockGasInfo
             gasUsed="10,494,636 "
             gasLimit="30,000,000"
             gasUsedPercent="50"
             baseFeePerGas="0.000000027819057327 ETH "
             burntFee="🔥 0.291950880509997972 ETH"
-            extraData=""
+            extraData="Titan (titanbuilder.xyz) (Hex:0x546974616e2028746974616e6275696c6465722e78797a29)"
           />
         </BlockCard>
         <BlockCard>

@@ -1,8 +1,10 @@
 export interface TokenDataProps {
     number:? string;
+    tokenImage:string
     tokenName: string ;
     unit:string;
-    price: string;
+    dollarPrice:string;
+    ethPrice: string;
     change: string;
     volume: string;
     holders:string

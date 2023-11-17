@@ -15,7 +15,7 @@ import TokenItemTable from "./_contents/TokenItemTable";
 import ItemDetail from "@app/_components/itemDetail"
 
 const Page: React.FC<ITokenDetailProps> = ({ params }) => {
-  const [toggleLabelNum, setToggleLabelNum] = useState<string | null>(null);
+  const [toggleLabelNum, setToggleLabelNum] = useState<string >('Transfers');
 
   const toggleHandler = (label: string) => {
     setToggleLabelNum(label);
@@ -66,7 +66,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
       </div>
       <div>
         <div>
-          <div className="flex w-auto overflow-x-scroll flex-nowrap p-5 ">
+          <div className="flex w-auto overflow-x-auto flex-nowrap p-5 ">
             <TapButton
               label="Transfers"
               toggleLabelNum={toggleLabelNum}

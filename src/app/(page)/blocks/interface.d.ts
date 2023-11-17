@@ -19,13 +19,15 @@ export interface BlocksDataProps {
   export interface IBlocksDetailProps {
     params: { blockdetail: string };
   }
-  export interface IBlocksDetailProps {
-    blockHeight: string;
+  export interface BlocksInfoProps {
+    blockHeight: any;
     status: string;
     timeStamp: string;
-    proposedOn: string;
+    slot:string;
+    epoch:string
     transaction : string
     withdrawals: string;
+    
   }
   
   export interface IBlocksDifficultyProps {

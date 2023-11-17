@@ -13,7 +13,7 @@ const MoreInfo:React.FC<IBlocksMoreProps> = ({hash,parentHash,stateRoot,withdraw
   };
 
   return (
-    <div className="">
+    <div>
       {showMore && (
         <div className="mb-3 border-b border-gray box-border break-words flex flex-col ">
             <BlockCardText
