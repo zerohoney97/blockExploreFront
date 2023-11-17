@@ -27,7 +27,6 @@ export interface BlocksDataProps {
     epoch:string
     transaction : string
     withdrawals: string;
-    
   }
   
   export interface IBlocksDifficultyProps {
