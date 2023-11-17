@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ItemTitle from "@app/_components/itemTitle";
-import TabWrap from "./_contents/overView/TabWrap";
+import TabWrap from "./_contents/TabWrap";
 import TabButton from "@app/_components/tabComponent/Tab";
 import TxOverView from "./_contents/overView/OverView";
 import TxOverViewMain from "./_contents/overView";

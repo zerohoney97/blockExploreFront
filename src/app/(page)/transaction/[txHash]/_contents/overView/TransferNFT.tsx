@@ -10,7 +10,9 @@ const TxTransferNFT = () => {
   return (
     <div className="w-full h-auto p-2 border-b border-gray pb-5 lg:flex lg:items-center  ">
       <div className="">
-        <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">ERC-721 Tokens Transferred:</div>
+        <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
+          ERC-721 Tokens Transferred:
+        </div>
       </div>
       <div className="w-1/3 lg:ml-10">
         <img
@@ -21,21 +23,26 @@ const TxTransferNFT = () => {
           className="m-6"
         />
         <p>
-          <span>
+          <span className="sm:inline-block">
             <span className="text-itemDetail-inventoryKeyColor">ERC-721</span>
             <span className="ml-2">Token ID[</span>
             <span className="text-blue-500 truncate">9044</span>
             <span>]</span>
             <span className="text-blue-500 truncate ml-2">Captaniz</span>
           </span>
-          <br />
-          <span className="font-bold text-md">From</span>
-          <span className="text-blue-500 text-sm ml-2">
-            {addressEncodeHandler("0x37d0aadDB833d8B62a0d259c2B0BCd82dA871D85")}
+          {/* <br /> */}
+          <span className="sm:inline-block">
+            <span className="font-bold text-md lg:ml-1">From</span>
+            <span className="text-blue-500 text-sm ml-2">
+              {addressEncodeHandler(
+                "0x37d0aadDB833d8B62a0d259c2B0BCd82dA871D85"
+              )}
+            </span>
+            <span className="font-bold  text-md ml-2 ">To</span>
           </span>
-          <span className="font-bold  text-md ml-2">To</span>
-          <br />
-          <span className="text-blue-500 text-sm">
+
+          {/* <br /> */}
+          <span className="text-blue-500 text-sm lg:ml-1">
             {addressEncodeHandler("0xb2ecfE4E4D61f8790bbb9DE2D1259B9e2410CEA5")}
           </span>
         </p>

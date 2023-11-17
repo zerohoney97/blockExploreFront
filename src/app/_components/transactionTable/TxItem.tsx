@@ -1,8 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import React from "react";
 import { TxItemProps } from "./interface";
+import { useRouter } from "next/navigation";
 
 const TxItem: React.FC<TxItemProps> = ({ TxItem, toggleHandler }) => {
+  const txNavigation = useRouter();
   return (
     <tr className="h-14 border-b  border-gray text-sm">
       <td className="min-w-[60px] lg:w-20 flex items-center justify-center p-2 relative">
@@ -16,7 +19,13 @@ const TxItem: React.FC<TxItemProps> = ({ TxItem, toggleHandler }) => {
         </div>
       </td>
 
-      <td className="min-w-[200px] lg:w-64" style={{ lineHeight: "2.3rem" }}>
+      <td
+        className="min-w-[200px] lg:w-64"
+        style={{ lineHeight: "2.3rem" }}
+        onClick={() => {
+          txNavigation.push(`/transaction/${TxItem.txHash}`);
+        }}
+      >
         {TxItem.txHash}
       </td>
       <td className="min-w-[120px]  items-center">

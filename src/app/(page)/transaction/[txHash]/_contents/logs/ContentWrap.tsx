@@ -64,6 +64,15 @@ const LogContentWrap: React.FC<any> = () => {
                 {transactionData.topics[2]}
               </div>
             </div>
+            <div className="text-gray-600 text-sm break-words mt-3">
+              <span className="border-2 border-gray p-1 w-fit rounded-md bg-txDetail-inputData">
+                3: tokenId
+              </span>{" "}
+              <span>→</span>{" "}
+              <div className=" mt-3 inline-block">
+                {transactionData.topics[3]}
+              </div>
+            </div>
           </div>
         </div>
 
