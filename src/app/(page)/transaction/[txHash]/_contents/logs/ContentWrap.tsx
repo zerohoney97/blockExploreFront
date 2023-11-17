@@ -1,6 +1,6 @@
 import ItemTableWrap from "@app/_components/itemTable";
 import React from "react";
-import LogInputData from "./\bInputData";
+import LogInputData from "./InputData";
 
 const LogContentWrap: React.FC<any> = () => {
   const transactionData = {

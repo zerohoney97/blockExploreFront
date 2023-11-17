@@ -2,26 +2,25 @@
 import React from "react";
 import Title from "@app/_components/itemTitle";
 import ItemTable from "@app/_components/itemTable";
-import {BlockCard}  from "./_contents/Card";
+import { BlockCard } from "./_contents/Card";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination/Pagiation";
 import { BlockHeader } from "./_contents/Header";
 import BlockContent from "./_contents/Content";
 
-
-const blocksData =[
+const blocksData = [
   {
     block: "18545455",
     age: "4 secs ago",
     Txn: "500",
     feeRecipient: "Recipient A",
     gasUsed: "30000",
-    gasUsedPercent:50,
+    gasUsedPercent: 50,
     gasLimit: "50000",
     baseFee: "20",
     reward: "100",
     burntFees: "50",
-    burntFeesPercent:90
+    burntFeesPercent: 90,
   },
   {
     block: "18545456",
@@ -34,7 +33,7 @@ const blocksData =[
     reward: "110",
     burntFees: "60",
   },
-]
+];
 
 const Page = () => {
   const pagination = usePagination(blocksData);
@@ -44,28 +43,27 @@ const Page = () => {
         <Title title="Blocks" />
         <ItemTable>
           <div className="">
-            <span className="text-sm">Total of "" blocks</span>
-          <table>
-            <BlockHeader />
-            <tbody className="items-center">
-              {pagination.pageTxList &&
-                (pagination.pageTxList as any).map(
-                  (data: any, index: number) => (
-                    <BlockContent key={index} data={data} />
-                  )
-                )}
-            </tbody>
-          </table>
+            <span className="text-sm">Total of blocks</span>
+            <table>
+              <BlockHeader />
+              <tbody className="items-center">
+                {pagination.pageTxList &&
+                  (pagination.pageTxList as any).map(
+                    (data: any, index: number) => (
+                      <BlockContent key={index} data={data} />
+                    )
+                  )}
+              </tbody>
+            </table>
           </div>
         </ItemTable>
-         <Pagination
+        <Pagination
           maxPage={pagination.maxPage}
           page={pagination.page}
           pageHandler={pagination.pageHandler}
         />
       </div>
-      </div>
-
+    </div>
   );
 };
 

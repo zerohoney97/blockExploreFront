@@ -40,7 +40,6 @@ const NftTxDetail: React.FC<INftTxDetailProps> = ({ params }) => {
             </NftDetailTableWrap>
           </NFTDetailFooterContainer>
         </NftDetailContainer>
-
         <NFTDetailMoreInfo />
       </div>
     </>
