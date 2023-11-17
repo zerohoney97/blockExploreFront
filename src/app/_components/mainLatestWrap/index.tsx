@@ -7,7 +7,7 @@ const MainLatestWrap: React.FC<ILatestWrapProps> = ({
   children,
 }) => {
   return (
-    <div className='border-stone-300 border-[1px] bg-white rounded-xl overflow-hidden sm:mt-[30px] sm:mb-[30px] sm:w-full sm:m-auto md:m-auto md:mb-[30px] md:w-11/12 lg:w-[49%]  '>
+    <div className='border-stone-300 border-[1px] bg-white rounded-xl overflow-hidden sm:mt-[30px] sm:mb-[30px] sm:w-full sm:m-auto md:m-auto md:mb-[30px] md:w-11/12 lg:w-[49%]'>
       <MainLatestWrapTitle title={title} />
       {children}
     </div>

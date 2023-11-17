@@ -3,7 +3,7 @@ import BlockInfo from "./BlockInfo";
 import Miner from "./Miner";
 import TransactionsNumber from "./TransactionsNumber";
 import MainEthValue from "@app/_components/mainEthValue";
-import { IBlocksItemProps } from "../interface";
+import { IBlocksItemProps } from "../../interface";
 
 const MainLatestBlocksItem: React.FC<IBlocksItemProps> = ({ blocksItem }) => {
   const {

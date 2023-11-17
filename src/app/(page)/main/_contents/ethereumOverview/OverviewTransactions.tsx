@@ -2,7 +2,7 @@ import React from "react";
 import MainTransactionsIndicator from "./TransactionsIndicator";
 import MainTransactionsVolume from "./TransactionsVolume";
 import MainGasPriceIndicator from "./GasPriceIndicator";
-import { IOverviewTransactionsDataProps } from "../interface";
+import { IOverviewTransactionsDataProps } from "../../interface";
 
 
 const MainOverviewTransactions: React.FC<IOverviewTransactionsDataProps> = ({

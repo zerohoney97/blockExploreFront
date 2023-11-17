@@ -1,6 +1,6 @@
 import React from 'react'
 import LatestTransactionsItem from './LatestTransactionsItem'
-import { ITransactionsListProps } from '../interface'
+import { ITransactionsListProps } from '../../interface'
 
 
 const MainLatestTransactionsList:React.FC<ITransactionsListProps> = ({transactionslist}) => {

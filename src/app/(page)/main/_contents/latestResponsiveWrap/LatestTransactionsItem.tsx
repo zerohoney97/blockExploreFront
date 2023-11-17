@@ -2,7 +2,7 @@ import React from 'react'
 import TransactionHashInfo from './TransactionHashInfo'
 import TransactionFrom from './TransactionFrom'
 import TransactionTo from './TransactionTo'
-import { ITransactionsItemProps } from '../interface'
+import { ITransactionsItemProps } from '../../interface'
 import MainEthValue from '@app/_components/mainEthValue'
 
 const MainLatestTransactionsItem:React.FC<ITransactionsItemProps> = ({transactionsData}) => {

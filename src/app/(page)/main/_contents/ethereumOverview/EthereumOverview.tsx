@@ -1,7 +1,7 @@
 import React from 'react'
 import OverviewTransactions from './OverviewTransactions'
 import OverviewLastFinalizedBlock from './OverviewLastFinalizedBlock'
-import { IOverviewProps } from '../interface'
+import { IOverviewProps } from '../../interface'
 
 
 const MainEthereumOverview:React.FC<IOverviewProps> = ({overviewTransactionsData, overviewLastFinalizedBlockData}) => {

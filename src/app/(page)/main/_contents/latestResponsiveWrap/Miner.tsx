@@ -1,5 +1,5 @@
 import React from 'react'
-import { IMinerProps } from '../interface'
+import { IMinerProps } from '../../interface'
 import Link from 'next/link'
 
 const MainMiner:React.FC<IMinerProps> = ({feeRecipient}) => {
