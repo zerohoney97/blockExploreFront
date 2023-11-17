@@ -1,12 +1,22 @@
 // import React, { useState } from 'react'
+<<<<<<< HEAD
 // import { BlocksDataProps, IBlocksDetail } from '../interface'
+=======
+// import { BlocksListProps, IblocksList } from '../interface'
+>>>>>>> 22a7d31e5b8f7b0b90eb58db8e128e001c37b4b1
 // import usePagination from "@app/_hooks/usePagination";
 // import Pagination from "../../../_components/pagination/Pagiation";
 // import BlocksList from "./Container"
 
+<<<<<<< HEAD
 // const BlockListWarp: React.FC<BlocksDataProps> = ({ blocksList,pageStack =50}) => {
 //   const [isToggled, setIsToggled] = useState<boolean>(false);
 //   const { maxPage, page, pageHandler, pageTxList } = usePagination<IBlocksDetail>(
+=======
+// const BlockListWarp: React.FC<BlocksListProps> = ({ blocksList,pageStack =50}) => {
+//   const [isToggled, setIsToggled] = useState<boolean>(false);
+//   const { maxPage, page, pageHandler, pageTxList } = usePagination<IblocksList>(
+>>>>>>> 22a7d31e5b8f7b0b90eb58db8e128e001c37b4b1
 //     blocksList,
 //     pageStack
 //   );

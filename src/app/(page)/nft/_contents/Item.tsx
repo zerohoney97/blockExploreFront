@@ -36,7 +36,9 @@ const CollectionItem: React.FC<Iitem> = ({
 
       <li className="flex justify-center items-center   w-[12%]">
         {" "}
-        <span className=" border-2 border-gray p-1 rounded-lg text-xs">{type}</span>
+        <span className=" border-2 border-gray p-1 rounded-lg text-xs">
+          {type}
+        </span>
       </li>
       <li className="flex justify-center items-center    w-[10%]"> {volume}</li>
       <li className="flex justify-center items-center     w-[9%]"> {change}</li>

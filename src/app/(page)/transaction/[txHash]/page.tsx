@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import ItemTitle from "@app/_components/itemTitle";
 import TabWrap from "./_contents/TabWrap";
