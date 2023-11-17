@@ -1,11 +1,13 @@
 import React from "react";
 import LogContentWrap from "./ContentWrap";
+import ItemTableWrap from "@app/_components/itemTable";
 
 const TxLogsMain = () => {
   return (
-    <div className="">
+    <ItemTableWrap>
       <LogContentWrap />
-    </div>
+      <LogContentWrap /> <LogContentWrap /> <LogContentWrap />
+    </ItemTableWrap>
   );
 };
 
