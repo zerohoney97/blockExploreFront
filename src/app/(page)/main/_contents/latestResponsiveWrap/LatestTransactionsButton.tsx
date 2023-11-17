@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import { ILatestTransactionsButtonProps } from '../interface'
+import { ILatestTransactionsButtonProps } from '../../interface'
 
 const MainLatestTransactionsButton:React.FC<ILatestTransactionsButtonProps> = ({buttonName}) => {
     const router = useRouter();

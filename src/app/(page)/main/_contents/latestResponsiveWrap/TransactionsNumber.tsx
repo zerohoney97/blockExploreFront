@@ -1,5 +1,5 @@
 import React from "react";
-import { ITransactionsNumberProps } from "../interface";
+import { ITransactionsNumberProps } from "../../interface";
 import Link from "next/link";
 
 const MainTransactionsNumber: React.FC<ITransactionsNumberProps> = ({

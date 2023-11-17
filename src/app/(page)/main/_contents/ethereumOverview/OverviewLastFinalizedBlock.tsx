@@ -2,7 +2,7 @@ import React from 'react'
 import MainBlockIndicator from './BlockIndicator'
 import MainFinalizedBlock from './FinalizedBlock'
 import MainSafeBlock from './SafeBlock'
-import { IOverviewLastFinalizedBlockDataProps } from '../interface'
+import { IOverviewLastFinalizedBlockDataProps } from '../../interface'
 
 const MainOverviewLastFinalizedBlock:React.FC<IOverviewLastFinalizedBlockDataProps> = ({overviewLastFinalizedBlockData}) => {
   const {lastFinalizedBlock, lastSafeBlock} = overviewLastFinalizedBlockData;

@@ -1,8 +1,8 @@
 import React from "react";
 
-import SearchBarWrap from "./_contents/SearchBarWrap";
-import EthereumOverview from "./_contents/EthereumOverview";
-import LatestResponsiveWrap from "./_contents/LatestResponsiveWrap";
+import SearchBarWrap from "./_contents/searchBarWrap/SearchBarWrap";
+import EthereumOverview from "./_contents/ethereumOverview/EthereumOverview";
+import LatestResponsiveWrap from "./_contents/latestResponsiveWrap/LatestResponsiveWrap";
 
 const MainPage = () => {
   const overviewTransactionsData = {

@@ -1,6 +1,6 @@
 import React from 'react'
 import LatestBlocksItem from './LatestBlocksItem'
-import { IBlocksListProps } from '../interface'
+import { IBlocksListProps } from '../../interface'
 
 
 const MainLatestBlocksList:React.FC<IBlocksListProps> = ({blocksList}) => {

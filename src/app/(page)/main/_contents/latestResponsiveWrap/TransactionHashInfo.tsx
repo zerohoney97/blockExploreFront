@@ -1,5 +1,5 @@
 import React from "react";
-import { ITransactionHashInfoProps } from "../interface";
+import { ITransactionHashInfoProps } from "../../interface";
 import Link from "next/link";
 
 const MainTransactionHashInfo: React.FC<ITransactionHashInfoProps> = ({

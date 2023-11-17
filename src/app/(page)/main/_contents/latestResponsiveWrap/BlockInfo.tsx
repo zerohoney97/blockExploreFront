@@ -1,5 +1,5 @@
 import React from 'react'
-import { IBlockInfoProps } from '../interface'
+import { IBlockInfoProps } from '../../interface'
 
 import Link from 'next/link';
 

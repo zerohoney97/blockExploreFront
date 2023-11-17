@@ -14,7 +14,7 @@ const NFTTable = () => {
       number: index.toString(),
       collection: "img",
       type: "ERC721",
-      name: "asdasdasdasdasdlanslkdnaskjdaskn",
+      name: "ContractAddress",
       volume: "203",
       change: "24",
       minPrice: "0.2",

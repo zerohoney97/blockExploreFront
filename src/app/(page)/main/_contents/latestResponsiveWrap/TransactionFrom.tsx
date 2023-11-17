@@ -1,5 +1,5 @@
 import React from "react";
-import { ITransactionFrom } from "../interface";
+import { ITransactionFrom } from "../../interface";
 import Link from "next/link";
 
 const MainTransactionFrom: React.FC<ITransactionFrom> = ({ fromAddress }) => {
