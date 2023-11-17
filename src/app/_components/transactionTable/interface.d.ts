@@ -17,19 +17,19 @@ export interface ItokenList {
   age: string;
 }
 
-export interface TxListProps {
+export interface ITxListProps {
   txList: ItxList[];
   lastThName: string;
   maxHeight?:string
   pageStack?:number
 }
 
-export interface TxListWrapProps {
+export interface ITxListWrapProps {
   pageTxList: ItxList[] | null;
   toggleHandler: () => void;
 }
 
-export interface TxItemProps {
+export interface ITxItemProps {
   TxItem: ItxList;
   toggleHandler: () => void;
 }

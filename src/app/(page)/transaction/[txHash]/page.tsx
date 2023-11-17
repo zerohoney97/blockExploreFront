@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import ItemTitle from "@app/_components/itemTitle";
 import TabWrap from "./_contents/TabWrap";
@@ -26,7 +25,7 @@ const Page = () => {
     }
   };
   return (
-    <div>
+    <div className="bg-mainBackGroundColor">
       <ItemTitle title="Transaction Details"  />
       <TabWrap>
         <TabButton

@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
-import { TxItemProps } from "./interface";
+import { ITxItemProps } from "./interface";
 import { useRouter } from "next/navigation";
 
-const TxItem: React.FC<TxItemProps> = ({ TxItem, toggleHandler }) => {
+const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
   const txNavigation = useRouter();
   return (
     <tr className="h-14 border-b  border-gray text-sm">

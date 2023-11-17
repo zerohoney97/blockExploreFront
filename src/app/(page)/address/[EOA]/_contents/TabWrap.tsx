@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const AddressTabWrap = () => {
+const AddressTabWrap = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>AddressTabWrap</div>
-  )
-}
+    <div className=" max-w-[90%] overflow-x-scroll m-auto  ">
+      <div className="flex w-[500px]  h-20 items-center justify-center">{children}</div>
+    </div>
+  );
+};
 
-export default AddressTabWrap
+export default AddressTabWrap;

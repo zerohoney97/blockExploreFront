@@ -13,9 +13,9 @@ const TabButton: React.FC<TabButtonProps> = ({
   label,
 }) => {
   const isActiveCSS =
-    "bg-green-500/60  text-xs text-081D35 py-2 px-5  w-auto  rounded m-1 flex justify-center items-center";
+    "bg-green-500/60  text-xs text-081D35 py-2 px-5  w-auto max-h-[32px] rounded m-1 flex justify-center items-center";
   const isNotActiveCSS =
-    "bg-gray text-081D35 text-xs  w-auto py-2 px-5  rounded m-1 flex justify-center items-center";
+    "bg-gray text-081D35 text-xs  w-auto max-h-[32px] py-2 px-5  rounded m-1 flex justify-center items-center";
   useEffect(() => {
     console.log(toggleLabelNum);
   }, [toggleLabelNum]);

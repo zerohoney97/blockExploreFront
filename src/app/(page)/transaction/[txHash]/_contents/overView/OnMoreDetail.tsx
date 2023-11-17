@@ -11,15 +11,17 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
       {/* 애니메이션 */}
       <div
         className={`${
-          mordeDetailToggle ? " relative sm:h-[400px] lg:h-[300px]" : "h-0 overflow-hidden "
+          mordeDetailToggle
+            ? " relative sm:h-[400px] lg:h-[300px]"
+            : "h-0 overflow-hidden "
         } transition-all  z-0`}
       >
         <div className="w-full h-72 min-h-72 flex flex-col">
           <div className="lg:flex lg:items-center">
-            <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px] ">
+            <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px] ">
               Gas Limit & Usage by Txn:
             </div>
-            <div className="p-1 h-auto text-sm break-words text-itemDetail-txGasInfoColor  lg:ml-10 ">
+            <div className="p-1 h-auto text-xs break-words text-itemDetail-txGasInfoColor  lg:ml-10 ">
               <span className="">217,522</span>{" "}
               <span className="border-r-2 mx-3  border-txDetail-moreDetailBorderRight"></span>
               <span className="">174,202(80.88%)</span>
@@ -27,24 +29,28 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
           </div>
           <div className="lg:flex lg:items-center">
             {" "}
-            <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
+            <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
               Gas Fees:
             </div>
             <div className="p-1 lg:ml-10">
-              <span className="text-itemDetail-textLabelColor">Base:</span>{" "}
-              <span> 21.966975084 Gwei</span>
+              <span className="text-sm text-itemDetail-textLabelColor">
+                Base:
+              </span>{" "}
+              <span className="text-xs"> 21.966975084 Gwei</span>
               <span className="border-r-2 mx-3  border-txDetail-moreDetailBorderRight"></span>
-              <span className="text-itemDetail-textLabelColor">Max:</span>{" "}
-              <span> 24.759 Gwei</span>
+              <span className="text-sm text-itemDetail-textLabelColor">
+                Max:
+              </span>{" "}
+              <span className="text-xs"> 24.759 Gwei</span>
               <span className="border-r-2 mx-3  border-txDetail-moreDetailBorderRight"></span>
-              <span className="text-itemDetail-textLabelColor">
+              <span className="text-sm text-itemDetail-textLabelColor">
                 Max Priority:
               </span>{" "}
-              <span>0.5Gwei</span>
+              <span className="text-xs">0.5Gwei</span>
             </div>
           </div>
           <div className="w-full lg:flex lg:items-center ">
-            <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
+            <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
               Input Data:
             </div>
             <div className="  flex flex-col sm:w-full sm:m-auto lg:w-2/3  ">
@@ -60,11 +66,11 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
           mordeDetailToggle && "mt-5"
         } w-full flex items-center relative  h-16  z-5 bg-white transition-all sm:justify-between`}
       >
-        <div className="font-bold lg:text-itemDetail-textLabelColor lg:w-[250px] ">
+        <div className="text-sm font-medium lg:text-itemDetail-textLabelColor lg:w-[250px] ">
           More Detail
         </div>
         <div
-          className=" text-blue-500 cursor-pointer  lg:ml-8 "
+          className=" text-blue-500 cursor-pointer text-sm lg:ml-8 "
           onClick={moreDetailToggleHandler}
         >
           {mordeDetailToggle ? "-" : "+"} Click To Show More

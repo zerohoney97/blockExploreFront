@@ -9,10 +9,10 @@ const TxOverView = () => {
       <div className="flex flex-col">
         <div className="lg:flex lg:items-center">
           {" "}
-          <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
+          <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Transaction Hash:
           </div>
-          <div className="p-1 h-auto text-sm   w-80 sm:break-words lg:ml-8 md:break-words ">
+          <div className="p-1 h-auto text-xs   w-80 sm:break-words lg:ml-8 md:break-words ">
             0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
             <Image
               className=" m-1 sm:float-right md:sm:float-right "
@@ -24,7 +24,7 @@ const TxOverView = () => {
           </div>
         </div>
         <div className="lg:flex lg:items-center">
-          <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
+          <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Status:{" "}
           </div>
           <div className="text-xs px-1 py-1   flex justify-center items-center rounded-lg border-2 border-green-600 bg-green-200 text-green-600 sm:w-16 md:w-16 lg:ml-8  lg:h-7">
@@ -33,7 +33,7 @@ const TxOverView = () => {
         </div>
 
         <div className="lg:flex lg:items-center">
-          <div className="font-bold p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
+          <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Time Stamp
           </div>
           <div className="flex flex-col ml-8">
@@ -45,7 +45,7 @@ const TxOverView = () => {
                 width={15}
                 height={3}
               />{" "}
-              <span className="text-sm">
+              <span className="text-xs">
                 7 mins ago (Nov-15-2023 06:43:59 AM +UTC)
               </span>
             </div>
