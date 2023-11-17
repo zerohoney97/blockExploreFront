@@ -1,13 +1,24 @@
 import React from "react";
 import { IBlocksDifficultyProps } from "../../interface";
 import BlockCardText from "./CardText";
+import Link from "next/link";
 
 const DiffcultyInfo:React.FC<IBlocksDifficultyProps> = ({feeRecipient,reward,totalDifficulty,size}) => {
   return (
-    <div className="w-11/12 border-b border-gray">
+    <div className="border-b border-gray">
       <BlockCardText
       title="Fee Recipient:"
-      content={feeRecipient}/>
+      content={
+        <>
+          <Link
+            className="text-blue-500"
+            href="http://localhost:3000/address/"
+          >
+           Fee Recipient {feeRecipient}
+          </Link>
+          <span> in sec</span>
+        </>
+      }/>
       <BlockCardText
       title="Block Reward:"
       content={reward}/>
