@@ -6,11 +6,13 @@ import TokenHerader from "@app/(page)/token/_contents/Header";
 import TokenContent from "@app/(page)/token/_contents/Content";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination/Pagiation";
+import searchIcon from "../../../../public/search04.png";
+import Image from "next/image";
 
 const tokenData = [
   {
     number: "1",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Ethereum",
     unit: "(ETH)",
     ethPrice: "0.0012",
@@ -20,7 +22,7 @@ const tokenData = [
   },
   {
     number: "2",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Bitcoin",
     unit: "(BTC)",
     ethPrice: "0.0234",
@@ -30,7 +32,7 @@ const tokenData = [
   },
   {
     number: "3",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Ripple",
     unit: "(XRP)",
     ethPrice: "0.00056",
@@ -40,7 +42,7 @@ const tokenData = [
   },
   {
     number: "4",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Litecoin",
     unit: "(LTC)",
     ethPrice: "0.0123",
@@ -50,7 +52,7 @@ const tokenData = [
   },
   {
     number: "5",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Cardano",
     unit: "(ADA)",
     ethPrice: "0.000034",
@@ -60,7 +62,7 @@ const tokenData = [
   },
   {
     number: "6",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Stellar",
     unit: "(XLM)",
     ethPrice: "0.00012",
@@ -70,7 +72,7 @@ const tokenData = [
   },
   {
     number: "7",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Chainlink",
     unit: "(LINK)",
     ethPrice: "0.0012",
@@ -80,7 +82,7 @@ const tokenData = [
   },
   {
     number: "8",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Polkadot",
     unit: "(DOT)",
     ethPrice: "0.00098",
@@ -90,7 +92,7 @@ const tokenData = [
   },
   {
     number: "9",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Binance Coin",
     unit: "(BNB)",
     ethPrice: "0.1234",
@@ -100,7 +102,7 @@ const tokenData = [
   },
   {
     number: "10",
-    tokenImage:"https://etherscan.io/token/images/tethernew_32.png",
+    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
     tokenName: "Dogecoin",
     unit: "(DOGE)",
     ethPrice: "0.00023",
@@ -115,10 +117,19 @@ const Page = () => {
   return (
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
       <div className="w-full">
-      <Title title="Token Tracker(ERC-20)" />
-        <ItemTable>
-          <div className="">
-          <div className="text-xs mb-2">A total of {""} Token Contracts found</div> 
+        <Title title="Token Tracker(ERC-20)" />
+        <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md  bg-white ">
+          <div className="text-xs m-2 flex justify-between items-center">
+            A total of "" Token Contracts found{" "}
+            <Image
+            className="flex cursor-pointer"
+            src={searchIcon}
+            alt="searchIcon"
+            width={25}
+            height={3}
+          />
+          </div>
+          <div className="min-w-[250px] max-w-[1250px] overflow-x-scroll h-auto">
           <table>
             <TokenHerader />
             <tbody className="items-center">
@@ -131,14 +142,14 @@ const Page = () => {
             </tbody>
           </table>
           </div>
-        </ItemTable>
+        </div>
         <Pagination
           maxPage={pagination.maxPage}
           page={pagination.page}
           pageHandler={pagination.pageHandler}
         />
       </div>
-      </div>
+    </div>
   );
 };
 

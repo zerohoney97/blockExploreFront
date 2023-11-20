@@ -18,9 +18,18 @@ const index: React.FC<TokenCardProps> = ({
       <div>
         <h3 className="text-base font-semibold mb-0">{title}</h3>
       </div>
-      <div className="text-xs">{price}</div>
-      <div className="text-xs">{fully}</div>
-      <div className="text-xs">{CIRCULATING}</div>
+      <div>
+        <div className="text-sm">Price</div>
+        <div className="text-xs">${price}</div>
+      </div>
+      <div>
+        <div className="text-sm">FULLY DILUTED MARKET CAP</div>
+        <div className="text-xs">${fully}</div>
+      </div>
+      <div>
+        <div className="text-sm">CIRCULATING SUPPLY MARKET CAP</div>
+        <div className="text-xs">${CIRCULATING}</div>
+      </div>
     </div>
   );
 };
