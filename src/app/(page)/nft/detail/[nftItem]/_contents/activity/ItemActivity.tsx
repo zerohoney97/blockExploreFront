@@ -1,10 +1,12 @@
 import React from 'react'
+import ActivityTitle from './ActivityTitle'
+import ActivityList from './ActivityList'
 
 const NftItemActivity = () => {
   return (
-    <div className='bg-yellow h-[100px] rounded-xl'>
-      {/* <ActivityTitle /> */}
-      {/* <ActivityList /> */}
+    <div className='border-gray border-[1px] rounded-xl'>
+      <ActivityTitle />
+      <ActivityList />
     </div>
   )
 }

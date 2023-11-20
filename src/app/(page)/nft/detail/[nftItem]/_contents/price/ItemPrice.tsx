@@ -3,7 +3,7 @@ import NftETHIndicator from "./ETHIndicator";
 
 const NftItemPrice = () => {
   return (
-    <ul className='border-gray border-[1px] rounded-xl my-[20px]'>
+    <ul className='border-gray border-[1px] rounded-xl my-[20px] lg:flex lg:text-center'>
       <NftETHIndicator
         title='Min Price (24H)'
         ethValue={33.2}
