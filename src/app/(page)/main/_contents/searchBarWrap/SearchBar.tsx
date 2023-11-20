@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import searchIcon from "../../../../../../public/search03.png";
+import searchIcon from "../../../../../../public/search06.png";
 
 const MainSearchBar = () => {
   const [value, setValue] = useState("");
