@@ -29,9 +29,9 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
   return (
     <div className="bg-mainBackGroundColor flex flex-col p-5">
       <div className="flex items-center  w-11/12  max-w-[1200px]">
-        <div className="flex items-center">
-          <Title title="Token" />
-          <span className="ml-2">{params.tokendetail}</span>
+        <div className="border-border-gray flex items-center">
+          <Title title="Token"/>
+             <div className="ml-2">{params.tokendetail}</div>
         </div>
       </div>
       <div className="flex flex-wrap">
@@ -39,9 +39,9 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
           <TokenItemTable>
             <OverviewCard
               title="Overview"
-              MaxTotalSupply="MAX TOTAL SUPPLY"
-              holders="HOLDERS"
-              totaltransfers="TOTAL TRANSFERS"
+              MaxTotalSupply="40,022,312,072.755921"
+              holders="4,695,126 "
+              totaltransfers="207,725,379"
             />
           </TokenItemTable>
         </div>
@@ -49,9 +49,9 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
         <TokenItemTable>
           <MarketCard
             title="Market"
-            price="PRICE"
-            fully="FULLY DILUTED MARKET CAP"
-            CIRCULATING="CIRCULATING SUPPLY MARKET CAP"
+            price="1"// 달러
+            fully="40,062,334,384.83"
+            CIRCULATING="87,750,911,870.00"
           />
         </TokenItemTable>
         </div>
