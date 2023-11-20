@@ -122,7 +122,7 @@ const Page = () => {
           <div className="text-xs m-2 flex justify-between items-center">
             A total of "" Token Contracts found{" "}
             <Image
-            className="flex cursor-pointer"
+            className="flex cursor-pointer m-3"
             src={searchIcon}
             alt="searchIcon"
             width={25}

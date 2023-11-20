@@ -20,7 +20,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
 
   return (
     <div className="bg-mainBackGroundColor flex flex-col p-5">
-      <div className="flex items-center  w-11/12   border-b-2 border-gray">
+      <div className="flex items-center   border-b-2 border-gray">
         <div className="border-border-gray flex items-center">
           <Title title="Token" />
           <div className="ml-2">{params.tokendetail}</div>
