@@ -1,4 +1,4 @@
-export interface NftETHIndicatorProps {
+export interface INftETHIndicatorProps {
   title: string;
   ethValue: number;
   ethValueDollar: number;
@@ -12,11 +12,7 @@ export interface INftDetailsTitleProps{
 export interface INftDetailsListProps {
   stateProps: boolean;
 }
-export interface NftDetailsItemProps{
-  name : string,
-  address : string,
-}
-export interface NftDetailsItemProps{
+export interface INftDetailsItemProps{
   name : string,
   address : string,
 }
