@@ -118,7 +118,7 @@ const Page = () => {
       <Title title="Token Tracker(ERC-20)" />
         <ItemTable>
           <div className="">
-          <div className="text-xs mb-2">A total of "" Token Contracts found</div> 
+          <div className="text-xs mb-2">A total of {""} Token Contracts found</div> 
           <table>
             <TokenHerader />
             <tbody className="items-center">
