@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 import usePagination from "@app/_hooks/usePagination";
 import { INftAListProps } from "../../interface";
 import ALTotalRecord from "./ALTotalRecord";

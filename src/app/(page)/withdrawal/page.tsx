@@ -4,7 +4,7 @@ import Title from "./_contents/Title";
 import ItemTable from "@app/_components/itemTable";
 import { BlockCard } from "./_contents/Card";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 import { WithdrawalHeader } from "./_contents/Header";
 import WithdrawalContent from "./_contents/Content";
 
@@ -26,7 +26,7 @@ const Page = () => {
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
       <div className="w-full">
         <Title title="Processed Beacon Chain Withdrawals">
-          For Block ""
+          For Block {""}
           </Title>
         <ItemTable>
           <div className="">
