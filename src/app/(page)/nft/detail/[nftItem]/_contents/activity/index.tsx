@@ -6,7 +6,7 @@ const NftActivity = () => {
   return (
     <div className='border-gray border-[1px] rounded-xl'>
       <ActivityTitle />
-      <ActivityContents />
+      <ActivityContents txnHash={''} age={''} action={''} price={''} from={''} to={''} />
     </div>
   )
 }
