@@ -11,7 +11,6 @@ const BlockContent: React.FC<{ data: WithdrawalDataProps }> = ({ data }) => {
         <td className="py-3  min-w-[100px] justify-center text-blue-400">{data.block}</td>
       </Link>
       <td className="min-w-[150px]">{data.age} secs ago</td>
-      <td className="min-w-[60px]">{data.validatorIndex}</td>
       <td className=" min-w-[200px]">{data.recipient}</td>
       <td className=" min-w-[200px]">{data.value} ETH</td>
     </tr>

@@ -1,4 +1,4 @@
-export interface BlocksDataProps {
+export interface IBlocksDataProps {
     block: string;
     age: string;
     Txn: string;
@@ -14,6 +14,8 @@ export interface BlocksDataProps {
 
   export interface IBlocksDetail {
     blockdetail: string;
+    maxHeight?:string
+    pageStack?:number
   }
   
   export interface IBlocksDetailProps {

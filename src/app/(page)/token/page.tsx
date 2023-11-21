@@ -120,27 +120,27 @@ const Page = () => {
         <Title title="Token Tracker(ERC-20)" />
         <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md  bg-white ">
           <div className="text-xs m-2 flex justify-between items-center">
-            A total of "" Token Contracts found{" "}
+            A total of {""} Token Contracts found{" "}
             <Image
-            className="flex cursor-pointer m-3"
-            src={searchIcon}
-            alt="searchIcon"
-            width={25}
-            height={3}
-          />
+              className="flex cursor-pointer m-3"
+              src={searchIcon}
+              alt="searchIcon"
+              width={25}
+              height={3}
+            />
           </div>
           <div className="min-w-[250px] max-w-[1250px] overflow-x-scroll h-auto">
-          <table>
-            <TokenHerader />
-            <tbody className="items-center">
-              {pagination.pageTxList &&
-                (pagination.pageTxList as any).map(
-                  (data: any, index: number) => (
-                    <TokenContent key={index} data={data} />
-                  )
-                )}
-            </tbody>
-          </table>
+            <table>
+              <TokenHerader />
+              <tbody className="items-center">
+                {pagination.pageTxList &&
+                  (pagination.pageTxList as any).map(
+                    (data: any, index: number) => (
+                      <TokenContent key={index} data={data} />
+                    )
+                  )}
+              </tbody>
+            </table>
           </div>
         </div>
         <Pagination

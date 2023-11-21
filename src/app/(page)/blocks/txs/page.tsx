@@ -19,7 +19,7 @@ const Page = () => {
     <div>
       <div>
       <TxnTitle title="Transactions">
-      For Block""
+      For Block{""}
         </TxnTitle>
       </div>
       {isRendered && <TxListWrap txList={tempDataArr} lastThName="Value" maxHeight="1200px" pageStack={50}/>}

@@ -2,9 +2,8 @@
 import React from "react";
 import Title from "./_contents/Title";
 import ItemTable from "@app/_components/itemTable";
-import { BlockCard } from "./_contents/Card";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 import { WithdrawalHeader } from "./_contents/Header";
 import WithdrawalContent from "./_contents/Content";
 
@@ -15,7 +14,6 @@ const blocksData = [
     index: "1234456789",
     block: "18545465",
     age: "4",
-    validatorIndex: "500",
     recipient: `${Ca.slice(0, 6)} ... ${Ca.slice(-6)}`,
     value: "017250819"
   }
@@ -26,7 +24,7 @@ const Page = () => {
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
       <div className="w-full">
         <Title title="Processed Beacon Chain Withdrawals">
-          For Block ""
+          For Block {""}
           </Title>
         <ItemTable>
           <div className="">
