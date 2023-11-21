@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 import AdditionalInfo from "./AdditionalInfo";
 import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "../pagination/Pagiation";
+import Pagination from "@app/_components/pagination/Pagiation";
 
 const TxListWrap: React.FC<ITxListProps> = ({
   txList,
@@ -29,12 +29,10 @@ const TxListWrap: React.FC<ITxListProps> = ({
   // 실제에서는 react-query로 가져올 예정
   const [addInfoTempData, setAddInfoTempData] = useState<IAddInfo>({
     status: "Success",
+    transactionAction"Mint 3 of", 
     transactionFee: "0.0000000000231",
     gasInfo: "293840",
-    gasLimit: "318840",
     nonce: "0",
-    blockNum: "18497",
-    position: "18",
   });
 
   const toggleHandler = () => {
@@ -72,9 +70,15 @@ const TxListWrap: React.FC<ITxListProps> = ({
               <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
                 To
               </th>
-              <th className="min-w-[100px] flex justify-start items-center  font-medium">
-                {lastThName}
+              <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
+                Type
               </th>
+              <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
+                Item
+              </th>
+              {/* <th className="min-w-[100px] flex justify-start items-center  font-medium">
+                {lastThName}
+              </th> */}
             </tr>
           </thead>
           <tbody>
