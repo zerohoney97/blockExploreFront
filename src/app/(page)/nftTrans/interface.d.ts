@@ -1,11 +1,12 @@
 export interface INftTransList {
   transcationInfo: string;
   method: string;
-  block: string;
+  age : string
   from: string;
   to: string;
   type: string;
-  item: string;
+  itemImage: string;
+  itemName : string;
 }
 
 

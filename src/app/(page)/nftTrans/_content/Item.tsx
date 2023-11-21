@@ -37,7 +37,6 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
             className="border-gray rounded-lg p-[10px] border-[1px] cursor-pointer"
             icon={faEye}
             onClick={toggleHandler}
-
           />
         </div>
       </td>
@@ -55,8 +54,8 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
           {NftTxItem.method}
         </span>
       </td>
-      <td className="min-w-[100px] items-center">{NftTxItem.block}</td>
-      <td className="min-w-[120px]   lg:w-44">
+      <td className="min-w-[100px] items-center">{NftTxItem.age} sec ago</td>
+      <td className="min-w-[180px]   lg:w-44">
         <div className="w-full flex ">
           <div className="text-blue-400">
             <Link href={`/transaction/${NftTxItem.from}`}>
@@ -87,8 +86,15 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
           </button>
         </div>
       </td>
-      <td className="min-w-[200px] items-center">{NftTxItem.type}</td>
-      <td className="min-w-[200px] items-center">{NftTxItem.item}</td>
+      <td className="min-w-[150px] items-center">
+        <span className="border border-black/50 rounded p-1">
+          {NftTxItem.type}
+        </span>
+      </td>
+      <td className="min-w-[300px] flex items-start">
+        <img className="w-8" src={NftTxItem.itemImage} alt="" />
+        <p className="ml-2">{NftTxItem.itemName}</p>
+      </td>
     </tr>
   );
 };

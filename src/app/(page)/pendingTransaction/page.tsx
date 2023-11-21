@@ -5,7 +5,6 @@ import useHydration from "@app/_hooks/useHydration";
 const Page = () => {
   return (
     <div>
-        
       <PendingTxListWrap />
     </div>
   );

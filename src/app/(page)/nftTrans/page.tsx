@@ -9,11 +9,12 @@ const Page = () => {
   const tempDataArr: INftTransList[] = Array.from({ length: 105 }, (ele, index) => ({
     transcationInfo: "0x123fjafk231s",
     method: "Transfer",
-    block: "123124124",
+    age :"15",
     from: "0x12312kj312kjb3jk",
     to: "0xqweqwnekjads2asdk2",
-    type: "0x123fjafk231s",
-    item: ""
+    type: "ERC-721",
+    itemImage: "https://etherscan.io/images/main/nft-placeholder.svg",
+    itemName : "NFT: Big Time Collection"
   }));
   const isRendered = useHydration();
   return (

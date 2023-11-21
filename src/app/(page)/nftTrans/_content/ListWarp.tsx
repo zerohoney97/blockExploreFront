@@ -57,9 +57,6 @@ const NftTxListWrap: React.FC<INftTxListProps> = ({
               <th className="min-w-[120px] flex items-center font-medium">
                 Method
               </th>
-              <th className="min-w-[100px] flex items-center  font-medium">
-                Block
-              </th>
               <th className="min-w-[100px] flex items-center font-medium">
                 Age
               </th>
@@ -69,10 +66,10 @@ const NftTxListWrap: React.FC<INftTxListProps> = ({
               <th className="min-w-[200px]  flex items-center font-medium">
                 To
               </th>
-              <th className="min-w-[200px] flex items-center font-medium">
+              <th className="min-w-[150px] flex items-center font-medium">
                 Type
               </th>
-              <th className="min-w-[200px]  flex items-center font-medium">
+              <th className="min-w-[300px]  flex items-center font-medium">
                 Item
               </th>
               {/* <th className="min-w-[100px] flex justify-start items-center  font-medium">
