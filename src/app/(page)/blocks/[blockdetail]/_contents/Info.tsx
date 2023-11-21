@@ -50,9 +50,9 @@ const Info: React.FC<BlocksInfoProps> = ({
 
       </BlockCardText>
       <BlockCardText title="Status:" content={status}>
-        <span className="border-2 rounded p-1 bg-gray border-black/10 font-bold">
+        {/* <span className="border-2 rounded p-1 bg-gray border-black/10 font-bold">
           Unfinalized
-        </span>
+        </span> */}
         <span className="border-2 rounded p-1 bg-green-300/40 border-green-500/30 text-green-800 font-bold">
           Finalized
         </span>
@@ -69,7 +69,7 @@ const Info: React.FC<BlocksInfoProps> = ({
           <>
             <Link
               className="text-blue-500"
-              href={`/transaction/${BlockNumber}`}
+              href={`/txs`}
             >
               {transaction} transaction
             </Link>
@@ -85,7 +85,7 @@ const Info: React.FC<BlocksInfoProps> = ({
           <>
             <Link
               className="text-blue-500"
-              href="http://localhost:3000/blocks/18545455"
+              href={`/withdrawal`}
             >
               {withdrawals} withdrawals
             </Link>
