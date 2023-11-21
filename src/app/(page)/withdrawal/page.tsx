@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Title from "@app/_components/itemTitle";
+import Title from "./_contents/Title";
 import ItemTable from "@app/_components/itemTable";
 import { BlockCard } from "./_contents/Card";
 import usePagination from "@app/_hooks/usePagination";
@@ -25,7 +25,9 @@ const Page = () => {
   return (
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
       <div className="w-full">
-        <Title title="Processed Beacon Chain Withdrawals" />
+        <Title title="Processed Beacon Chain Withdrawals">
+          For Block ""
+          </Title>
         <ItemTable>
           <div className="">
             <span className="text-sm">A total of 16 withdrawals found (Total 0.316717145 ETH withdrawn)</span>
