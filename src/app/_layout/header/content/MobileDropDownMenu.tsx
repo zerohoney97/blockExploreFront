@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { IMobileDropMenuProps, IopenToggle, IsubMenu } from "../interface";
+import Link from "next/link";
 
 const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
   isMenuOpen,
@@ -25,9 +26,19 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
   const menuOpenCSS = "h-fit p-3 mt-2 relative transition-all  z-00 ";
   const menuArr: Array<string> = ["Blockchain", "Tokens", "NFTs"];
   const subMenuArr: IsubMenu = {
-    0: ["Transactions", "Pending Transactions", "View Blocks"],
-    1: ["ERC20 token transfer"],
-    2: ["Latest Transfer", "Latest Mints"],
+    0: [
+      { name: "Transactions", href: "transaction" },
+      { name: "Pending Transactions", href: "pendingTransaction" },
+      { name: "View Blocks", href: "blocks" },
+    ],
+    1: [
+      { name: "Top Tokens", href: "token" },
+      { name: "Token Transfers", href: "token" },
+    ],
+    2: [
+      { name: "Latest Transfer", href: "nft" },
+      { name: "Latest Mints", href: "nft" },
+    ],
   };
   useEffect(() => {
     setSubMenuOpenName("");
@@ -69,7 +80,12 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
                   <div className="w-11/12 border-2 rounded-xl border-gray-100 h-fit m-auto p-5">
                     <ul>
                       {subMenuArr[`${index}`].map((el, index) => {
-                        return <li key={index}>{el}</li>;
+                        return (
+                          <li key={index}>
+                            {" "}
+                            <Link href={`/${el.href}`}> {el.name}</Link>
+                          </li>
+                        );
                       })}
                     </ul>
                   </div>

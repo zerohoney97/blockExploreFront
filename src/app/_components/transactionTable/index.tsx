@@ -21,7 +21,6 @@ const TxListWrap: React.FC<ITxListProps> = ({
     txList,
     pageStack
   );
-  
 
   useEffect(() => {
     setAddInfoModal(document.getElementById("portal"));
@@ -56,7 +55,7 @@ const TxListWrap: React.FC<ITxListProps> = ({
                 ?
               </th>
               <th className="font-bold min-w-[200px]  flex justify-start items-center ">
-                Txn Info
+                Txn Hash
               </th>
               <th className="font-bold min-w-[120px] flex items-center ">
                 Method

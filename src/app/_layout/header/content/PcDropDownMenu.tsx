@@ -34,7 +34,7 @@ const PcDropDownMenu: React.FC<IPcDropMenu> = ({
               {dropDownMenuArr.map((ele: IDropDownMenuData, index: number) => {
                 return (
                   <li key={index} className="mt-2">
-                    <Link href={`/${ele.url}`}>{ele.name}</Link>
+                    <Link href={`/${ele.href}`}>{ele.name}</Link>
                   </li>
                 );
               })}
