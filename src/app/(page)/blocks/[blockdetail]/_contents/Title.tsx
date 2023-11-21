@@ -7,7 +7,7 @@ interface TitleProps {
 const Title: React.FC<TitleProps> = ({ title }) => {
   
   return (
-    <div className="flex m-auto flex-wrap items-center gap-3 py-5">
+    <div className="flex w-11/12 m-auto flex-wrap justify-between items-center gap-3 py-5">
       <h1 className="font-semibold text-tablePage-textColor ">{title}</h1>
       
       
