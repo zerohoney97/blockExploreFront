@@ -33,7 +33,7 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
     ],
     1: [
       { name: "Top Tokens", href: "token" },
-      { name: "Token Transfers", href: "token" },
+      { name: "Token Transfers", href: "token/transfer" },
     ],
     2: [
       { name: "Latest Transfer", href: "nft" },

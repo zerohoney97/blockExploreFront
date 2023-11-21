@@ -2,7 +2,7 @@ import React from "react";
 import { HoldersListProps, IholdersList } from "./interface";
 import HoldersList from "./HoldersContainer";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "../pagination/Pagiation";
+import Pagination from "../pagination";
 
 const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
   const { maxPage, page, pageHandler, pageTxList } =

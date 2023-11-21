@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 import AdditionalInfo from "./AdditionalInfo";
 import DexList from "./DexListContainer";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "../pagination/Pagiation";
+import Pagination from "../pagination";
 
 const DexListWrap: React.FC<DexListProps> = ({ dexList }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);

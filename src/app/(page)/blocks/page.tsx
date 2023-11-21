@@ -4,7 +4,7 @@ import Title from "@app/_components/itemTitle";
 import ItemTable from "@app/_components/itemTable";
 import { BlockCard } from "./_contents/Card";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 import { BlockHeader } from "./_contents/Header";
 import BlockContent from "./_contents/Content";
 

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { IholdersList, HoldersListProps } from "./interface";
 import HoldersItem from "./HoldersItem";
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 import usePagiNation from "@app/_hooks/usePagination";
 
 const HoldersContainer: React.FC<HoldersListProps> = ({ holdersList }) => {

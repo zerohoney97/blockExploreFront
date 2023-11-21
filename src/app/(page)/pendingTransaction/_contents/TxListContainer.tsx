@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { IPendingTransaction, IPendingTransactionProps } from "./interface";
 import TxItem from "./TxItem";
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 import usePagiNation from "@app/_hooks/usePagination";
 
 const PendingTxList: React.FC<IPendingTransactionProps> = ({

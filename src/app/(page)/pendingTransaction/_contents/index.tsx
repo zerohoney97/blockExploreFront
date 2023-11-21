@@ -6,7 +6,7 @@ import { IPendingTransaction } from "./interface";
 import { createPortal } from "react-dom";
 import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 import useHydration from "@app/_hooks/useHydration";
 
 const PendingTxListWrap = () => {

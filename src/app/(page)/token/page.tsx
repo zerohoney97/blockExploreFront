@@ -5,7 +5,7 @@ import ItemTable from "@app/_components/itemTable";
 import TokenHerader from "@app/(page)/token/_contents/Header";
 import TokenContent from "@app/(page)/token/_contents/Content";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 import searchIcon from "../../../../public/search04.png";
 import Image from "next/image";
 
