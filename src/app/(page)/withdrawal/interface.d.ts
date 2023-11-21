@@ -2,16 +2,15 @@ export interface WithdrawalDataProps {
   index: string;
   block: string;
   age: string;
-  validatorIndex: string;
   recipient: string;
-  value?:number
+  value :string
 
   }
 
-  export interface IBlocksDetail {
-    blockdetail: string;
+  export interface IWithdrawalDetail {
+    withdrawaldetail: string;
   }
   
-  export interface IBlocksDetailProps {
-    params: { blockdetail: string };
-  }
+
+
+

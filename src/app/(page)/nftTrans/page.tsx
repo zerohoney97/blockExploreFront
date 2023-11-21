@@ -7,7 +7,7 @@ import NftTransTitle from "@app/_components/itemTitle";
 const Page = () => {
   
   const tempDataArr: INftTransList[] = Array.from({ length: 105 }, (ele, index) => ({
-    transcationInfo: "asd",
+    transcationInfo: "0x123fjafk231s",
     method: "Transfer",
     block: "123124124",
     from: "0x12312kj312kjb3jk",

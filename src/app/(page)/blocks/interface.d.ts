@@ -1,4 +1,4 @@
-export interface BlocksDataProps {
+export interface IBlocksDataProps {
     block: string;
     age: string;
     Txn: string;
@@ -14,6 +14,8 @@ export interface BlocksDataProps {
 
   export interface IBlocksDetail {
     blockdetail: string;
+    maxHeight?:string
+    pageStack?:number
   }
   
   export interface IBlocksDetailProps {
@@ -29,28 +31,5 @@ export interface BlocksDataProps {
     withdrawals: string;
   }
   
-  export interface IBlocksDifficultyProps {
-    feeRecipient: string;
-    reward: string;
-    totalDifficulty: string;
-    size: string;
-  }
-  
-  export interface IBlocksGasProps {
-    gasUsed: string;
-    gasUsedPercent?:any
-    gasLimit: string;
-    baseFeePerGas: string;
-    burntFee: string;
-    extraData: string;
-  }
-  
-  export interface IBlocksMoreProps {
-    hash: string;
-    parentHash: string;
-    stateRoot: string;
-    withdrawsRoot: string;
-    nonce: string;
-  }
-  
+
   

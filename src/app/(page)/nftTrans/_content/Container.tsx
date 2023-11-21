@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { INftTxListWrapProps,INftTransList } from "../interface";
 import NftTxsItem from "./Item";
 
-const NftTxsList: React.FC<INftTxListWrapProps> = ({ pageTxList, toggleHandler }) => {
+const NftTxContainer: React.FC<INftTxListWrapProps> = ({ pageTxList, toggleHandler }) => {
 
   return (
       <div >
@@ -20,4 +20,4 @@ const NftTxsList: React.FC<INftTxListWrapProps> = ({ pageTxList, toggleHandler }
   );
 };
 
-export default NftTxsList;
+export default NftTxContainer;
