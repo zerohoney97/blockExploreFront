@@ -31,5 +31,28 @@ export interface IBlocksDataProps {
     withdrawals: string;
   }
   
-
+  export interface IBlocksDifficultyProps {
+    feeRecipient: string;
+    reward: string;
+    totalDifficulty: string;
+    size: string;
+  }
+  
+  export interface IBlocksGasProps {
+    gasUsed: string;
+    gasUsedPercent?:any
+    gasLimit: string;
+    baseFeePerGas: string;
+    burntFee: string;
+    extraData: string;
+  }
+  
+  export interface IBlocksMoreProps {
+    hash: string;
+    parentHash: string;
+    stateRoot: string;
+    withdrawsRoot: string;
+    nonce: string;
+  }
+  
   

@@ -48,7 +48,7 @@ const NftTxListWrap: React.FC<INftTxListProps> = ({
         <table className="w-full m-auto">
           <thead>
             <tr className="h-8 border-b border-gray flex ">
-              <th className="min-w-[60px] w-auto flex items-center justify-center font-medium">
+              <th className="min-w-[60px] w-auto flex items-center justify-center font-medium p-2">
                 ?
               </th>
               <th className="min-w-[200px]  flex justify-start items-center font-medium">
