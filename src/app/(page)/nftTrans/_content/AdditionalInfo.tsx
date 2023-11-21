@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { IAdditionalInfoProps } from "./interface";
+import { IAdditionalInfoProps } from "@app/_components/transactionTable/interface";
 
 const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
   addInfoTempData,
