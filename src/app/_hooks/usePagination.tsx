@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { ItxList } from "@app/_components/transactionTable/interface";
 import { Iitem } from "@app/(page)/nft/interface";
-const usePagination = <T,>(txList: T[], pageStack = 25) => {
+const usePagination = <T,>(txList: T[], pageStack = 5) => {
   const [page, setPage] = useState<number>(1);
   const [pageTxList, setPageTxList] = useState<T[]>([]);
   const [maxPage, setMaxPage] = useState<number>(0);

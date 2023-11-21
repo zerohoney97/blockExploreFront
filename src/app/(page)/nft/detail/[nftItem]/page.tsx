@@ -4,8 +4,8 @@ import React from 'react'
 import NftItemTitle from './_contents/title/ItemTitle'
 import NftItemImage from './_contents/image/ItemImage'
 import NftItemPrice from './_contents/price/ItemPrice'
-import NftItemDetailsWrap from './_contents/details/ItemDetailsWrap'
-import NftItemActivity from './_contents/activity/ItemActivity'
+import NftActivity from './_contents/activity'
+import NftDetails from './_contents/details'
 
 const Page = () => {
   // const param = useParams();
@@ -13,17 +13,22 @@ const Page = () => {
   // console.log(nftId + " / Token ID :" + nftItem);
   return (
     <div className='sm:w-11/12 md:w-10/12 lg:w-9/12 m-auto'>
-      <div className='sm:flex sm:flex-col md:flex lg:flex'>
-        <div className='sm:block sm:order-2 md:w-1/2 md:order-2 lg:w-2/3 lg:order-2'>
+      <div className='flex sm:flex-col md:gap-10 lg:gap-10'>
+        <div className='md:hidden lg:hidden'>
           <NftItemTitle />
-          <NftItemPrice />
-          <NftItemDetailsWrap />
         </div>
-        <div className='sm:block sm:order-1 md:w-1/2 md:mr-5 lg:mr-5 md:order-1 lg:w-1/3 lg:order-1'>
+        <div>
           <NftItemImage />
         </div>
+        <div className='md:w-full'>
+          <div className='sm:hidden'>
+            <NftItemTitle />
+          </div>
+          <NftItemPrice />
+          <NftDetails />
+        </div>
       </div>
-      <NftItemActivity />
+      <NftActivity />
     </div>
   )
 }
