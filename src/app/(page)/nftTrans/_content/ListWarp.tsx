@@ -2,23 +2,22 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { IAddInfo, InftTransList, ITxListProps } from "../interface";
+import { INftAddInfo, INftTransList, INftTxListProps } from "../interface";
 import { createPortal } from "react-dom";
 import AdditionalInfo from "./AdditionalInfo";
-import TxList from "./TxListContainer";
+import NftTxsList from "./Container";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "@app/_components/pagination/Pagiation";
+import Pagination from "@app/_components/pagination";
 
-const TxListWrap: React.FC<ITxListProps> = ({
-  txList,
-  lastThName,
+const NftTxListWrap: React.FC<INftTxListProps> = ({
+  nftTxList,
   maxHeight = "900px",
   pageStack = 25,
 }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
-  const { maxPage, page, pageHandler, pageTxList } = usePagination<InftTransList>(
-    txList,
+  const { maxPage, page, pageHandler, pageTxList } = usePagination<INftTransList>(
+    nftTxList,
     pageStack
   );
 
@@ -27,9 +26,9 @@ const TxListWrap: React.FC<ITxListProps> = ({
   }, [isToggled]);
 
   // 실제에서는 react-query로 가져올 예정
-  const [addInfoTempData, setAddInfoTempData] = useState<IAddInfo>({
+  const [addInfoTempData, setAddInfoTempData] = useState<INftAddInfo>({
     status: "Success",
-    transactionAction"Mint 3 of", 
+    transactionAction:"Mint 3 of", 
     transactionFee: "0.0000000000231",
     gasInfo: "293840",
     nonce: "0",
@@ -49,10 +48,10 @@ const TxListWrap: React.FC<ITxListProps> = ({
         <table className="w-full m-auto">
           <thead>
             <tr className="h-8 border-b border-gray flex ">
-              <th className="min-w-[60px] lg:w-20 w-auto flex items-center justify-center font-medium">
+              <th className="min-w-[60px] w-auto flex items-center justify-center font-medium">
                 ?
               </th>
-              <th className="min-w-[200px]  lg:w-64 flex justify-start items-center font-medium">
+              <th className="min-w-[200px]  flex justify-start items-center font-medium">
                 Transaction Info
               </th>
               <th className="min-w-[120px] flex items-center font-medium">
@@ -64,16 +63,16 @@ const TxListWrap: React.FC<ITxListProps> = ({
               <th className="min-w-[100px] flex items-center font-medium">
                 Age
               </th>
-              <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
+              <th className="min-w-[200px]  flex items-center font-medium">
                 From
               </th>
-              <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
+              <th className="min-w-[200px]  flex items-center font-medium">
                 To
               </th>
-              <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
+              <th className="min-w-[200px] flex items-center font-medium">
                 Type
               </th>
-              <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
+              <th className="min-w-[200px]  flex items-center font-medium">
                 Item
               </th>
               {/* <th className="min-w-[100px] flex justify-start items-center  font-medium">
@@ -82,7 +81,7 @@ const TxListWrap: React.FC<ITxListProps> = ({
             </tr>
           </thead>
           <tbody>
-            <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
+            <NftTxsList pageTxList={pageTxList} toggleHandler={toggleHandler} />
           </tbody>
         </table>
 
@@ -101,4 +100,4 @@ const TxListWrap: React.FC<ITxListProps> = ({
   );
 };
 
-export default TxListWrap;
+export default NftTxListWrap;
