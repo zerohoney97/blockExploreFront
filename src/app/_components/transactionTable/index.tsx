@@ -21,6 +21,7 @@ const TxListWrap: React.FC<ITxListProps> = ({
     txList,
     pageStack
   );
+  
 
   useEffect(() => {
     setAddInfoModal(document.getElementById("portal"));
@@ -49,30 +50,31 @@ const TxListWrap: React.FC<ITxListProps> = ({
     >
       <div className={`overflow-x-auto  h-auto  max-h-[${maxHeight}]`}>
         <table className="w-full m-auto">
-          <thead>
-            <tr className="h-8 border-b border-gray flex ">
-              <th className="min-w-[60px] lg:w-20 w-auto flex items-center justify-center font-medium">
+          <thead className="">
+            <tr className="h-20 border-b border-gray flex ">
+              <th className="font-bold min-w-[60px] w-auto flex items-center justify-center lg:w-20  ">
                 ?
               </th>
-              <th className="min-w-[200px]  lg:w-64 flex justify-start items-center font-medium">
+              <th className="font-bold min-w-[200px]  flex justify-start items-center ">
                 Txn Info
               </th>
-              <th className="min-w-[120px] flex items-center font-medium">
+              <th className="font-bold min-w-[120px] flex items-center ">
                 Method
               </th>
-              <th className="min-w-[100px] flex items-center  font-medium">
+              <th className="font-bold min-w-[100px] flex items-center  ">
                 Block
               </th>
-              <th className="min-w-[100px] flex items-center font-medium">
+              <th className="font-bold min-w-[100px] flex items-center ">
                 Age
               </th>
-              <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
+              <th className="font-bold min-w-[120px] flex items-center  lg:w-44  ">
                 From
               </th>
-              <th className="min-w-[200px]  lg:w-64 flex items-center font-medium">
+              <th className="w-auto lg:w-20"></th>
+              <th className="font-bold min-w-[200px] flex items-center   sm:ml-4 md:ml-4 lg:w-64 ">
                 To
               </th>
-              <th className="min-w-[100px] flex justify-start items-center  font-medium">
+              <th className="min-w-[100px] flex justify-start items-center  ">
                 {lastThName}
               </th>
             </tr>
@@ -81,7 +83,6 @@ const TxListWrap: React.FC<ITxListProps> = ({
             <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
           </tbody>
         </table>
-
         {isToggled && addInfoModal
           ? createPortal(
               <AdditionalInfo

@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { IAdditionalInfoProps } from "./interface";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
   addInfoTempData,
@@ -11,13 +13,7 @@ const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
       <div className="z-40 border-1 border-black w-80 h-96 rounded-lg p-4 bg-white overflow-scroll absolute top-[40%] left-[50%] -translate-x-1/2 -translate-y-1/2">
         <div className="flex w-full justify-between items-center h-1/6">
           <div className="text-lg font-bold">Additional Info</div>
-          <img
-            width={20}
-            height={20}
-            src="https://png.pngtree.com/png-vector/20190411/ourmid/pngtree-vector-cross-icon-png-image_925896.jpg"
-            alt="x이미지"
-            onClick={toggleHandler}
-          />
+          <FontAwesomeIcon icon={faXmark}  className="cursor-pointer" onClick={toggleHandler}/>
         </div>
         <div className="flex flex-col w-full text-sm h-1/5 border-b justify-center">
           <div className="">Status:</div>

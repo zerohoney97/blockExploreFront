@@ -17,7 +17,7 @@ const CollectionItem: React.FC<Iitem> = ({
   type,
 }) => {
   return (
-    <ul className="flex w-[1250px] h-16 border-b border-gray">
+    <ul className="flex w-[1250px] h-16 border-b border-gray text-sm">
       <li className="flex justify-center items-center   w-[3%]">{number}</li>
       <li className="flex justify-center items-center   w-[5%]">
         {" "}
