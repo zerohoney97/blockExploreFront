@@ -41,7 +41,6 @@ const NftAList:React.FC<INftAListOA> = ({pageTxList}) => {
               <div className='mb-5'>
                 <button>
                   <FontAwesomeIcon
-                    className='p-[10px]'
                     icon={faCircleQuestion}
                   />
                 </button>
