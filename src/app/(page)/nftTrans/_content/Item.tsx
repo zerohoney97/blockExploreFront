@@ -31,7 +31,7 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
   const txNavigation = useRouter();
   return (
     <tr className="h-14 border-b  border-gray text-sm  align-middle">
-      <td className="min-w-[60px] lg:w-20 flex items-center justify-center p-2 relative">
+      <td className="min-w-[80px] flex items-center justify-center p-2 relative">
         <div className="relative">
           <FontAwesomeIcon
             className="border-gray rounded-lg p-[10px] border-[1px] cursor-pointer"
@@ -69,7 +69,7 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
         </div>
       </td>
       <td>
-        <div className=" lg:w-20">
+        <div className="">
           <FontAwesomeIcon icon={faCircleRight} />
         </div>
       </td>
