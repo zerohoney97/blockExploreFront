@@ -15,8 +15,8 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
   const Ca = "0x13d1639cd9b11872b12594d7bf708c8f5cfeb183c126962b19af8ce7e9f99dd3"
 
   return (
-    <div className="bg-mainBackGroundColor flex flex-col p-5">
-      <div className="flex items-center  border-b-2 border-gray">
+    <div className="bg-mainBackGroundColor flex flex-col p-5" >
+      <div className="flex items-center  border-b-2 border-gray w-11/12 m-auto">
         <div className="flex items-center">
           <Title title="Block" />
           <span className="ml-2 text-black/40 ">#{params.blockdetail}</span>
