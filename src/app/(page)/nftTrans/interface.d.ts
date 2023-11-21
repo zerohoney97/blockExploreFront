@@ -1,4 +1,4 @@
-export interface InftTransList {
+export interface INftTransList {
   transcationInfo: string;
   method: string;
   block: string;
@@ -9,24 +9,23 @@ export interface InftTransList {
 }
 
 
-export interface ITxListProps {
-  txList: ItxList[];
-  lastThName: string;
+export interface INftTxListProps {
+  nftTxList: INftTransList[];
   maxHeight?:string
   pageStack?:number
 }
 
-export interface ITxListWrapProps {
-  pageTxList: ItxList[] | null;
+export interface INftTxListWrapProps {
+  pageTxList: INftTransList[] | null;
   toggleHandler: () => void;
 }
 
-export interface ITxItemProps {
-  TxItem: ItxList;
+export interface INftTxItemProps {
+  NftTxItem: INftTransList;
   toggleHandler: () => void;
 }
 
-export interface IAddInfo {
+export interface INftAddInfo {
   status: string;
   transactionAction: string;
   transactionFee: string;
