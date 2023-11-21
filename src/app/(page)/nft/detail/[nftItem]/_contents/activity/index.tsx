@@ -1,14 +1,14 @@
 import React from 'react'
 import ActivityTitle from './ActivityTitle'
-import ActivityList from './ActivityList'
+import ActivityContents from './ActivityContents'
 
-const NftItemActivity = () => {
+const NftActivity = () => {
   return (
     <div className='border-gray border-[1px] rounded-xl'>
       <ActivityTitle />
-      <ActivityList />
+      <ActivityContents />
     </div>
   )
 }
 
-export default NftItemActivity
+export default NftActivity
