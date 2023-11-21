@@ -6,10 +6,8 @@ import React from "react";
 const NftLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      {" "}
       <Header />
-      <SearchBar />
-      {children}
+      <div className="max-w-[1400px] m-auto">{children}</div>
       <Footer />
     </div>
   );

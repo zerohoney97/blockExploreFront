@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 body {
-  max-width:2560px;
+  /* max-width: 1400px; */
   min-width: 280px;
   overflow: scroll;
   margin: 0 auto;
+  background-color: rgb(250 251 253);
 }
