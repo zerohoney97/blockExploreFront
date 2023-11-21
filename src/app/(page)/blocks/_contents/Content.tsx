@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { BlocksDataProps } from "../interface";
+import { IBlocksDataProps } from "../interface";
 
-const BlockContent: React.FC<{ data: BlocksDataProps }> = ({ data }) => {
+const BlockContent: React.FC<{ data: IBlocksDataProps }> = ({ data }) => {
   const BlocksDetailPath = `/blocks/${encodeURIComponent(data.block)}`;
   return (
     <tr className="border-b border-gray text-sm  ">

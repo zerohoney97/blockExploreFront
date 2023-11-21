@@ -69,7 +69,7 @@ const Info: React.FC<BlocksInfoProps> = ({
           <>
             <Link
               className="text-blue-500"
-              href={`/txs`}
+              href={`/blocks/txs`}
             >
               {transaction} transaction
             </Link>

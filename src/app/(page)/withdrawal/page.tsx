@@ -2,7 +2,6 @@
 import React from "react";
 import Title from "./_contents/Title";
 import ItemTable from "@app/_components/itemTable";
-import { BlockCard } from "./_contents/Card";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
 import { WithdrawalHeader } from "./_contents/Header";
@@ -15,7 +14,6 @@ const blocksData = [
     index: "1234456789",
     block: "18545465",
     age: "4",
-    validatorIndex: "500",
     recipient: `${Ca.slice(0, 6)} ... ${Ca.slice(-6)}`,
     value: "017250819"
   }
