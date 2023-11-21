@@ -13,17 +13,17 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const [openMenuName, setOpenMenuName] = useState<string>("");
   const dropDownMenu: IDropDownMenuDataObj = {
     blockchain: [
-      { name: "Transactions", url: "transaction" },
-      { name: "Pending Transactions", url: "transaction" },
-      { name: "View Blocks", url: "block" },
+      { name: "Transactions", href: "transaction" },
+      { name: "Pending Transactions", href: "pendingTransaction" },
+      { name: "View Blocks", href: "blocks" },
     ],
     token: [
-      { name: "Top Tokens", url: "token" },
-      { name: "Token Transfers", url: "token" },
+      { name: "Top Tokens", href: "token" },
+      { name: "Token Transfers", href: "token/trnasfer" },
     ],
     NFT: [
-      { name: "Top NFTs", url: "nft" },
-      { name: "NFT Transfers", url: "nft" },
+      { name: "Top NFTs", href: "nft" },
+      { name: "NFT Transfers", href: "nft" },
     ],
   };
 

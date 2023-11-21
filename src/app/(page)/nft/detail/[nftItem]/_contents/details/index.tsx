@@ -1,7 +1,7 @@
 import React from 'react'
 import NftItemDetails from './ItemDetails'
 
-const NftItemDetailsWrap = () => {
+const NftDetails = () => {
   return (
     <div className='border-gray border-[1px] rounded-xl overflow-hidden mb-[20px]'>
       <NftItemDetails />
@@ -9,4 +9,4 @@ const NftItemDetailsWrap = () => {
   )
 }
 
-export default NftItemDetailsWrap
+export default NftDetails

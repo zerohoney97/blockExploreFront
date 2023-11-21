@@ -3,7 +3,7 @@ import { HoldersItemProps } from "./interface";
 
 const HoldersItem: React.FC<HoldersItemProps> = ({ HoldersItem }) => {
   return (
-    <tr className="h-14 border-b border-gray">
+    <tr className="h-14 border-b border-gray text-sm">
     <td className="w-[100px]  flex items-center justify-center p-2 relative">
         {HoldersItem.rank}
       </td>

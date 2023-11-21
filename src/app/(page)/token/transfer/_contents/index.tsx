@@ -2,25 +2,34 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { IAddInfo, ItxList, ITxListProps } from "./interface";
+import { ITokenTransfer } from "./interface";
 import { createPortal } from "react-dom";
 import AdditionalInfo from "./AdditionalInfo";
 import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "../pagination";
+import Pagination from "@app/_components/pagination";
+import { IAddInfo } from "@app/_components/transactionTable/interface";
+import useHydration from "@app/_hooks/useHydration";
 
-const TxListWrap: React.FC<ITxListProps> = ({
-  txList,
-  lastThName,
-  maxHeight = "900px",
-  pageStack = 25,
-}) => {
+const TokenTransferListWrap = () => {
+  const isRendered = useHydration();
+  const tempDataArr: ITokenTransfer[] = Array.from(
+    { length: 105 },
+    (ele, index) => ({
+      age: "asd",
+      block: "123124124",
+      from: "0x12312kj312kjb3jk",
+      to: "0xqweqwnekjads2asdk2",
+      method: "Transfer",
+      txHash: "0x123fjafk231s",
+      value: index.toString(),
+      token: "pepe",
+    })
+  );
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
-  const { maxPage, page, pageHandler, pageTxList } = usePagination<ItxList>(
-    txList,
-    pageStack
-  );
+  const { maxPage, page, pageHandler, pageTxList } =
+    usePagination<ITokenTransfer>(tempDataArr, 50);
 
   useEffect(() => {
     setAddInfoModal(document.getElementById("portal"));
@@ -40,14 +49,12 @@ const TxListWrap: React.FC<ITxListProps> = ({
   const toggleHandler = () => {
     setIsToggled(!isToggled);
   };
-  useEffect(() => {
-    console.log(maxHeight);
-  }, [maxHeight]);
+
   return (
     <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[${maxHeight}]`}
+      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[1200px}]`}
     >
-      <div className={`overflow-x-auto  h-auto  max-h-[${maxHeight}]`}>
+      <div className={`overflow-x-auto  h-auto  max-h-[1200px]`}>
         <table className="w-full m-auto">
           <thead className="">
             <tr className="h-20 border-b border-gray flex ">
@@ -74,13 +81,18 @@ const TxListWrap: React.FC<ITxListProps> = ({
                 To
               </th>
               <th className="min-w-[100px] flex justify-start items-center  ">
-                {lastThName}
+                Value
+              </th>
+              <th className="min-w-[100px] flex justify-start items-center  ">
+                Token
               </th>
             </tr>
           </thead>
-          <tbody>
-            <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
-          </tbody>
+          {isRendered && (
+            <tbody>
+              <TxList pageTxList={pageTxList} toggleHandler={toggleHandler} />
+            </tbody>
+          )}
         </table>
         {isToggled && addInfoModal
           ? createPortal(
@@ -97,4 +109,4 @@ const TxListWrap: React.FC<ITxListProps> = ({
   );
 };
 
-export default TxListWrap;
+export default TokenTransferListWrap;

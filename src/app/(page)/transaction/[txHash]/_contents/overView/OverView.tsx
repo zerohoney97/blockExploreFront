@@ -1,6 +1,8 @@
 import React from "react";
 import copy from "public/copy.png";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-regular-svg-icons";
 const TxOverView = () => {
   const clock =
     "https://w7.pngwing.com/pngs/712/835/png-transparent-computer-icons-clock-icon-design-clock-time-rim-timer.png";
@@ -14,10 +16,9 @@ const TxOverView = () => {
           </div>
           <div className="p-1 h-auto text-xs   w-80 sm:break-words lg:ml-8 md:break-words ">
             0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
-            <Image
-              className=" m-1 sm:float-right md:sm:float-right "
-              src={copy}
-              alt="종이 아이콘"
+            <FontAwesomeIcon
+              icon={faCopy}
+              className=" ml-2  "
               width={15}
               height={3}
             />

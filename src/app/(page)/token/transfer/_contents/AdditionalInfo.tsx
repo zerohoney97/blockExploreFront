@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { IAdditionalInfoProps } from "./interface";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IAdditionalInfoProps } from "@app/_components/transactionTable/interface";
 
-const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
+const TokenTransferAdditionalInfo: React.FC<IAdditionalInfoProps> = ({
   addInfoTempData,
   toggleHandler,
 }) => {
@@ -13,7 +13,11 @@ const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
       <div className="z-40 border-1 border-black w-80 h-96 rounded-lg p-4 bg-white overflow-scroll absolute top-[40%] left-[50%] -translate-x-1/2 -translate-y-1/2">
         <div className="flex w-full justify-between items-center h-1/6">
           <div className="text-lg font-bold">Additional Info</div>
-          <FontAwesomeIcon icon={faXmark}  className="cursor-pointer" onClick={toggleHandler}/>
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="cursor-pointer"
+            onClick={toggleHandler}
+          />
         </div>
         <div className="flex flex-col w-full text-sm h-1/5 border-b justify-center">
           <div className="">Status:</div>
@@ -51,4 +55,4 @@ const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
   );
 };
 
-export default AdditionalInfo;
+export default TokenTransferAdditionalInfo;

@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 import AdditionalInfo from "./AdditionalInfo";
 import DexList from "./DexListContainer";
 import usePagination from "@app/_hooks/usePagination";
-import Pagination from "../pagination/Pagiation";
+import Pagination from "../pagination";
 
 const DexListWrap: React.FC<DexListProps> = ({ dexList }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
@@ -40,7 +40,7 @@ const DexListWrap: React.FC<DexListProps> = ({ dexList }) => {
       <div className="overflow-x-auto h-auto max-h-[500px]">
         <table className="w-full">
           <thead>
-            <tr className="h-8 border-b border-gray flex ">
+            <tr className="h-20 border-b border-gray flex ">
               <th className="min-w-[60px] flex items-center justify-center text-sm font-medium">?</th>
               <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
                 Txn Hash

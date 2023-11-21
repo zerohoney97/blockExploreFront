@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
-import { ITxItemProps } from "./interface";
+import { ITokenTransferItemProps } from "./interface";
 import { useRouter } from "next/navigation";
 import {
   faCircleRight,
@@ -12,7 +12,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
+const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
+  TxItem,
+  toggleHandler,
+}) => {
   const addressEncodeHandler = (address: string) => {
     return (
       address.substring(0, 4) + "...." + address.substring(address.length - 4)
@@ -37,7 +40,6 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
             className="border-gray rounded-lg p-[10px] border-[1px] cursor-pointer"
             icon={faEye}
             onClick={toggleHandler}
-
           />
         </div>
       </td>
@@ -89,8 +91,9 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
         </div>
       </td>
       <td className="min-w-[100px] items-center">{TxItem.value}</td>
+      <td className="min-w-[100px] items-center">{TxItem.token}</td>
     </tr>
   );
 };
 
-export default TxItem;
+export default TokenTransferItem;

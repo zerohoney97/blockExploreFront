@@ -15,12 +15,16 @@ export interface IopenToggle {
   openToggle: boolean;
   key: string;
 }
+export interface ISubMenuContent {
+  name: string;
+  href: string;
+}
 // 서브메뉴 인터페이스
 export interface IsubMenu {
-  0: Array<string>;
-  1: Array<string>;
-  2: Array<string>;
-  [key: number]: Array<string>;
+  0: Array<ISubMenuContent>;
+  1: Array<ISubMenuContent>;
+  2: Array<ISubMenuContent>;
+  [key: number]: Array<ISubMenuContent>;
 }
 
 export interface IMobileDropMenuProps {
@@ -30,10 +34,10 @@ export interface IMobileDropMenuProps {
 
 export interface IDropDownMenuData {
   name: string;
-  url: string;
+  href: string;
 }
 export interface IDropDownMenuDataObj {
-  blockchain: IDropDownMenuData[];
-  token: IDropDownMenuData[];
-  NFT: IDropDownMenuData[];
+  blockchain: Array<IDropDownMenuData>;
+  token: Array<IDropDownMenuData>;
+  NFT: Array<IDropDownMenuData>;
 }
