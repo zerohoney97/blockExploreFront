@@ -9,8 +9,8 @@ import Link from "next/link";
 const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const [isMenuOpen, setIsMeuOpen] = useState<boolean>(false);
   return (
-    <div className=" min-h-[60px]  h-fit relative ">
-      <div className="  min-h-[60px] h-full flex justify-between items-center relative z-10 bg-white  ">
+    <div className="p-4 bg-yellow min-h-[60px]  h-fit relative">
+      <div className=" border-black border-[1px] min-h-[60px] h-full flex justify-between items-center relative z-10 bg-white ">
         <Link href={"/"}>
           <div className="w-40 h-10 flex justify-between items-center">
             <img

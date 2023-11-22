@@ -5,7 +5,7 @@ import { ITransactionsListProps } from '../../interface'
 
 const MainLatestTransactionsList:React.FC<ITransactionsListProps> = ({transactionslist}) => {
   return (
-    <ul className='h-[482px] overflow-scroll w-full'>
+    <ul className='h-[482px] overflow-y-scroll w-full'>
       {transactionslist.map((item, index)=>(
         <>
           <LatestTransactionsItem transactionsData ={item} />
