@@ -12,7 +12,10 @@ const MainLatestResponsiveWrap: React.FC<MainLatestResponsiveWrapProps> = ({
   blocksData,
   transactionsData,
 }) => {
-
+  useEffect(() => {
+    console.log(blocksData);
+    console.log(transactionsData);
+  }, [transactionsData]);
   return (
     <div className="sm:w-11/12 md:w-full lg:w-full m-auto lg:flex lg:justify-between lg:mb-[20px]">
       <MainLatestWrap title="Blocks">

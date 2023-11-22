@@ -14,6 +14,7 @@ const Page = () => {
     txHash: "0x123fjafk231s",
     value: index.toString(),
   }));
+  
   const isRendered = useHydration();
   return (
     <div>

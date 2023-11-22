@@ -1,6 +1,6 @@
 export interface IBlockInfoProps {
-  blockHeight: number;
-  blockTime: number;
+  blockHeight: string;
+  blockTime: string;
 }
 
 interface IBlocksItem {
@@ -12,10 +12,10 @@ interface IBlocksItem {
 }
 interface ITransactionsItem {
   transactionHash: string;
-  transactionTime: number;
+  transactionTime: string;
   fromAddress: string;
   toAddress: string;
-  ethAmount: number;
+  ethAmount: string;
 }
 export interface IBlocksItemProps {
   blocksItem: IBlocksItem;
@@ -42,14 +42,14 @@ export interface IMinerProps {
 }
 
 export interface ITransactionsNumberProps {
-  transactionsInThisBlock: number;
-  transactionsTime: number;
-  blockHeight: number;
+  transactionsInThisBlock: string;
+  transactionsTime: string;
+  blockHeight: string;
 }
 
 export interface ITransactionHashInfoProps {
   transactionHash: string;
-  transactionTime: number;
+  transactionTime: string;
 }
 
 export interface ITransactionFrom {

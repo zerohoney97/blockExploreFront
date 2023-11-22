@@ -1,3 +1,3 @@
 export interface ethValueProps {
-  ethValue: number;
+  ethValue: string;
 }
