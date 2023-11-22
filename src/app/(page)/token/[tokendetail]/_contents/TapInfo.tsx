@@ -88,7 +88,7 @@ const TokenTapInfo = () => {
     <>
       {isRendered && (
         <div>
-          <div className="w-full flex overflow-x-auto flex-nowrap p-3">
+          <div className="flex overflow-x-auto flex-nowrap p-3">
             <TabButton
               label="Transfers"
               toggleLabelNum={toggleLabelNum}
