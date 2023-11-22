@@ -36,7 +36,7 @@ const MoreInfo:React.FC<IBlocksMoreProps> = ({hash,parentHash,stateRoot,withdraw
       <div className="flex justify-between">
         <div className="font-medium text-sm  ">More Detail:</div>
         <div
-          className="text-sm text-blue-500 cursor-pointer"
+          className="text-sm text-text-mainTextColor cursor-pointer"
           onClick={toggleMoreInfo}
         >
           {showMore ? "- Click to show less" : "+ Click to show more"}

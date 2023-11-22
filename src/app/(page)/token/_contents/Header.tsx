@@ -6,10 +6,10 @@ const TableHeader = () => {
       <tr className='text-sm border-box'>
         <th className='py-2 min-w-[60px] flex px-4'>#</th>
         <th className=' min-w-[350px]'>Token</th>
-        <th className='text-blue-400 min-w-[300px] '>Price</th>
-        <th className='text-blue-400 min-w-[230px]'>Change</th>
-        <th className='text-blue-400 min-w-[230px]'>Volume(24h)</th>
-        <th className='text-blue-400 min-w-[200px]'>Holders</th>
+        <th className='text-text-mainTextColor min-w-[300px] '>Price</th>
+        <th className='text-text-mainTextColor min-w-[230px]'>Change</th>
+        <th className='text-text-mainTextColor min-w-[230px]'>Volume(24h)</th>
+        <th className='text-text-mainTextColor min-w-[200px]'>Holders</th>
       </tr>
     </thead>
   );

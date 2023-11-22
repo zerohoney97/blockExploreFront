@@ -9,7 +9,7 @@ export interface IBlocksDataProps {
     baseFee: string;
     reward: string;
     burntFees: string;
-    burntFeesPercent:number
+    burntFeesPercent:string
   }
 
   export interface IBlocksDetail {

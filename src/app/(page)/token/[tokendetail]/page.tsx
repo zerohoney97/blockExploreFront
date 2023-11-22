@@ -26,6 +26,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
           <div className="ml-2">{params.tokendetail}</div>
         </div>
       </div>
+      <div className="w-11/12 m-auto">
       <div className="flex flex-wrap min-w-[280px] mt-5" >
         <div className="w-full md:w-1/2 lg:w-1/3">
           <TokenItemTable>
@@ -56,9 +57,8 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
           </TokenItemTable>
         </div>
       </div>
-      <div className="">
-        <TokenTapInfo />
       </div>
+        <TokenTapInfo />
     </div>
   );
 };

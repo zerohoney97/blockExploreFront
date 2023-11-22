@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Title from "@app/_components/itemTitle";
-import ItemTable from "@app/_components/itemTable";
+import ItemTable from "./_contents/ItemTable";
 import TokenHerader from "@app/(page)/token/_contents/Header";
 import TokenContent from "@app/(page)/token/_contents/Content";
 import usePagination from "@app/_hooks/usePagination";
@@ -118,7 +118,7 @@ const Page = () => {
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
       <div className="w-full">
         <Title title="Token Tracker(ERC-20)" />
-        <div className="mt-10 w-11/12 m-auto rounded-lg shadow-md  bg-white ">
+        <ItemTable>
           <div className="text-xs m-2 flex justify-between items-center">
             A total of {""} Token Contracts found{" "}
             <Image
@@ -126,7 +126,6 @@ const Page = () => {
               src={searchIcon}
               alt="searchIcon"
               width={25}
-              height={3}
             />
           </div>
           <div className="min-w-[250px] max-w-[1250px] overflow-x-scroll h-auto">
@@ -142,7 +141,7 @@ const Page = () => {
               </tbody>
             </table>
           </div>
-        </div>
+        </ItemTable>
         <Pagination
           maxPage={pagination.maxPage}
           page={pagination.page}
