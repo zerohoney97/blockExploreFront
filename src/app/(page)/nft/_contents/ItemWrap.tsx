@@ -7,7 +7,6 @@ import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
 
 const CollectionItemWrap: React.FC<IitemProps> = ({ pageTxList }) => {
-
   return (
     <>
       <CollectionTableTitle />

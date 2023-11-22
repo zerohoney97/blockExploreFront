@@ -5,7 +5,6 @@ import LatestResponsiveWrap from "./(page)/main/_contents/latestResponsiveWrap/L
 import Header from "./_layout/header";
 import Footer from "./_layout/footer";
 
-
 export default function Main() {
   const overviewTransactionsData = {
     totalTransactionsCounter : 2155.70,
