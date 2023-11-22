@@ -23,11 +23,12 @@ const fromWeiToETH = (wei: string) => {
 
 export const getTransaction = async () => {
   try {
+    console.log("들어옴?");
     const res = await fetch("https://api.bouncexplorer.site/tx");
 
-    console.log('res : ',res.headers)
     const now = new Date().getTime();
-    const responseBlockData: IResponseTransactionData[] = await res.json();
+    const responseTransactionData: IResponseTransactionData[] =
+      await res.json();
     //   const data = {
     //     id: 1,
     //     accessList: null,
@@ -56,20 +57,23 @@ export const getTransaction = async () => {
     //     eoa_id: null,
     //     CA_id: null,
     //   };
-    const transactionData: ITransactionData[] = responseBlockData.map((el) => {
-      return {
-        ethAmount: fromWeiToETH(el.value).toString(),
-        fromAddress: el.from,
-        toAddress: el.to,
-        transactionHash: el.hash,
-        transactionTime: divideTimeIntoUnits(now, Number(el.Timestamp)),
-      };
-    });
+    const transactionData: ITransactionData[] = responseTransactionData.map(
+      (el) => {
+        return {
+          ethAmount: fromWeiToETH(el.value).toString(),
+          fromAddress: el.from,
+          toAddress: el.to,
+          transactionHash: el.hash,
+          transactionTime: divideTimeIntoUnits(now, Number(el.Timestamp)),
+        };
+      }
+    );
+
     if (!res.ok) {
       // This will activate the closest `error.js` Error Boundary
       throw new Error("Failed to fetch data");
     }
-
+    console.log(transactionData[0]);
     return transactionData.slice(0, 6);
   } catch (error) {
     console.log(error);
