@@ -64,13 +64,13 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
       <div
         className={`${
           mordeDetailToggle && "mt-5"
-        } w-full flex items-center relative  h-16  z-5 bg-white transition-all sm:justify-between`}
+        } w-full flex items-center relative  h-16  z-5 bg-white transition-all justify-between`}
       >
         <div className="text-sm font-medium lg:text-itemDetail-textLabelColor lg:w-[250px] ">
           More Detail
         </div>
         <div
-          className=" text-blue-500 cursor-pointer text-sm lg:ml-8 "
+          className=" text-text-mainTextColor cursor-pointer text-sm lg:ml-8 "
           onClick={moreDetailToggleHandler}
         >
           {mordeDetailToggle ? "-" : "+"} Click To Show More

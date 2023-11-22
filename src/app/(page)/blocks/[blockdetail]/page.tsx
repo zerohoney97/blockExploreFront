@@ -12,17 +12,20 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
     console.log(params);
   }, []);
 
-  const Ca = "0x13d1639cd9b11872b12594d7bf708c8f5cfeb183c126962b19af8ce7e9f99dd3"
+  const Ca =
+    "0x13d1639cd9b11872b12594d7bf708c8f5cfeb183c126962b19af8ce7e9f99dd3";
 
   return (
-    <div className="bg-mainBackGroundColor flex flex-col p-5" >
-      <div className="flex items-center border-b-2 border-gray w-11/12 m-auto ">
-        <div className="flex items-center">
-          <Title title="Block" />
-          <span className="ml-2 text-black/50 text-sm ">#{params.blockdetail}</span>
+    <>
+       <div className="bg-mainBackGroundColor">
+        <div className="w-full ">
+          <Title
+            title={`Block `}
+            subtitle={<span className="text-sm">#{params.blockdetail}</span>}
+          />
         </div>
       </div>
-      <div>
+      <div className="">
         <BlockCard>
           <BlockInfo
             blockHeight={params.blockdetail}
@@ -34,7 +37,7 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
             withdrawals="16"
           />
           <BlockDiffcultyInfo
-            feeRecipient={`${Ca.slice(0,4)} ... ${Ca.slice(-4)}`}
+            feeRecipient={`${Ca.slice(0, 4)} ... ${Ca.slice(-4)}`}
             reward="0.062845414849980248 ETH ( + 0.819979037944046248 - 0.757133623094066)"
             totalDifficulty="58,750,003,716,598,352,816,469"
             size="50,281 bytes"
@@ -59,7 +62,7 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
           />
         </BlockCard>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import ItemTitle from "@app/_components/itemTitle";
 import TabWrap from "./_contents/TabWrap";
@@ -26,9 +26,9 @@ const Page = () => {
     }
   };
   return (
-    <div className="bg-mainBackGroundColor">
-      <ItemTitle title="Transaction Details"  />
-      <TabWrap>
+    <div className="bg-mainBackGroundColor  max-w-[1250px]">
+      <ItemTitle title="Transaction Details" />
+      <div className="flex overflow-x-auto flex-nowrap py-3 mt-5  m-auto w-11/12">
         <TabButton
           label="Over View"
           toggleLabelNum={toggleLabelName}
@@ -44,7 +44,7 @@ const Page = () => {
           toggleLabelNum={toggleLabelName}
           toggleHandler={toggleHandler}
         />
-      </TabWrap>
+      </div>
       {componentHandler(toggleLabelName as string)}
     </div>
   );

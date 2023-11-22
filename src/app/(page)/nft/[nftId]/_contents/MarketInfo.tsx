@@ -1,31 +1,37 @@
 import React from "react";
 
-const MarketInfo = () => {
+interface TokenCardProps {
+  title: string;
+  volume: string;
+  minPrice: string;
+  maxPrice: string;
+}
+
+const index: React.FC<TokenCardProps> = ({
+  title,
+  volume,
+  minPrice,
+  maxPrice,
+}) => {
   return (
-    <div className="w-full h-full flex flex-col items-start">
-      <div className="m-5 text-lg  font-bold h-1/4">Market</div>
-      <div className="m-5  h-1/4">
-        <div className="text-itemDetail-textLabelColor">VOLUME(24H)</div>
-        <div className="">
-          {" "}
-          <span>40</span> <span>ETH</span>{" "}
-        </div>
+    <div className=" flex flex-col gap-5 text-sm">
+      <div>
+        <h3 className="text-base font-semibold mb-0">{title}</h3>
       </div>
-      <div className="m-5  h-1/4">
-        <div className="text-itemDetail-textLabelColor">MIN PRICE(24H)</div>
-        <div className="">
-          {" "}
-          <span>$</span> <span>770,18.03</span> <span>@40.0000000ETH</span>{" "}
-        </div>
+      <div>
+        <div>Volume (24H) </div>
+        <div>${volume}</div>
       </div>
-      <div className="m-5  h-1/4">
-        <div className="text-itemDetail-textLabelColor">MAX PRICE(24H)</div>
-        <div className="">
-          <span>$</span> <span>770,18.03</span> <span>@40.0000000ETH</span>
-        </div>
+      <div>
+        <div>Min Price (24H)</div>
+        <div>${minPrice}</div>
+      </div>
+      <div>
+        <div>Max Price (24H)</div>
+        <div>${maxPrice}</div>
       </div>
     </div>
   );
 };
 
-export default MarketInfo;
+export default index;

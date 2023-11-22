@@ -35,11 +35,12 @@ const TokenTapInfo = () => {
       return <TxListWrap txList={tempDataArr} lastThName="Item" />;
     } else if (label === "Info") {
       return (
+        <div>
         <InfoTapContent
           VolumeContent="VolumeContent"
           MarketContent="Market Contents"
           CirculatingContent="Circulating Contents"
-        />
+        /></div>
       );
     } else if (label === "Dex Trades") {
       return (
@@ -87,8 +88,8 @@ const TokenTapInfo = () => {
   return (
     <>
       {isRendered && (
-        <div>
-          <div className="w-full flex overflow-x-auto flex-nowrap p-3">
+        <div >
+          <div className="flex overflow-x-auto flex-nowrap py-3 mt-5 w-11/12 m-auto ">
             <TabButton
               label="Transfers"
               toggleLabelNum={toggleLabelNum}

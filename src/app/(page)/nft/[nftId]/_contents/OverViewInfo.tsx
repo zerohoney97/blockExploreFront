@@ -1,23 +1,38 @@
 import React from "react";
 
-const OverViewInfo = () => {
+interface TokenCardProps {
+  title: string;
+  MaxTotalSupply: string;
+  holders: string;
+  totaltransfers: string;
+}
+
+const index: React.FC<TokenCardProps> = ({
+  title,
+  MaxTotalSupply,
+  holders,
+  totaltransfers,
+}) => {
   return (
-    <div className="w-full h-full flex flex-col items-start">
-      <div className="m-5 text-lg  font-bold h-1/4">Overview</div>
-      <div className="m-5  h-1/4">
-        <div className="text-itemDetail-textLabelColor">MAX TOTAL SUPPLY</div>
-        <div className="">123123</div>
+    <div className=" flex flex-col gap-5 text-sm">
+      <div>
+        <h3 className="text-base font-semibold mb-0">{title}</h3>
       </div>
-      <div className="m-5  h-1/4">
-        <div className="text-itemDetail-textLabelColor">HOLDERS</div>
-        <div className="">25,301</div>
+      <div>
+        <div>MAX TOTAL SUPPLY</div>
+        <div>{MaxTotalSupply}USDT</div>
       </div>
-      <div className="m-5  h-1/4">
-        <div className="text-itemDetail-textLabelColor">TOTAL TRANSFERS</div>
-        <div className="">-</div>
+      <div>
+        <div>HOLDERS</div>
+        <div>{holders}</div>
       </div>
+      <div>
+        <div>TOTAL TRANSFERS</div>
+        <div>{totaltransfers}</div>
+      </div>
+      
     </div>
   );
 };
 
-export default OverViewInfo;
+export default index;

@@ -33,7 +33,7 @@ const MoreInfo:React.FC<IBlocksMoreProps> = ({hash,parentHash,stateRoot,withdraw
             content ={nonce}/>
         </div>
       )}
-      <div className="flex justify-between">
+      <div className="flex justify-between h-16 overflow-hidden items-center">
         <div className="font-medium text-sm  ">More Detail:</div>
         <div
           className="text-sm text-text-mainTextColor cursor-pointer"
