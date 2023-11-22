@@ -7,18 +7,13 @@ import Pagination from "../pagination";
 import usePagiNation from "@app/_hooks/usePagination";
 
 const TxList: React.FC<ITxListWrapProps> = ({ pageTxList, toggleHandler }) => {
-
   return (
-      <div >
-        {pageTxList &&
-          (pageTxList as ItxList[]).map((ele) => (
-            <TxItem
-              TxItem={ele}
-              toggleHandler={toggleHandler}
-              key={ele.txHash}
-            />
-          ))}
-    </div>
+    <>
+      {pageTxList &&
+        (pageTxList as ItxList[]).map((ele) => (
+          <TxItem TxItem={ele} toggleHandler={toggleHandler} key={ele.txHash} />
+        ))}
+    </>
   );
 };
 

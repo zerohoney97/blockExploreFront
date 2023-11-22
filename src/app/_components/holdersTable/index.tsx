@@ -14,7 +14,7 @@ const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
         <table className="w-full">
           <thead>
             <tr className="h-20 border-b border-gray flex">
-              <th className="flex w-[100px] items-center justify-center font-medium">Rank</th>
+              <th className="flex w-[100px] items-center font-medium">Rank</th>
               <th className="flex min-w-[350px] items-center font-medium">Address</th>
               <th className="flex min-w-[300px] items-center font-medium">Quantity</th>
               <th className="flex min-w-[200px] items-center font-medium">Percentage</th>

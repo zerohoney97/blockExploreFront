@@ -8,6 +8,8 @@ import AdditionalInfo from "./AdditionalInfo";
 import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 
 const TxListWrap: React.FC<ITxListProps> = ({
   txList,
@@ -43,14 +45,17 @@ const TxListWrap: React.FC<ITxListProps> = ({
     <div
       className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[3000px]`}
     >
-      <div className={`overflow-x-auto  h-auto  max-h-[3000px]`}>
+      <div className={`overflow-x-scroll overflow-y-hidden h-auto max-h-[3000px]`}>
         <table className="w-full m-auto">
-          <thead className="">
-            <tr className="h-20 border-b border-gray flex ">
-              <th className="font-bold min-w-[60px] w-auto flex items-center justify-center lg:w-20  ">
-                ?
+          <thead>
+            <tr className="h-[50px] border-b border-gray flex">
+              {/* 1 */}
+              <th className="font-bold min-w-[60px] flex items-center justify-center">
+                <FontAwesomeIcon icon={faCircleQuestion}  />
               </th>
-              <th className="font-bold min-w-[200px]  flex justify-start items-center ">
+              
+              {/* 2 */}
+              <th className="font-bold min-w-[200px] flex justify-start items-center">
                 Txn Hash
               </th>
               <th className="font-bold min-w-[120px] flex items-center ">
@@ -59,14 +64,14 @@ const TxListWrap: React.FC<ITxListProps> = ({
               <th className="font-bold min-w-[100px] flex items-center  ">
                 Block
               </th>
-              <th className="font-bold min-w-[100px] flex items-center ">
+              <th className="font-bold min-w-[80px] flex items-center ">
                 Age
               </th>
               <th className="font-bold min-w-[120px] flex items-center  lg:w-44  ">
                 From
               </th>
               <th className="w-auto lg:w-20"></th>
-              <th className="font-bold min-w-[200px] flex items-center   sm:ml-4 md:ml-4 lg:w-64 ">
+              <th className="font-bold min-w-[120px] flex items-center sm:ml-4 md:ml-4 lg:w-64 ">
                 To
               </th>
               <th className="min-w-[100px] flex justify-start items-center  ">
@@ -87,6 +92,7 @@ const TxListWrap: React.FC<ITxListProps> = ({
               addInfoModal
             )
           : ""}
+          
       </div>
       <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
     </div>

@@ -10,8 +10,8 @@ const Page = () => {
   // const {nftItem} = param;
   // console.log(nftId + " / Token ID :" + nftItem);
   return (
-    <div className='sm:w-11/12 md:w-10/12 lg:w-9/12 m-auto'>
-      <div className='flex sm:flex-col md:gap-10 lg:gap-10'>
+    <div className='sm:p-4 md:p-8 lg:p-8 m-auto'>
+      <div className='flex sm:flex-col md:gap-10 lg:gap-10 '>
         <div className='md:hidden lg:hidden'>
           <NftItemTitle />
         </div>
