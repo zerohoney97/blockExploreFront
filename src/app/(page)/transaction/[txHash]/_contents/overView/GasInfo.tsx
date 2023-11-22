@@ -4,7 +4,7 @@ const TxGasInfo = () => {
   const etherIcon =
     "https://w7.pngwing.com/pngs/889/143/png-transparent-ethereum-computer-icons-cryptocurrency-blockchain-valentines-day-party-miscellaneous-angle-triangle.png";
   return (
-    <div className="w-full h-auto flex flex-col border-b border-gray pb-5 ">
+    <div className="w-full h-auto flex flex-col pb-5 ">
       <div className="flex flex-col">
         <div className="lg:flex lg:items-center">
           <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px] ">

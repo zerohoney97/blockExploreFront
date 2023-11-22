@@ -24,14 +24,14 @@ const TxTransferNFT = () => {
           <span className="text-sm sm:inline-block">
             <span className=" text-itemDetail-inventoryKeyColor">ERC-721</span>
             <span className="ml-2">Token ID[</span>
-            <span className="text-blue-500 truncate">9044</span>
+            <span className="text-text-mainTextColor truncate">9044</span>
             <span>]</span>
-            <span className="text-blue-500 truncate ml-2">Captaniz</span>
+            <span className="text-text-mainTextColor truncate ml-2">Captaniz</span>
           </span>
           {/* <br /> */}
           <span className="sm:inline-block">
             <span className="font-medium text-sm lg:ml-1">From</span>
-            <span className="text-blue-500 text-xs ml-2">
+            <span className="text-text-mainTextColor text-xs ml-2">
               {addressEncodeHandler(
                 "0x37d0aadDB833d8B62a0d259c2B0BCd82dA871D85"
               )}
@@ -40,7 +40,7 @@ const TxTransferNFT = () => {
           </span>
 
           {/* <br /> */}
-          <span className="text-blue-500 text-xs lg:ml-1">
+          <span className="text-text-mainTextColor text-xs lg:ml-1">
             {addressEncodeHandler("0xb2ecfE4E4D61f8790bbb9DE2D1259B9e2410CEA5")}
           </span>
         </p>

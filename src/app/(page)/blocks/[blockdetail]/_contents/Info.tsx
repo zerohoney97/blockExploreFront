@@ -36,7 +36,7 @@ const Info: React.FC<BlocksInfoProps> = ({
 
 
   return (
-    <div className="border-b border-gray">
+    <div className=" border-gray">
       <BlockCardText title="Block Height:" content={
         <>
         {BlockNumber}

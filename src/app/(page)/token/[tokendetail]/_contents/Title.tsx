@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 interface TitleProps {
   title: string;
+  subtitle: React.ReactNode; 
 }
 
-const Title: React.FC<TitleProps> = ({ title }) => {
-  
+const Title: React.FC<TitleProps> = ({ title, subtitle }) => {
   return (
-    <div className="flex m-auto flex-wrap items-center gap-3 py-5">
-      <h1 className="font-semibold text-tablePage-textColor ">{title}</h1>
-      
-      
-    </div>
+
+      <div className="flex w-11/12 m-auto  items-center border-b border-gray gap-3 py-5">
+        <h1 className="font-semibold text-tablePage-textColor">{title}</h1>
+        <div className="text-black/50">{subtitle}</div>
+      </div>
   );
 };
 

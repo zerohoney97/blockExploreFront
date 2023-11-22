@@ -1,23 +1,25 @@
-import Image from "next/image";
 import React from "react";
-import copy from "../../../../../../public/copy.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopy } from "@fortawesome/free-regular-svg-icons";
-const OtherInfo = () => {
+import Link from "next/link";
+
+
+interface TokenCardProps {
+  title: string;
+  contract: string;
+}
+
+const index: React.FC<TokenCardProps> = ({ title, contract }) => {
   return (
-    <div className="w-full h-1/4 flex flex-col items-start">
-      <div className="m-5 text-lg  font-bold h-1/4">Other Info</div>
-      <div className="m-5  h-1/4">
-        <div className="text-itemDetail-textLabelColor">TOKEN CONTRACT</div>
-        <div className="w-full flex items-center  ">
-          <div className="truncate w-2/3 text-blue-600">
-            0xasdasdkjaqwjhrqwjyrqwjyeasddsa
-          </div>
-          <FontAwesomeIcon icon={faCopy} className="ml-4" />
-        </div>
+    <div className=" flex flex-col gap-5 text-sm">
+      <div>
+        <h3 className="text-base font-semibold mb-0">{title}</h3>
       </div>
+      <div>TOKEN CONTRACT</div>
+      <Link href={"/"}>
+      <div className="text-text-mainTextColor">{contract}</div>
+      </Link>
     </div>
   );
 };
 
-export default OtherInfo;
+export default index;
+

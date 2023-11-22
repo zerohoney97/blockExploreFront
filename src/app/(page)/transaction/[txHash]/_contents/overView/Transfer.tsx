@@ -14,7 +14,7 @@ const TxTransfer = () => {
           </div>
           <div className="p-1 h-10 text-xs lg:ml-4  ">
             <div className="p-1 h-auto text-xs   w-80  sm:break-words md:break-words">
-              <span className="text-blue-500">
+              <span className="text-text-mainTextColor">
                 0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
               </span>
               <FontAwesomeIcon
@@ -32,7 +32,7 @@ const TxTransfer = () => {
           </div>
           <div className="p-1 h-10 text-xs  lg:ml-4 ">
             <div className="p-1 h-auto text-xs   w-80  sm:break-words md:break-words ">
-              <span className="text-blue-500">
+              <span className="text-text-mainTextColor">
               0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
               </span>
               <FontAwesomeIcon

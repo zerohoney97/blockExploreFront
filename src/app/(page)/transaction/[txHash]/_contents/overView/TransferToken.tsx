@@ -17,7 +17,7 @@ const TxTransferToken = () => {
             <p className="">
               <span className="sm:inline-block">
                 <span className="font-medium text-sm ">From</span>{" "}
-                <span className="text-blue-500 text-xs">
+                <span className="text-text-mainTextColor text-xs">
                   {addressEncodeHandler(
                     "0x37d0aadDB833d8B62a0d259c2B0BCd82dA871D85"
                   )}
@@ -26,7 +26,7 @@ const TxTransferToken = () => {
               </span>
               <span className="ml-1 sm:inline-block">
                 {/* <br /> */}
-                <span className="text-blue-500 text-xs">
+                <span className="text-text-mainTextColor text-xs">
                   {addressEncodeHandler(
                     "0xb2ecfE4E4D61f8790bbb9DE2D1259B9e2410CEA5"
                   )}
@@ -34,7 +34,7 @@ const TxTransferToken = () => {
                 <span className="font-medium text-sm ml-1">For</span>
                 <span className="text-xs ml-1">0.15477</span>
               </span>
-              <span className="text-blue-500 text-xs ml-1 sm:inline-block">
+              <span className="text-text-mainTextColor text-xs ml-1 sm:inline-block">
                 Blur Pool
               </span>
             </p>
@@ -43,7 +43,7 @@ const TxTransferToken = () => {
             <p className="">
               <span className="sm:inline-block">
                 <span className="font-medium text-sm ">From</span>{" "}
-                <span className="text-blue-500 text-xs">
+                <span className="text-text-mainTextColor text-xs">
                   {addressEncodeHandler(
                     "0x37d0aadDB833d8B62a0d259c2B0BCd82dA871D85"
                   )}
@@ -52,7 +52,7 @@ const TxTransferToken = () => {
               </span>
               <span className="ml-1 sm:inline-block">
                 {/* <br /> */}
-                <span className="text-blue-500 text-xs">
+                <span className="text-text-mainTextColor text-xs">
                   {addressEncodeHandler(
                     "0xb2ecfE4E4D61f8790bbb9DE2D1259B9e2410CEA5"
                   )}
@@ -60,7 +60,7 @@ const TxTransferToken = () => {
                 <span className="font-medium text-sm ml-1">For</span>
                 <span className="text-xs ml-1">0.15477</span>
               </span>
-              <span className="text-blue-500 text-xs ml-1 sm:inline-block">
+              <span className="text-text-mainTextColor text-xs ml-1 sm:inline-block">
                 Blur Pool
               </span>
             </p>

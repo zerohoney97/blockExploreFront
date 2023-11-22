@@ -45,7 +45,7 @@ const NFTDetailMoreInfo = () => {
     <>
       {isRendered && (
         <div>
-          <div className="w-full flex overflow-x-auto flex-nowrap py-5 px-5">
+          <div className="flex overflow-x-auto flex-nowrap py-3 mt-5 w-11/12 m-auto ">
             <TabButton
               label="Transfers"
               toggleLabelNum={toggleLabelNum}

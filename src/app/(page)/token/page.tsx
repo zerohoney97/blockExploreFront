@@ -2,11 +2,11 @@
 import React from "react";
 import Title from "@app/_components/itemTitle";
 import ItemTable from "./_contents/ItemTable";
-import TokenHerader from "@app/(page)/token/_contents/Header";
+import TokenHeader from "@app/(page)/token/_contents/Header";
 import TokenContent from "@app/(page)/token/_contents/Content";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
-import searchIcon from "../../../../public/search04.png";
+import searchIcon from "../../../../public/search03.png";
 import Image from "next/image";
 
 const tokenData = [
@@ -130,7 +130,7 @@ const Page = () => {
           </div>
           <div className="min-w-[250px] max-w-[1250px] overflow-x-scroll h-auto">
             <table>
-              <TokenHerader />
+              <TokenHeader />
               <tbody className="items-center">
                 {pagination.pageTxList &&
                   (pagination.pageTxList as any).map(

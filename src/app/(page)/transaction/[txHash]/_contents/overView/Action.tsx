@@ -9,7 +9,7 @@ const TxAction = () => {
         </div>
         <div className="p-1 h-10 text-xs lg:ml-7  ">
           <div className="w-44 p-1 truncate">
-            Transfer 1 Of <span className="text-blue-500"> CapTainz</span>{" "}
+            Transfer 1 Of <span className="text-text-mainTextColor"> CapTainz</span>{" "}
           </div>
         </div>
       </div>
