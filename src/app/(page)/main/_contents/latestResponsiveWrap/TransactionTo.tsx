@@ -10,7 +10,7 @@ const MainTransactionTo: React.FC<ITransactionTo> = ({ toAddress }) => {
   return (
     <span>
       To
-      <Link href={`/main/address/${toAddress}`} className='ml-2 text-blue-400'>
+      <Link href={`/main/address/${toAddress}`} className='ml-2 text-text-mainTextColor'>
         {truncateTransaction}
       </Link>
     </span>

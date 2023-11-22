@@ -60,7 +60,7 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
                 Home{" "}
               </li>
               <PcDropDownMenu
-                label="Blcokchain"
+                label="Blockchain"
                 dropDownMenuArr={dropDownMenu["blockchain"]}
                 openMenuName={openMenuName}
                 openMenuNameHandler={openMenuNameHandler}
