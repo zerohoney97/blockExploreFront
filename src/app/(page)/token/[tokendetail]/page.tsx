@@ -19,14 +19,14 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
   }, []);
 
   return (
-    <div className="bg-mainBackGroundColor flex flex-col p-5">
-      <div className="flex items-center   border-b-2 border-gray">
-        <div className="border-border-gray flex items-center">
+    <div className="bg-mainBackGroundColor flex flex-col p-5" >
+      <div className="flex items-center  border-b-2 border-gray w-11/12 m-auto">
+        <div className="flex items-center">
           <Title title="Token" />
           <div className="ml-2">{params.tokendetail}</div>
         </div>
       </div>
-      <div className="flex flex-wrap min-w-[280px]  mt-5">
+      <div className="flex flex-wrap min-w-[280px] mt-5" >
         <div className="w-full md:w-1/2 lg:w-1/3">
           <TokenItemTable>
             <OverviewCard

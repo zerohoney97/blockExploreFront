@@ -9,7 +9,7 @@ const MainTransactionsNumber: React.FC<ITransactionsNumberProps> = ({
 }) => {
   return (
     <>
-      <Link href={`/main/txs/${blockHeight}`} className='text-blue-400'>
+      <Link href={`/main/txs/${blockHeight}`} className=' text-text-mainTextColor'>
         {transactionsInThisBlock} txns
       </Link>
       <span className='ml-2 text-xs text-zinc-400'>
