@@ -1,6 +1,6 @@
 "use client";
 import SearchBar from "@app/_components/searchBar";
-import React from "react";
+import React, { useEffect } from "react";
 import Title from "@app/_components/itemTitle";
 import ItemTableWrap from "@app/_components/itemTable";
 import CollectionTableTitle from "./_contents/TableTitle";
@@ -13,7 +13,8 @@ const Page = () => {
   const tempDataArr: Iitem[] = Array.from({ length: 100 }, (ele, index) => {
     return {
       number: index.toString(),
-      collection: "https://upload.wikimedia.org/wikipedia/ko/e/eb/%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0_%EB%A0%88%EB%93%9C%C2%B7%EA%B7%B8%EB%A6%B0%EC%9D%98_%ED%99%8D%EB%B3%B4_%EC%9E%91%ED%92%88%EC%97%90_%EB%AC%98%EC%82%AC_%EB%90%9C_%ED%94%BC%EC%B9%B4%EC%B8%84.png",
+      collection:
+        "https://upload.wikimedia.org/wikipedia/ko/e/eb/%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0_%EB%A0%88%EB%93%9C%C2%B7%EA%B7%B8%EB%A6%B0%EC%9D%98_%ED%99%8D%EB%B3%B4_%EC%9E%91%ED%92%88%EC%97%90_%EB%AC%98%EC%82%AC_%EB%90%9C_%ED%94%BC%EC%B9%B4%EC%B8%84.png",
       type: "ERC721",
       name: "ContractAddress",
       volume: "203",
@@ -26,8 +27,26 @@ const Page = () => {
       totalAssets: "0",
     };
   });
+
   const { maxPage, page, pageHandler, pageTxList } =
     usePagination<Iitem>(tempDataArr);
+  async function getData() {
+    const res = await fetch("https://api.bouncexplorer.site/block");
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  useEffect(() => {
+    getData().then((data) => {
+      console.log(data);
+    });
+  }, []);
 
   return (
     <div className="bg-mainBackGroundColor min-h-screen ">
