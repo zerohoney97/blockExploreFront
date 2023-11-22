@@ -119,14 +119,11 @@ const MainPage = () => {
 
   return (
     <>
-    <div className="max-w-[1400px] p-8">
-          <SearchBarWrap />
-          
-          <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
+      <SearchBarWrap />
+      
+      <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
 
-          <LatestResponsiveWrap blocksData={blocksData} transactionsData={transactionsData} />
-    </div>
-    
+      <LatestResponsiveWrap blocksData={blocksData} transactionsData={transactionsData} />
     </>
   );
 };
