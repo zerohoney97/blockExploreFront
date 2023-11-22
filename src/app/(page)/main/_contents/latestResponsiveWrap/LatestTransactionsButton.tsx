@@ -9,7 +9,7 @@ const MainLatestTransactionsButton:React.FC<ILatestTransactionsButtonProps> = ({
         router.push(`/main/transactions`);
     }
   return (
-    <button className='bg-stone-100 text-stone-500 w-full h-[50px] font-bold text-xs' onClick={routeHandler}>VIEW ALL {buttonName} →</button>
+    <button className='bg-[#eef3f2] text-stone-500 w-full h-[50px] font-bold text-xs' onClick={routeHandler}>VIEW ALL {buttonName} →</button>
   )
 }
 

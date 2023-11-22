@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}  suppressHydrationWarning={true}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         {/* <Header /> */}
         {children}
         <div className="relative" id="portal"></div>

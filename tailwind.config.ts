@@ -81,6 +81,9 @@ const config: Config = {
           inventoryKeyColor: "#6c757d",
           txGasInfoColor: "#212529",
         },
+      text :{
+          mainTextColor:"rgb(163,204,163)"
+        }
       },
       borderColor: {
         txDetail: {

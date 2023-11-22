@@ -6,7 +6,7 @@ const MainMiner:React.FC<IMinerProps> = ({feeRecipient}) => {
   return (
     <p>
         Fee Recipient
-        <Link href={`/main/address/${feeRecipient}`} className='ml-2 text-blue-400'>{feeRecipient}</Link>
+        <Link href={`/main/address/${feeRecipient}`} className='ml-2 text-text-mainTextColor'>{feeRecipient}</Link>
     </p>
   )
 }

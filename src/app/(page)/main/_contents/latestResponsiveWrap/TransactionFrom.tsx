@@ -13,7 +13,7 @@ const MainTransactionFrom: React.FC<ITransactionFrom> = ({ fromAddress }) => {
       From
       <Link
         href={`/main/address/${fromAddress}`}
-        className='ml-2 text-blue-400'>
+        className='ml-2 text-text-mainTextColor'>
         {truncateTransaction}
       </Link>
     </p>

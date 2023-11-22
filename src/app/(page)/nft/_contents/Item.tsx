@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Iitem } from "../interface";
 import Link from "next/link";
+import Image from "next/image";
 
 const CollectionItem: React.FC<Iitem> = ({
   number,
@@ -16,12 +17,12 @@ const CollectionItem: React.FC<Iitem> = ({
   volume,
   type,
 }) => {
+
   return (
     <ul className="flex w-[1250px] h-16 border-b border-gray text-sm">
       <li className="flex justify-center items-center   w-[3%]">{number}</li>
       <li className="flex justify-center items-center   w-[5%]">
-        {" "}
-        {collection}
+        <img width={25} height={25} src={collection} alt="피카츄"/>
       </li>
       {/* 바로 밑에 li 태그 세로로 중앙 정렬 */}
       <Link

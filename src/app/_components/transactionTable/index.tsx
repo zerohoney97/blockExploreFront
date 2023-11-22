@@ -12,7 +12,6 @@ import Pagination from "../pagination";
 const TxListWrap: React.FC<ITxListProps> = ({
   txList,
   lastThName,
-  maxHeight = "900px",
   pageStack = 25,
 }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
@@ -40,14 +39,11 @@ const TxListWrap: React.FC<ITxListProps> = ({
   const toggleHandler = () => {
     setIsToggled(!isToggled);
   };
-  useEffect(() => {
-    console.log(maxHeight);
-  }, [maxHeight]);
   return (
     <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[${maxHeight}]`}
+      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[3000px]`}
     >
-      <div className={`overflow-x-auto  h-auto  max-h-[${maxHeight}]`}>
+      <div className={`overflow-x-auto  h-auto  max-h-[3000px]`}>
         <table className="w-full m-auto">
           <thead className="">
             <tr className="h-20 border-b border-gray flex ">
