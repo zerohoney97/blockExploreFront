@@ -37,7 +37,7 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
 
   return (
     <div className="bg-white">
-      <div className="max-w-[1400px] m-auto min-h-[60px] p-8 h-fit relative">
+      <div className="max-w-[1400px] m-auto min-h-[60px] px-8 py-2 h-fit relative">
         <div className="min-h-[60px] h-full flex justify-between items-center relative z-10  m-auto  ">
           <Link href={"http://localhost:3000/"}>
             <div className="w-52 h-10 flex justify-around items-center">

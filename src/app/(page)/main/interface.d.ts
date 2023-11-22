@@ -4,12 +4,11 @@ export interface IBlockInfoProps {
 }
 
 interface IBlocksItem {
-  blockHeight: number;
-  blockTime: number;
+  blockHeight: string;
+  blockTime: string;
   feeRecipient: string;
-  transactionsInThisBlock: number;
-  transactionsTime: number;
-  blockReward: number;
+  transactionsInThisBlock: string;
+  transactionsTime: string;
 }
 interface ITransactionsItem {
   transactionHash: string;
@@ -25,9 +24,9 @@ interface ITransactionsItemProps {
   transactionsData: ITransactionsItem;
 }
 
-export interface MainLatestResponsiveWrapProps{
-  blocksData : IBlocksItem[],
-  transactionsData : ITransactionsItem[]
+export interface MainLatestResponsiveWrapProps {
+  blocksData: IBlocksItem[];
+  transactionsData: ITransactionsItem[];
 }
 
 export interface IBlocksListProps {

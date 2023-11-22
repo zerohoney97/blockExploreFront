@@ -4,69 +4,71 @@ import EthereumOverview from "./(page)/main/_contents/ethereumOverview/EthereumO
 import LatestResponsiveWrap from "./(page)/main/_contents/latestResponsiveWrap/LatestResponsiveWrap";
 import Header from "./_layout/header";
 import Footer from "./_layout/footer";
+import { getBlock } from "./_api/main/getBlock";
 
-export default function Main() {
+export default async function Main() {
+  const blockData = await getBlock();
+
   const overviewTransactionsData = {
-    totalTransactionsCounter : 2155.70,
-    transactionsPerSecond : 12.7,
-    baseFee : 42,
-    priorityFee : 1.81,
+    totalTransactionsCounter: 2155.7,
+    transactionsPerSecond: 12.7,
+    baseFee: 42,
+    priorityFee: 1.81,
   };
   const overviewLastFinalizedBlockData = {
-    lastFinalizedBlock : 18562780,
-    lastSafeBlock : 18562812
+    lastFinalizedBlock: 18562780,
+    lastSafeBlock: 18562812,
   };
-  const blocksData = [
-    {
-      blockHeight: 1,
-      blockTime: 3,
-      feeRecipient: "rsync-builder",
-      transactionsInThisBlock: 147,
-      transactionsTime: 12,
-      blockReward: 0.04742,
-    },
-    {
-      blockHeight: 2,
-      blockTime: 6,
-      feeRecipient: "lucid",
-      transactionsInThisBlock: 284,
-      transactionsTime: 24,
-      blockReward: 0.642,
-    },
-    {
-      blockHeight: 3,
-      blockTime: 9,
-      feeRecipient: "demian",
-      transactionsInThisBlock: 321,
-      transactionsTime: 36,
-      blockReward: 0.856,
-    },
-    {
-      blockHeight: 4,
-      blockTime: 3,
-      feeRecipient: "rsync-builder",
-      transactionsInThisBlock: 147,
-      transactionsTime: 12,
-      blockReward: 0.04742,
-    },
-    {
-      blockHeight: 5,
-      blockTime: 6,
-      feeRecipient: "lucid",
-      transactionsInThisBlock: 284,
-      transactionsTime: 24,
-      blockReward: 0.642,
-    },
-    {
-      blockHeight: 6,
-      blockTime: 9,
-      feeRecipient: "demian",
-      transactionsInThisBlock: 321,
-      transactionsTime: 36,
-      blockReward: 0.856,
-    },
-
-  ];
+  // const blocksData = [
+  //   {
+  //     blockHeight: 1,
+  //     blockTime: 3,
+  //     feeRecipient: "rsync-builder",
+  //     transactionsInThisBlock: 147,
+  //     transactionsTime: 12,
+  //     blockReward: 0.04742,
+  //   },
+  //   {
+  //     blockHeight: 2,
+  //     blockTime: 6,
+  //     feeRecipient: "lucid",
+  //     transactionsInThisBlock: 284,
+  //     transactionsTime: 24,
+  //     blockReward: 0.642,
+  //   },
+  //   {
+  //     blockHeight: 3,
+  //     blockTime: 9,
+  //     feeRecipient: "demian",
+  //     transactionsInThisBlock: 321,
+  //     transactionsTime: 36,
+  //     blockReward: 0.856,
+  //   },
+  //   {
+  //     blockHeight: 4,
+  //     blockTime: 3,
+  //     feeRecipient: "rsync-builder",
+  //     transactionsInThisBlock: 147,
+  //     transactionsTime: 12,
+  //     blockReward: 0.04742,
+  //   },
+  //   {
+  //     blockHeight: 5,
+  //     blockTime: 6,
+  //     feeRecipient: "lucid",
+  //     transactionsInThisBlock: 284,
+  //     transactionsTime: 24,
+  //     blockReward: 0.642,
+  //   },
+  //   {
+  //     blockHeight: 6,
+  //     blockTime: 9,
+  //     feeRecipient: "demian",
+  //     transactionsInThisBlock: 321,
+  //     transactionsTime: 36,
+  //     blockReward: 0.856,
+  //   },
+  // ];
   const transactionsData = [
     {
       transactionHash:
@@ -122,8 +124,14 @@ export default function Main() {
       <Header />
       <div className="max-w-[1400px] m-auto sm:px-0 md:px-0 pt-0 p-8">
         <MainSearchBarWrap />
-        <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
-        <LatestResponsiveWrap blocksData={blocksData} transactionsData={transactionsData} />
+        <EthereumOverview
+          overviewTransactionsData={overviewTransactionsData}
+          overviewLastFinalizedBlockData={overviewLastFinalizedBlockData}
+        />
+        <LatestResponsiveWrap
+          blocksData={blockData}
+          transactionsData={transactionsData}
+        />
       </div>
       <Footer />
     </>

@@ -12,7 +12,6 @@ const MainLatestBlocksItem: React.FC<IBlocksItemProps> = ({ blocksItem }) => {
     feeRecipient,
     transactionsInThisBlock,
     transactionsTime,
-    blockReward,
   } = blocksItem;
   return (
     <li className="bg-white w-11/12 m-auto border-gray text-sm border-b-[1px] last:border-b-0 py-[15px] md:flex lg:flex">
