@@ -7,7 +7,7 @@ import PageTxnList from "./PageTxnList";
 
 const NftAList: React.FC<INftAListOA> = ({ pageTxList }) => {
   return (
-    <div className='overflow-x-scroll p-5 lg:flex'>
+    <div className='overflow-x-scroll p-5 lg: lg:flex'>
       <table>
         <thead className='border-gray border-b-[1px]'>
           <tr className='text-left'>

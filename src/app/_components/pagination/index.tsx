@@ -25,7 +25,7 @@ const Pagination: React.FC<IPageNationProps> = ({
         } `}
         onClick={() => {
           if (page !== 1) {
-            pageHandler(1);
+            pageHandler(page - 1);
           }
         }}
       >
@@ -52,7 +52,7 @@ const Pagination: React.FC<IPageNationProps> = ({
         }`}
         onClick={() => {
           if (page !== maxPage) {
-            pageHandler(page + 1);
+            pageHandler(maxPage);
           }
         }}
       >

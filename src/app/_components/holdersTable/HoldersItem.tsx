@@ -3,23 +3,16 @@ import { HoldersItemProps } from "./interface";
 
 const HoldersItem: React.FC<HoldersItemProps> = ({ HoldersItem }) => {
   return (
-    <tr className="h-14 border-b border-gray text-sm">
-    <td className="w-[100px]  flex items-center justify-center p-2 relative">
+    <tr className='h-14 border-b border-gray text-sm flex items-center'>
+      <td className='w-[100px]'>
         {HoldersItem.rank}
       </td>
-      <td
-         className="min-w-[350px]" style={{ lineHeight: "2.3rem" }}>
+      <td className='min-w-[350px]'>
         {HoldersItem.address}
       </td>
-      <td className="min-w-[300px] items-center">
-        {HoldersItem.quantity}
-      </td>
-      <td className="min-w-[200px] items-center">
-        {HoldersItem.percentage}
-      </td>
-      <td className="min-w-[200px] items-center">
-        {HoldersItem.value}
-      </td>
+      <td className='min-w-[300px]'>{HoldersItem.quantity}</td>
+      <td className='min-w-[200px]'>{HoldersItem.percentage}</td>
+      <td className='min-w-[200px]'>{HoldersItem.value}</td>
     </tr>
   );
 };
