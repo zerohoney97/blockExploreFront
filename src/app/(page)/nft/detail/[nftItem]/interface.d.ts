@@ -32,3 +32,4 @@ interface INftAListProps {
 interface INftAListOA {
   pageTxList:INftAListProps[]
 }
+
