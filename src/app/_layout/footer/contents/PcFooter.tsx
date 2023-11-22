@@ -3,7 +3,7 @@ import React from "react";
 const PcFooter = () => {
   return (
     <div className="bg-white">
-      <div className="max-w-[1400px] m-auto h-80 bg-gray-50 p-8 ">
+      <div className="max-w-[1400px] m-auto h-80 bg-gray-50 p-8">
         <div className=" h-20 flex justify-end border-2 border-white border-b-gray">
           <img
             src="https://static.thenounproject.com/png/1590838-200.png"
