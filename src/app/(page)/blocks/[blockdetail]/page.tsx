@@ -16,10 +16,10 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
 
   return (
     <div className="bg-mainBackGroundColor flex flex-col p-5" >
-      <div className="flex items-center  border-b-2 border-gray w-11/12 m-auto">
+      <div className="flex items-center border-b-2 border-gray w-11/12 m-auto ">
         <div className="flex items-center">
           <Title title="Block" />
-          <span className="ml-2 text-black/40 ">#{params.blockdetail}</span>
+          <span className="ml-2 text-black/50 text-sm ">#{params.blockdetail}</span>
         </div>
       </div>
       <div>

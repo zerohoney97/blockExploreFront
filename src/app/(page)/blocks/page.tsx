@@ -13,7 +13,7 @@ const blocksData = [
     block: "18545465",
     age: "4 secs ago",
     Txn: "500",
-    feeRecipient: "Recipient A",
+    feeRecipient: "beaverbuild",
     gasUsed: "30000",
     gasUsedPercent: 50,
     gasLimit: "50000",
@@ -26,7 +26,7 @@ const blocksData = [
     block: "18545464",
     age: "3 secs ago",
     Txn: "600",
-    feeRecipient: "Recipient B",
+    feeRecipient: "beaverbuild",
     gasUsed: "35000",
     gasLimit: "60000",
     baseFee: "25",
@@ -37,7 +37,7 @@ const blocksData = [
     block: "18545463",
     age: "4 secs ago",
     Txn: "500",
-    feeRecipient: "Recipient A",
+    feeRecipient: "beaverbuild",
     gasUsed: "30000",
     gasUsedPercent: 50,
     gasLimit: "50000",
@@ -50,7 +50,7 @@ const blocksData = [
     block: "18545462",
     age: "3 secs ago",
     Txn: "600",
-    feeRecipient: "Recipient B",
+    feeRecipient: "beaverbuild",
     gasUsed: "35000",
     gasLimit: "60000",
     baseFee: "25",
@@ -61,73 +61,79 @@ const blocksData = [
     block: "18545461",
     age: "4 secs ago",
     Txn: "500",
-    feeRecipient: "Recipient A",
+    feeRecipient: "beaverbuild",
     gasUsed: "30000",
     gasUsedPercent: 50,
     gasLimit: "50000",
     baseFee: "20",
     reward: "100",
     burntFees: "50",
-    burntFeesPercent: 90,
+    burntFeesPercent:"90",
   },
   {
     block: "18545460",
     age: "3 secs ago",
     Txn: "600",
-    feeRecipient: "Recipient B",
+    feeRecipient: "beaverbuild",
     gasUsed: "35000",
     gasLimit: "60000",
     baseFee: "25",
     reward: "110",
     burntFees: "60",
+    burntFeesPercent:"90",
+
   },
   {
     block: "18545459",
     age: "4 secs ago",
     Txn: "500",
-    feeRecipient: "Recipient A",
+    feeRecipient: "beaverbuild",
     gasUsed: "30000",
     gasUsedPercent: 50,
     gasLimit: "50000",
     baseFee: "20",
     reward: "100",
     burntFees: "50",
-    burntFeesPercent: 90,
+    burntFeesPercent:"90",
+
   },
   {
     block: "18545458",
     age: "3 secs ago",
     Txn: "600",
-    feeRecipient: "Recipient B",
+    feeRecipient: "beaverbuild",
     gasUsed: "35000",
     gasLimit: "60000",
     baseFee: "25",
     reward: "110",
     burntFees: "60",
+    burntFeesPercent:"90",
+
   },
   {
     block: "18545457",
     age: "4 secs ago",
     Txn: "500",
-    feeRecipient: "Recipient A",
+    feeRecipient: "beaverbuild",
     gasUsed: "30000",
     gasUsedPercent: 50,
     gasLimit: "50000",
     baseFee: "20",
     reward: "100",
     burntFees: "50",
-    burntFeesPercent: 90,
+    burntFeesPercent:"90",
   },
   {
     block: "18545456",
     age: "3 secs ago",
     Txn: "600",
-    feeRecipient: "Recipient B",
+    feeRecipient: "beaverbuild",
     gasUsed: "35000",
     gasLimit: "60000",
     baseFee: "25",
     reward: "110",
     burntFees: "60",
+    burntFeesPercent:"90"
   },
 ];
 
@@ -135,10 +141,10 @@ const Page = () => {
   const pagination = usePagination(blocksData);
   return (
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
-      <div className="w-full">
+      <div className="w-full ">
         <Title title="Blocks" />
-        <ItemTable>
-          <div className="">
+        <div className="mt-10">
+          <ItemTable>
             <span className="text-sm">Total of blocks</span>
             <table>
               <BlockHeader />
@@ -151,8 +157,8 @@ const Page = () => {
                   )}
               </tbody>
             </table>
-          </div>
-        </ItemTable>
+          </ItemTable>
+        </div>
         <Pagination
           maxPage={pagination.maxPage}
           page={pagination.page}

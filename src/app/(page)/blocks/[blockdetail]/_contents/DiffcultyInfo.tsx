@@ -11,7 +11,7 @@ const DiffcultyInfo:React.FC<IBlocksDifficultyProps> = ({feeRecipient,reward,tot
       content={
         <>
           <Link
-            className="text-blue-500"
+            className="text-text-mainTextColor"
             href="http://localhost:3000/address/"
           >
            Fee Recipient {feeRecipient}
