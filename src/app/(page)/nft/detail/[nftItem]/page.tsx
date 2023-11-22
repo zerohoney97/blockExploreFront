@@ -1,11 +1,10 @@
-"use client"
-import { useParams } from 'next/navigation'
 import React from 'react'
 import NftItemTitle from './_contents/title/ItemTitle'
 import NftItemImage from './_contents/image/ItemImage'
 import NftItemPrice from './_contents/price/ItemPrice'
 import NftActivity from './_contents/activity'
 import NftDetails from './_contents/details'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 const Page = () => {
   // const param = useParams();

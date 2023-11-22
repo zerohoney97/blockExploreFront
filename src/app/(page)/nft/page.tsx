@@ -8,6 +8,7 @@ import { Iitem } from "./interface";
 import CollectionItemWrap from "./_contents/ItemWrap";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
+
 const Page = () => {
   const tempDataArr: Iitem[] = Array.from({ length: 100 }, (ele, index) => {
     return {

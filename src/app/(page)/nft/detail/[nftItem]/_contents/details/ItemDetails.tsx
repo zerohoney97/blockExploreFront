@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import NftDetailsTitle from "./DetailsTitle";
 import NftDetailsList from "./DetailsList";
