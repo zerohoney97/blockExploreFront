@@ -8,6 +8,8 @@ import AdditionalInfo from "./AdditionalInfo";
 import DexList from "./DexListContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 
 const DexListWrap: React.FC<DexListProps> = ({ dexList }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
@@ -36,12 +38,14 @@ const DexListWrap: React.FC<DexListProps> = ({ dexList }) => {
   };
 
   return (
-    <div className="mt-5 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px] py-2 px-2">
+    <div className="mt-5 w-11/12 m-auto rounded-lg shadow-md h-auto bg-white max-h-[600px]">
       <div className="overflow-x-auto h-auto max-h-[500px]">
         <table className="w-full">
           <thead>
             <tr className="h-20 border-b border-gray flex ">
-              <th className="min-w-[60px] flex items-center justify-center text-sm font-medium">?</th>
+              <th className="min-w-[60px] flex items-center justify-center text-sm font-medium">
+                <FontAwesomeIcon icon={faCircleQuestion} />
+              </th>
               <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
                 Txn Hash
               </th>

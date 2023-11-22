@@ -4,7 +4,7 @@ import { HoldersItemProps } from "./interface";
 const HoldersItem: React.FC<HoldersItemProps> = ({ HoldersItem }) => {
   return (
     <tr className='h-14 border-b border-gray text-sm flex items-center'>
-      <td className='w-[100px]'>
+      <td className='w-[100px] pl-[20px]'>
         {HoldersItem.rank}
       </td>
       <td className='min-w-[350px]'>
