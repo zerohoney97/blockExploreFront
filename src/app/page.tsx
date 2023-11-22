@@ -120,9 +120,11 @@ export default function Main() {
   return (
     <>
       <Header />
-      <MainSearchBarWrap />
-      <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
-      <LatestResponsiveWrap blocksData={blocksData} transactionsData={transactionsData} />
+      <div className="max-w-[1400px] m-auto sm:px-0 md:px-0 pt-0 p-8">
+        <MainSearchBarWrap />
+        <EthereumOverview overviewTransactionsData={overviewTransactionsData} overviewLastFinalizedBlockData={overviewLastFinalizedBlockData} />
+        <LatestResponsiveWrap blocksData={blocksData} transactionsData={transactionsData} />
+      </div>
       <Footer />
     </>
   );
