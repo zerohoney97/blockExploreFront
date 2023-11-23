@@ -3,8 +3,8 @@ import { DexItemProps } from './interface';
 
 const DexItem: React.FC<DexItemProps> = ({ DexItem, toggleHandler }) => {
     return (
-        <tr className="h-14 border-b border-gray text-sm">
-          <td className="min-w-[60px] flex items-center justify-center p-2 relative">
+        <tr className="h-14 border-b border-gray text-sm flex items-center">
+          <td className="min-w-[60px] flex justify-center">
             <div className="relative">
               <img
                 src="https://i.pinimg.com/originals/ce/9c/4e/ce9c4e4f06e724a10b3766845f93a051.png"

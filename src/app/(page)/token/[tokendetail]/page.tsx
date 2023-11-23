@@ -54,7 +54,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
           </TokenItemTable>
         </div>
       </div>
-      <div className="w-11/12">
+      <div className="w-11/12 m-auto">
         <TokenTapInfo />
       </div>
     </>

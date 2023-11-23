@@ -9,16 +9,16 @@ const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
     usePagination<IholdersList>(holdersList);
 
   return (
-    <div className="mt-5 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px] py-2 px-2 max-w-[1250px]">
+    <div className="mt-5 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px] max-w-[1250px]">
       <div className="overflow-x-auto h-auto ">
         <table className="w-full">
           <thead>
-            <tr className="h-20 border-b border-gray flex">
-              <th className="flex w-[100px] items-center font-medium">Rank</th>
-              <th className="flex min-w-[350px] items-center font-medium">Address</th>
-              <th className="flex min-w-[300px] items-center font-medium">Quantity</th>
-              <th className="flex min-w-[200px] items-center font-medium">Percentage</th>
-              <th className="flex min-w-[150px] items-center font-medium">Value</th>
+            <tr className="h-[50px] border-b border-gray flex text-sm">
+              <th className="flex w-[100px] items-center  pl-[20px]">Rank</th>
+              <th className="flex min-w-[350px] items-center">Address</th>
+              <th className="flex min-w-[300px] items-center">Quantity</th>
+              <th className="flex min-w-[200px] items-center">Percentage</th>
+              <th className="flex min-w-[150px] items-center">Value</th>
             </tr>
           </thead>
           <tbody className="align-middle whitespace-no-wrap">
