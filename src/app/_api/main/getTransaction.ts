@@ -22,13 +22,14 @@ const fromWeiToETH = (wei: string) => {
 };
 
 export const getTransaction = async () => {
+  const res = await fetch("https://api.bouncexplorer.site/tx");
   try {
-    console.log("들어옴?");
-    const res = await fetch("https://api.bouncexplorer.site/tx");
+    // const temp = await res.json();
 
     const now = new Date().getTime();
     const responseTransactionData: IResponseTransactionData[] =
       await res.json();
+      
     //   const data = {
     //     id: 1,
     //     accessList: null,
