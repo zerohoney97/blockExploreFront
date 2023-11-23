@@ -14,7 +14,7 @@ const MainLatestBlocksItem: React.FC<IBlocksItemProps> = ({ blocksItem }) => {
     transactionsTime,
   } = blocksItem;
   return (
-    <li className="bg-white w-11/12 m-auto border-gray text-sm border-b-[1px] last:border-b-0 py-[15px] md:flex lg:flex">
+    <li className="w-11/12 m-auto border-gray text-sm border-b-[1px] last:border-b-0 py-[15px] md:flex lg:flex">
       <BlockInfo blockHeight={blockHeight} blockTime={blockTime} />
       <div className="sm:inline md:ml-auto lg:ml-auto">
         <Miner feeRecipient={feeRecipient} />

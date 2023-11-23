@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import searchIcon from "../../../../../../public/search05.png";
+import searchIcon2 from "../../../../../../public/search06.png";
 
 const MainSearchBar = () => {
   const [value, setValue] = useState("");
+  
 
   return (
     <div className="bg-white flex h-[58px] leading-[58px] rounded-lg whitespace-nowrap m-auto sm:w-11/12 md:w-[500px] lg:w-[500px]">
@@ -16,7 +18,7 @@ const MainSearchBar = () => {
       />
       <Link href={`/main/search/${value}`}>
         <span className="p-2 flex">
-          <Image src={searchIcon} alt="Search Icon" width={40} height={40} />
+          <Image src={searchIcon2} alt="Search Icon" width={40} height={40} />
         </span>
       </Link>
     </div>

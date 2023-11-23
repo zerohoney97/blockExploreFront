@@ -8,6 +8,7 @@ import {
   IPcDropMenu,
 } from "../interface";
 import Link from "next/link";
+import DarkModeToggle from "@app/_components/darkToggle";
 
 const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const [openMenuName, setOpenMenuName] = useState<string>("");
@@ -49,37 +50,40 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
               <div className="text-xl">Bounce Code</div>
             </div>
           </Link>
-          <div className="w-3/6 h-full">
-            <ul className="flex justify-center items-center">
-              <li
-                className="cursor-pointer  flex flex-col justify-start items-start ml-5 mr-5 text-text-mainTextColor"
-                onClick={() => {
-                  router.push("/");
-                }}
-              >
-                Home{" "}
-              </li>
-              <PcDropDownMenu
-                label="Blockchain"
-                dropDownMenuArr={dropDownMenu["blockchain"]}
-                openMenuName={openMenuName}
-                openMenuNameHandler={openMenuNameHandler}
-              />
-              <PcDropDownMenu
-                label="Tokens"
-                dropDownMenuArr={dropDownMenu["token"]}
-                openMenuName={openMenuName}
-                openMenuNameHandler={openMenuNameHandler}
-              />
-              <PcDropDownMenu
-                label="NFTs"
-                dropDownMenuArr={dropDownMenu["NFT"]}
-                openMenuName={openMenuName}
-                openMenuNameHandler={openMenuNameHandler}
-              />
-            </ul>
+          <div className="flex items-center justify-around "> 
+            <div className="w-3/6 h-full">
+              <ul className="flex justify-center items-center">
+                <li
+                  className="cursor-pointer  flex flex-col justify-start items-start ml-5 mr-5 text-text-mainTextColor"
+                  onClick={() => {
+                    router.push("/");
+                  }}
+                >
+                  Home{" "}
+                </li>
+                <PcDropDownMenu
+                  label="Blockchain"
+                  dropDownMenuArr={dropDownMenu["blockchain"]}
+                  openMenuName={openMenuName}
+                  openMenuNameHandler={openMenuNameHandler}
+                />
+                <PcDropDownMenu
+                  label="Tokens"
+                  dropDownMenuArr={dropDownMenu["token"]}
+                  openMenuName={openMenuName}
+                  openMenuNameHandler={openMenuNameHandler}
+                />
+                <PcDropDownMenu
+                  label="NFTs"
+                  dropDownMenuArr={dropDownMenu["NFT"]}
+                  openMenuName={openMenuName}
+                  openMenuNameHandler={openMenuNameHandler}
+                />
+              </ul>
+            </div>
+          <DarkModeToggle />
           </div>
-        </div>
+          </div>
       </div>
     </div>
   );
