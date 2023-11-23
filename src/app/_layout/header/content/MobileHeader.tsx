@@ -5,6 +5,7 @@ import ham from "public/burger.png";
 import MobileDropDownMenu from "./MobileDropDownMenu";
 import { IDropMenuProps } from "../interface";
 import Link from "next/link";
+import DarkModeToggle from "@app/_components/darkToggle";
 
 const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const [isMenuOpen, setIsMeuOpen] = useState<boolean>(false);
@@ -21,7 +22,7 @@ const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
             <div>Bounce Code</div>
           </div>
         </Link>
-
+        <div className="flex"> 
         <div className=" top-16 w-14 h-full text-right ">
           <Image
             className="w-6"
@@ -34,6 +35,8 @@ const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
             }}
           />
         </div>
+        <DarkModeToggle/>
+       </div>
       </div>
       <MobileDropDownMenu router={router} isMenuOpen={isMenuOpen} />
     </div>

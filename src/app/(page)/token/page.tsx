@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Title from "@app/_components/itemTitle";
 import ItemTable from "./_contents/ItemTable";
 import TokenHeader from "@app/(page)/token/_contents/Header";
@@ -8,6 +8,7 @@ import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
 import searchIcon from "../../../../public/search03.png";
 import Image from "next/image";
+import DarkModeToggle from "@app/_components/darkToggle";
 
 const tokenData = [
   {
@@ -20,140 +21,49 @@ const tokenData = [
     volume: "2,500",
     holders: "1,000,000",
   },
-  {
-    number: "2",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Bitcoin",
-    unit: "(BTC)",
-    ethPrice: "0.0234",
-    change: "-0.8%",
-    volume: "300",
-    holders: "1,000,000",
-  },
-  {
-    number: "3",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Ripple",
-    unit: "(XRP)",
-    ethPrice: "0.00056",
-    change: "+0.2%",
-    volume: "12,000",
-    holders: "1,000,000",
-  },
-  {
-    number: "4",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Litecoin",
-    unit: "(LTC)",
-    ethPrice: "0.0123",
-    change: "-1.3%",
-    volume: "800",
-    holders: "1,000,000",
-  },
-  {
-    number: "5",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Cardano",
-    unit: "(ADA)",
-    ethPrice: "0.000034",
-    change: "+0.1%",
-    volume: "50,000",
-    holders: "1,000,000",
-  },
-  {
-    number: "6",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Stellar",
-    unit: "(XLM)",
-    ethPrice: "0.00012",
-    change: "+0.3%",
-    volume: "6,000",
-    holders: "1,000,000",
-  },
-  {
-    number: "7",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Chainlink",
-    unit: "(LINK)",
-    ethPrice: "0.0012",
-    change: "-0.6%",
-    volume: "3,000",
-    holders: "1,000,000",
-  },
-  {
-    number: "8",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Polkadot",
-    unit: "(DOT)",
-    ethPrice: "0.00098",
-    change: "+0.7%",
-    volume: "2,500",
-    holders: "1,000,000",
-  },
-  {
-    number: "9",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Binance Coin",
-    unit: "(BNB)",
-    ethPrice: "0.1234",
-    change: "-0.9%",
-    volume: "200",
-    holders: "1,000,000",
-  },
-  {
-    number: "10",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Dogecoin",
-    unit: "(DOGE)",
-    ethPrice: "0.00023",
-    change: "+0.4%",
-    volume: "15,000",
-    holders: "1,000,000",
-  },
 ];
 
-
 const Page = () => {
-  
   const pagination = usePagination(tokenData);
   return (
-    <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-gray-800 text-black dark:text-white">
-      <div className="w-full">
-      <button id="darkModeToggle" className="text-gray-600 dark:text-gray-400 bg-green-700/20">Dark Mode 토글</button>
-        <Title title="Token Tracker(ERC-20)" />
-        <ItemTable> 
-          <div className="overflow-x-scroll">
-          <div className="text-xs m-2 flex justify-between items-center">
-            A total of {""} Token Contracts found{" "}
-            <Image
-              className="flex cursor-pointer m-3"
-              src={searchIcon}
-              alt="searchIcon"
-              width={25}
+    <>
+      <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-black/20">
+        <div className="w-full dark:">
+          <Title title="Token Tracker(ERC-20)" />
+          <ItemTable>
+            <div className="overflow-x-scroll">
+              <div className="text-xs m-2 flex justify-between items-center">
+                A total of {""} Token Contracts found{" "}
+                <Image
+                  className="flex cursor-pointer m-3"
+                  src={searchIcon}
+                  alt="searchIcon"
+                  width={25}
+                />
+              </div>
+              <div className="min-w-[250px] max-w-[1250px] h-auto">
+                <table>
+                  <TokenHeader />
+                  <tbody className="items-center">
+                    {pagination.pageTxList &&
+                      (pagination.pageTxList as any).map(
+                        (data: any, index: number) => (
+                          <TokenContent key={index} data={data} />
+                        )
+                      )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <Pagination
+              maxPage={pagination.maxPage}
+              page={pagination.page}
+              pageHandler={pagination.pageHandler}
             />
-          </div>
-          <div className="min-w-[250px] max-w-[1250px] h-auto">
-            <table>
-              <TokenHeader />
-              <tbody className="items-center">
-                {pagination.pageTxList &&
-                  (pagination.pageTxList as any).map(
-                    (data: any, index: number) => (
-                      <TokenContent key={index} data={data} />
-                    )
-                  )}
-              </tbody>
-            </table>
-          </div>
-         </div>
-        <Pagination
-          maxPage={pagination.maxPage}
-          page={pagination.page}
-          pageHandler={pagination.pageHandler}
-        />
-        </ItemTable>
+          </ItemTable>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

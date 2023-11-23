@@ -1,3 +1,4 @@
+
 import React from "react";
 import MainSearchBarWrap from "./(page)/main/_contents/searchBarWrap/SearchBarWrap";
 import EthereumOverview from "./(page)/main/_contents/ethereumOverview/EthereumOverview";
@@ -7,6 +8,7 @@ import Footer from "./_layout/footer";
 import { getBlock } from "./_api/main/getBlock";
 import { getTransaction } from "./_api/main/getTransaction";
 import { ITransactionData } from "./_api/main/interface";
+import DarkModeToggle from "@app/_components/darkToggle";
 
 export default async function Main() {
   const blockData = await getBlock();
@@ -124,7 +126,7 @@ export default async function Main() {
   return (
     <>
       <Header />
-      <div className="max-w-[1400px] m-auto sm:px-0 md:px-0 pt-0 p-8">
+      <div className="max-w-[1400px] m-auto sm:px-0 md:px-0 pt-0 p-8 dark:bg-black/20">
         <MainSearchBarWrap />
         <EthereumOverview
           overviewTransactionsData={overviewTransactionsData}
