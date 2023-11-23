@@ -8,8 +8,11 @@ import {
   faCopy,
   faEye,
 } from "@fortawesome/free-regular-svg-icons";
+import Arrow from "public/arrow.png"
+import arrowIcon from "public/arrowIcon.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import Image from "next/image";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
@@ -69,9 +72,12 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
           </button>
         </div>
       </td>
-      <td>
-        <div className="lg:w-20 text-center">
-          <FontAwesomeIcon icon={faCircleRight} />
+      <td className="flex justify-center items-center">
+        <div className="lg:w-20 text-center ">
+          <Image
+          alt=""
+          width={30}
+          src={Arrow}/>
         </div>
       </td>
       <td className="min-w-[120px] lg:w-64">

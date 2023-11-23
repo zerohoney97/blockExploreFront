@@ -7,16 +7,16 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
   moreDetailToggleHandler,
 }) => {
   return (
-    <div className="w-full h-auto flex flex-col  pb-5 relative ">
+    <div className="w-full h-auto flex flex-col   pb-5 relative ">
       {/* 애니메이션 */}
       <div
         className={`${
           mordeDetailToggle
-            ? " relative sm:h-[400px] lg:h-[300px]"
+            ? "  sm:h-[400px] md:h-[380px] lg:h-[300px]"
             : "h-0 overflow-hidden "
-        } transition-all  z-0 `}
+        } relative overflow-hidden transition-all duration-500 z-0 `}
       >
-        <div className="w-full h-72 min-h-72 flex flex-col">
+        <div className="w-full h-72 min-h-72 flex relative z-0  flex-col">
           <div className="lg:flex lg:items-center">
             <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px] ">
               Gas Limit & Usage by Txn:
@@ -63,8 +63,8 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
       {/* 애니메이션 */}
       <div
         className={`${
-          mordeDetailToggle && "mt-5"
-        } w-full flex items-center relative  h-16  z-5 bg-white transition-all justify-between`}
+          mordeDetailToggle ? "mt-5":'bg-white'
+        } w-full flex items-center relative  h-16  z-5  transition-all  justify-between`}
       >
         <div className="text-sm font-medium lg:text-itemDetail-textLabelColor lg:w-[250px] ">
           More Detail

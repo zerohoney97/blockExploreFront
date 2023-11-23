@@ -98,6 +98,9 @@ const config: Config = {
         txDetail: {
           inputData: "#e9ecef",
         },
+        datkMode:{
+          'wrapBG':'#111'
+        }
       },
       minWidth: {
         itemTable: "300px",
@@ -108,9 +111,9 @@ const config: Config = {
         lg: { min: "990px" },
       },
 
-      //
     },
   },
   plugins: [],
+  darkMode: 'class',
 };
 export default config;

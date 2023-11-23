@@ -22,8 +22,8 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
       setSubMenuOpenName(key);
     }
   };
-  const menuCloseCSS = "h-0 overflow-hidden  relative transition-all   z-00 ";
-  const menuOpenCSS = "p-4 h-fit mt-2 relative transition-all  z-00 ";
+  const menuCloseCSS = "h-0 overflow-hidden  relative transition-all    z-00 ";
+  const menuOpenCSS = "p-4 h-fit mt-2 relative transition-all   z-00 ";
   const menuArr: Array<string> = ["Blockchain", "Tokens", "NFTs"];
   const subMenuArr: IsubMenu = {
     0: [

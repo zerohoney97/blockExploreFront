@@ -14,7 +14,7 @@ import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 const TxListWrap: React.FC<ITxListProps> = ({
   txList,
   lastThName,
-  pageStack = 25,
+  pageStack = 20,
 }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
