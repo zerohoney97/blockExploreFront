@@ -112,11 +112,14 @@ const tokenData = [
   },
 ];
 
+
 const Page = () => {
+  
   const pagination = usePagination(tokenData);
   return (
-    <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
+    <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-gray-800 text-black dark:text-white">
       <div className="w-full">
+      <button id="darkModeToggle" className="text-gray-600 dark:text-gray-400 bg-green-700/20">Dark Mode 토글</button>
         <Title title="Token Tracker(ERC-20)" />
         <ItemTable> 
           <div className="overflow-x-scroll">

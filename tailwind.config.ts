@@ -108,9 +108,9 @@ const config: Config = {
         lg: { min: "990px" },
       },
 
-      //
     },
   },
   plugins: [],
+  darkMode: 'class',
 };
 export default config;
