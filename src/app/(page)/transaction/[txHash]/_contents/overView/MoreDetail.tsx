@@ -8,16 +8,19 @@ const TxMoreDetail: React.FC<IMordeDetailToggleProps> = ({
 }) => {
   return (
     <>
-    <div
-      className={`${
-        mordeDetailToggle ? "sm:h-[520px] lg:h-[410px]" : "h-16 overflow-hidden"
-      } transition-all relative`}
-    >
-      <TxOnMoreDetail
-        mordeDetailToggle={mordeDetailToggle}
-        moreDetailToggleHandler={moreDetailToggleHandler}
-      />
-    </div></>
+      <div
+        className={`${
+          mordeDetailToggle
+            ? "sm:h-[480px] md:h-[450px] lg:h-[380px]"
+            : " overflow-hidden"
+        } h-16 transition-all duration-500 relative`}
+      >
+        <TxOnMoreDetail
+          mordeDetailToggle={mordeDetailToggle}
+          moreDetailToggleHandler={moreDetailToggleHandler}
+        />
+      </div>
+    </>
   );
 };
 
