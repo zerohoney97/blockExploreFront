@@ -42,9 +42,9 @@ const NftTxListWrap: React.FC<INftTxListProps> = ({
   }, [maxHeight]);
   return (
     <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[${maxHeight}]`}
+      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white `}
     >
-      <div className={`overflow-x-auto  h-auto  max-h-[${maxHeight}]`}>
+      <div className={`overflow-x-auto  h-auto`}>
         <table className="w-full m-auto">
           <thead>
             <tr className="h-8 border-b border-gray flex ">

@@ -52,7 +52,7 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
           <div className="w-3/6 h-full">
             <ul className="flex justify-center items-center">
               <li
-                className="cursor-pointer  flex flex-col justify-start items-start ml-5 mr-5"
+                className="cursor-pointer  flex flex-col justify-start items-start ml-5 mr-5 text-text-mainTextColor"
                 onClick={() => {
                   router.push("/main");
                 }}

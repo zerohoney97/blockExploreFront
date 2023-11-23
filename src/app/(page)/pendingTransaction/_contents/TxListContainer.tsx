@@ -10,7 +10,7 @@ const PendingTxList: React.FC<IPendingTransactionProps> = ({
   pendingTransactionData,
 }) => {
   return (
-    <div>
+    <div className="">
       {pendingTransactionData &&
         (pendingTransactionData as IPendingTransaction[]).map((ele) => (
           <TxItem

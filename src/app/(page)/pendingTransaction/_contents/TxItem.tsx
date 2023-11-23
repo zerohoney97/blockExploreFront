@@ -42,7 +42,7 @@ const PendingTxItem: React.FC<IPendingTransaction> = ({
   return (
     <tr className="h-14 border-b  border-gray text-sm  align-middle">
       <td
-        className=" text-blue-400 max-w-[240px] truncate p-2 "
+        className=" text-text-mainTextColor max-w-[240px] truncate p-2 "
         onClick={() => {
           txNavigation.push(`/transaction/${txHash}`);
         }}
@@ -58,7 +58,7 @@ const PendingTxItem: React.FC<IPendingTransaction> = ({
       <td className=" items-center min-w-[100px]">{gasPrice}</td>
       <td className="  min-w-[130px] lg:w-44">
         <div className="w-full flex ">
-          <div className="text-blue-400">
+          <div className="text-text-mainTextColor">
             <Link href={`/transaction/${from}`}>
               {" "}
               {addressEncodeHandler(from)}
@@ -76,7 +76,7 @@ const PendingTxItem: React.FC<IPendingTransaction> = ({
       </td>
       <td className=" min-w-[150px] lg:w-64">
         <div className="w-full flex ">
-          <div className="text-blue-400  sm:ml-2 md:ml-2">
+          <div className="text-text-mainTextColor  sm:ml-2 md:ml-2">
             <Link href={`/transaction/${to}`}> {addressEncodeHandler(to)}</Link>
           </div>
           <button onClick={() => AddressClick(to)} className="ml-3">

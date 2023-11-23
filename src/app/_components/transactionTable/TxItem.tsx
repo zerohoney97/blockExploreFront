@@ -41,7 +41,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       </td>
       {/* 2 */}
       <td
-        className="min-w-[200px] text-blue-400"
+        className="min-w-[200px] text-text-mainTextColor"
         onClick={() => {
           txNavigation.push(`/transaction/${TxItem.txHash}`);
         }}
@@ -59,7 +59,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       <td className="min-w-[80px] items-center ">{TxItem.age}</td>
       <td className="min-w-[120px] lg:w-44">
         <div className="w-full flex ">
-          <div className="text-blue-400">
+          <div className="text-text-mainTextColor">
             <Link href={`/transaction/${TxItem.from}`}>
               {addressEncodeHandler(TxItem.from)}
             </Link>
@@ -76,7 +76,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       </td>
       <td className="min-w-[120px] lg:w-64">
         <div className="w-full flex ">
-          <div className="text-blue-400 sm:ml-2 md:ml-2">
+          <div className="text-text-mainTextColor sm:ml-2 md:ml-2">
             <Link href={`/transaction/${TxItem.to}`}>
               {addressEncodeHandler(TxItem.to)}
             </Link>

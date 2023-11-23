@@ -8,6 +8,7 @@ import { Iitem } from "./interface";
 import CollectionItemWrap from "./_contents/ItemWrap";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
+import useHydration from "@app/_hooks/useHydration";
 
 const Page = () => {
   const tempDataArr: Iitem[] = Array.from({ length: 100 }, (ele, index) => {
@@ -37,10 +38,12 @@ const Page = () => {
       {/* <SearchBar />
       <NFTContainer /> */}
       <Title title="NFT List" />
+      <div className="mt-10">
       <ItemTableWrap>
         <CollectionItemWrap pageTxList={pageTxList} />
-      </ItemTableWrap>
       <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
+      </ItemTableWrap>
+      </div>
     </div>
   );
 };

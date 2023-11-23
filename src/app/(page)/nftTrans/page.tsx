@@ -20,8 +20,9 @@ const Page = () => {
   return (
     <div>
       <NftTransTitle title="NFT Transfers" />
-      {isRendered && <NftTxsListWrap nftTxList={tempDataArr} maxHeight="1200px" pageStack={25} />}
+      {isRendered && <NftTxsListWrap nftTxList={tempDataArr} maxHeight="1200px" pageStack={20} />}
     </div>
+    
   );
 };
 

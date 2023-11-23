@@ -145,6 +145,7 @@ const Page = () => {
         <Title title="Blocks" />
         <div className="mt-10">
           <ItemTable>
+            <div className="overflow-x-scroll">
             <span className="text-sm">Total of blocks</span>
             <table>
               <BlockHeader />
@@ -157,13 +158,14 @@ const Page = () => {
                   )}
               </tbody>
             </table>
-          </ItemTable>
-        </div>
+            </div>
         <Pagination
           maxPage={pagination.maxPage}
           page={pagination.page}
           pageHandler={pagination.pageHandler}
         />
+          </ItemTable>
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import Pagination from "@app/_components/pagination";
 
 const CollectionItemWrap: React.FC<IitemProps> = ({ pageTxList }) => {
   return (
-    <>
+    <div className="overflow-x-scroll">
       <CollectionTableTitle />
       {pageTxList &&
         (pageTxList as Iitem[]).map(
@@ -46,7 +46,7 @@ const CollectionItemWrap: React.FC<IitemProps> = ({ pageTxList }) => {
             />
           )
         )}
-    </>
+    </div>
   );
 };
 
