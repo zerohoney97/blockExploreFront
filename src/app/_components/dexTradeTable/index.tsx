@@ -42,32 +42,32 @@ const DexListWrap: React.FC<DexListProps> = ({ dexList }) => {
       <div className="overflow-x-auto h-auto max-h-[500px]">
         <table className="w-full">
           <thead>
-            <tr className="h-20 border-b border-gray flex ">
-              <th className="min-w-[60px] flex items-center justify-center text-sm font-medium">
+            <tr className="h-[50px] border-b border-gray flex text-sm">
+              <th className="min-w-[60px] flex items-center justify-center text-sm">
                 <FontAwesomeIcon icon={faCircleQuestion} />
               </th>
-              <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
+              <th className="min-w-[200px] flex justify-start items-center text-sm">
                 Txn Hash
               </th>
-              <th className="min-w-[200px] flex items-center text-sm font-medium">
+              <th className="min-w-[200px] flex items-center text-sm">
                 Age
               </th>
-              <th className="min-w-[100px] flex items-center text-sm font-medium">
+              <th className="min-w-[100px] flex items-center text-sm">
                 Action
               </th>
-              <th className="min-w-[200px] flex items-center text-sm font-medium">
+              <th className="min-w-[200px] flex items-center text-sm">
                 Token Amount (Out)
               </th>
-              <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
+              <th className="min-w-[200px] flex justify-start items-center text-sm">
                 Token Amount (In)
               </th>
-              <th className="min-w-[200px] flex justify-start items-center text-sm font-medium">
+              <th className="min-w-[200px] flex justify-start items-center text-sm">
                 Swapped Rate
               </th>
-              <th className="min-w-[150px] flex justify-start items-center text-sm font-medium">
+              <th className="min-w-[150px] flex justify-start items-center text-sm">
                 Txn Value ($)
               </th>
-              <th className="min-w-[50px] flex justify-start items-center text-sm font-medium">
+              <th className="min-w-[50px] flex justify-start items-center text-sm">
                 Dex
               </th>
             </tr>

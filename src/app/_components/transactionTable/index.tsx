@@ -48,30 +48,27 @@ const TxListWrap: React.FC<ITxListProps> = ({
       <div className={`overflow-x-scroll overflow-y-hidden h-auto max-h-[3000px]`}>
         <table className="w-full m-auto">
           <thead>
-            <tr className="h-[50px] border-b border-gray flex">
-              {/* 1 */}
-              <th className="font-bold min-w-[60px] flex items-center justify-center">
+            <tr className="h-[50px] border-b border-gray flex text-sm">
+              <th className="min-w-[60px] flex items-center justify-center">
                 <FontAwesomeIcon icon={faCircleQuestion}  />
               </th>
-              
-              {/* 2 */}
-              <th className="font-bold min-w-[200px] flex justify-start items-center">
+              <th className="min-w-[200px] flex justify-start items-center">
                 Txn Hash
               </th>
-              <th className="font-bold min-w-[120px] flex items-center ">
+              <th className="min-w-[120px] flex items-center ">
                 Method
               </th>
-              <th className="font-bold min-w-[100px] flex items-center  ">
+              <th className="min-w-[100px] flex items-center  ">
                 Block
               </th>
-              <th className="font-bold min-w-[80px] flex items-center ">
+              <th className="min-w-[80px] flex items-center ">
                 Age
               </th>
-              <th className="font-bold min-w-[120px] flex items-center  lg:w-44  ">
+              <th className="min-w-[120px] flex items-center  lg:w-44  ">
                 From
               </th>
               <th className="w-auto lg:w-20"></th>
-              <th className="font-bold min-w-[120px] flex items-center sm:ml-4 md:ml-4 lg:w-64 ">
+              <th className="min-w-[120px] flex items-center sm:ml-4 md:ml-4 lg:w-64 ">
                 To
               </th>
               <th className="min-w-[100px] flex justify-start items-center  ">

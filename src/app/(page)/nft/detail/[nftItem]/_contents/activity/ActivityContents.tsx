@@ -10,7 +10,7 @@ const NftActivityContents: React.FC<INftAListProps> = () => {
 
   // 페이지네이션
   const tempDataArr: INftAListProps[] = Array.from(
-    { length: 26 },
+    { length: 10 },
     (ele, index) => {
       return {
         txnHash:
@@ -28,7 +28,7 @@ const NftActivityContents: React.FC<INftAListProps> = () => {
 
   return (
     <>
-      <div className='px-5'>
+      <div>
         <ALTotalRecord totalCount={tempDataArr.length} />
         <AList pageTxList={pageTxList}  />
         <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />

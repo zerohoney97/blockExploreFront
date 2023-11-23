@@ -7,36 +7,25 @@ import PageTxnList from "./PageTxnList";
 
 const NftAList: React.FC<INftAListOA> = ({ pageTxList }) => {
   return (
-    <div className='overflow-x-scroll p-5 lg: lg:flex'>
-      <table>
+    <div className='overflow-x-scroll'>
+      <table className='w-full'>
         <thead className='border-gray border-b-[1px]'>
-          <tr className='text-left'>
-            <th>
-              <div className='mb-5'>
-                <button>
-                  <FontAwesomeIcon className='border-transparent p-[10px] border-[1px]' icon={faCircleQuestion} />
-                </button>
-              </div>
+          <tr className='h-[50px] text-left text-sm'>
+            <th className='text-center'>
+              <button>
+                <FontAwesomeIcon
+                  className='border-transparent p-[10px] border-[1px]'
+                  icon={faCircleQuestion}
+                />
+              </button>
             </th>
-            <th>
-              <div className='mb-5'>Txn Hash</div>
-            </th>
-            <th>
-              <div className='mb-5'>Age</div>
-            </th>
-            <th>
-              <div className='mb-5'>Action</div>
-            </th>
-            <th>
-              <div className='mb-5'>Price</div>
-            </th>
-            <th>
-              <div className='mb-5'>From</div>
-            </th>
+            <th>Txn Hash</th>
+            <th>Age</th>
+            <th>Action</th>
+            <th>Price</th>
+            <th>From</th>
             <th></th>
-            <th>
-              <div className='mb-5'>To</div>
-            </th>
+            <th>To</th>
           </tr>
         </thead>
         <tbody>

@@ -1,6 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { faEye, faCopy, faCircleRight } from "@fortawesome/free-regular-svg-icons";
+import {
+  faEye,
+  faCopy,
+  faCircleRight,
+} from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { INftAListOA } from "../../interface";
 
@@ -27,11 +31,9 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
   return (
     <>
       {pageTxList.map((item, index) => (
-        <tr
-          key={index}
-          className='border-gray border-b-[1px] last:border-b-[0px] text-sm '>
+        <tr key={index} className='border-gray border-b-[1px] text-sm '>
           <td>
-            <div className='w-[60px] my-5 flex'>
+            <div className='min-w-[60px] h-[50px] flex justify-center'>
               <button onClick={() => additionalClick(index)}>
                 <FontAwesomeIcon
                   className='border-gray rounded-lg p-[10px] border-[1px]'
@@ -42,25 +44,25 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
             </div>
           </td>
           <td>
-            <div className='w-[192px] overflow-hidden'>
+            <div className='min-w-[220px]'>
               <Link className='text-blue-400' href={"./1"}>
                 {truncate(item.txnHash)}
               </Link>
             </div>
           </td>
           <td>
-            <div className='w-[155px] overflow-hidden'>{item.age}</div>
+            <div className='min-w-[180px]'>{item.age}</div>
           </td>
           <td>
-            <div className='w-[86px] overflow-hidden text-stone-500'>
+            <div className='min-w-[100px] text-stone-500'>
               {item.action}
             </div>
           </td>
           <td>
-            <div className='w-[150px] overflow-hidden '>{item.price}</div>
+            <div className='min-w-[180px] '>{item.price}</div>
           </td>
           <td>
-            <div className='whitespace-nowrap mr-[10px] overflow-hidden'>
+            <div className='min-w-[220px] mr-[10px] '>
               <Link className='text-blue-400 mr-[10px]' href={"./1"}>
                 {truncate2(item.from)}
               </Link>
@@ -70,12 +72,12 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
             </div>
           </td>
           <td>
-            <div className='mr-[10px]'>
+            <div className='min-w-[50px] mr-[10px]'>
               <FontAwesomeIcon icon={faCircleRight} />
             </div>
           </td>
           <td>
-            <div className='whitespace-nowrap  overflow-hidden'>
+            <div className='min-w-[220px]'>
               <Link className='text-blue-400 mr-[10px]' href={"./1"}>
                 {truncate2(item.to)}
               </Link>
