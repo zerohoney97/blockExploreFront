@@ -24,7 +24,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
         title={`Token`}
         subtitle={<span className="text-sm">#{params.tokendetail}</span>}
       />
-      <div className="flex flex-wrap min-w-[280px] mt-5 w-11/12 m-auto">
+      <div className="dark:bg-datkMode-wrapBG flex flex-wrap min-w-[280px] mt-5 w-11/12 m-auto">
         <div className="w-full md:w-1/2 lg:w-1/3">
           <TokenItemTable>
             <OverviewCard

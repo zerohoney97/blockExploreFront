@@ -28,7 +28,7 @@ const Page = () => {
   return (
     <>
       <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-black/20">
-        <div className="w-full dark:">
+        <div className="w-full ">
           <Title title="Token Tracker(ERC-20)" />
           <ItemTable>
             <div className="overflow-x-scroll">
