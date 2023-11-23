@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ItemTableWrap from "@app/_components/itemTable";
+import ItemTableWrap from "../itemWrap";
 import TxOverView from "./OverView";
 import TxAction from "./Action";
 import TxTransfer from "./Transfer";

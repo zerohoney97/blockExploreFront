@@ -7,7 +7,7 @@ import NftTxsItem from "./Item";
 const NftTxContainer: React.FC<INftTxListWrapProps> = ({ pageTxList, toggleHandler }) => {
 
   return (
-      <div >
+      <div className="" >
         {pageTxList &&
           (pageTxList as INftTransList[]).map((ele) => (
             <NftTxsItem

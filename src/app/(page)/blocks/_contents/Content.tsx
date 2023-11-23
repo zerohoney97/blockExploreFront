@@ -5,7 +5,7 @@ import { IBlocksDataProps } from "../interface";
 const BlockContent: React.FC<{ data: IBlocksDataProps }> = ({ data }) => {
   const BlocksDetailPath = `/blocks/${encodeURIComponent(data.block)}`;
   const transactionPath = "/transaction";
-  const addressPath = "/address";
+  const addressPath = "nft/ContractAddress";
 
   return (
     <tr className="border-b border-gray text-sm">

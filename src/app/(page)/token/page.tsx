@@ -118,7 +118,8 @@ const Page = () => {
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
       <div className="w-full">
         <Title title="Token Tracker(ERC-20)" />
-        <ItemTable>
+        <ItemTable> 
+          <div className="overflow-x-scroll">
           <div className="text-xs m-2 flex justify-between items-center">
             A total of {""} Token Contracts found{" "}
             <Image
@@ -128,7 +129,7 @@ const Page = () => {
               width={25}
             />
           </div>
-          <div className="min-w-[250px] max-w-[1250px] overflow-x-scroll h-auto">
+          <div className="min-w-[250px] max-w-[1250px] h-auto">
             <table>
               <TokenHeader />
               <tbody className="items-center">
@@ -141,12 +142,13 @@ const Page = () => {
               </tbody>
             </table>
           </div>
-        </ItemTable>
+         </div>
         <Pagination
           maxPage={pagination.maxPage}
           page={pagination.page}
           pageHandler={pagination.pageHandler}
         />
+        </ItemTable>
       </div>
     </div>
   );

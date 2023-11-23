@@ -5,6 +5,7 @@ import Image from "next/image";
 import { IPendingTransaction } from "./interface";
 import { createPortal } from "react-dom";
 import TxList from "./TxListContainer";
+import Title from "@app/_components/itemTitle";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
 import useHydration from "@app/_hooks/useHydration";
@@ -40,11 +41,12 @@ const PendingTxListWrap = () => {
   };
   return (
     <>
+      <Title title="Pending Transactions" />
       {isRendered && (
         <div
-          className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[3000px]`}
+          className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white`}
         >
-          <div className={`overflow-x-auto  h-auto  max-h-[3000px]`}>
+          <div className={`h-auto overflow-x-scroll`}>
             <table className="w-full m-auto">
               <thead className="">
                 <tr className="h-20 border-b border-gray flex ">

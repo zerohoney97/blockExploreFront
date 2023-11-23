@@ -47,7 +47,7 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
     <div className={isMenuOpen ? menuOpenCSS : menuCloseCSS}>
       <ul className="w-full ">
         <li
-          className="text-blue-400 mt-2 "
+          className="text-text-mainTextColor mt-2 cursor-pointer "
           onClick={() => {
             router.push("/main");
           }}
@@ -77,11 +77,11 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
               </div>
               {subMenuOpenName === index.toString() && (
                 <div className=" h-fit">
-                  <div className="w-11/12 border-2 rounded-xl border-gray-100 h-fit m-auto p-5">
+                  <div className="w-full border-2 rounded-xl border-gray h-fit m-auto p-5">
                     <ul>
                       {subMenuArr[`${index}`].map((el, index) => {
                         return (
-                          <li key={index}>
+                          <li key={index} className=" hover:bg-black/10 cursor-pointer rounded p-1 ">
                             {" "}
                             <Link href={`/${el.href}`}> {el.name}</Link>
                           </li>
@@ -94,8 +94,6 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
             </li>
           );
         })}
-
-        <li className="text-blue-400 mt-2">NickName</li>
       </ul>
     </div>
   );
