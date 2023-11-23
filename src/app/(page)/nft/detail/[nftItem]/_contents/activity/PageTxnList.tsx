@@ -28,12 +28,16 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
         console.error(err);
       });
   };
+
+  const minWidth = (value:number) => {
+    return `min-w-[${value}px]`;
+  }
   return (
     <>
       {pageTxList.map((item, index) => (
         <tr key={index} className='border-gray border-b-[1px] text-sm '>
           <td>
-            <div className='min-w-[60px] h-[50px] flex justify-center'>
+            <div className={`${minWidth(60)} h-[50px] flex justify-center`}>
               <button onClick={() => additionalClick(index)}>
                 <FontAwesomeIcon
                   className='border-gray rounded-lg p-[10px] border-[1px]'
@@ -44,25 +48,25 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
             </div>
           </td>
           <td>
-            <div className='min-w-[220px]'>
+            <div className={`${minWidth(220)}`}>
               <Link className='text-blue-400' href={"./1"}>
                 {truncate(item.txnHash)}
               </Link>
             </div>
           </td>
           <td>
-            <div className='min-w-[180px]'>{item.age}</div>
+            <div className={`${minWidth(180)}`}>{item.age}</div>
           </td>
           <td>
-            <div className='min-w-[100px] text-stone-500'>
+            <div className={`${minWidth(100)} text-stone-500`}>
               {item.action}
             </div>
           </td>
           <td>
-            <div className='min-w-[180px] '>{item.price}</div>
+            <div className={`${minWidth(180)}`}>{item.price}</div>
           </td>
           <td>
-            <div className='min-w-[220px] mr-[10px] '>
+            <div className={`${minWidth(220)} mr-[10px] `}>
               <Link className='text-blue-400 mr-[10px]' href={"./1"}>
                 {truncate2(item.from)}
               </Link>
@@ -72,12 +76,12 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
             </div>
           </td>
           <td>
-            <div className='min-w-[50px] mr-[10px]'>
+            <div className={`${minWidth(50)} mr-[10px]`}>
               <FontAwesomeIcon icon={faCircleRight} />
             </div>
           </td>
           <td>
-            <div className='min-w-[220px]'>
+            <div className={`${minWidth(220)}`}>
               <Link className='text-blue-400 mr-[10px]' href={"./1"}>
                 {truncate2(item.to)}
               </Link>

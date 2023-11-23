@@ -7,17 +7,14 @@ const NftItemPrice = () => {
       <NftETHIndicator
         title='Min Price (24H)'
         ethValue={33.2}
-        ethValueDollar={64862.93}
       />
       <NftETHIndicator
         title='Last Sale (Item)'
         ethValue={33.49}
-        ethValueDollar={65429.50}
       />
       <NftETHIndicator
         title='Last Sale (Contract)'
         ethValue={33.2}
-        ethValueDollar={64862.93}
       />
     </ul>
   );

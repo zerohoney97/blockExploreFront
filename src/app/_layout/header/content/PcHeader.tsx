@@ -19,7 +19,7 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
     ],
     token: [
       { name: "Top Tokens", href: "token" },
-      { name: "Token Transfers", href: "token/trnasfer" },
+      { name: "Token Transfers", href: "token/transfer" },
     ],
     NFT: [
       { name: "Top NFTs", href: "nft" },

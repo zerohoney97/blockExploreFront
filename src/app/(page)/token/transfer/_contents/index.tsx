@@ -10,6 +10,8 @@ import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
 import { IAddInfo } from "@app/_components/transactionTable/interface";
 import useHydration from "@app/_hooks/useHydration";
+import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TokenTransferListWrap = () => {
   const isRendered = useHydration();
@@ -57,27 +59,27 @@ const TokenTransferListWrap = () => {
       <div className={`overflow-x-auto  h-auto`}>
         <table className="w-full m-auto">
           <thead className="">
-            <tr className="h-20 border-b border-gray flex ">
-              <th className="font-bold min-w-[60px] w-auto flex items-center justify-center lg:w-20  ">
-                ?
+            <tr className="h-20 border-b border-gray flex text-sm">
+              <th className="min-w-[60px] w-auto flex items-center justify-center lg:w-20  ">
+                <FontAwesomeIcon icon={faCircleQuestion} />
               </th>
-              <th className="font-bold min-w-[200px]  flex justify-start items-center ">
+              <th className="min-w-[200px]  flex justify-start items-center ">
                 Txn Hash
               </th>
-              <th className="font-bold min-w-[120px] flex items-center ">
+              <th className="min-w-[120px] flex items-center ">
                 Method
               </th>
-              <th className="font-bold min-w-[100px] flex items-center  ">
+              <th className="min-w-[100px] flex items-center  ">
                 Block
               </th>
-              <th className="font-bold min-w-[100px] flex items-center ">
+              <th className="min-w-[100px] flex items-center ">
                 Age
               </th>
-              <th className="font-bold min-w-[120px] flex items-center  lg:w-44  ">
+              <th className="min-w-[120px] flex items-center  lg:w-44  ">
                 From
               </th>
               <th className="w-auto lg:w-20"></th>
-              <th className="font-bold min-w-[200px] flex items-center   sm:ml-4 md:ml-4 lg:w-64 ">
+              <th className="min-w-[200px] flex items-center   sm:ml-4 md:ml-4 lg:w-64 ">
                 To
               </th>
               <th className="min-w-[100px] flex justify-start items-center  ">
