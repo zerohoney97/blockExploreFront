@@ -1,7 +1,6 @@
 export interface INftETHIndicatorProps {
   title: string;
   ethValue: number;
-  ethValueDollar: number;
 }
 
 // details

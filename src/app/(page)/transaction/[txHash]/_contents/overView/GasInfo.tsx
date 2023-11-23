@@ -1,3 +1,5 @@
+import { faEthereum } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const TxGasInfo = () => {
@@ -11,7 +13,8 @@ const TxGasInfo = () => {
             Value:
           </div>
           <div className="p-1 h-auto text-xs break-words  w-20 text-itemDetail-txGasInfoColor flex justify-around lg:ml-10 ">
-            <img src={etherIcon} alt="이더 아이콘" className="w-5 h-5 " />
+            {/* <img src={etherIcon} alt="이더 아이콘" className="w-5 h-5 " /> */}
+            <FontAwesomeIcon icon={faEthereum} />
             <div className="">0 ETH</div>
           </div>
         </div>

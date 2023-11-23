@@ -2,7 +2,7 @@ import React from "react";
 import copy from "public/copy.png";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopy } from "@fortawesome/free-regular-svg-icons";
+import { faClock, faCopy } from "@fortawesome/free-regular-svg-icons";
 const TxOverView = () => {
   const clock =
     "https://w7.pngwing.com/pngs/712/835/png-transparent-computer-icons-clock-icon-design-clock-time-rim-timer.png";
@@ -14,7 +14,7 @@ const TxOverView = () => {
           <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Transaction Hash:
           </div>
-          <div className="p-1 h-auto text-xs   w-80 sm:break-words lg:ml-8 md:break-words ">
+          <div className="p-1 h-auto text-xs w-80 sm:break-words lg:ml-8 md:break-words ">
             0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
             <FontAwesomeIcon
               icon={faCopy}
@@ -39,14 +39,15 @@ const TxOverView = () => {
           </div>
           <div className="flex flex-col ml-8">
             <div className="flex">
-              <img
+              <FontAwesomeIcon icon={faClock} />
+              {/* <img
                 className="m-1 max-h-[10px]"
                 src={clock}
                 alt="시계 아이콘"
                 width={15}
                 height={3}
-              />{" "}
-              <span className="text-xs">
+              />{" "} */}
+              <span className="ml-[5px] text-xs">
                 7 mins ago (Nov-15-2023 06:43:59 AM +UTC)
               </span>
             </div>

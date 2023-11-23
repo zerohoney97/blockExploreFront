@@ -31,18 +31,17 @@ const Page = () => {
 
   const { maxPage, page, pageHandler, pageTxList } =
     usePagination<Iitem>(tempDataArr);
- 
 
   return (
-    <div className="bg-mainBackGroundColor min-h-screen ">
+    <div className='bg-mainBackGroundColor min-h-screen '>
       {/* <SearchBar />
       <NFTContainer /> */}
-      <Title title="NFT List" />
-      <div className="mt-10">
-      <ItemTableWrap>
-        <CollectionItemWrap pageTxList={pageTxList} />
-      <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
-      </ItemTableWrap>
+      <Title title='NFT List' />
+      <div className='mt-10'>
+        <ItemTableWrap>
+          <CollectionItemWrap pageTxList={pageTxList} />
+          <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
+        </ItemTableWrap>
       </div>
     </div>
   );

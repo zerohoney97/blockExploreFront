@@ -6,7 +6,9 @@ const TxLogsMain = () => {
   return (
     <ItemTableWrap>
       <LogContentWrap />
-      <LogContentWrap /> <LogContentWrap /> <LogContentWrap />
+      <LogContentWrap />
+      <LogContentWrap />
+      <LogContentWrap />
     </ItemTableWrap>
   );
 };
