@@ -49,12 +49,12 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
                 alt="바운스코드 이미지"
                 width={50}
               />
-              <div className="text-xl dark:text-white">Bounce Code</div>
+              <div className="font-titleFont  text-xl dark:text-white">Bounce Explorer</div>
             </div>
           </Link>
           <div className="flex items-center justify-around "> 
             <div className="w-3/6 h-full dark:text-white">
-              <ul className="flex justify-center items-center">
+              <ul className="flex justify-center items-center font-headerFont">
                 <li
                   className="cursor-pointer  flex flex-col justify-start items-start ml-5 mr-5 text-text-mainTextColor"
                   onClick={() => {

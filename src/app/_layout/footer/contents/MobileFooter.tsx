@@ -10,7 +10,7 @@ const MobileFooter = () => {
             alt="바운스코드 이미지"
             className="ml-2 w-10 h-10 "
           />
-          <div className="text-lg font-bold">Bounce Code EtherScan</div>
+          <div className="text-lg font-bold">Bounce Explorer EtherScan</div>
         </div>
         <div className="w-10 ml-2 ">
           <img

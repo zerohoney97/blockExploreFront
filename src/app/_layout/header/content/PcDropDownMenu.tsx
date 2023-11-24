@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { IDropDownMenuData, IPcDropMenu } from "../interface";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 const PcDropDownMenu: React.FC<IPcDropMenu> = ({
   label,
   dropDownMenuArr,
@@ -20,12 +22,13 @@ const PcDropDownMenu: React.FC<IPcDropMenu> = ({
           }}
         >
           <span> {label} </span>
-          <Image
+          <FontAwesomeIcon
             width={10}
             height={10}
-            src={dropArray}
-            alt="array"
-            className={`ml-3 ${openMenuName === label || "scale-y-[-1]"}`}
+            icon={faCaretUp}
+            className={`ml-3 dark:text-white ${
+              openMenuName === label || "scale-y-[-1]"
+            }`}
           />
         </div>
         {openMenuName === label && (

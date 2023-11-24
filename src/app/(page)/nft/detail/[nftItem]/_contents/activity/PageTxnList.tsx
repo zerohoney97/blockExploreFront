@@ -31,7 +31,7 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
 
   const minWidth = (value:number) => {
     return `min-w-[${value}px]`;
-  }
+  } 
   return (
     <>
       {pageTxList.map((item, index) => (

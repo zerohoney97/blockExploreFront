@@ -17,7 +17,7 @@ const PcFooter = () => {
             alt="바운스코드 이미지"
             className="ml-2 w-10 h-10 "
           />
-          <div className="text-lg ml-10 font-bold">Bounce Code EtherScan</div>
+          <div className="text-lg ml-10 font-bold">Bounce Explorer EtherScan</div>
         </div>
         <div className="h-20">
           <ul className="ml-2 h-full text-xs flex flex-col justify-center">
