@@ -1,6 +1,4 @@
 import {
-  IBlocksItem,
-  IResponseBlockData,
   IResponseTransactionData,
   IMainTransactionData,
   IListTransactionData,

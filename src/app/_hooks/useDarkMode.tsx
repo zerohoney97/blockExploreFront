@@ -1,10 +1,14 @@
+"use client";
 import React, { useEffect, useState } from "react";
 
 const useDarkMode = () => {
-  const [isDark, setIsDark] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
+  const [isDark, setIsDark] = useState<boolean>();
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsDark(localStorage.getItem("theme") === "dark");
+    }
+  }, []);
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
