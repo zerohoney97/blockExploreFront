@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const MainMiner:React.FC<IMinerProps> = ({feeRecipient}) => {
   return (
-    <p>
+    <p className='dark:text-white'>
         Fee Recipient
         <Link href={`/main/address/${feeRecipient}`} className='ml-2 text-text-mainTextColor'>{feeRecipient}</Link>
     </p>

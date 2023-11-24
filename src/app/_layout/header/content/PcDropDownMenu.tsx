@@ -33,13 +33,10 @@ const PcDropDownMenu: React.FC<IPcDropMenu> = ({
         </div>
         {openMenuName === label && (
           <div className={`w-full relative animate-slide-up-fade-in `}>
-            <ul className="bg-white shadow-md rounded-b-lg border-2 border-white border-t-green-600/30 w-52 absolute h-auto top-0 p-3">
+            <ul className="bg-white shadow-md rounded-b-lg border-2 border-white border-t-green-600/30 w-52 absolute h-auto top-0 p-3 dark:bg-black ">
               {dropDownMenuArr.map((ele: IDropDownMenuData, index: number) => {
                 return (
-                  <li
-                    key={index}
-                    className=" hover:bg-black/10 cursor-pointer rounded p-1 mt-2"
-                  >
+                  <li key={index} className=" hover:bg-black/10 cursor-pointer rounded p-1 mt-2 dark:hover:bg-gray/30">
                     <Link href={`/${ele.href}`}>{ele.name}</Link>
                   </li>
                 );

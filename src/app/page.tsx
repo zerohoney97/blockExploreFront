@@ -126,7 +126,7 @@ export default async function Main() {
   return (
     <>
       <Header />
-      <div className="max-w-[1400px] m-auto sm:px-0 md:px-0 pt-0 p-8 dark:bg-black/20">
+      <div className="max-w-[1400px] m-auto sm:px-0 md:px-0 pt-0 p-8 dark:bg-black">
         <MainSearchBarWrap />
         <EthereumOverview
           overviewTransactionsData={overviewTransactionsData}

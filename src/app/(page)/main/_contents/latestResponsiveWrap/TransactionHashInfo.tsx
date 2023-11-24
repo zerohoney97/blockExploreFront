@@ -13,7 +13,7 @@ const MainTransactionHashInfo: React.FC<ITransactionHashInfoProps> = ({
   const truncateHash = truncate(transactionHash) + "...";
 
   return (
-    <p className="md:w-[40%] lg:w-[40%]">
+    <p className="md:w-[40%] lg:w-[40%] dark:text-white">
       TX #
       <Link
         href={`/main/tx/${transactionHash}`}
