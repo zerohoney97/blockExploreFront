@@ -8,7 +8,7 @@ const MainTransactionTo: React.FC<ITransactionTo> = ({ toAddress }) => {
   };
   const truncateTransaction = truncate(toAddress);
   return (
-    <span>
+    <span className="dark:text-white">
       To
       <Link href={`/main/address/${toAddress}`} className='ml-2 text-text-mainTextColor'>
         {truncateTransaction}

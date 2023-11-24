@@ -7,7 +7,7 @@ const MainBlockInfo:React.FC<IBlockInfoProps>
 = ({blockHeight, blockTime}) => {
 
   return (
-    <p className='md:w-[36%] lg:w-[36%]'>
+    <p className='md:w-[36%] lg:w-[36%] dark:text-white'>
         Block
         <Link className='ml-2 text-text-mainTextColor' href={`/blocks/${blockHeight}`}>{blockHeight}</Link>
 

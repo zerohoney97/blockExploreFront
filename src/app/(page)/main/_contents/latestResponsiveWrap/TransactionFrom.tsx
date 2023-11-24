@@ -9,7 +9,7 @@ const MainTransactionFrom: React.FC<ITransactionFrom> = ({ fromAddress }) => {
 
   const truncateTransaction = truncate(fromAddress);
   return (
-    <p>
+    <p className="dark:text-white">
       From
       <Link
         href={`/main/address/${fromAddress}`}
