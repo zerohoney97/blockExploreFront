@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import DarkModeToggle from "@app/_components/darkToggle";
 import Image from "next/image";
-import Logo from "../../../../../public/Logo.png"
+import Logo from "../../../../../public/Logo.png";
 
 const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const [openMenuName, setOpenMenuName] = useState<string>("");
@@ -44,19 +44,17 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
         <div className="min-h-[60px] h-full flex justify-between items-center relative z-10  m-auto  ">
           <Link href={"http://localhost:3000/"}>
             <div className="w-52 h-10 flex justify-around items-center">
-              <Image
-                src={Logo}
-                alt="바운스코드 이미지"
-                width={50}
-              />
-              <div className="font-titleFont  text-xl whitespace-nowrap dark:text-white">Bounce Explorer</div>
+              <Image src={Logo} alt="바운스코드 이미지" width={50} />
+              <div className="font-titleFont  text-xl whitespace-nowrap dark:text-white">
+                Bounce Explorer
+              </div>
             </div>
           </Link>
-          <div className="flex items-center justify-around "> 
-            <div className="w-3/6 h-full dark:text-white">
-              <ul className="flex justify-center items-center font-headerFont">
+          <div className="flex items-center justify-around w-2/3 ">
+            <div className="w-2/3 h-full dark:text-white flex justify-between">
+              <ul className="w-4/5 flex  justify-evenly items-center font-headerFont">
                 <li
-                  className="cursor-pointer  flex flex-col justify-start items-start ml-5 mr-5 text-text-mainTextColor"
+                  className="cursor-pointer  flex flex-col justify-start items-start  text-text-mainTextColor"
                   onClick={() => {
                     router.push("/");
                   }}
@@ -82,10 +80,10 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
                   openMenuNameHandler={openMenuNameHandler}
                 />
               </ul>
+              <DarkModeToggle />
             </div>
-          <DarkModeToggle />
           </div>
-          </div>
+        </div>
       </div>
     </div>
   );
