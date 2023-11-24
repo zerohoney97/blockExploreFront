@@ -49,7 +49,7 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
                 alt="바운스코드 이미지"
                 width={50}
               />
-              <div className="font-titleFont  text-xl dark:text-white">Bounce Explorer</div>
+              <div className="font-titleFont  text-xl whitespace-nowrap dark:text-white">Bounce Explorer</div>
             </div>
           </Link>
           <div className="flex items-center justify-around "> 

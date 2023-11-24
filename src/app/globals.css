@@ -10,7 +10,7 @@ body {
   background-color: rgb(250 251 253);
 }
 
-@font-face {
+/* @font-face {
   font-family:'titleFont';
   src : url('/fonts/Valoon.ttf') format('truetype');
 }
@@ -28,4 +28,16 @@ body {
   font-family:'numberFont';
   src : url('/fonts/Walkway UltraBold.ttf') format('truetype');
 }
+@font-face {
+  font-family:'gunmetl';
+  src : url('/fonts/gunmetl.ttf') format('truetype');
+}
+@font-face {
+  font-family:'Dalgona Candy';
+  src : url('/fonts/Dalgona Candy.ttf') format('truetype');
+}
+ */
+
+
+
 
