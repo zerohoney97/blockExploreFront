@@ -9,6 +9,7 @@ import Pagination from "@app/_components/pagination";
 import searchIcon from "../../../../public/search03.png";
 import Image from "next/image";
 import DarkModeToggle from "@app/_components/darkToggle";
+import { TokenDataProps } from "./Interface";
 
 const tokenData = [
   {
@@ -24,7 +25,7 @@ const tokenData = [
 ];
 
 const Page = () => {
-  const pagination = usePagination(tokenData);
+  const pagination = usePagination<TokenDataProps>(tokenData);
   return (
     <>
       <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-black/20">
@@ -46,8 +47,8 @@ const Page = () => {
                   <TokenHeader />
                   <tbody className="items-center">
                     {pagination.pageTxList &&
-                      (pagination.pageTxList as any).map(
-                        (data: any, index: number) => (
+                      (pagination.pageTxList as TokenDataProps[]).map(
+                        (data: TokenDataProps, index: number) => (
                           <TokenContent key={index} data={data} />
                         )
                       )}

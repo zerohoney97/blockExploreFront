@@ -6,7 +6,7 @@ import TxListTitle from "@app/_components/itemTitle";
 import TransactionListWrap from "./_contents/ListWrap";
 const Page = () => {
   return (
-    <div>
+    <div className="dark:bg-black/90">
       <TxListTitle title="Transaction List" />
       <TransactionListWrap />
     </div>

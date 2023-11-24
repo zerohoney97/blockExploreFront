@@ -7,9 +7,9 @@ const Pagination: React.FC<IPageNationProps> = ({
   maxPage,
 }) => {
   return (
-    <div className="w-full h-20  flex justify-center items-center text-sm min-w-[280px]">
+    <div className="w-full h-20  flex justify-center items-center text-sm min-w-[280px] ">
       <div
-        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg
+        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg 
         ${page === 1 && "text-gray"}`}
         onClick={() => {
           if (page !== 1) {

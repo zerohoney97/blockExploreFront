@@ -43,27 +43,23 @@ const TxListWrap: React.FC<ITxListProps> = ({
   };
   return (
     <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[3000px]`}
+      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[3000px] dark:bg-black `}
     >
-      <div className={`overflow-x-scroll overflow-y-hidden h-auto max-h-[3000px]`}>
+      <div
+        className={`overflow-x-scroll overflow-y-hidden h-auto max-h-[3000px] dark:text-white`}
+      >
         <table className="w-full m-auto">
           <thead>
             <tr className="h-[50px] border-b border-gray flex text-sm">
               <th className="min-w-[60px] flex items-center justify-center">
-                <FontAwesomeIcon icon={faCircleQuestion}  />
+                <FontAwesomeIcon icon={faCircleQuestion} />
               </th>
               <th className="min-w-[200px] flex justify-start items-center">
                 Txn Hash
               </th>
-              <th className="min-w-[120px] flex items-center ">
-                Method
-              </th>
-              <th className="min-w-[100px] flex items-center  ">
-                Block
-              </th>
-              <th className="min-w-[80px] flex items-center ">
-                Age
-              </th>
+              <th className="min-w-[120px] flex items-center ">Method</th>
+              <th className="min-w-[100px] flex items-center  ">Block</th>
+              <th className="min-w-[80px] flex items-center ">Age</th>
               <th className="min-w-[120px] flex items-center  lg:w-44  ">
                 From
               </th>
@@ -89,7 +85,6 @@ const TxListWrap: React.FC<ITxListProps> = ({
               addInfoModal
             )
           : ""}
-          
       </div>
       <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
     </div>

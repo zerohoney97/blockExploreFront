@@ -7,6 +7,7 @@ import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
 import { BlockHeader } from "./_contents/Header";
 import BlockContent from "./_contents/Content";
+import { IBlocksDataProps } from "./interface";
 
 const blocksData = [
   {
@@ -68,7 +69,7 @@ const blocksData = [
     baseFee: "20",
     reward: "100",
     burntFees: "50",
-    burntFeesPercent:"90",
+    burntFeesPercent: "90",
   },
   {
     block: "18545460",
@@ -80,8 +81,7 @@ const blocksData = [
     baseFee: "25",
     reward: "110",
     burntFees: "60",
-    burntFeesPercent:"90",
-
+    burntFeesPercent: "90",
   },
   {
     block: "18545459",
@@ -94,8 +94,7 @@ const blocksData = [
     baseFee: "20",
     reward: "100",
     burntFees: "50",
-    burntFeesPercent:"90",
-
+    burntFeesPercent: "90",
   },
   {
     block: "18545458",
@@ -107,8 +106,7 @@ const blocksData = [
     baseFee: "25",
     reward: "110",
     burntFees: "60",
-    burntFeesPercent:"90",
-
+    burntFeesPercent: "90",
   },
   {
     block: "18545457",
@@ -121,7 +119,7 @@ const blocksData = [
     baseFee: "20",
     reward: "100",
     burntFees: "50",
-    burntFeesPercent:"90",
+    burntFeesPercent: "90",
   },
   {
     block: "18545456",
@@ -133,12 +131,12 @@ const blocksData = [
     baseFee: "25",
     reward: "110",
     burntFees: "60",
-    burntFeesPercent:"90"
+    burntFeesPercent: "90",
   },
 ];
 
 const Page = () => {
-  const pagination = usePagination(blocksData);
+  const pagination = usePagination<IBlocksDataProps>(blocksData);
   return (
     <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center">
       <div className="w-full ">
@@ -146,24 +144,24 @@ const Page = () => {
         <div className="mt-10">
           <ItemTable>
             <div className="overflow-x-scroll">
-            <span className="text-sm">Total of blocks</span>
-            <table>
-              <BlockHeader />
-              <tbody className="items-center">
-                {pagination.pageTxList &&
-                  (pagination.pageTxList as any).map(
-                    (data: any, index: number) => (
-                      <BlockContent key={index} data={data} />
-                    )
-                  )}
-              </tbody>
-            </table>
+              <span className="text-sm">Total of blocks</span>
+              <table>
+                <BlockHeader />
+                <tbody className="items-center">
+                  {pagination.pageTxList &&
+                    (pagination.pageTxList as any).map(
+                      (data: any, index: number) => (
+                        <BlockContent key={index} data={data} />
+                      )
+                    )}
+                </tbody>
+              </table>
             </div>
-        <Pagination
-          maxPage={pagination.maxPage}
-          page={pagination.page}
-          pageHandler={pagination.pageHandler}
-        />
+            <Pagination
+              maxPage={pagination.maxPage}
+              page={pagination.page}
+              pageHandler={pagination.pageHandler}
+            />
           </ItemTable>
         </div>
       </div>
