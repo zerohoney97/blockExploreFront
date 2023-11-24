@@ -8,7 +8,7 @@ import Link from "next/link";
 import DarkModeToggle from "@app/_components/darkToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-
+import Logo from "public/Logo.png";
 const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const [isMenuOpen, setIsMeuOpen] = useState<boolean>(false);
   return (
@@ -16,11 +16,7 @@ const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
       <div className=" p-4 min-h-[60px] h-full flex justify-between items-center relative z-10 bg-white  dark:bg-black">
         <Link href={"/"}>
           <div className="w-40 h-10 flex justify-between items-center">
-            <Image
-              src={Logo}
-              alt="바운스코드 이미지"
-              width={50}
-            />
+            <Image src={Logo} alt="바운스코드 이미지" width={50} />
             <div className="whitespace-nowrap">Bounce Explorer</div>
           </div>
         </Link>
