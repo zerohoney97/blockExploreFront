@@ -9,7 +9,7 @@ import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
+import { faCircleQuestion, faCircleRight } from "@fortawesome/free-regular-svg-icons";
 
 const TxListWrap: React.FC<ITxListProps> = ({
   txList,
@@ -43,7 +43,7 @@ const TxListWrap: React.FC<ITxListProps> = ({
   };
   return (
     <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white max-h-[3000px] dark:bg-black `}
+      className={`w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px] h-auto bg-white max-h-[3000px] dark:bg-black my-10`}
     >
       <div
         className={`overflow-x-scroll overflow-y-hidden h-auto max-h-[3000px] dark:text-white`}
@@ -57,23 +57,23 @@ const TxListWrap: React.FC<ITxListProps> = ({
               <th className="min-w-[200px] flex justify-start items-center">
                 Txn Hash
               </th>
-              <th className="min-w-[120px] flex items-center ">
+              <th className="min-w-[120px] flex items-center ml-[50px]">
                 Method
               </th>
-              <th className="min-w-[100px] flex items-center  ">
+              <th className="min-w-[100px] flex items-center ml-[20px] ">
                 Block
               </th>
               <th className="min-w-[100px] flex items-center ">
                 Age
               </th>
-              <th className="min-w-[120px] flex items-center  lg:w-44  ">
+              <th className="min-w-[120px] flex items-center  ml-[20px]">
                 From
               </th>
-              <th className="w-auto lg:w-20"></th>
-              <th className="min-w-[120px] flex items-center sm:ml-4 md:ml-4 lg:w-64 ">
+              <th className="w-20 lg:w-[150px]"></th>
+              <th className="min-w-[120px] lg:w-44 flex items-center">
                 To
               </th>
-              <th className="min-w-[100px] flex justify-start items-center  ">
+              <th className="min-w-[100px] flex justify-start items-center ml-[20px]">
                 {lastThName}
               </th>
             </tr>

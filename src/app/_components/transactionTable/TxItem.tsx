@@ -44,7 +44,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       </td>
       {/* 2 */}
       <td
-        className="min-w-[200px] w-[200px] truncate text-text-mainTextColor"
+        className="min-w-[200px] w-[200px] truncate text-text-mainTextColor cursor-pointer"
         onClick={() => {
           txNavigation.push(`/transaction/${TxItem.txHash}`);
         }}
@@ -52,15 +52,15 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
         {TxItem.txHash}
       </td>
       {/* 3 */}
-      <td className="min-w-[120px] items-center">
-        <span className="bg-gray border-black/10 border-[1px] max-w-[95px] p-1 px-2 rounded-lg text-xs ">
+      <td className="min-w-[120px] flex items-center ml-[50px] ">
+        <span className="bg-gray/30 border-black/10 border-[1px] px-2 py-1 rounded-lg text-xs inline-block w-[94px] text-center truncate">
           {TxItem.method}
         </span>
       </td>
       {/* 4 */}
-      <td className="min-w-[100px] items-center">{TxItem.block}</td>
+      <td className="min-w-[100px] items-center ml-[20px]">{TxItem.block}</td>
       <td className="min-w-[100px] items-center ">{TxItem.age}</td>
-      <td className="min-w-[120px] lg:w-44">
+      <td className="min-w-[120px] ml-[20px]">
         <div className="w-full flex ">
           <div className="text-text-mainTextColor">
             <Link href={`/transaction/${TxItem.from}`}>
@@ -72,14 +72,12 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
           </button>
         </div>
       </td>
-      <td className="flex justify-center items-center">
-        <div className="lg:w-20 text-center ">
-          <Image alt="" width={30} src={Arrow} />
-        </div>
+      <td className="flex justify-center items-center w-20 lg:w-[150px]">
+        <Image alt="" width={30} src={Arrow} />
       </td>
-      <td className="min-w-[120px] lg:w-64">
+      <td className="min-w-[120px] lg:w-44">
         <div className="w-full flex ">
-          <div className="text-text-mainTextColor sm:ml-2 md:ml-2">
+          <div className="text-text-mainTextColor">
             <Link href={`/transaction/${TxItem.to}`}>
               {addressEncodeHandler(TxItem.to)}
             </Link>
@@ -89,7 +87,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
           </button>
         </div>
       </td>
-      <td className="min-w-[100px] items-center">{TxItem.value}</td>
+      <td className="min-w-[100px] items-center ml-[20px] ">{TxItem.value}</td>
     </tr>
   );
 };
