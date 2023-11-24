@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        titleFont : ['titleFont'],
+        headerFont : ['headerFont'],
+        EthereumOverviewFont : ['EthereumOverviewFont'],
+        numberFont : ['numberFont']
+      },
       animation: {
         "slide-up-fade-in": "slideUpFadeIn 1s ease-out",
         'change-height-zero-to-auto':'changeHeightZeroToAuto 1s ease-out',

@@ -9,3 +9,23 @@ body {
   margin: 0 auto;
   background-color: rgb(250 251 253);
 }
+
+@font-face {
+  font-family:'titleFont';
+  src : url('/fonts/Valoon.ttf') format('truetype');
+}
+
+@font-face {
+  font-family:'headerFont';
+  src : url('/fonts/Louis George Cafe Light Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family:'EthereumOverviewFont';
+  src : url('/fonts/Louis George Cafe Bold Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family:'numberFont';
+  src : url('/fonts/Walkway UltraBold.ttf') format('truetype');
+}
+

@@ -6,7 +6,9 @@ const MainTransactionsVolume:React.FC<ITransactionsVolumeProps> = ({totalTransac
     <div className='w-[160px] whitespace-nowrap sm:text-[11px] md:text-[12px] lg:text-[15px]'>
       <p className='text-zinc-400'>TRANSACTIONS</p>
       <p>
-        <span className="md:text-[15px] lg:text-[20px]">{totalTransactionsCounter} M</span>
+        <span className="md:text-[15px] lg:text-[20px] ">
+          <span className="">{totalTransactionsCounter}</span> M
+        </span>
         <span className='text-zinc-400 '> ({transactionsPerSecond} TPS)</span>
       </p>
     </div>
