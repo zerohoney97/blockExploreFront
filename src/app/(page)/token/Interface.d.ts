@@ -1,14 +1,13 @@
 export interface TokenDataProps {
-    number:? string;
-    tokenImage:string
-    tokenName: string ;
-    unit:string;
-    dollarPrice:string;
-    ethPrice: string;
-    change: string;
-    volume: string;
-    holders:string
-  }
+  number: ?string;
+  tokenImage: string;
+  tokenName: string;
+  unit: string;
+  ethPrice: string;
+  change: string;
+  volume: string;
+  holders: string;
+}
 
 export interface ITokenDetail {
   tokendetail: string;

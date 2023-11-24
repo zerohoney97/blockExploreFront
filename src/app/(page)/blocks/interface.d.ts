@@ -19,7 +19,7 @@ export interface IBlocksDataProps {
     params: { blockdetail: string };
   }
   export interface BlocksInfoProps {
-    blockHeight: any;
+    blockHeight:string;
     status: string;
     timeStamp: string;
     slot:string;
@@ -37,7 +37,7 @@ export interface IBlocksDataProps {
   
   export interface IBlocksGasProps {
     gasUsed: string;
-    gasUsedPercent?:any
+    gasUsedPercent?:string
     gasLimit: string;
     baseFeePerGas: string;
     burntFee: string;
