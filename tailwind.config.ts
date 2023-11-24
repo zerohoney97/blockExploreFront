@@ -8,12 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        titleFont : ['titleFont'],
-        headerFont : ['headerFont'],
-        EthereumOverviewFont : ['EthereumOverviewFont'],
-        numberFont : ['numberFont']
-      },
+      // fontFamily: {
+      //   titleFont : ['titleFont'],
+      //   headerFont : ['headerFont'],
+      //   EthereumOverviewFont : ['EthereumOverviewFont'],
+      //   numberFont : ['numberFont'],
+      //   gunmetl : ['gunmetl'],
+      //   number2 : ['Dalgona Candy'],
+      // },
       animation: {
         "slide-up-fade-in": "slideUpFadeIn 1s ease-out",
         'change-height-zero-to-auto':'changeHeightZeroToAuto 1s ease-out',
