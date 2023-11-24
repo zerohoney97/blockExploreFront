@@ -1,10 +1,10 @@
-export interface IBlocksItem {
-  blockHeight: string;
-  blockTime: string;
-  feeRecipient: string;
-  transactionsInThisBlock: string;
-  transactionsTime: string;
-}
+import { IBlocksDataProps } from "@app/(page)/blocks/interface";
+import { IBlocksItem, ITransactionsItem } from "@app/(page)/main/interface";
+import { ItxList } from "@app/_components/transactionTable/interface";
+
+export type IMainBlocksItem = IBlocksItem;
+
+export type IListBLocksItem = IBlocksDataProps;
 
 export interface IResponseBlockData {
   baseFeePerGas: string;
@@ -30,13 +30,9 @@ export interface IResponseBlockData {
   withdrawalsRoot: string;
 }
 
-export interface ITransactionData {
-  transactionHash: string;
-  transactionTime: string;
-  fromAddress: string;
-  toAddress: string;
-  ethAmount: string;
-}
+export type IMainTransactionData = ITransactionsItem;
+
+export type IListTransactionData = ItxList;
 
 export interface IResponseTransactionData {
   id: string;

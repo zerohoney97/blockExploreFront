@@ -7,12 +7,12 @@ import Header from "./_layout/header";
 import Footer from "./_layout/footer";
 import { getBlock } from "./_api/main/getBlock";
 import { getTransaction } from "./_api/main/getTransaction";
-import { ITransactionData } from "./_api/main/interface";
+import { IMainBlocksItem, IMainTransactionData } from "./_api/main/interface";
 import DarkModeToggle from "@app/_components/darkToggle";
 
 export default async function Main() {
-  const blockData = await getBlock();
-  const transactionData = await getTransaction();
+  const blockData = await getBlock('main');
+  const transactionData = await getTransaction('main');
   const overviewTransactionsData = {
     totalTransactionsCounter: 2155.7,
     transactionsPerSecond: 12.7,
@@ -133,8 +133,8 @@ export default async function Main() {
           overviewLastFinalizedBlockData={overviewLastFinalizedBlockData}
         />
         <LatestResponsiveWrap
-          blocksData={blockData}
-          transactionsData={transactionData as ITransactionData[]}
+          blocksData={blockData as IMainBlocksItem[]}
+          transactionsData={transactionData as IMainTransactionData[]}
         />
       </div>
       <Footer />

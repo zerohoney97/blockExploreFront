@@ -8,8 +8,8 @@ import {
   faCopy,
   faEye,
 } from "@fortawesome/free-regular-svg-icons";
-import Arrow from "public/arrow.png"
-import arrowIcon from "public/arrowIcon.png"
+import Arrow from "public/arrow.png";
+import arrowIcon from "public/arrowIcon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Image from "next/image";
@@ -44,12 +44,12 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       </td>
       {/* 2 */}
       <td
-        className="min-w-[200px] text-text-mainTextColor"
+        className="min-w-[200px] w-[200px] truncate text-text-mainTextColor"
         onClick={() => {
           txNavigation.push(`/transaction/${TxItem.txHash}`);
         }}
       >
-          {TxItem.txHash}
+        {TxItem.txHash}
       </td>
       {/* 3 */}
       <td className="min-w-[120px] items-center">
@@ -59,7 +59,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       </td>
       {/* 4 */}
       <td className="min-w-[100px] items-center">{TxItem.block}</td>
-      <td className="min-w-[80px] items-center ">{TxItem.age}</td>
+      <td className="min-w-[100px] items-center ">{TxItem.age}</td>
       <td className="min-w-[120px] lg:w-44">
         <div className="w-full flex ">
           <div className="text-text-mainTextColor">
@@ -74,10 +74,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       </td>
       <td className="flex justify-center items-center">
         <div className="lg:w-20 text-center ">
-          <Image
-          alt=""
-          width={30}
-          src={Arrow}/>
+          <Image alt="" width={30} src={Arrow} />
         </div>
       </td>
       <td className="min-w-[120px] lg:w-64">

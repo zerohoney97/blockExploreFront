@@ -1,4 +1,8 @@
-import { IBlocksItem, IResponseBlockData } from "./interface";
+import {
+  IListBLocksItem,
+  IMainBlocksItem,
+  IResponseBlockData,
+} from "./interface";
 
 const divideTimeIntoUnits = (now: number, blockTime: number) => {
   const timestampInMilliseconds = blockTime * 1000;
@@ -13,23 +17,45 @@ const divideTimeIntoUnits = (now: number, blockTime: number) => {
   }
 };
 
-export const getBlock = async () => {
+export const getBlock = async (pageName: string) => {
   const res = await fetch("https://api.bouncexplorer.site/block");
   const now = new Date().getTime();
-  const responseBlockData: IResponseBlockData[] = await res.json();
-  const blockData: IBlocksItem[] = responseBlockData.map((el) => {
-    return {
-      blockHeight: el.number,
-      blockTime: divideTimeIntoUnits(now, Number(el.timestamp)),
-      feeRecipient: el.miner,
-      transactionsInThisBlock: "없음",
-      transactionsTime: "없음 ago",
-    };
-  });
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
 
-  return blockData;
+  if (pageName === "main") {
+    const responseBlockData: IResponseBlockData[] = await res.json();
+    const blockData: IMainBlocksItem[] = responseBlockData.map((el) => {
+      return {
+        blockHeight: el.number,
+        blockTime: divideTimeIntoUnits(now, Number(el.timestamp)),
+        feeRecipient: el.miner,
+        transactionsInThisBlock: "없음",
+        transactionsTime: "없음 ago",
+      };
+    });
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return blockData.slice(0, 5);
+  } else if (pageName === "list") {
+    const responseBlockData: IResponseBlockData[] = await res.json();
+    const blockData: IListBLocksItem[] = responseBlockData.map((el) => {
+      return {
+        block: el.number,
+        age: divideTimeIntoUnits(now, Number(el.timestamp)),
+        feeRecipient: el.miner,
+        baseFee: el.baseFeePerGas,
+        gasLimit: el.gasLimit,
+        gasUsed: el.gasUsed,
+        Txn: "104",
+      };
+    });
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return blockData.slice(0, 5);
+  }
 };

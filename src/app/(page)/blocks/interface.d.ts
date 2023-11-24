@@ -7,9 +7,6 @@ export interface IBlocksDataProps {
     gasUsedPercent?:number
     gasLimit: string;
     baseFee: string;
-    reward: string;
-    burntFees: string;
-    burntFeesPercent:string
   }
 
   export interface IBlocksDetail {
@@ -53,6 +50,10 @@ export interface IBlocksDataProps {
     stateRoot: string;
     withdrawsRoot: string;
     nonce: string;
+  }
+
+  export interface IBlocksTableProps{
+    blocksData:IBlocksDataProps[]
   }
   
   

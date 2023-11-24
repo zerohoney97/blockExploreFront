@@ -2,7 +2,8 @@ import {
   IBlocksItem,
   IResponseBlockData,
   IResponseTransactionData,
-  ITransactionData,
+  IMainTransactionData,
+  IListTransactionData,
 } from "./interface";
 
 const divideTimeIntoUnits = (now: number, blockTime: number) => {
@@ -21,7 +22,7 @@ const fromWeiToETH = (wei: string) => {
   return Number(wei) / 10 ** 18;
 };
 
-export const getTransaction = async () => {
+export const getTransaction = async (pageName: string) => {
   const res = await fetch("https://api.bouncexplorer.site/tx");
   try {
     // const temp = await res.json();
@@ -29,7 +30,7 @@ export const getTransaction = async () => {
     const now = new Date().getTime();
     const responseTransactionData: IResponseTransactionData[] =
       await res.json();
-      
+
     //   const data = {
     //     id: 1,
     //     accessList: null,
@@ -52,30 +53,49 @@ export const getTransaction = async () => {
     //     Timestamp: "1700548800",
     //     createdAt: "2023-11-21T06:40:08.859Z",
     //     updatedAt: "2023-11-21T06:40:08.859Z",
+    //      blockNum:123842
     //     NFT_id: null,
     //     token_id: null,
     //     block_id: 1,
     //     eoa_id: null,
     //     CA_id: null,
     //   };
-    const transactionData: ITransactionData[] = responseTransactionData.map(
-      (el) => {
-        return {
-          ethAmount: fromWeiToETH(el.value).toString(),
-          fromAddress: el.from,
-          toAddress: el.to,
-          transactionHash: el.hash,
-          transactionTime: divideTimeIntoUnits(now, Number(el.Timestamp)),
-        };
-      }
-    );
+    if (pageName === "main") {
+      const transactionData: IMainTransactionData[] =
+        responseTransactionData.map((el) => {
+          return {
+            ethAmount: fromWeiToETH(el.value).toString(),
+            fromAddress: el.from,
+            toAddress: el.to,
+            transactionHash: el.hash,
+            transactionTime: divideTimeIntoUnits(now, Number(el.Timestamp)),
+          };
+        });
 
-    if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error("Failed to fetch data");
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      console.log(transactionData[0]);
+      return transactionData.slice(0, 5);
+    } else if (pageName === "list") {
+      const transactionData: IListTransactionData[] =
+        responseTransactionData.map((el) => {
+          return {
+            value: fromWeiToETH(el.value).toString(),
+            from: el.from,
+            to: el.to,
+            txHash: el.hash,
+            age: divideTimeIntoUnits(now, Number(el.Timestamp)),
+            block: "12345",
+            method: el.Method,
+          };
+        });
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      return transactionData;
     }
-    console.log(transactionData[0]);
-    return transactionData.slice(0, 6);
   } catch (error) {
     console.log(error);
   }
