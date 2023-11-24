@@ -7,12 +7,7 @@ interface CardTextProps {
   children?: ReactNode;
 }
 
-const CardText: React.FC<CardTextProps> = ({
-  title,
-  content,
-  content2,
-  children,
-}) => {
+const CardText: React.FC<CardTextProps> = ({ title, content,content2, children }) => {
   return (
     <div className="my-3 break-words md:flex lg:flex">
       <div className="font-medium text-sm md:text-itemDetail-textLabelColor mr-2 w-36 lg:text-itemDetail-textLabelColor">
