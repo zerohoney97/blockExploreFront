@@ -6,6 +6,8 @@ import MobileDropDownMenu from "./MobileDropDownMenu";
 import { IDropMenuProps } from "../interface";
 import Link from "next/link";
 import DarkModeToggle from "@app/_components/darkToggle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const [isMenuOpen, setIsMeuOpen] = useState<boolean>(false);
@@ -22,21 +24,21 @@ const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
             <div>Bounce Code</div>
           </div>
         </Link>
-        <div className="flex"> 
-        <div className=" top-16 w-14 h-full text-right ">
-          <Image
-            className="w-6"
-            src={ham}
-            alt="메뉴 버튼"
-            onClick={() => {
-              setIsMeuOpen((prev) => {
-                return !prev;
-              });
-            }}
-          />
+        <div className="flex">
+          <div className=" top-16 w-14 h-full text-right ">
+            <FontAwesomeIcon
+              className="w-6 mr-4 dark:text-white"
+              icon={faBars}
+              onClick={() => {
+                setIsMeuOpen((prev) => {
+                  return !prev;
+                });
+              }}
+              size="xl"
+            />
+          </div>
+          <DarkModeToggle />
         </div>
-        <DarkModeToggle/>
-       </div>
       </div>
       <MobileDropDownMenu router={router} isMenuOpen={isMenuOpen} />
     </div>

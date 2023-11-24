@@ -4,6 +4,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { IMobileDropMenuProps, IopenToggle, IsubMenu } from "../interface";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
   isMenuOpen,
@@ -65,14 +67,13 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
             >
               <div className="flex justify-between items-center">
                 {el}
-                <Image
+                <FontAwesomeIcon
                   className={
                     subMenuOpenName === index.toString() ? "" : "scale-y-[-1]"
                   }
                   width={10}
                   height={10}
-                  src={dropArray}
-                  alt="array"
+                  icon={faCaretUp}
                 />
               </div>
               {subMenuOpenName === index.toString() && (
@@ -81,7 +82,10 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
                     <ul>
                       {subMenuArr[`${index}`].map((el, index) => {
                         return (
-                          <li key={index} className=" hover:bg-black/10 cursor-pointer rounded p-1 ">
+                          <li
+                            key={index}
+                            className=" hover:bg-black/10 cursor-pointer rounded p-1 "
+                          >
                             {" "}
                             <Link href={`/${el.href}`}> {el.name}</Link>
                           </li>
