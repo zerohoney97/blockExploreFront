@@ -4,6 +4,7 @@ import TxTabButtonWrap from "./_contents/TabButtonWrap";
 import { getTxItemData } from "@app/_api/txDetail/getTxItemData";
 const Page = ({ params }: { params: { txHash: string } }) => {
   const transactionItemData = getTxItemData(params.txHash);
+  
   return (
     <div className="bg-mainBackGroundColor  max-w-[1250px] m-auto dark:bg-black/90">
       <ItemTitle title="Transaction Details" />

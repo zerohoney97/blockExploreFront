@@ -12,10 +12,16 @@ const nextConfig = {
   //       destination: "/qnaMain",
   //     },
   //     // nft페이지
-      
+
   //     { source: "/nft/collections", destination: "/collections" },
   //   ];
   // },
+  // devServer: {
+  //   https: true,
+  // },
+  server : {
+    https : true
+  }
 };
 
 module.exports = nextConfig;
