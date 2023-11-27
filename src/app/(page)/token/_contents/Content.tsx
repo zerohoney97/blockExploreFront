@@ -6,7 +6,7 @@ const TokenContent: React.FC<{ data: TokenDataProps }> = ({ data }) => {
   const tokenDetailPath = `/token/${encodeURIComponent(data.tokenName)}`;
 
   return (
-    <tr className='border-b border-gray text-sm '>
+    <tr className='border-b border-gray text-sm dark:text-white'>
       <td className='py-3 px-4 '>{data.number}</td>
       <td>
         <Link href={tokenDetailPath}>

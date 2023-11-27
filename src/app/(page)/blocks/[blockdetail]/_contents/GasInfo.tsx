@@ -12,7 +12,7 @@ const GasInfo: React.FC<IBlocksGasProps> = ({
   extraData,
 }) => {
   return (
-    <div className=" border-gray">
+    <div className=" border-gray dark:text-white">
         <BlockCardText title="Gas Used:" content={gasUsed}>
           {gasUsedPercent && (
             <span className="text-xs">({gasUsedPercent}%)</span>

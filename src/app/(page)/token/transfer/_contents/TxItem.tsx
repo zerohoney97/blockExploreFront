@@ -33,7 +33,7 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
   };
   const txNavigation = useRouter();
   return (
-    <tr className="h-14 border-b  border-gray text-sm  align-middle">
+    <tr className="h-14 border-b  border-gray text-sm  align-middle dark:text-white">
       <td className="min-w-[60px] lg:w-20 flex items-center justify-center p-2 relative">
         <div className="relative">
           <FontAwesomeIcon
@@ -45,7 +45,7 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
       </td>
 
       <td
-        className="min-w-[200px] text-blue-400    "
+        className="min-w-[200px] text-text-mainTextColor"
         onClick={() => {
           txNavigation.push(`/transaction/${TxItem.txHash}`);
         }}
@@ -53,7 +53,7 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
         {TxItem.txHash}
       </td>
       <td className="min-w-[120px]  items-center">
-        <span className="bg-gray max-w-[95px] p-1 rounded">
+        <span className="bg-gray max-w-[95px] p-1 rounded dark:text-black">
           {TxItem.method}
         </span>
       </td>
@@ -61,7 +61,7 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
       <td className="min-w-[100px] items-center">{TxItem.age}</td>
       <td className="min-w-[120px]   lg:w-44">
         <div className="w-full flex ">
-          <div className="text-blue-400">
+          <div className="text-text-mainTextColor">
             <Link href={`/transaction/${TxItem.from}`}>
               {" "}
               {addressEncodeHandler(TxItem.from)}
@@ -79,7 +79,7 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
       </td>
       <td className="min-w-[200px]  lg:w-64">
         <div className="w-full flex ">
-          <div className="text-blue-400  sm:ml-2 md:ml-2">
+          <div className="text-text-mainTextColor  sm:ml-2 md:ml-2">
             <Link href={`/transaction/${TxItem.to}`}>
               {" "}
               {addressEncodeHandler(TxItem.to)}

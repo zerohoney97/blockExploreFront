@@ -12,7 +12,7 @@ import TokenItemTable from "@app/(page)/token/[tokendetail]/_contents/TokenItemT
 const NftTxDetail: React.FC<INftTxDetailProps> = ({ params }) => {
   return (
     <>
-    <div className="bg-mainBackGroundColor ">
+    <div className="bg-mainBackGroundColor dark:bg-black/90">
       <ItemTitle title={params.nftId} />
       <div className="w-20 h-8 m-6 border-2 border-white bg-white rounded-xl font-bold flex justify-center items-center text-sm">
         ERC-721

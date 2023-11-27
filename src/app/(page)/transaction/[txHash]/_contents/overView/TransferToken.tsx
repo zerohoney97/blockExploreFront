@@ -7,12 +7,12 @@ const TxTransferToken = () => {
     );
   };
   return (
-    <div className="w-full h-auto flex flex-col border-b border-gray pb-5">
+    <div className="w-full h-auto flex flex-col border-b border-gray pb-5 dark:text-white">
       <div className="flex sm:flex-col md:flex-col ">
         <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
           ERC-20 Tokens Transferred:
         </div>
-        <div className="w-2/3 lg:ml-10">
+        <div className="w-2/3 lg:ml-10 dark:text-white">
           <div className="w-full h-auto p-2">
             <p className="">
               <span className="sm:inline-block">

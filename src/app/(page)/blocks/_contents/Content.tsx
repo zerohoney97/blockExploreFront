@@ -12,18 +12,18 @@ const BlockContent: React.FC<{ data: IBlocksDataProps }> = ({ data }) => {
       <td className="py-3 min-w-[100px] justify-center text-text-mainTextColor">
         <Link href={BlocksDetailPath}>{data.block}</Link>
       </td>
-      <td className="min-w-[150px]">{data.age}</td>
+      <td className="min-w-[150px] dark:text-white">{data.age}</td>
       <td className="min-w-[60px] text-text-mainTextColor">
         <Link href={transactionPath}>{data.Txn}</Link>
       </td>
-      <td className="min-w-[200px] text-text-mainTextColor">
+      <td className="min-w-[250px] text-text-mainTextColor">
         <Link href={addressPath}>{data.feeRecipient}</Link>
       </td>
-      <td className="min-w-[200px]">
+      <td className="min-w-[200px] dark:text-white">
         {data.gasUsed} <span>({data.gasUsedPercent}%)</span>
       </td>
-      <td className="min-w-[200px]">{data.gasLimit}</td>
-      <td className="min-w-[200px]">{data.baseFee}Gwei</td>
+      <td className="min-w-[200px] dark:text-white">{data.gasLimit}</td>
+      <td className="min-w-[200px] dark:text-white">{data.baseFee}Gwei</td>
     </tr>
   );
 };

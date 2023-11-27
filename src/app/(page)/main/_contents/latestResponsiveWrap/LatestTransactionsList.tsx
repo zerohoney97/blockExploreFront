@@ -10,7 +10,7 @@ const MainLatestTransactionsList: React.FC<ITransactionsListProps> = ({
     console.log(transactionslist);
   }, [transactionslist]);
   return (
-    <ul className="h-[482px] overflow-y-scroll w-full">
+    <ul className="h-[482px] w-full">
       {transactionslist.map((item, index) => (
         <>
           <LatestTransactionsItem transactionsData={item} />

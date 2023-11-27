@@ -2,7 +2,7 @@ import React from "react";
 
 const CollectionTableTitle = () => {
   return (
-    <ul className="flex h-20 w-[1250px] border-b border-gray font-bold text-sm">
+    <ul className="flex h-20 w-[1250px] border-b border-gray font-bold text-sm dark:text-white">
       <li className=" flex justify-center items-center   w-[3%]">#</li>
       <li className=" flex justify-center items-center   w-[15%]">
         Collection

@@ -16,9 +16,9 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
     "0x13d1639cd9b11872b12594d7bf708c8f5cfeb183c126962b19af8ce7e9f99dd3";
 
   return (
-    <>
-      <div className='bg-mainBackGroundColor'>
-        <div className='w-full '>
+    <div className="dark:bg-black/90">
+      <div className='bg-mainBackGroundColor '>
+        <div className='w-full dark:bg-black/90'>
           <Title
             title={`Block `}
             subtitle={<span className='text-sm'>#{params.blockdetail}</span>}
@@ -62,7 +62,7 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
           />
         </BlockCard>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ const TxTransferNFT = () => {
   };
 
   return (
-    <div className="w-full h-auto p-2 border-b border-gray pb-5 lg:flex lg:items-center  ">
+    <div className="w-full h-auto p-2 border-b border-gray pb-5 lg:flex lg:items-center dark:text-white">
       <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
         ERC-721 Tokens Transferred:
       </div>

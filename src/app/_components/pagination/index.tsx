@@ -9,8 +9,8 @@ const Pagination: React.FC<IPageNationProps> = ({
   return (
     <div className="w-full h-20  flex justify-center items-center text-sm min-w-[280px] ">
       <div
-        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg 
-        ${page === 1 && "text-gray"}`}
+        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg dark:bg-gray/60
+        ${page === 1 && "text-black"}`}
         onClick={() => {
           if (page !== 1) {
             pageHandler(1);
@@ -20,8 +20,8 @@ const Pagination: React.FC<IPageNationProps> = ({
         First
       </div>
       <div
-        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg ${
-          page === 1 && "text-gray"
+        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg dark:bg-gray/60 ${
+          page === 1 && "text-black"
         } `}
         onClick={() => {
           if (page !== 1) {
@@ -31,12 +31,12 @@ const Pagination: React.FC<IPageNationProps> = ({
       >
         {"<"}
       </div>
-      <div className="m-2 flex justify-center items-center border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg">
+      <div className="m-2 flex justify-center items-center border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg dark:bg-gray/60">
         Page {page} of {maxPage}
       </div>
       <div
-        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg ${
-          page === maxPage && "text-gray"
+        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg dark:bg-gray/60 ${
+          page === maxPage && "text-black"
         } `}
         onClick={() => {
           if (page !== maxPage) {
@@ -47,8 +47,8 @@ const Pagination: React.FC<IPageNationProps> = ({
         {">"}
       </div>
       <div
-        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg ${
-          page === maxPage && "text-gray"
+        className={`cursor-pointer m-2 border-gray border-2 py-1 px-2 bg-searchBarBackGroundColor rounded-lg dark:bg-gray/60 dark:bg-gray/60 ${
+          page === maxPage && "text-black"
         }`}
         onClick={() => {
           if (page !== maxPage) {

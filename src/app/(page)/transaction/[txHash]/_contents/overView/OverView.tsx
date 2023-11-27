@@ -7,14 +7,14 @@ const TxOverView = () => {
   const clock =
     "https://w7.pngwing.com/pngs/712/835/png-transparent-computer-icons-clock-icon-design-clock-time-rim-timer.png";
   return (
-    <div className="w-full h-auto flex flex-col border-b border-gray pb-5 ">
+    <div className="w-full h-auto flex flex-col border-b border-gray pb-5 dark:text-white">
       <div className="flex flex-col">
         <div className="lg:flex lg:items-center">
           {" "}
           <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Transaction Hash:
           </div>
-          <div className="p-1 h-auto text-xs w-80 sm:break-words lg:ml-8 md:break-words ">
+          <div className="p-1 h-auto text-xs w-80 sm:break-words lg:ml-8 md:break-words dark:text-white ">
             0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
             <FontAwesomeIcon
               icon={faCopy}
@@ -37,7 +37,7 @@ const TxOverView = () => {
           <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Time Stamp
           </div>
-          <div className="flex flex-col ml-8">
+          <div className="flex flex-col ml-8 dark:text-white">
             <div className="flex">
               <FontAwesomeIcon icon={faClock} />
               {/* <img
@@ -47,7 +47,7 @@ const TxOverView = () => {
                 width={15}
                 height={3}
               />{" "} */}
-              <span className="ml-[5px] text-xs">
+              <span className="ml-[5px] text-xs ">
                 7 mins ago (Nov-15-2023 06:43:59 AM +UTC)
               </span>
             </div>

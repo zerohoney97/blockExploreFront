@@ -36,13 +36,13 @@ const Info: React.FC<BlocksInfoProps> = ({
 
 
   return (
-    <div className=" border-gray">
+    <div className=" border-gray dark:text-white">
       <BlockCardText title="Block Height:" content={
         <>
-        {BlockNumber}
+        <span className="">{BlockNumber}</span>
         <span className="">
-          <button onClick={decrement} className="bg-gray w-auto px-1 text-base rounded ml-1">{"<"}</button>
-          <button onClick={increment} className="bg-gray  w-auto px-1 text-base rounded ml-1 ">{">"}</button>
+          <button onClick={decrement} className="bg-gray w-auto px-1 text-base rounded ml-1 dark:bg-gray/30">{"<"}</button>
+          <button onClick={increment} className="bg-gray  w-auto px-1 text-base rounded ml-1 dark:bg-gray/30">{">"}</button>
         </span>
         </>
         }>
@@ -50,7 +50,7 @@ const Info: React.FC<BlocksInfoProps> = ({
 
       </BlockCardText>
       <BlockCardText title="Status:" content={status}>
-        <span className="border-2 rounded p-1 bg-gray border-black/10 font-bold">
+        <span className="border-2 rounded p-1 bg-gray border-black/10 font-bold  dark:text-black">
           Unfinalized
         </span> 
         {/* <span className="border-2 rounded p-1 bg-green-300/40 border-green-500/30 text-green-800 font-bold">

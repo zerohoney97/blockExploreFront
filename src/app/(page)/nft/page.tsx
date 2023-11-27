@@ -33,7 +33,7 @@ const Page = () => {
     usePagination<Iitem>(tempDataArr);
 
   return (
-    <div className='bg-mainBackGroundColor min-h-screen '>
+    <div className='bg-mainBackGroundColor min-h-screen dark:bg-black/90'>
       {/* <SearchBar />
       <NFTContainer /> */}
       <Title title='NFT List' />

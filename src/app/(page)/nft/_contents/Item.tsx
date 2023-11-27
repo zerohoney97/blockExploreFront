@@ -19,7 +19,7 @@ const CollectionItem: React.FC<Iitem> = ({
 }) => {
 
   return (
-    <ul className="flex w-[1250px] h-16 border-b border-gray text-sm">
+    <ul className="flex w-[1250px] h-16 border-b border-gray text-sm dark:text-white">
       <li className="flex justify-center items-center   w-[3%]">{number}</li>
       <li className="flex justify-center items-center   w-[5%]">
         <img width={25} height={25} src={collection} alt="피카츄"/>

@@ -8,12 +8,12 @@ const MainLatestBlocksButton: React.FC<ILatestBlocksButtonProps> = ({
 }) => {
   const router = useRouter();
   const routeHandler = () => {
-    router.push(`/main/blocks/`);
+    router.push(`/blocks`);
   };
   return (
     <>
       <button
-        className="bg-[#eef3f2] text-stone-500 w-full h-[50px] font-bold text-xs dark:bg-black dark:text-stone-300"
+        className="bg-[#eef3f2]  text-stone-500 w-full h-[50px] font-bold text-xs dark:bg-black dark:text-stone-300 dark:border-t border-gray"
         onClick={routeHandler}
       >
         VIEW ALL {buttonName} →

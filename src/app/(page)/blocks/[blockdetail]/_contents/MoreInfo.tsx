@@ -19,7 +19,7 @@ const MoreInfo: React.FC<IBlocksMoreProps> = ({
     <div className="">
       <div
         className={`relative z-0 transition-all duration-500 flex flex-col justify-between ${
-          showMore ? "h-0ƒ" : "sm:h-[510px] md:h-[300px] lg:h-[300px]"
+          showMore ? "h-0ƒ" : " md:h-[230px] lg:h-[230px]"
         } overflow-hidden`}
       >
         <div
@@ -34,13 +34,13 @@ const MoreInfo: React.FC<IBlocksMoreProps> = ({
           <BlockCardText title="Nonce:: " content={nonce} />
         </div>
       </div>
-      <div className="bg-white relative z-5 flex justify-between h-16 overflow-hidden items-center">
-        <div className="font-medium text-sm">More Detail:</div>
+      <div className=" relative z-5 flex justify-between h-16 overflow-hidden items-center ">
+        <div className="font-medium text-sm dark:text-white">More Detail:</div>
         <div
           className="text-sm text-text-mainTextColor cursor-pointer"
           onClick={toggleMoreInfo}
         >
-          {showMore ? "- Click to show less" : "+ Click to show more"}
+          {showMore ? "+ Click to show more" : "- Click to show less"}
         </div>
       </div>
     </div>

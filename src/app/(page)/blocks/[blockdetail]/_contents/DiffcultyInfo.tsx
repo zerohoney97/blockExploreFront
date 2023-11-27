@@ -10,7 +10,7 @@ const DiffcultyInfo: React.FC<IBlocksDifficultyProps> = ({
   size,
 }) => {
   return (
-    <div className="border-b border-t border-gray">
+    <div className="border-b border-t border-gray dark:text-white">
       <BlockCardText
         title="Fee Recipient:"
         content={
