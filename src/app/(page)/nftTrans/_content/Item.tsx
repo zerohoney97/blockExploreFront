@@ -42,7 +42,7 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
       </td>
 
       <td
-        className="min-w-[200px] text-blue-400    "
+        className="min-w-[200px] text-text-mainTextColor    "
         onClick={() => {
           txNavigation.push(`/transaction/${NftTxItem.transcationInfo}`);
         }}
@@ -50,14 +50,14 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
         {NftTxItem.transcationInfo}
       </td>
       <td className="min-w-[120px]  items-center">
-        <span className="bg-gray max-w-[95px] p-1 rounded">
+        <span className="bg-gray max-w-[95px] p-1 rounded dark:text-black">
           {NftTxItem.method}
         </span>
       </td>
       <td className="min-w-[100px] items-center">{NftTxItem.age} sec ago</td>
       <td className="min-w-[180px]   lg:w-44">
         <div className="w-full flex ">
-          <div className="text-blue-400">
+          <div className="text-text-mainTextColor">
             <Link href={`/transaction/${NftTxItem.from}`}>
               {" "}
               {addressEncodeHandler(NftTxItem.from)}
@@ -75,7 +75,7 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
       </td>
       <td className="min-w-[200px]  lg:w-64">
         <div className="w-full flex ">
-          <div className="text-blue-400  sm:ml-2 md:ml-2">
+          <div className="text-text-mainTextColor  sm:ml-2 md:ml-2">
             <Link href={`/transaction/${NftTxItem.to}`}>
               {" "}
               {addressEncodeHandler(NftTxItem.to)}

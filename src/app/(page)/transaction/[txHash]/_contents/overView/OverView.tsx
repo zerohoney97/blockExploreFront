@@ -3,7 +3,9 @@ import copy from "public/copy.png";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCopy } from "@fortawesome/free-regular-svg-icons";
+import { useParams } from "next/navigation";
 const TxOverView = () => {
+  const { txHash } = useParams();
   const clock =
     "https://w7.pngwing.com/pngs/712/835/png-transparent-computer-icons-clock-icon-design-clock-time-rim-timer.png";
   return (
@@ -15,7 +17,7 @@ const TxOverView = () => {
             Transaction Hash:
           </div>
           <div className="p-1 h-auto text-xs w-80 sm:break-words lg:ml-8 md:break-words dark:text-white ">
-            0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
+          {txHash}
             <FontAwesomeIcon
               icon={faCopy}
               className=" ml-2  "

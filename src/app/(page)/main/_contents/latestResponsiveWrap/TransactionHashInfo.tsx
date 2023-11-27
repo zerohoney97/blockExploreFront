@@ -16,7 +16,7 @@ const MainTransactionHashInfo: React.FC<ITransactionHashInfoProps> = ({
     <p className="md:w-[40%] lg:w-[40%] dark:text-white">
       TX #
       <Link
-        href={`/main/tx/${transactionHash}`}
+        href={`/transaction/${transactionHash}`}
         className="ml-2  text-text-mainTextColor"
       >
         {truncateHash}

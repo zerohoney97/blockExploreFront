@@ -11,7 +11,7 @@ const MainMiner:React.FC<IMinerProps> = ({feeRecipient}) => {
   return (
     <p className='dark:text-white'>
         Fee Recipient
-        <Link href={`/main/address/${feeRecipient}`} className='ml-2 text-text-mainTextColor'>{truncate(feeRecipient)}</Link>
+        <Link href={`/address/${feeRecipient}`} className='ml-2 text-text-mainTextColor'>{truncate(feeRecipient)}</Link>
     </p>
   )
 }

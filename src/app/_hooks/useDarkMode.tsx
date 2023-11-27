@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 const useDarkMode = () => {
-  const [isDark, setIsDark] = useState<boolean>();
+  const [isDark, setIsDark] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
