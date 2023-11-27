@@ -21,9 +21,7 @@ const fromWeiToETH = (wei: string) => {
 };
 
 export const getTransaction = async (pageName: string) => {
-  const res = await fetch("https://api.bouncexplorer.site/tx",{
-    cache:'no-store'
-  });
+  const res = await fetch("https://api.bouncexplorer.site/tx");
   try {
     // const temp = await res.json();
 
