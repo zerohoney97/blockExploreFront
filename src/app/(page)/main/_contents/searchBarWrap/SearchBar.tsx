@@ -11,7 +11,7 @@ const MainSearchBar = () => {
   return (
     <div className="bg-white flex h-[58px] leading-[58px] rounded-lg whitespace-nowrap m-auto sm:w-11/12 md:w-[500px] lg:w-[500px] dark:bg-black dark:border-gray">
       <input
-        className="h-[34px] m-auto rounded-lg text-sm ml-[10px] w-11/12  dark:bg-black"
+        className="h-[34px] m-auto rounded-lg text-sm ml-[10px] w-11/12  dark:bg-black dark:text-white"
         placeholder="Search by Address / Txn Hash / Block / Token / Domain Name"
         value={value}
         onChange={(e) => setValue(e.target.value)}
