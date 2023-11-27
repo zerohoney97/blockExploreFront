@@ -18,7 +18,11 @@ const divideTimeIntoUnits = (now: number, blockTime: number) => {
 };
 
 export const getBlock = async (pageName: string) => {
-  const res = await fetch("https://api.bouncexplorer.site/block");
+  const res = await fetch("https://api.bouncexplorer.site/block", {
+    next: {
+      revalidate: 600,
+    },
+  });
   const now = new Date().getTime();
 
   if (pageName === "main") {
