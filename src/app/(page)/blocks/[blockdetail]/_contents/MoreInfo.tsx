@@ -19,19 +19,29 @@ const MoreInfo: React.FC<IBlocksMoreProps> = ({
     <div className="">
       <div
         className={`relative z-0 transition-all duration-500 flex flex-col justify-between ${
-          showMore ? "h-0ƒ" : " md:h-[230px] lg:h-[230px]"
+          showMore ? "h-0" : "sm:h-[450px] md:h-[230px] lg:h-[230px]"
         } overflow-hidden`}
       >
         <div
           className={`z-0 relative  box-border break-words flex flex-col ${
-            showMore ? "h-0" : "mb-3 border-b border-gray h-auto"
+            showMore
+              ? "h-0"
+              : "mb-3 border-b border-gray h-auto sm:h-[450px] md:h-[230px] lg:h-[230px]"
           }`}
         >
-          <BlockCardText title="Hash:" content={hash} />
-          <BlockCardText title="Parent Hash:" content={parentHash} />
-          <BlockCardText title="StateRoot:" content={stateRoot} />
-          <BlockCardText title="WithdrawlsRoot: " content={withdrawsRoot} />
-          <BlockCardText title="Nonce:: " content={nonce} />
+          <BlockCardText type={true} title="Hash:" content={hash} />
+          <BlockCardText
+            type={true}
+            title="Parent Hash:"
+            content={parentHash}
+          />
+          <BlockCardText type={true} title="StateRoot:" content={stateRoot} />
+          <BlockCardText
+            type={true}
+            title="WithdrawlsRoot: "
+            content={withdrawsRoot}
+          />
+          <BlockCardText type={true} title="Nonce:: " content={nonce} />
         </div>
       </div>
       <div className=" relative z-5 flex justify-between h-16 overflow-hidden items-center ">

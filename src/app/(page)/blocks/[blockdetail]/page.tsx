@@ -25,7 +25,7 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
           />
         </div>
       </div>
-      <div className=''>
+      <div className='py-5'>
         <BlockCard>
           <BlockInfo
             blockHeight={params.blockdetail}
@@ -59,6 +59,7 @@ const Page: React.FC<IBlocksDetailProps> = ({ params }) => {
             withdrawsRoot='
           0x4ddb8356fe3bfedf06d97caa3c303401177d72a196628e61ab5019d2bec0de33'
             nonce='0x0000000000000000'
+            
           />
         </BlockCard>
       </div>
