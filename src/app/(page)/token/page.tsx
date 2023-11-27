@@ -27,20 +27,20 @@ const Page = () => {
   const pagination = usePagination<TokenDataProps>(tokenData);
   return (
     <>
-      <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-black/20">
+      <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-black/90">
         <div className="w-full ">
           <Title title="Token Tracker(ERC-20)" />
           <ItemTable>
+            <div className="text-xs m-2 flex justify-between items-center dark:text-white">
+              A total of {""} Token Contracts found{" "}
+              <Image
+                className="flex cursor-pointer m-3"
+                src={searchIcon}
+                alt="searchIcon"
+                width={25}
+              />
+            </div>
             <div className="overflow-x-scroll">
-              <div className="text-xs m-2 flex justify-between items-center">
-                A total of {""} Token Contracts found{" "}
-                <Image
-                  className="flex cursor-pointer m-3"
-                  src={searchIcon}
-                  alt="searchIcon"
-                  width={25}
-                />
-              </div>
               <div className="min-w-[250px] max-w-[1250px] h-auto">
                 <table>
                   <TokenHeader />

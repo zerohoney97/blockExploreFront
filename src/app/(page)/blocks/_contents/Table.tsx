@@ -11,8 +11,8 @@ const BlocksTable:React.FC<IBlocksTableProps> = ({blocksData}) => {
     const pagination = usePagination(blocksData);
   return (
     <ItemTableWrap>
+    <span className="text-sm dark:text-white ">Total of blocks</span>
     <div className="overflow-x-scroll">
-      <span className="text-sm">Total of blocks</span>
       <table>
         <BlockHeader />
         <tbody className="items-center">

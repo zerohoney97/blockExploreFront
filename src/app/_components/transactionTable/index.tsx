@@ -43,7 +43,7 @@ const TxListWrap: React.FC<ITxListProps> = ({
   };
   return (
     <div
-      className={`w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px] h-auto bg-white max-h-[3000px] dark:bg-black my-10`}
+      className={`w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px] h-auto bg-white max-h-[3000px] dark:bg-black my-10 `}
     >
       <div
         className={`overflow-x-scroll overflow-y-hidden h-auto max-h-[3000px] dark:text-white`}

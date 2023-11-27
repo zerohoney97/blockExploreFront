@@ -50,7 +50,7 @@ const PendingTxItem: React.FC<IPendingTransaction> = ({
         {txHash}
       </td>
       <td className="items-center min-w-[150px]">
-        <span className="bg-gray max-w-[95px] p-1 rounded">{method}</span>
+        <span className="bg-gray max-w-[95px] p-1 rounded dark:text-black">{method}</span>
       </td>
       <td className=" items-center min-w-[100px]">{nonce}</td>
       <td className=" items-center min-w-[150px]">{lastSeen}</td>

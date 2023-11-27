@@ -20,7 +20,7 @@ const Page = () => {
   );
   const isRendered = useHydration();
   return (
-    <div>
+    <div className="dark:bg-black/90">
       <NftTransTitle title="NFT Transfers" />
       {isRendered && (
         <NftTxsListWrap

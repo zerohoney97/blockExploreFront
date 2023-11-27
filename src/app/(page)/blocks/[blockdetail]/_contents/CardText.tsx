@@ -15,10 +15,10 @@ const CardText: React.FC<CardTextProps> = ({
 }) => {
   return (
     <div className="my-3 break-words md:flex lg:flex">
-      <div className="font-medium text-sm md:text-itemDetail-textLabelColor mr-2 w-36 lg:text-itemDetail-textLabelColor">
+      <div className="font-medium text-sm md:text-itemDetail-textLabelColor mr-2 w-36 lg:text-itemDetail-textLabelColor dark:text-itemDetail-textLabelColor">
         {title}
       </div>
-      <span className="text-xs">
+      <span className="text-xs dark:text-white">
         {content}
         {content2}
         {children && <span className="text-xs">{children}</span>}

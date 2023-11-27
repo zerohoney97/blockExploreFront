@@ -4,7 +4,7 @@ import Title from "@app/_components/itemTitle";
 
 const Page = () => {
   return (
-    <div>
+    <div className="dark:bg-black/90">
       <Title title="Token Transfers (ERC-20)"/>
       <TokenTransferListWrap />
     </div>

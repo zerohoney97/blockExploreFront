@@ -17,7 +17,7 @@ const MobileHeader: React.FC<IDropMenuProps> = ({ router }) => {
         <Link href={"/"}>
           <div className="w-40 h-10 flex justify-between items-center">
             <Image src={Logo} alt="바운스코드 이미지" width={50} />
-            <div className="whitespace-nowrap">Bounce Explorer</div>
+            <div className="whitespace-nowrap dark:text-white">Bounce Explorer</div>
           </div>
         </Link>
         <div className="flex">

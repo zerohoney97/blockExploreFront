@@ -10,14 +10,14 @@ const DiffcultyInfo: React.FC<IBlocksDifficultyProps> = ({
   size,
 }) => {
   return (
-    <div className="border-b border-t border-gray">
+    <div className="border-b border-t border-gray dark:text-white">
       <BlockCardText
         title="Fee Recipient:"
         content={
           <>
             <Link
               className="text-text-mainTextColor"
-              href="http://localhost:3000/address/"
+              href={`/address/${feeRecipient}`}
             >
               Fee Recipient {feeRecipient}
             </Link>

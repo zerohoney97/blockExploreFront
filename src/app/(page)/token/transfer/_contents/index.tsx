@@ -54,12 +54,12 @@ const TokenTransferListWrap = () => {
 
   return (
     <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white `}
+      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white dark:bg-black`}
     >
       <div className={`overflow-x-auto  h-auto`}>
         <table className="w-full m-auto">
           <thead className="">
-            <tr className="h-20 border-b border-gray flex text-sm">
+            <tr className="h-20 border-b border-gray flex text-sm dark:text-white">
               <th className="min-w-[60px] w-auto flex items-center justify-center lg:w-20  ">
                 <FontAwesomeIcon icon={faCircleQuestion} />
               </th>

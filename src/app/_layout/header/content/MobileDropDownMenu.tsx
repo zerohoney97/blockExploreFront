@@ -25,7 +25,7 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
     }
   };
   const menuCloseCSS = "h-0 overflow-hidden  relative transition-all    z-00 ";
-  const menuOpenCSS = "p-4 h-fit mt-2 relative transition-all   z-00 ";
+  const menuOpenCSS = "p-4 h-fit relative transition-all   z-00 dark:bg-black";
   const menuArr: Array<string> = ["Blockchain", "Tokens", "NFTs"];
   const subMenuArr: IsubMenu = {
     0: [
@@ -51,7 +51,7 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
         <li
           className="text-text-mainTextColor mt-2 cursor-pointer "
           onClick={() => {
-            router.push("/main");
+            router.push("/");
           }}
         >
           Home
@@ -59,7 +59,7 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
         {menuArr.map((el, index) => {
           return (
             <li
-              className="w-full mt-2  "
+              className="w-full mt-2 dark:text-white "
               onClick={() => {
                 subMenuHandler(index.toString());
               }}
@@ -78,13 +78,13 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
               </div>
               {subMenuOpenName === index.toString() && (
                 <div className=" h-fit">
-                  <div className="w-full border-2 rounded-xl border-gray h-fit m-auto p-5">
+                  <div className="w-full border-2 rounded-xl border-gray h-fit m-auto p-5 dark:bg-black">
                     <ul>
                       {subMenuArr[`${index}`].map((el, index) => {
                         return (
                           <li
                             key={index}
-                            className=" hover:bg-black/10 cursor-pointer rounded p-1 "
+                            className=" hover:bg-black/10 cursor-pointer rounded p-1 dark:hover:bg-gray/30"
                           >
                             {" "}
                             <Link href={`/${el.href}`}> {el.name}</Link>

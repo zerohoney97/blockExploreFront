@@ -17,7 +17,7 @@ const AbiFile: React.FC<AbiContentProps>= ({ label, onChange }) => {
           <input
             type="file"
             onChange={onChange}
-            className="block w-11/12"
+            className="block w-11/12 text-sm"
           />
         </label>
       </div>
