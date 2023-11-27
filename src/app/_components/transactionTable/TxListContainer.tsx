@@ -10,8 +10,14 @@ const TxList: React.FC<ITxListWrapProps> = ({ pageTxList, toggleHandler }) => {
   return (
     <>
       {pageTxList &&
-        (pageTxList as ItxList[]).map((ele) => (
-          <TxItem TxItem={ele} toggleHandler={toggleHandler} key={ele.txHash} />
+        (pageTxList as ItxList[]).map((ele, index) => (
+          <React.Fragment key={index}>
+            <TxItem
+              TxItem={ele}
+              toggleHandler={toggleHandler}
+              key={ele.txHash}
+            />
+          </React.Fragment>
         ))}
     </>
   );
