@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 
 interface CardTextProps {
   title: string;
-  content: any;
-  content2?:string
+  content: string | React.ReactNode;
+  content2?: string;
   children?: ReactNode;
 }
 

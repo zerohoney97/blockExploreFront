@@ -8,7 +8,6 @@ import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
 import searchIcon from "../../../../public/search03.png";
 import Image from "next/image";
-import DarkModeToggle from "@app/_components/darkToggle";
 import { TokenDataProps } from "./Interface";
 
 const tokenData = [

@@ -13,7 +13,7 @@ const TxMoreDetail: React.FC<IMordeDetailToggleProps> = ({
           mordeDetailToggle
             ? "sm:h-[480px] md:h-[450px] lg:h-[380px]"
             : " overflow-hidden"
-        } h-16 transition-all duration-500 relative`}
+        } h-16 transition-all duration-500 relative `}
       >
         <TxOnMoreDetail
           mordeDetailToggle={mordeDetailToggle}
