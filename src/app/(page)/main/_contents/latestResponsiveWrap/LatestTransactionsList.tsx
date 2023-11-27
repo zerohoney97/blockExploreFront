@@ -12,9 +12,9 @@ const MainLatestTransactionsList: React.FC<ITransactionsListProps> = ({
   return (
     <ul className="h-[482px] overflow-y-scroll w-full">
       {transactionslist.map((item, index) => (
-        <>
+        <React.Fragment key={index}>
           <LatestTransactionsItem transactionsData={item} />
-        </>
+        </React.Fragment>
       ))}
     </ul>
   );
