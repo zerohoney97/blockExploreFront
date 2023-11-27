@@ -21,13 +21,16 @@ const fromWeiToETH = (wei: string) => {
 };
 
 export const getTransaction = async (pageName: string) => {
-  const res = await fetch("https://api.bouncexplorer.site/tx");
+  const res = await fetch("https://api.bouncexplorer.site/tx", {
+    cache: "no-cache",
+  });
   try {
     // const temp = await res.json();
 
     const now = new Date().getTime();
     const responseTransactionData: IResponseTransactionData[] =
       await res.json();
+    console.log(responseTransactionData.length);
 
     //   const data = {
     //     id: 1,
