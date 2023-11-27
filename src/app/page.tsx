@@ -1,4 +1,3 @@
-
 import React from "react";
 import MainSearchBarWrap from "./(page)/main/_contents/searchBarWrap/SearchBarWrap";
 import EthereumOverview from "./(page)/main/_contents/ethereumOverview/EthereumOverview";
@@ -10,8 +9,8 @@ import { getTransaction } from "./_api/main/getTransaction";
 import { IMainBlocksItem, IMainTransactionData } from "./_api/main/interface";
 
 export default async function Main() {
-  const blockData = await getBlock('main');
-  const transactionData = await getTransaction('main');
+  const blockData = await getBlock("main");
+  const transactionData = await getTransaction("main");
   const overviewTransactionsData = {
     totalTransactionsCounter: 2155.7,
     transactionsPerSecond: 12.7,

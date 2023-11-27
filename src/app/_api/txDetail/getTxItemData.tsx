@@ -6,11 +6,12 @@ export const getTxItemData = async (txHash: string) => {
         process.env.NODE_ENV === "development"
           ? "http://localhost:8080"
           : "https://api.bouncexplorer.site"
-      }/tx/${txHash}`
+      }/tx/${txHash}`,
+      { cache: "no-cache" }
     );
 
-    // console.log(responseTransactionData.json());
-    const transactionData: any = await responseTransactionData.json();
+    const transactionData = await responseTransactionData.json();
+    console.log(transactionData);
     return "transactionData";
   } catch (error) {
     console.log(error);

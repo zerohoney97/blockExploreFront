@@ -27,7 +27,8 @@ export const getTransaction = async (pageName: string) => {
       process.env.NODE_ENV === "development"
         ? "http://localhost:8080"
         : "https://api.bouncexplorer.site"
-    }/tx`
+    }/tx`,
+    { cache: "no-cache" }
   );
   try {
     // const temp = await res.json();
