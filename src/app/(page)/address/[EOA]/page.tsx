@@ -13,11 +13,14 @@ import { useParams } from "next/navigation"
 
 
 const Page = () => {
+  const router = useParams();
+  const { eoa } = useParams();
+
   return (
     <div className="bg-mainBackGroundColor">
       <AddressTitle
         title="Address"
-        address="0x787E943f27D78168ebF2D1E00B66b8895Ca45B6F"
+        eoa={eoa as string}
       />
       <AddressOverView />
       <AddressMoreInfo />
