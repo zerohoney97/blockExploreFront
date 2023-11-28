@@ -4,13 +4,14 @@ import React from "react";
 import { ITokenTransferItemProps } from "./interface";
 import { useRouter } from "next/navigation";
 import {
-  faCircleRight,
   faCopy,
   faEye,
 } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
+import Arrow from "public/arrow.png";
+import WordBallon from "@app/_components/wordBallon";
 
 const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
   TxItem,
@@ -20,16 +21,6 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
     return (
       address.substring(0, 4) + "...." + address.substring(address.length - 4)
     );
-  };
-  const AddressClick = (value: string) => {
-    navigator.clipboard
-      .writeText(value)
-      .then(() => {
-        console.log(value);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
   };
   const txNavigation = useRouter();
   return (
@@ -59,7 +50,7 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
       </td>
       <td className="min-w-[100px] items-center">{TxItem.block}</td>
       <td className="min-w-[100px] items-center">{TxItem.age}</td>
-      <td className="min-w-[120px]   lg:w-44">
+      <td className="min-w-[120px]">
         <div className="w-full flex ">
           <div className="text-text-mainTextColor">
             <Link href={`/transaction/${TxItem.from}`}>
@@ -67,27 +58,25 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
               {addressEncodeHandler(TxItem.from)}
             </Link>
           </div>
-          <button onClick={() => AddressClick(TxItem.from)} className="ml-3">
-            <FontAwesomeIcon icon={faCopy} />
-          </button>
+          <div className="ml-3">
+            <WordBallon copyValue={TxItem.from} />
+          </div>
         </div>
       </td>
-      <td>
-        <div className=" lg:w-20">
-          <FontAwesomeIcon icon={faCircleRight} />
-        </div>
+      <td className='flex justify-center sm:w-[50px] md:w-[100px]  lg:w-[150px]'>
+        <Image alt='' width={20} src={Arrow} />
       </td>
-      <td className="min-w-[200px]  lg:w-64">
+      <td className="min-w-[200px] lg:w-64">
         <div className="w-full flex ">
-          <div className="text-text-mainTextColor  sm:ml-2 md:ml-2">
+          <div className="text-text-mainTextColor">
             <Link href={`/transaction/${TxItem.to}`}>
               {" "}
               {addressEncodeHandler(TxItem.to)}
             </Link>
           </div>
-          <button onClick={() => AddressClick(TxItem.to)} className="ml-3">
-            <FontAwesomeIcon icon={faCopy} />
-          </button>
+          <div className="ml-3">
+            <WordBallon copyValue={TxItem.to} />
+          </div>
         </div>
       </td>
       <td className="min-w-[100px] items-center">{TxItem.value}</td>

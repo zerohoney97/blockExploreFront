@@ -3,14 +3,10 @@
 import React from "react";
 import { IPendingTransaction, IPendingTransactionProps } from "./interface";
 import { useRouter } from "next/navigation";
-import {
-  faCircleRight,
-  faCopy,
-  faEye,
-} from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
+import WordBallon from "@app/_components/wordBallon";
+import Image from "next/image";
+import Arrow from "public/arrow.png";
 
 const PendingTxItem: React.FC<IPendingTransaction> = ({
   amount,
@@ -28,21 +24,11 @@ const PendingTxItem: React.FC<IPendingTransaction> = ({
       address.substring(0, 4) + "...." + address.substring(address.length - 4)
     );
   };
-  const AddressClick = (value: string) => {
-    navigator.clipboard
-      .writeText(value)
-      .then(() => {
-        console.log(value);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
   const txNavigation = useRouter();
   return (
-    <tr className="h-14 border-b  border-gray text-sm  align-middle">
+    <tr className="h-14 border-b border-gray text-sm flex items-center">
       <td
-        className=" text-text-mainTextColor max-w-[240px] truncate p-2 "
+        className=" text-text-mainTextColor max-w-[240px] truncate px-5 "
         onClick={() => {
           txNavigation.push(`/transaction/${txHash}`);
         }}
@@ -64,24 +50,26 @@ const PendingTxItem: React.FC<IPendingTransaction> = ({
               {addressEncodeHandler(from)}
             </Link>
           </div>
-          <button onClick={() => AddressClick(from)} className="ml-3">
-            <FontAwesomeIcon icon={faCopy} />
-          </button>
+          <div className="ml-3">
+            <WordBallon copyValue={from} />
+          </div>
+          
         </div>
       </td>
       <td>
-        <div className="min-w-[20px] lg:w-20">
-          <FontAwesomeIcon icon={faCircleRight} />
+        <div className="min-w-[20px] sm:mr-[15px] md:mr-[20px] lg:mr-[30px]">
+          <Image alt='' width={20} src={Arrow} />
         </div>
       </td>
       <td className=" min-w-[150px] lg:w-64">
         <div className="w-full flex ">
-          <div className="text-text-mainTextColor  sm:ml-2 md:ml-2">
+          <div className="text-text-mainTextColor">
             <Link href={`/transaction/${to}`}> {addressEncodeHandler(to)}</Link>
           </div>
-          <button onClick={() => AddressClick(to)} className="ml-3">
-            <FontAwesomeIcon icon={faCopy} />
-          </button>
+          <div className="ml-3">
+            <WordBallon copyValue={to} />
+          </div>
+          
         </div>
       </td>
       <td className=" items-center min-w-[100px]">{amount}</td>

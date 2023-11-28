@@ -8,22 +8,22 @@ const BlockContent: React.FC<{ data: IBlocksDataProps }> = ({ data }) => {
   const addressPath = "nft/ContractAddress";
 
   return (
-    <tr className="border-b border-gray text-sm">
-      <td className="py-3 min-w-[100px] justify-center text-text-mainTextColor">
+    <tr className="border-b border-gray text-sm ">
+      <td className="py-3 pl-4 min-w-[100px] justify-center text-text-mainTextColor">
         <Link href={BlocksDetailPath}>{data.block}</Link>
       </td>
-      <td className="min-w-[150px] dark:text-white">{data.age}</td>
+      <td className="min-w-[150px] dark:text-white pl-4">{data.age}</td>
       <td className="min-w-[60px] text-text-mainTextColor">
         <Link href={transactionPath}>{data.Txn}</Link>
       </td>
-      <td className="min-w-[250px] text-text-mainTextColor">
+      <td className="max-w-[250px] truncate text-text-mainTextColor">
         <Link href={addressPath}>{data.feeRecipient}</Link>
       </td>
-      <td className="min-w-[200px] dark:text-white">
+      <td className="min-w-[200px] dark:text-white pl-3">
         {data.gasUsed} <span>({data.gasUsedPercent}%)</span>
       </td>
       <td className="min-w-[200px] dark:text-white">{data.gasLimit}</td>
-      <td className="min-w-[200px] dark:text-white">{data.baseFee}Gwei</td>
+      <td className="dark:text-white">{data.baseFee}Gwei</td>
     </tr>
   );
 };

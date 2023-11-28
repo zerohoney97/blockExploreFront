@@ -59,12 +59,13 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
               {addressEncodeHandler(TxItem.from)}
             </Link>
           </div>
-          <WordBallon copyValue={TxItem.from} />
-
+          <div className="ml-3">
+            <WordBallon copyValue={TxItem.from} />
+          </div>
         </div>
       </td>
-      <td className='flex justify-center items-center w-20 lg:w-[150px]'>
-        <Image alt='' width={30} src={Arrow} />
+      <td className='flex justify-center items-center sm:w-[50px] md:w-[100px]  lg:w-[150px]'>
+        <Image alt='' width={20} src={Arrow} />
       </td>
       <td className='min-w-[120px] lg:w-44'>
         <div className='w-full flex '>
@@ -73,7 +74,9 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
               {addressEncodeHandler(TxItem.to)}
             </Link>
           </div>
-          <WordBallon copyValue={TxItem.to} />
+          <div className="ml-3">
+            <WordBallon copyValue={TxItem.to} />
+          </div>
           
         </div>
       </td>

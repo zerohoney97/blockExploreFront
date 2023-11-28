@@ -37,7 +37,7 @@ const Page = () => {
       {/* <SearchBar />
       <NFTContainer /> */}
       <Title title='NFT List' />
-      <div className='mt-10'>
+      <div className='my-10'>
         <ItemTableWrap>
           <CollectionItemWrap pageTxList={pageTxList} />
           <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />

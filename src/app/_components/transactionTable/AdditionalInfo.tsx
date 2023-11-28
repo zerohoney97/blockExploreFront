@@ -36,7 +36,7 @@ const AdditionalInfo: React.FC<IAdditionalInfoProps> = ({
               {addInfoTempData.gasInfo} gas used from {addInfoTempData.gasLimit}{" "}
               limit
             </div>
-            <div>@0.0000000000000000004843ETH(0.000004834Gwei)</div>
+            <div className="text-[10px] truncate">@0.0000000000000000004843ETH(0.000004834Gwei)</div>
           </div>
         </div>
         <div className="flex flex-col w-full text-sm h-1/5 border-b justify-center">

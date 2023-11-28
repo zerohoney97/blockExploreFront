@@ -69,7 +69,7 @@ const TxListWrap: React.FC<ITxListProps> = ({
               <th className="min-w-[120px] flex items-center  ml-[20px]">
                 From
               </th>
-              <th className="w-20 lg:w-[150px]"></th>
+              <th className="w-20 sm:w-[50px] md:w-[100px]  lg:w-[150px]"></th>
               <th className="min-w-[120px] lg:w-44 flex items-center">
                 To
               </th>

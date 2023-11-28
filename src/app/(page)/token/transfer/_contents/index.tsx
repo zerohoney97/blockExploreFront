@@ -54,7 +54,7 @@ const TokenTransferListWrap = () => {
 
   return (
     <div
-      className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white dark:bg-black`}
+      className={`my-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white dark:bg-black`}
     >
       <div className={`overflow-x-auto  h-auto`}>
         <table className="w-full m-auto">
@@ -75,11 +75,11 @@ const TokenTransferListWrap = () => {
               <th className="min-w-[100px] flex items-center ">
                 Age
               </th>
-              <th className="min-w-[120px] flex items-center  lg:w-44  ">
+              <th className="min-w-[120px] flex items-center">
                 From
               </th>
-              <th className="w-auto lg:w-20"></th>
-              <th className="min-w-[200px] flex items-center   sm:ml-4 md:ml-4 lg:w-64 ">
+              <th className="sm:w-[50px] md:w-[100px]  lg:w-[150px]"></th>
+              <th className="min-w-[200px] flex items-center lg:w-64">
                 To
               </th>
               <th className="min-w-[100px] flex justify-start items-center  ">
