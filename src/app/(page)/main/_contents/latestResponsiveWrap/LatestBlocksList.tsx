@@ -5,7 +5,7 @@ import { IBlocksListProps } from '../../interface'
 
 const MainLatestBlocksList:React.FC<IBlocksListProps> = ({blocksList}) => {
   return (
-    <ul className='h-[482px] w-full dark:bg-black '>
+    <ul className='w-full dark:bg-black '>
       {blocksList.map((item, index)=>(
         <React.Fragment key={index}>
           <LatestBlocksItem blocksItem ={item}/>

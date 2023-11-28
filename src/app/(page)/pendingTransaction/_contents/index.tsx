@@ -40,7 +40,7 @@ const PendingTxListWrap = () => {
     setIsToggled(!isToggled);
   };
   return (
-    <div className="dark:bg-black/90 dark:text-white">
+    <div className="dark:bg-black/90 dark:text-white mb-[50px]">
       <Title title="Pending Transactions" />
       {isRendered && (
         <div
@@ -50,7 +50,7 @@ const PendingTxListWrap = () => {
             <table className="w-full m-auto">
               <thead className="">
                 <tr className="h-20 border-b border-gray flex text-sm">
-                  <th className=" flex justify-start items-center min-w-[240px] p-2">
+                  <th className=" flex justify-start items-center min-w-[240px] px-5">
                     Txn Info
                   </th>
                   <th className=" flex items-center min-w-[150px]">Method</th>
@@ -61,8 +61,10 @@ const PendingTxListWrap = () => {
                   <th className=" flex items-center  lg:w-44  min-w-[130px] ">
                     From
                   </th>
-                  <th className="w-auto min-w-[20px] lg:w-20"></th>
-                  <th className=" flex items-center  min-w-[150px] sm:ml-4 md:ml-4 lg:w-64 ">
+                  <th>
+                    <div className="min-w-[20px] sm:mr-[15px] md:mr-[20px] lg:mr-[30px]"></div>
+                  </th>
+                  <th className=" flex items-center  min-w-[150px] lg:w-64">
                     To
                   </th>
                   <th className=" flex justify-start items-center min-w-[100px] ">Amount</th>

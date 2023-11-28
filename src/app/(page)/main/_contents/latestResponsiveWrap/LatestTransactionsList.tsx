@@ -10,7 +10,7 @@ const MainLatestTransactionsList: React.FC<ITransactionsListProps> = ({
     console.log(transactionslist);
   }, [transactionslist]);
   return (
-    <ul className="h-[482px] w-full">
+    <ul className="w-full">
       {transactionslist.map((item, index) => (
         <React.Fragment key={index}>
           <LatestTransactionsItem transactionsData={item} />

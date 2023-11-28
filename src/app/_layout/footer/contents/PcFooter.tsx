@@ -5,7 +5,7 @@ import Logo from "public/Logo.png";
 const PcFooter = () => {
   return (
     <div className="bg-white dark:bg-black">
-      <div className="max-w-[1400px] m-auto h-80  p-8 border-t border-gray  ">
+      <div className="max-w-[1400px] m-auto h-80  p-8 md:border-t border-gray  ">
         <div className=" h-20 flex justify-end border-2 border-white border-b-gray">
           <img
             src="https://static.thenounproject.com/png/1590838-200.png"
