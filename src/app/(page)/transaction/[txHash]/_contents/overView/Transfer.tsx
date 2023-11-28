@@ -6,7 +6,9 @@ import copy from "public/copy.png";
 import React from "react";
 import Link from "next/link";
 
-const TxTransfer: React.FC<ITransactionDetailProps> = ({transactionItemData}) => {
+const TxTransfer: React.FC<ITransactionDetailProps> = ({
+  transactionItemData,
+}) => {
   return (
     <div className="w-full h-auto flex flex-col border-b border-gray pb-5 dark:text-white">
       <div className="flex flex-col">
@@ -16,7 +18,7 @@ const TxTransfer: React.FC<ITransactionDetailProps> = ({transactionItemData}) =>
           </div>
           <div className="p-1 h-10 text-xs lg:ml-4   ">
             <div className="p-1 h-auto text-xs   sm:w-80 md:w-80  sm:break-words md:break-words lg:w-auto">
-              <Link href={`/address/0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738`}>
+              <Link href={`/address/${transactionItemData.from}`}>
                 <span className="text-text-mainTextColor">
                   {transactionItemData.from}
                 </span>
@@ -37,10 +39,10 @@ const TxTransfer: React.FC<ITransactionDetailProps> = ({transactionItemData}) =>
           </div>
           <div className="p-1 h-10 text-xs  lg:ml-4 ">
             <div className="p-1 h-auto text-xs sm:w-80 md:w-80 sm:break-words md:break-words lg:w-auto ">
-              <Link  href={`/address/0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738`}>
-              <span className="text-text-mainTextColor">
-               {transactionItemData.to}
-              </span>
+              <Link href={`/address/${transactionItemData.to}`}>
+                <span className="text-text-mainTextColor">
+                  {transactionItemData.to}
+                </span>
               </Link>
               <FontAwesomeIcon
                 icon={faCopy}
