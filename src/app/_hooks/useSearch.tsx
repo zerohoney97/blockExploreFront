@@ -20,7 +20,7 @@ const useSearch = () => {
   };
 
   const handleInvalidInput = () => {
-    alert("검색하신 내용을 찾을 수 없습니다. 다시 입력해 주세요.");
+    router.push('/error')
   };
 
   const handleSearch = () => {
