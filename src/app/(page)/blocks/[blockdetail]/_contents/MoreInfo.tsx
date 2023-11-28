@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import { IBlocksMoreProps } from "../../interface";
 import BlockCardText from "./CardText";

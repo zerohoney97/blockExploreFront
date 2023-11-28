@@ -1,6 +1,7 @@
+import { ITransactionDetailProps } from "@app/(page)/transaction/interface";
 import React from "react";
 
-const TxTransferToken = () => {
+const TxTransferToken: React.FC<ITransactionDetailProps> = ({transactionItemData}) => {
   const addressEncodeHandler = (address: string) => {
     return (
       address.substring(0, 4) + "...." + address.substring(address.length - 4)

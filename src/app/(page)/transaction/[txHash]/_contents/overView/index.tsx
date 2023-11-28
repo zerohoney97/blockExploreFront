@@ -8,8 +8,11 @@ import TxTransferToken from "./TransferToken";
 import TxTransferNFT from "./TransferNFT";
 import TxGasInfo from "./GasInfo";
 import TxMoreDetail from "./MoreDetail";
+import { ITransactionDetailProps } from "@app/(page)/transaction/interface";
 
-const TxOverViewMain = () => {
+const TxOverViewMain: React.FC<ITransactionDetailProps> = ({
+  transactionItemData,
+}) => {
   const [mordeDetailToggle, setMoreDetailToggle] = useState<boolean>(false);
   const moreDetailToggleHandler = () => {
     setMoreDetailToggle(!mordeDetailToggle);
@@ -18,17 +21,18 @@ const TxOverViewMain = () => {
     <>
       {" "}
       <ItemTableWrap>
-        <TxOverView />
-        <TxAction />
-        <TxTransfer />
-        <TxTransferToken />
-        <TxTransferNFT />
-        <TxGasInfo />
+        <TxOverView transactionItemData={transactionItemData} />
+        <TxAction transactionItemData={transactionItemData} />
+        <TxTransfer transactionItemData={transactionItemData} />
+        <TxTransferToken transactionItemData={transactionItemData} />
+        <TxTransferNFT transactionItemData={transactionItemData} />
+        <TxGasInfo transactionItemData={transactionItemData} />
       </ItemTableWrap>
       <ItemTableWrap>
         <TxMoreDetail
           mordeDetailToggle={mordeDetailToggle}
           moreDetailToggleHandler={moreDetailToggleHandler}
+          transactionItemData={transactionItemData}
         />
       </ItemTableWrap>
     </>

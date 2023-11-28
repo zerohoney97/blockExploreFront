@@ -5,6 +5,7 @@ import { IMordeDetailToggleProps } from "@app/(page)/transaction/interface";
 const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
   mordeDetailToggle,
   moreDetailToggleHandler,
+  transactionItemData,
 }) => {
   return (
     <div className="w-full h-auto flex flex-col   pb-5 relative dark:bg-black dark:text-white">
@@ -22,9 +23,7 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
               Gas Limit & Usage by Txn:
             </div>
             <div className="p-1 h-auto text-xs break-words text-itemDetail-txGasInfoColor  lg:ml-10 dark:text-white ">
-              <span className="">217,522</span>{" "}
-              <span className="border-r-2 mx-3  border-txDetail-moreDetailBorderRight"></span>
-              <span className="">174,202(80.88%)</span>
+              <span className="">{transactionItemData.gas}</span>{" "}
             </div>
           </div>
           <div className="lg:flex lg:items-center">
@@ -36,17 +35,25 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
               <span className="text-sm text-itemDetail-textLabelColor">
                 Base:
               </span>{" "}
-              <span className="text-xs dark:text-white"> 21.966975084 Gwei</span>
+              <span className="text-xs dark:text-white">
+                {" "}
+                {transactionItemData.gas} Gwei
+              </span>
               <span className="border-r-2 mx-3  border-txDetail-moreDetailBorderRight"></span>
               <span className="text-sm text-itemDetail-textLabelColor">
                 Max:
               </span>{" "}
-              <span className="text-xs dark:text-white"> 24.759 Gwei</span>
+              <span className="text-xs dark:text-white">
+                {" "}
+                {transactionItemData.maxFeePerGas}Gwei
+              </span>
               <span className="border-r-2 mx-3  border-txDetail-moreDetailBorderRight"></span>
               <span className="text-sm text-itemDetail-textLabelColor">
                 Max Priority:
               </span>{" "}
-              <span className="text-xs dark:text-white">0.5Gwei</span>
+              <span className="text-xs dark:text-white">
+                {transactionItemData.maxPriorityFeePerGas}Gwei
+              </span>
             </div>
           </div>
           <div className="w-full lg:flex lg:items-center ">
@@ -63,7 +70,7 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
       {/* 애니메이션 */}
       <div
         className={`${
-          mordeDetailToggle ? "mt-5":'bg-white'
+          mordeDetailToggle ? "mt-5" : "bg-white"
         } w-full flex items-center relative  h-16  z-5  transition-all  justify-between dark:bg-black`}
       >
         <div className="text-sm font-medium lg:text-itemDetail-textLabelColor  dark:text-white">

@@ -5,6 +5,7 @@ import { IMordeDetailToggleProps } from "@app/(page)/transaction/interface";
 const TxMoreDetail: React.FC<IMordeDetailToggleProps> = ({
   mordeDetailToggle,
   moreDetailToggleHandler,
+  transactionItemData,
 }) => {
   return (
     <>
@@ -18,6 +19,7 @@ const TxMoreDetail: React.FC<IMordeDetailToggleProps> = ({
         <TxOnMoreDetail
           mordeDetailToggle={mordeDetailToggle}
           moreDetailToggleHandler={moreDetailToggleHandler}
+          transactionItemData={transactionItemData}
         />
       </div>
     </>

@@ -1,20 +1,26 @@
 "use client";
 import TabButton from "@app/_components/tabComponent/Tab";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TxOverViewMain from "./overView";
 import TxLogsMain from "./logs";
 import TxStateMain from "./state";
+import { ITransactionDetailProps } from "../../interface";
 
-const TxTabButtonWrap = () => {
+const TxContentWrap: React.FC<ITransactionDetailProps> = ({
+  transactionItemData,
+}) => {
   const [toggleLabelName, setToggleLabelName] = useState<string | null>(
     "Over View"
   );
   const toggleHandler = (label: string) => {
     setToggleLabelName(label);
   };
+  useEffect(() => {
+    console.log(transactionItemData);
+  }, []);
   const componentHandler = (label: string) => {
     if (label === "Over View") {
-      return <TxOverViewMain />;
+      return <TxOverViewMain transactionItemData={transactionItemData} />;
     } else if (label === "Logs") {
       return <TxLogsMain />;
     } else if (label === "State") {
@@ -48,4 +54,4 @@ const TxTabButtonWrap = () => {
   );
 };
 
-export default TxTabButtonWrap;
+export default TxContentWrap;
