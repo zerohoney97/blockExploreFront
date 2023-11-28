@@ -29,6 +29,7 @@ interface INftAListProps {
   to: string;
 }
 interface INftAListOA {
-  pageTxList:INftAListProps[]
+  pageTxList:INftAListProps[],
+  toggleHandler: () => void;
 }
 

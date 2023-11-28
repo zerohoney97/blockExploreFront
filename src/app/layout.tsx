@@ -24,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
         {/* <Header /> */}
-        {children}
+        <div className="dark:bg-black">
+          {children}
+        </div>
         <div className="relative" id="portal"></div>
         {/* <Footer /> */}
       </body>

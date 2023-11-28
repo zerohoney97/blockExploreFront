@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { INftAListOA } from "../../interface";
 
-const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
+const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList, toggleHandler }) => {
   const truncate = (hash: string) => {
     return hash.substring(0, 19) + "...";
   };
@@ -40,8 +40,9 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList }) => {
             <div className={`${minWidth(60)} h-[50px] flex justify-center`}>
               <button onClick={() => additionalClick(index)}>
                 <FontAwesomeIcon
-                  className='border-gray rounded-lg p-[10px] border-[1px]'
+                  className='border-gray rounded-lg p-[10px] border-[1px] cursor-pointer'
                   icon={faEye}
+                  onClick={toggleHandler}
                 />
               </button>
               {/* <div className={`ml-[50px] w-[100px] h-[50px] bg-yellow absolute ${test[index] ? "block" : "hidden"}`}></div> */}
