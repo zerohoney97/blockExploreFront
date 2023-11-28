@@ -13,10 +13,10 @@ const TxGasInfo: React.FC<ITransactionDetailProps> = ({transactionItemData}) => 
           <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px] ">
             Value:
           </div>
-          <div className="p-1 h-auto text-xs break-words  w-20 text-itemDetail-txGasInfoColor flex justify-around lg:ml-10 dark:text-white">
+          <div className="p-1 h-auto text-xs break-words  w-fit text-itemDetail-txGasInfoColor flex justify-around lg:ml-10 dark:text-white">
             {/* <img src={etherIcon} alt="이더 아이콘" className="w-5 h-5 " /> */}
             <FontAwesomeIcon icon={faEthereum} />
-            <div className="">{transactionItemData.value}ETH</div>
+            <div className="ml-3">{transactionItemData.value}ETH</div>
           </div>
         </div>
         <div className="lg:flex lg:items-center">

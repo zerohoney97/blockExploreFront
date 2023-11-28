@@ -6,7 +6,9 @@ const Page = async ({ params }: { params: { txHash: string } }) => {
   const transactionItemData: ITransactionDetailData = (await getTxItemData(
     params.txHash
   )) as ITransactionDetailData;
-
+  if (transactionItemData === undefined) {
+    return "";
+  }
   return (
     <div className="bg-mainBackGroundColor pb-5  max-w-[1250px] m-auto dark:bg-black/90">
       <ItemTitle title="Transaction Details" />

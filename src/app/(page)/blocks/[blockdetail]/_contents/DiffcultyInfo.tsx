@@ -5,9 +5,7 @@ import Link from "next/link";
 
 const DiffcultyInfo: React.FC<IBlocksDifficultyProps> = ({
   feeRecipient,
-  reward,
   totalDifficulty,
-  size,
 }) => {
   return (
     <div className="border-b border-t border-gray dark:text-white">
@@ -25,9 +23,7 @@ const DiffcultyInfo: React.FC<IBlocksDifficultyProps> = ({
           </>
         }
       />
-      <BlockCardText title="Block Reward:" content={reward} />
       <BlockCardText title="Total Difficulty:" content={totalDifficulty} />
-      <BlockCardText title="Size:" content={size} />
     </div>
   );
 };
