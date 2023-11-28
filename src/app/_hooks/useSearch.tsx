@@ -8,8 +8,6 @@ const useSearch = () => {
   const router = useRouter();
 
   const search = (searchValue: string): string | null => {
-    console.log(`Search value: ${searchValue}`);
-    console.log(`Length: ${searchValue.length}`);
     if (searchValue.startsWith("0x") && searchValue.length === 42) {
       return `/address/${searchValue}`;
     } else if (searchValue.startsWith("0x") && searchValue.length === 66) {

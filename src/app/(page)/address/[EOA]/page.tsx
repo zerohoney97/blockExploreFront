@@ -13,7 +13,6 @@ const Page = () => {
     <div className="bg-mainBackGroundColor">
       <AddressTitle
         title="Address"
-
       />
       <AddressOverView />
       <AddressMoreInfo />

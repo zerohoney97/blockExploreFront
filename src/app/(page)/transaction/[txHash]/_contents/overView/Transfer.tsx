@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import copy from "public/copy.png";
 import React from "react";
+import Link from "next/link";
 
 const TxTransfer = () => {
   return (
@@ -14,9 +15,12 @@ const TxTransfer = () => {
           </div>
           <div className="p-1 h-10 text-xs lg:ml-4   ">
             <div className="p-1 h-auto text-xs   sm:w-80 md:w-80  sm:break-words md:break-words lg:w-auto">
-              <span className="text-text-mainTextColor">
-                0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
-              </span>
+              <Link href={`/address/0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738`}>
+                <span className="text-text-mainTextColor">
+                  0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
+                </span>
+              </Link>
+
               <FontAwesomeIcon
                 icon={faCopy}
                 className=" ml-2   "
@@ -32,9 +36,11 @@ const TxTransfer = () => {
           </div>
           <div className="p-1 h-10 text-xs  lg:ml-4 ">
             <div className="p-1 h-auto text-xs sm:w-80 md:w-80 sm:break-words md:break-words lg:w-auto ">
+              <Link  href={`/address/0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738`}>
               <span className="text-text-mainTextColor">
-              0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
+                0xdc1b18f4fba9b80868268645a2c449e5f7e556c4d2b0335204d12c4496720738
               </span>
+              </Link>
               <FontAwesomeIcon
                 icon={faCopy}
                 className=" ml-2  "

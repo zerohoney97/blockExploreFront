@@ -1,15 +1,15 @@
 import ItemTableWrap from "@app/_components/itemTable";
 import React from "react";
 
-const AddressOverView = () => {
+const  AddressOverView = () => {
   return (
     <ItemTableWrap>
-      <div className="w-full h-auto flex flex-col border-b border-gray pb-5 ">
+      <div className="w-full h-auto flex flex-col  pb-5 ">
         <div className="font-bold">Overview</div>
         <div className="flex flex-col">
           <div className="lg:flex lg:items-center">
             {" "}
-            <div className="font-bold p-2 text-itemDetail-textLabelColor lg:w-[250px]">
+            <div className="font-bold p-2 text-itemDetail-textLabelColor lg:w-[250px] text-sm">
               ETH BALLANCE:
             </div>
             <div className="p-1 h-auto text-sm   w-60 sm:break-words lg:ml-8 md:break-words ">
@@ -18,7 +18,7 @@ const AddressOverView = () => {
             </div>
           </div>
           <div className="lg:flex lg:items-center">
-            <div className="font-bold p-2 text-itemDetail-textLabelColor lg:w-[250px]">
+            <div className="font-bold p-2 text-itemDetail-textLabelColor lg:w-[250px] text-sm">
               LAST TXN SENT:
             </div>
             <div className="p-1 h-auto text-sm flex  w-80 sm:break-words lg:ml-8 md:break-words">
@@ -32,7 +32,7 @@ const AddressOverView = () => {
           </div>
 
           <div className="lg:flex lg:items-center">
-            <div className="font-bold p-2 text-itemDetail-textLabelColor lg:w-[250px]">
+            <div className="font-bold p-2 text-itemDetail-textLabelColor lg:w-[250px] text-sm">
               FRIST TXN SENT:
             </div>
             <div className="p-1 h-auto text-sm flex  sm:w-80 sm:break-words lg:ml-8  lg:w-96">

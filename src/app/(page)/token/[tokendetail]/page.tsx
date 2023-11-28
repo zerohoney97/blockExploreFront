@@ -19,7 +19,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
   }, []);
 
   return (
-    <>
+    <div className="dark:bg-black/90">
       <Title
         title={`Token`}
         subtitle={<span className="text-sm">#{params.tokendetail}</span>}
@@ -57,7 +57,7 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
       <div className="w-11/12 m-auto">
         <TokenTapInfo />
       </div>
-    </>
+    </div>
   );
 };
 
