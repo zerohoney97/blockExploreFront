@@ -17,7 +17,10 @@ const divideTimeIntoUnits = (now: number, txTime: number) => {
 const weiToGwei = (gas: string) => {
   return (Number(gas) / 1e9).toString();
 };
-
+const weiToEth = (wei: string) => {
+  const eth = Number(wei) / 1e18; // 1 Ether = 10^18 Wei
+  return eth.toFixed(18); // Format the result with 18 decimal places (optional)
+};
 export const getTxItemData = async (txHash: string) => {
   const now = new Date().getTime();
 
@@ -34,31 +37,50 @@ export const getTxItemData = async (txHash: string) => {
     const responseTransactionData: ITransactionResponseItemData =
       await res.json();
 
-    const transactionFee =
-      (Number(responseTransactionData.gas) *
-        Number(responseTransactionData.gasPrice)) /
-      1e18;
+    const {
+      Method,
+      NFT_id,
+      Timestamp,
+      accessList,
+      block_id,
+      blocknumber,
+      chainId,
+      createdAt,
+      from,
+      gas,
+      gasPrice,
+      hash,
+      id,
+      input,
+      maxFeePerGas,
+      maxPriorityFeePerGas,
+      r,
+      s,
+      to,
+      token_id,
+      transactionIndex,
+      type,
+      updatedAt,
+      v,
+      value,
+    } = responseTransactionData;
+    const transactionFee = (Number(gas) * Number(gasPrice)) / 1e18;
     const transactionData: ITransactionItemData = {
-      txHash: responseTransactionData.hash,
-      from: responseTransactionData.from,
-      to: responseTransactionData.to,
+      txHash: hash,
+      from,
+      to,
       transactionFee: transactionFee.toString(),
-      gas: weiToGwei(responseTransactionData.gas),
-      gasPrice: weiToGwei(responseTransactionData.gasPrice),
-      maxFeePerGas: weiToGwei(responseTransactionData.maxFeePerGas),
-      maxPriorityFeePerGas: weiToGwei(
-        responseTransactionData.maxPriorityFeePerGas
-      ),
-      method: responseTransactionData.Method,
-      status: responseTransactionData.transactionIndex ? true : false,
-      timeStamp: divideTimeIntoUnits(
-        now,
-        Number(responseTransactionData.Timestamp)
-      ),
-      value: responseTransactionData.value,
-      block_id: responseTransactionData.block_id,
-      NFT_id: responseTransactionData.NFT_id,
-      token_id: responseTransactionData.token_id,
+      gas: weiToGwei(gas),
+      gasPrice: weiToGwei(gasPrice),
+      maxFeePerGas: weiToGwei(maxFeePerGas),
+      maxPriorityFeePerGas: weiToGwei(maxPriorityFeePerGas),
+      method: Method,
+      status: transactionIndex ? true : false,
+      timeStamp: divideTimeIntoUnits(now, Number(Timestamp)),
+      value: weiToEth(value),
+      block_id: block_id,
+      NFT_id: NFT_id,
+      token_id: token_id,
     };
 
     return transactionData;

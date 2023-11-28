@@ -1,3 +1,5 @@
+import { IBlockItemData, IResponseBLockItemData } from "./interface";
+
 const divideTimeIntoUnits = (now: number, blockTime: number) => {
   const timestampInMilliseconds = blockTime * 1000;
   const difference = now - timestampInMilliseconds;
@@ -13,7 +15,10 @@ const divideTimeIntoUnits = (now: number, blockTime: number) => {
 const weiToGwei = (gas: string) => {
   return (Number(gas) / 1e9).toString();
 };
-
+const weiToEth = (wei: string) => {
+  const eth = Number(wei) / 1e18; // 1 Ether = 10^18 Wei
+  return eth.toFixed(18); // Format the result with 18 decimal places (optional)
+};
 export const getBlockItemData = async (blockNum: string) => {
   const now = new Date().getTime();
 
@@ -27,8 +32,52 @@ export const getBlockItemData = async (blockNum: string) => {
       { cache: "no-cache" }
     );
 
-    const reponseBlockData = await res.json();
-    console.log(reponseBlockData);
+    const responseBlockData: IResponseBLockItemData = await res.json();
+    if (responseBlockData === null) {
+      throw new Error("Data is null");
+    }
+    const {
+      baseFeePerGas,
+      createdAt,
+      difficulty,
+      extraData,
+      gasLimit,
+      gasUsed,
+      hash,
+      id,
+      logsBloom,
+      miner,
+      mixHash,
+      nonce,
+      number,
+      parentHash,
+      receiptsRoot,
+      sha3Uncles,
+      stateRoot,
+      timestamp,
+      transactionsRoot,
+      txcount,
+      updatedAt,
+      withdrawalsRoot,
+    } = responseBlockData;
+    const blockData: IBlockItemData = {
+      blockNumber: number,
+      timeStamp: divideTimeIntoUnits(now, Number(timestamp)),
+      baseFeePerGas: weiToEth(baseFeePerGas),
+      difficulty: difficulty,
+      extraData: extraData,
+      feeRecipient: miner,
+      gas: gasUsed,
+      gasLimit,
+      hash,
+      nonce,
+      parentHash,
+      stateRoot,
+      status: createdAt ? true : false,
+      txCount: txcount,
+      withdrawalsRoot,
+    };
+    return blockData;
   } catch (error) {
     console.log(error);
   }

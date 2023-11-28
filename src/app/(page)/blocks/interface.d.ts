@@ -1,3 +1,5 @@
+import { IBlockItemData } from "@app/_api/blockDetail/interface";
+
 export interface IBlocksDataProps {
     block: string;
     age: string;
@@ -22,17 +24,12 @@ export interface IBlocksDataProps {
     blockHeight:string;
     status: string;
     timeStamp: string;
-    slot:string;
-    epoch:string
     transaction : string
-    withdrawals: string;
   }
   
   export interface IBlocksDifficultyProps {
     feeRecipient: string;
-    reward: string;
     totalDifficulty: string;
-    size: string;
   }
   
   export interface IBlocksGasProps {
@@ -40,7 +37,6 @@ export interface IBlocksDataProps {
     gasUsedPercent?:string
     gasLimit: string;
     baseFeePerGas: string;
-    burntFee: string;
     extraData: string;
   }
   
@@ -57,3 +53,5 @@ export interface IBlocksDataProps {
   }
   
   
+
+  export type IBlockDetailData=IBlockItemData

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { IBlocksMoreProps } from "../../interface";
 import BlockCardText from "./CardText";
@@ -42,7 +42,7 @@ const MoreInfo: React.FC<IBlocksMoreProps> = ({
             title="WithdrawlsRoot: "
             content={withdrawsRoot}
           />
-          <BlockCardText type={true} title="Nonce:: " content={nonce} />
+          <BlockCardText type={true} title="Nonce:" content={nonce} />
         </div>
       </div>
       <div className=" relative z-5 flex justify-between h-16 overflow-hidden items-center ">
