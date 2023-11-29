@@ -6,6 +6,20 @@ import { INftAListProps } from "../../interface";
 import ALTotalRecord from "./ALTotalRecord";
 import AList from "./AList";
 
+// interface INftAListProps {
+//   txnHash: string;
+//   age: string;
+//   action: string;
+//   price: string;
+//   from: string;
+//   to: string;
+// }
+
+interface NftActivityContentsProps{
+  activityData: INftAListProps;
+}
+
+
 const NftActivityContents: React.FC<INftAListProps> = () => {
 
   // 페이지네이션
