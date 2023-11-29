@@ -34,6 +34,8 @@ export type IMainTransactionData = ITransactionsItem;
 
 export type IListTransactionData = ItxList;
 
+
+
 export interface IResponseTransactionData {
   id: string;
   accessList: string;
