@@ -37,15 +37,55 @@ interface INftActivityProps{
 }
 
 const NftActivity:React.FC<INftActivityProps> = ({activityData}) => {
-  const abc = {
+  const abc = [{
     txnHash:
           "0xca433abccf1dcae6d49fedaf89af3fdbebdfb4039ebd429578e230a13daecae5",
     age: "49 mins ago",
-    action: "Sale",
+    action: "AAA",
     price: "0.03 ETH",
     from: "0x05deF240E528c952812bE0f637bC7ec068C87e3b",
     to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
-  };
+  },{
+    txnHash:
+          "0xca433abccf1dcae6d49fedaf89af3fdbebdfb4039ebd429578e230a13daecae5",
+    age: "49 mins ago",
+    action: "BBB",
+    price: "0.03 ETH",
+    from: "0x05deF240E528c952812bE0f637bC7ec068C87e3b",
+    to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
+  },{
+    txnHash:
+          "0xca433abccf1dcae6d49fedaf89af3fdbebdfb4039ebd429578e230a13daecae5",
+    age: "49 mins ago",
+    action: "AAA",
+    price: "0.03 ETH",
+    from: "0x05deF240E528c952812bE0f637bC7ec068C87e3b",
+    to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
+  },{
+    txnHash:
+          "0xca433abccf1dcae6d49fedaf89af3fdbebdfb4039ebd429578e230a13daecae5",
+    age: "49 mins ago",
+    action: "BBB",
+    price: "0.03 ETH",
+    from: "0x05deF240E528c952812bE0f637bC7ec068C87e3b",
+    to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
+  },{
+    txnHash:
+          "0xca433abccf1dcae6d49fedaf89af3fdbebdfb4039ebd429578e230a13daecae5",
+    age: "49 mins ago",
+    action: "AAA",
+    price: "0.03 ETH",
+    from: "0x05deF240E528c952812bE0f637bC7ec068C87e3b",
+    to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
+  },{
+    txnHash:
+          "0xca433abccf1dcae6d49fedaf89af3fdbebdfb4039ebd429578e230a13daecae5",
+    age: "49 mins ago",
+    action: "BBB",
+    price: "0.03 ETH",
+    from: "0x05deF240E528c952812bE0f637bC7ec068C87e3b",
+    to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
+  }];
   // console.log(abc);
 
   if(activityData === null){
