@@ -2,6 +2,10 @@ import ItemTableWrap from "@app/_components/itemTable";
 import React from "react";
 import { IAddressContent, IAddressTableProps } from "../../interface";
 
+const weiToEther = (wei : number) => {
+  const ether = wei / 10**18;
+  return ether.toFixed(5); 
+};
 
 const  AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({addressOverViewData }) => {
 
