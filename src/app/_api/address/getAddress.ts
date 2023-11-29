@@ -15,9 +15,6 @@ const divideTimeIntoUnits = (now: number, addressTime: number) => {
 };
 
 
-const fromWeiToETH = (wei: string) => {
-  return Number(wei) / 10 ** 18;
-};
 
 export const getAddress = async (address: string) => {
   console.log("확인", address);

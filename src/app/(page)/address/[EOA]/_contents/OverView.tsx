@@ -11,7 +11,13 @@ const weiToEther = (wei: number): string => {
 
 const  AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({addressOverViewData }) => {
 
-  const ethBalanceInEther: string = weiToEther(Number(addressOverViewData.ethBalance));;
+  const ethBalanceInEther: string = weiToEther(Number(addressOverViewData.ethBalance));
+  const firstTx = addressOverViewData.txs[0];
+  const firstTxHash = firstTx.hash
+
+  const lastTxIndex = addressOverViewData.txs.length - 1;
+  const lastTx = addressOverViewData.txs[lastTxIndex];
+  const lastTxHash = lastTx.hash
   return (
     <ItemTableWrap>
       <div className="w-full h-auto flex flex-col  pb-5 ">
@@ -31,7 +37,7 @@ const  AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({a
             </div>
             <div className="p-1 h-auto text-sm flex  w-80 sm:break-words lg:ml-8 md:break-words">
               <div className="text-blue-500 w-40 truncate">
-                {addressOverViewData.lastTxnSent}
+                {lastTxHash}
               </div>
               <div className="text-itemDetail-textLabelColor">
                 {addressOverViewData.lastTxnSentTimestamp}
@@ -45,7 +51,7 @@ const  AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({a
             </div>
             <div className="p-1 h-auto text-sm flex  sm:w-80 sm:break-words lg:ml-8  lg:w-96">
               <div className="text-blue-500 w-40 truncate">
-                {addressOverViewData.firstTxnSent}
+                {firstTxHash}
               </div>
               <div className="text-itemDetail-textLabelColor">
                 {addressOverViewData.lastTxnSentTimestamp}
