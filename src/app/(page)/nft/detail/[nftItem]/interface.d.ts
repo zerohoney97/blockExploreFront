@@ -34,12 +34,14 @@ interface INftAListOA {
 }
 
 interface INftDetails{
+  id : number,
   tokenId : string,
   name : string,
   description : string,
   imageUrl : string,
   creatorAddress : string,
   Owner : string,
+  txs : object,
 }
 
 interface INftDetailsProps{
