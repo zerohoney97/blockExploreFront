@@ -25,7 +25,7 @@ const CollectionItem: React.FC<INFTItem> = ({
         style={{
           lineHeight: "4rem",
         }}
-        href={`/nft/${name}`}
+        href={`/nft/${id}`}
       >
         <li className="truncate">{name}</li>
       </Link>

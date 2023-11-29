@@ -1,4 +1,12 @@
 import { IResponseTokenData, ITokenListData } from "./interface";
+const filterT0 = (time: string) => {
+  let indexOfTOO = time.indexOf("T0");
+  if (indexOfTOO !== -1) {
+    time = time.substring(0, indexOfTOO);
+  }
+  console.log(time);
+  return time;
+};
 
 export const getTokenDetail = async (tokenName: string) => {
   const now = new Date().getTime();
@@ -13,9 +21,9 @@ export const getTokenDetail = async (tokenName: string) => {
       { cache: "no-cache" }
     );
 
-    const reponseTokenData: IResponseTokenData = await res.json();
-    console.log(reponseTokenData);
-    return reponseTokenData;
+    const responseTokenData: IResponseTokenData = await res.json();
+    responseTokenData.createdAt = filterT0(responseTokenData.createdAt);
+    return responseTokenData;
   } catch (error) {
     console.log(error);
   }

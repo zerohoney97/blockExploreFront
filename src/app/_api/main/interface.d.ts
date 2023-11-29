@@ -56,6 +56,7 @@ export interface IResponseTransactionData {
   Timestamp: string;
   createdAt: string;
   updatedAt: string;
+  blocknumber:number
   NFT_id: string;
   token_id: string;
   block_id: string;

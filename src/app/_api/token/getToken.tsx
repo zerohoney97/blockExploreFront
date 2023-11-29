@@ -1,6 +1,13 @@
 import { IResponseTokenData, ITokenListData } from "./interface";
 
-
+const filterT0 = (time: string) => {
+  let indexOfTOO = time.indexOf("T0");
+  if (indexOfTOO !== -1) {
+    time = time.substring(0, indexOfTOO);
+  }
+  console.log(time);
+  return time;
+};
 export const getToken = async () => {
   const now = new Date().getTime();
 
@@ -11,11 +18,11 @@ export const getToken = async () => {
           ? "http://localhost:8080"
           : "https://api.bouncexplorer.site"
       }/token`,
-      { cache: "no-cache" }
+      { next: { revalidate: 600 } }
     );
 
     const reponseTokenDataList: IResponseTokenData[] = await res.json();
-    
+
     const tokenListData: ITokenListData[] = reponseTokenDataList.map(
       ({
         circulatingSupply,
@@ -34,7 +41,7 @@ export const getToken = async () => {
           holder: circulatingSupply,
           id,
           name,
-          timeStamp: createdAt,
+          timeStamp: filterT0(createdAt),
         };
       }
     );

@@ -55,7 +55,7 @@ const Page: React.FC<ITokenDetailProps> = async ({ params }) => {
         </div>
       </div>
       <div className="w-11/12 m-auto">
-        <TokenTapInfo />
+        <TokenTapInfo tokenItemData={tokenItemData}  />
       </div>
     </div>
   );

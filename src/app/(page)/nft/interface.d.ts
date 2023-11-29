@@ -1,4 +1,4 @@
-import { INFTListData } from "@app/_api/nft/interface";
+import { INFTListData, IResponseNFTListData } from "@app/_api/nft/interface";
 
 
 export type INFTItem =INFTListData
@@ -18,3 +18,5 @@ export interface INftTxDetailInventory {
 export interface INftTxDetailInventoryProps {
   nftInvenData: INftTxDetailInventory;
 }
+
+export type INFTDetailData=IResponseNFTListData

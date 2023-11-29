@@ -14,7 +14,6 @@ export const getTokenDetail = async (tokenName: string) => {
     );
 
     const reponseTokenData: IResponseTokenData = await res.json();
-    console.log(reponseTokenData);
     return reponseTokenData;
   } catch (error) {
     console.log(error);

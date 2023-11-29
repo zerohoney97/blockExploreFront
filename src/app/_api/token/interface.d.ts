@@ -1,3 +1,5 @@
+import { IResponseTransactionData } from "../main/interface";
+
 export interface IResponseTokenData {
   id: number;
   contractAddress: string;
@@ -8,14 +10,14 @@ export interface IResponseTokenData {
   circulatingSupply: string;
   createdAt: string;
   updatedAt: string;
+  txs: IResponseTransactionData[];
 }
 
-
-export interface ITokenListData{
-    id:number
-    name:string
-    symbol:string
-    decimal:number
-    timeStamp:string
-    holder:string
+export interface ITokenListData {
+  id: number;
+  name: string;
+  symbol: string;
+  decimal: number;
+  timeStamp: string;
+  holder: string;
 }

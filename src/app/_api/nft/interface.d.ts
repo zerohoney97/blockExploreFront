@@ -1,4 +1,4 @@
-export interface IResponseNFTListDAta {
+export interface IResponseNFTListData {
   id: number;
   tokenId: string;
   name: string;
@@ -20,3 +20,5 @@ export interface INFTListData {
   owner: string;
   createdAt: string;
 }
+
+

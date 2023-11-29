@@ -30,3 +30,6 @@ export interface ITokenTableProps {
 }
 
 export type ITokenDetailData = IResponseTokenData;
+export interface ITokenDetailDataProps {
+  tokenItemData: ITokenDetailData;
+}
