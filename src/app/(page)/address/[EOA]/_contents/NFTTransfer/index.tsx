@@ -11,7 +11,7 @@ const AddressNftTransfer: React.FC<ITxListProps> = () => {
   const tempDataArr: INftTransList[] = Array.from(
     { length: 105 },
     (ele, index) => ({
-      transcationInfo: "0x123fjafk231s",
+      hash: "0x123fjafk231s",
       method: "Transfer",
       age: "15",
       from: "0x12312kj312kjb3jk",

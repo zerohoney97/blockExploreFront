@@ -26,7 +26,7 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
     ],
     NFT: [
       { name: "Top NFTs", href: "nft" },
-      { name: "NFT Transfers", href: "nft" },
+      { name: "NFT Transfers", href: "nftTrans" },
     ],
   };
 

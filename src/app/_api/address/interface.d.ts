@@ -18,5 +18,6 @@ export interface IAddressData {
   txs: ItxList[];
   firstTxnSentTimestamp:string;
   lastTxnSentTimestamp:string
+  txs:string
 
 }

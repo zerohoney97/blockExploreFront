@@ -1,4 +1,4 @@
-import { INFTListData, IResponseNFTListDAta } from "./interface";
+import { INFTListData, IResponseNFTListData } from "./interface";
 
 const filterTOO = (time: string) => {
   let indexOfTOO = time.indexOf("T00");
@@ -21,7 +21,7 @@ export const getNFT = async () => {
       { cache: "no-cache" }
     );
 
-    const responseNFTDataList: IResponseNFTListDAta[] = await res.json();
+    const responseNFTDataList: IResponseNFTListData[] = await res.json();
     const NFTdataList: INFTListData[] = responseNFTDataList.map(
       (
         {

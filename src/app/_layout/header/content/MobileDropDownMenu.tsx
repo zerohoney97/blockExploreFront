@@ -39,7 +39,7 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
     ],
     2: [
       { name: "Latest Transfer", href: "nft" },
-      { name: "Latest Mints", href: "nft" },
+      { name: "Latest Mints", href: "nftTrans" },
     ],
   };
   useEffect(() => {

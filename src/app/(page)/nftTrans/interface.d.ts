@@ -1,11 +1,10 @@
 export interface INftTransList {
-  transcationInfo: string;
+  hash: string;
   method: string;
   age : string
   from: string;
   to: string;
   type: string;
-  itemImage: string;
   itemName : string;
 }
 
@@ -50,4 +49,10 @@ export interface IPageNationProps {
 export interface IMordeDetailToggleProps {
   mordeDetailToggle: boolean;
   moreDetailToggleHandler: () => void;
+}
+
+
+
+export interface INFTTranseTableProps{
+  NFTTransData:INftTransList[]
 }
