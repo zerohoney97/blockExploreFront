@@ -16,25 +16,31 @@ interface INftItemProps {
 const Page = async (props: INftItemProps) => {
   let param = props.params.nftItem;
   const nftData: INftDetails = await getNfts(param);
+  
+  const activityData = nftData.txs;
+  console.log("여기",activityData.length);
   return (
-    <div className='sm:p-4 md:p-8 lg:px-8 lg:my-10 m-auto'>
-      <div className='flex sm:flex-col md:gap-10 lg:gap-10 '>
-        <div className='md:hidden lg:hidden'>
-          <NftItemTitle nftData={nftData} />
-        </div>
-        <div>
-          <NftItemImage nftData = {nftData.imageUrl} />
-        </div>
-        <div className='md:w-full'>
-          <div className='sm:hidden'>
+    <>
+      <div className='sm:p-4 md:p-8 lg:px-8 lg:my-10 m-auto'>
+        <div className='flex sm:flex-col md:gap-10 lg:gap-10 '>
+          <div className='md:hidden lg:hidden'>
             <NftItemTitle nftData={nftData} />
           </div>
-          {/* <NftItemPrice /> */}
-          <NftDetails nftData={nftData} />
+          <div>
+            <NftItemImage nftData = {nftData.imageUrl} />
+          </div>
+          <div className='md:w-full'>
+            <div className='sm:hidden'>
+              <NftItemTitle nftData={nftData} />
+            </div>
+            {/* <NftItemPrice /> */}
+            <NftDetails nftData={nftData} />
+          </div>
         </div>
+        <NftActivity activityData={activityData.length == 0 ? '321' : "123" }  />
+        
       </div>
-      <NftActivity />
-    </div>
+    </>
   );
 };
 
