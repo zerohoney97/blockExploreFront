@@ -6,25 +6,37 @@ import { INftAListProps } from "../../interface";
 import ALTotalRecord from "./ALTotalRecord";
 import AList from "./AList";
 
-const NftActivityContents: React.FC<INftAListProps> = () => {
+// interface INftAListProps {
+//   txnHash: string;
+//   age: string;
+//   action: string;
+//   price: string;
+//   from: string;
+//   to: string;
+// }
 
+interface NftActivityContentsProps{
+  activityData: INftAListProps;
+}
+
+const NftActivityContents: React.FC<NftActivityContentsProps> = ({activityData}) => {
   // 페이지네이션
   const tempDataArr: INftAListProps[] = Array.from(
-    { length: 10 },
+    { length: activityData.length },
     (ele, index) => {
       return {
-        txnHash:
-          "0xca433abccf1dcae6d49fedaf89af3fdbebdfb4039ebd429578e230a13daecae5",
-        age: "49 mins ago",
-        action: "Sale",
-        price: "0.03 ETH",
-        from: "0x05deF240E528c952812bE0f637bC7ec068C87e3b",
-        to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
+        txnHash: activityData[index].txnHash,
+        age: activityData[index].age,
+        action: activityData[index].action,
+        price: activityData[index].price,
+        from: activityData[index].from,
+        to: activityData[index].to,
       };
     },
   );
   const { maxPage, page, pageHandler, pageTxList } =
-    usePagination<INftAListProps>(tempDataArr);
+    usePagination<INftAListProps>(tempDataArr,10);
+    // console.log("pagetxlist",pageTxList);
 
   return (
     <>
