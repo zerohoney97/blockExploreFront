@@ -2,7 +2,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { ITokenTransfer } from "./interface";
+import { ITokenTransfer, ITokenTransferContainerProps } from "../../interface";
 import { createPortal } from "react-dom";
 import AdditionalInfo from "./AdditionalInfo";
 import TxList from "./TxListContainer";
@@ -13,25 +13,15 @@ import useHydration from "@app/_hooks/useHydration";
 import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const TokenTransferListWrap = () => {
+const TokenTransferListWrap: React.FC<ITokenTransferContainerProps> = ({
+  tokenTransferDataList,
+}) => {
   const isRendered = useHydration();
-  const tempDataArr: ITokenTransfer[] = Array.from(
-    { length: 105 },
-    (ele, index) => ({
-      age: "asd",
-      block: "123124124",
-      from: "0x12312kj312kjb3jk",
-      to: "0xqweqwnekjads2asdk2",
-      method: "Transfer",
-      txHash: "0x123fjafk231s",
-      value: index.toString(),
-      token: "pepe",
-    })
-  );
+
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
   const { maxPage, page, pageHandler, pageTxList } =
-    usePagination<ITokenTransfer>(tempDataArr, 50);
+    usePagination<ITokenTransfer>(tokenTransferDataList, 50);
 
   useEffect(() => {
     setAddInfoModal(document.getElementById("portal"));
@@ -66,25 +56,12 @@ const TokenTransferListWrap = () => {
               <th className="min-w-[200px]  flex justify-start items-center ">
                 Txn Hash
               </th>
-              <th className="min-w-[120px] flex items-center ">
-                Method
-              </th>
-              <th className="min-w-[100px] flex items-center  ">
-                Block
-              </th>
-              <th className="min-w-[100px] flex items-center ">
-                Age
-              </th>
-              <th className="min-w-[120px] flex items-center">
-                From
-              </th>
+              <th className="min-w-[120px] ml-2 flex items-center ">Method</th>
+              <th className="min-w-[100px] flex items-center  ">Block</th>
+              <th className="min-w-[100px] flex items-center ">Age</th>
+              <th className="min-w-[120px] flex items-center">From</th>
               <th className="sm:w-[50px] md:w-[100px]  lg:w-[150px]"></th>
-              <th className="min-w-[200px] flex items-center lg:w-64">
-                To
-              </th>
-              <th className="min-w-[100px] flex justify-start items-center  ">
-                Value
-              </th>
+              <th className="min-w-[200px] flex items-center lg:w-64">To</th>
               <th className="min-w-[100px] flex justify-start items-center  ">
                 Token
               </th>

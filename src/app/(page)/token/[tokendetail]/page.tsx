@@ -7,7 +7,7 @@ import {
   ITokenDetail,
   ITokenDetailData,
   ITokenDetailProps,
-} from "../Interface";
+} from "../interface";
 import TokenItemTable from "./_contents/TokenItemTable";
 import TokenTapInfo from "./_contents/TapInfo";
 import { getToken } from "@app/_api/token/getToken";

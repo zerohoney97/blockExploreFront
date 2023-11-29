@@ -18,7 +18,7 @@ export const getNFT = async () => {
           ? "http://localhost:8080"
           : "https://api.bouncexplorer.site"
       }/nft`,
-      { cache: "no-cache" }
+      { next: { revalidate: 30 } }
     );
 
     const responseNFTDataList: IResponseNFTListData[] = await res.json();

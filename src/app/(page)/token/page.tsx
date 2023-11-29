@@ -6,7 +6,7 @@ import searchIcon from "../../../../public/search03.png";
 import Image from "next/image";
 import TokenTable from "./_contents/Table";
 import { getToken } from "@app/_api/token/getToken";
-import { ITokenDetail, TokenDataProps } from "./Interface";
+import { ITokenDetail, TokenDataProps } from "./interface";
 
 const Page = async () => {
   const tokenListData: TokenDataProps[] = (await getToken()) as TokenDataProps[];
