@@ -2,13 +2,16 @@ import ItemTableWrap from "@app/_components/itemTable";
 import React from "react";
 import { IAddressContent, IAddressTableProps } from "../../interface";
 
-const weiToEther = (wei : number) => {
-  const ether = wei / 10**18;
-  return ether.toFixed(5); 
+
+const weiToEther = (wei: number): string => {
+  const ether = (wei / 10**18).toFixed(5); // Convert to ether with 5 decimal places
+  return ether.toString(); // Convert the result to string explicitly
 };
+
 
 const  AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({addressOverViewData }) => {
 
+  const ethBalanceInEther: string = weiToEther(Number(addressOverViewData.ethBalance));;
   return (
     <ItemTableWrap>
       <div className="w-full h-auto flex flex-col  pb-5 ">
@@ -19,7 +22,7 @@ const  AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({a
               ETH BALLANCE:
             </div>
             <div className="p-1 h-auto text-sm   w-60 sm:break-words lg:ml-8 md:break-words ">
-              <span>{addressOverViewData.ethBalance} ETH</span>
+              <span>{ethBalanceInEther} ETH</span>
             </div>
           </div>
           <div className="lg:flex lg:items-center">
