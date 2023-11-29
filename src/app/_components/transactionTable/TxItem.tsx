@@ -4,8 +4,6 @@ import React from "react";
 import { ITxItemProps } from "./interface";
 import { useRouter } from "next/navigation";
 import {
-  faCircleRight,
-  faCopy,
   faEye,
 } from "@fortawesome/free-regular-svg-icons";
 import Arrow from "public/arrow.png";

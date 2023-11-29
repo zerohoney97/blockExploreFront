@@ -29,7 +29,7 @@ const NftDetailsItemLink:React.FC<INftDetailsItemProps> = ({name,address}) => {
   return (
     <li className='flex py-5'>
       <span className='text-stone-500 text-sm sm:w-[150px] md:w-1/3 lg:w-[350px]'>{name}:</span>
-      <Link href='' className='text-blue-400 text-xs md:w-2/3 lg:w-2/3 overflow-hidden flex items-center'>{windowWidth>=1410 ? address : truncateHash}</Link>
+      <Link href='' className='text-text-mainTextColor text-xs md:w-2/3 lg:w-2/3 overflow-hidden flex items-center'>{windowWidth>=1410 ? address : truncateHash}</Link>
     </li>
   )
 }

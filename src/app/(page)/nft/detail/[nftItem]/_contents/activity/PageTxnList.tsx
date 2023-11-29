@@ -7,6 +7,9 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { INftAListOA } from "../../interface";
+import WordBallon from "@app/_components/wordBallon";
+import Image from "next/image";
+import Arrow from "public/arrow.png";
 
 const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList, toggleHandler }) => {
   const truncate = (hash: string) => {
@@ -18,17 +21,6 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList, toggleHandler }) =>
   const additionalClick = (index: number) => {
     console.log(index);
   };
-  const AddressClick = (value: string) => {
-    navigator.clipboard
-      .writeText(value)
-      .then(() => {
-        console.log(value);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
-
   const minWidth = (value:number) => {
     return `min-w-[${value}px]`;
   } 
@@ -50,7 +42,7 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList, toggleHandler }) =>
           </td>
           <td>
             <div className={`${minWidth(220)}`}>
-              <Link className='text-blue-400' href={"./1"}>
+              <Link className='text-text-mainTextColor' href={"./1"}>
                 {truncate(item.txnHash)}
               </Link>
             </div>
@@ -68,27 +60,23 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList, toggleHandler }) =>
           </td>
           <td>
             <div className={`${minWidth(220)} mr-[10px] `}>
-              <Link className='text-blue-400 mr-[10px]' href={"./1"}>
+              <Link className='text-text-mainTextColor mr-[10px]' href={"./1"}>
                 {truncate2(item.from)}
               </Link>
-              <button onClick={() => AddressClick(item.from)}>
-                <FontAwesomeIcon icon={faCopy} />
-              </button>
+              <WordBallon copyValue={item.from} />
             </div>
           </td>
           <td>
             <div className={`${minWidth(50)} mr-[10px]`}>
-              <FontAwesomeIcon icon={faCircleRight} />
+              <Image alt='' width={20} src={Arrow} />
             </div>
           </td>
           <td>
             <div className={`${minWidth(220)}`}>
-              <Link className='text-blue-400 mr-[10px]' href={"./1"}>
+              <Link className='text-text-mainTextColor mr-[10px]' href={"./1"}>
                 {truncate2(item.to)}
               </Link>
-              <button onClick={() => AddressClick(item.to)}>
-                <FontAwesomeIcon icon={faCopy} />
-              </button>
+              <WordBallon copyValue={item.to} />
             </div>
           </td>
         </tr>
