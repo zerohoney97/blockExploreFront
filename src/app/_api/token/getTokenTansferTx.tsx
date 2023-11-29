@@ -10,7 +10,7 @@ export const getTokenDetail = async (tokenName: string) => {
           ? "http://localhost:8080"
           : "https://api.bouncexplorer.site"
       }/token/find/${tokenName}`,
-      { cache: "no-cache" }
+      { next: { revalidate: 30 } }
     );
 
     const reponseTokenData: IResponseTokenData = await res.json();

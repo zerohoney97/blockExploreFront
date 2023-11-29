@@ -18,14 +18,14 @@ export const getNFTTransferTx = async (
         ? "http://localhost:8080"
         : "https://api.bouncexplorer.site"
     }/nft`,
-    { cache: "no-cache" }
+    { next: { revalidate: 30 } }
   );
 
   const NFTData: IResponseNFTListData[] = await responseNFTData.json();
 
   const transactionData: INftTransList[] = filteredTransactionData.map((el) => {
     const NFTObj: IResponseNFTListData = NFTData.find((obj) => {
-      return obj.id === Number(el.id);
+      return obj.id === Number(el.NFT_id);
     }) as IResponseNFTListData;
     return {
       from: el.from,
