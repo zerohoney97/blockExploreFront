@@ -1,6 +1,10 @@
 import React from "react";
 
-const NftItemImage = () => {
+interface NftItemImageProps{
+  nftData : string
+}
+
+const NftItemImage:React.FC<NftItemImageProps> = ({nftData}) => {
   return (
     <div className='border-gray border-[1px] rounded-xl w-full flex my-[20px]'>
       <img

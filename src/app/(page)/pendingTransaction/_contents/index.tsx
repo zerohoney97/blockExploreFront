@@ -40,11 +40,11 @@ const PendingTxListWrap = () => {
     setIsToggled(!isToggled);
   };
   return (
-    <div className="dark:bg-black/90 dark:text-white mb-[50px]">
+    <div className="dark:bg-black/90 dark:text-white">
       <Title title="Pending Transactions" />
       {isRendered && (
         <div
-          className={`mt-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white dark:bg-black`}
+          className={`my-10 w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px]  h-auto bg-white dark:bg-black`}
         >
           <div className={`h-auto overflow-x-scroll`}>
             <table className="w-full m-auto">

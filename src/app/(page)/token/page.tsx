@@ -15,7 +15,7 @@ const Page = async () => {
   }
   return (
     <>
-      <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-black/90">
+      <div className="box-border flex flex-col bg-mainBackGroundColor items-center dark:bg-black/90">
         <div className="w-full">
           <Title title="Token Tracker(ERC-20)" />
           <ItemTable>

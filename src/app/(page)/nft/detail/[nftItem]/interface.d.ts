@@ -29,6 +29,19 @@ interface INftAListProps {
   to: string;
 }
 interface INftAListOA {
-  pageTxList:INftAListProps[]
+  pageTxList:INftAListProps[],
+  toggleHandler: () => void;
 }
 
+interface INftDetails{
+  tokenId : string,
+  name : string,
+  description : string,
+  imageUrl : string,
+  creatorAddress : string,
+  Owner : string,
+}
+
+interface INftDetailsProps{
+nftData : INftDetails;
+}
