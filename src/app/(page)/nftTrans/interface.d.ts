@@ -1,5 +1,5 @@
 export interface INftTransList {
-  transcationInfo: string;
+  hash: string;
   method: string;
   age : string
   from: string;
