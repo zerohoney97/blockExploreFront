@@ -8,8 +8,8 @@ interface IBlocksItem {
   blockTime: string;
   feeRecipient: string;
   transactionsInThisBlock: string;
-  transactionsTime: string;
-}
+  transactionsTime:string;
+} 
 interface ITransactionsItem {
   transactionHash: string;
   transactionTime: string;

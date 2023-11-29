@@ -1,9 +1,13 @@
-import { ITxListProps } from '@app/_components/transactionTable/interface'
-import React from 'react'
+import TxListWrap from "@app/_components/transactionTable";
+import {
+  ITxListProps,
+  ItxList,
+} from "@app/_components/transactionTable/interface";
+import React from "react";
 
 const AddressTokenTransfer: React.FC<ITxListProps> = ({ txList, lastThName }) => {
   return (
-    <div>AddressTokenTransfer</div>
+     <TxListWrap txList={txList} lastThName={lastThName} />
   )
 }
 

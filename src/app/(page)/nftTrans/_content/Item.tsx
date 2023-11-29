@@ -88,7 +88,7 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
       </td>
       <td className="min-w-[150px] items-center">
         <span className="border border-black/50 rounded p-1">
-          {NftTxItem.type}
+          ERC-721
         </span>
       </td>
       <td className="min-w-[300px] flex items-start">
