@@ -1,6 +1,6 @@
-import { ITokenListData } from "@app/_api/token/interface";
+import { IResponseTokenData, ITokenListData } from "@app/_api/token/interface";
 
-export type TokenDataProps=ITokenListData
+export type TokenDataProps = ITokenListData;
 
 export interface ITokenDetail {
   tokendetail: string;
@@ -26,5 +26,7 @@ export interface IHoldersDetailProps {
 }
 
 export interface ITokenTableProps {
-  tokenListData:TokenDataProps[]
-};
+  tokenListData: TokenDataProps[];
+}
+
+export type ITokenDetailData = IResponseTokenData;

@@ -7,7 +7,7 @@ const Page = async ({ params }: { params: { txHash: string } }) => {
     params.txHash
   )) as ITransactionDetailData;
   if (transactionItemData === undefined) {
-    return "";
+    return <>에러 페이지</>;
   }
   return (
     <div className="bg-mainBackGroundColor pb-5  max-w-[1250px] m-auto dark:bg-black/90">

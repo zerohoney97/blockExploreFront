@@ -1,32 +1,27 @@
 import React, { useEffect } from "react";
-import { Iitem } from "../interface";
+import { INFTItem } from "../interface";
 import Link from "next/link";
 import Image from "next/image";
 
-const CollectionItem: React.FC<Iitem> = ({
-  number,
-  change,
-  collection,
-  maxPrice,
-  minPrice,
+const CollectionItem: React.FC<INFTItem> = ({
+  createdAt,
+  creatorAddress,
+  description,
+  id,
+  imgUrl,
   name,
-  owners,
-  sales,
-  totalAssets,
-  transfers,
-  volume,
-  type,
+  owner,
+  tokenId,
 }) => {
-
   return (
-    <ul className="flex w-[1250px] h-16 border-b border-gray text-sm dark:text-white">
-      <li className="flex justify-center items-center   w-[3%]">{number}</li>
-      <li className="flex justify-center items-center   w-[5%]">
-        <img width={25} height={25} src={collection} alt="피카츄"/>
+    <ul className="flex w-[2000px] h-16 border-b border-gray text-sm px-4 dark:text-white ">
+      <li className="flex justify-center items-center   w-[50px]">{id}</li>
+      <li className="flex justify-center items-center   w-[50px]">
+        <Image width={25} height={25} src={imgUrl} alt="nft이미지" />
       </li>
       {/* 바로 밑에 li 태그 세로로 중앙 정렬 */}
       <Link
-        className="h-16  w-[10%] "
+        className="h-16  w-[300px] "
         style={{
           lineHeight: "4rem",
         }}
@@ -35,28 +30,30 @@ const CollectionItem: React.FC<Iitem> = ({
         <li className="truncate">{name}</li>
       </Link>
 
-      <li className="flex justify-center items-center   w-[12%]">
+      <li className="flex justify-center items-center   w-[200px]">
         {" "}
         <span className=" border-2 border-gray p-1 rounded-lg text-xs">
-          {type}
+          ERC-721
         </span>
       </li>
-      <li className="flex justify-center items-center    w-[10%]"> {volume}</li>
-      <li className="flex justify-center items-center     w-[9%]"> {change}</li>
-      <li className="flex justify-center items-center    w-[8%]">
+      <li className="flex justify-center items-center    w-[150px]">
         {" "}
-        {minPrice}
+        {tokenId}
       </li>
-      <li className="flex justify-center items-center    w-[8%]">{maxPrice}</li>
-      <li className="flex justify-center items-center    w-[10%]"> {sales}</li>
-      <li className="flex justify-center items-center    w-[10%]">
+      <li className="flex justify-center items-center     w-[400px]">
         {" "}
-        {transfers}
+        {owner}
       </li>
-      <li className="flex justify-center items-center    w-[10%]"> {owners}</li>
-      <li className="flex justify-center items-center    w-[10%]">
+      <li className="flex justify-center items-center    w-[400px]">
         {" "}
-        {totalAssets}
+        {creatorAddress}
+      </li>
+      <li className="flex justify-center items-center    w-[400px]">
+        <span className="truncate">{description}</span>
+      </li>
+      <li className="flex justify-center items-center    w-[100px]">
+        {" "}
+        {createdAt}
       </li>
     </ul>
   );

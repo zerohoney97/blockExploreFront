@@ -1,12 +1,6 @@
 import { IResponseTokenData, ITokenListData } from "./interface";
 
-const weiToGwei = (gas: string) => {
-  return (Number(gas) / 1e9).toString();
-};
-const weiToEth = (wei: string) => {
-  const eth = Number(wei) / 1e18; // 1 Ether = 10^18 Wei
-  return eth.toFixed(18); // Format the result with 18 decimal places (optional)
-};
+
 export const getToken = async () => {
   const now = new Date().getTime();
 
@@ -21,6 +15,7 @@ export const getToken = async () => {
     );
 
     const reponseTokenDataList: IResponseTokenData[] = await res.json();
+    
     const tokenListData: ITokenListData[] = reponseTokenDataList.map(
       ({
         circulatingSupply,

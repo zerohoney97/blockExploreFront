@@ -10,6 +10,9 @@ import { ITokenDetail, TokenDataProps } from "./Interface";
 
 const Page = async () => {
   const tokenListData: TokenDataProps[] = (await getToken()) as TokenDataProps[];
+  if (tokenListData===undefined) {
+    return <>에러 페이지</>
+  }
   return (
     <>
       <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-black/90">
