@@ -92,7 +92,7 @@ export const getTransaction = async (pageName: string) => {
             to: el.to,
             txHash: el.hash,
             age: divideTimeIntoUnits(now, Number(el.Timestamp)),
-            block: "12345",
+            blocknumber: el.blocknumber.toString(),
             method: el.Method,
           };
         });

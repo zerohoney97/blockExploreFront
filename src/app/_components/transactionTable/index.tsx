@@ -9,7 +9,10 @@ import TxList from "./TxListContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleQuestion, faCircleRight } from "@fortawesome/free-regular-svg-icons";
+import {
+  faCircleQuestion,
+  faCircleRight,
+} from "@fortawesome/free-regular-svg-icons";
 
 const TxListWrap: React.FC<ITxListProps> = ({
   txList,
@@ -63,16 +66,12 @@ const TxListWrap: React.FC<ITxListProps> = ({
               <th className="min-w-[100px] flex items-center ml-[20px] ">
                 Block
               </th>
-              <th className="min-w-[100px] flex items-center ">
-                Age
-              </th>
+              <th className="min-w-[100px] flex items-center ">Age</th>
               <th className="min-w-[120px] flex items-center  ml-[20px]">
                 From
               </th>
               <th className="w-20 sm:w-[50px] md:w-[100px]  lg:w-[150px]"></th>
-              <th className="min-w-[120px] lg:w-44 flex items-center">
-                To
-              </th>
+              <th className="min-w-[120px] lg:w-44 flex items-center">To</th>
               <th className="min-w-[100px] flex justify-start items-center ml-[20px]">
                 {lastThName}
               </th>

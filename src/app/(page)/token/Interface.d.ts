@@ -1,13 +1,6 @@
-export interface TokenDataProps {
-  number: ?string;
-  tokenImage: string;
-  tokenName: string;
-  unit: string;
-  ethPrice: string;
-  change: string;
-  volume: string;
-  holders: string;
-}
+import { IResponseTokenData, ITokenListData } from "@app/_api/token/interface";
+
+export type TokenDataProps = ITokenListData;
 
 export interface ITokenDetail {
   tokendetail: string;
@@ -30,4 +23,13 @@ export interface IHoldersDetail {
 
 export interface IHoldersDetailProps {
   params: { holdersDetail: string };
+}
+
+export interface ITokenTableProps {
+  tokenListData: TokenDataProps[];
+}
+
+export type ITokenDetailData = IResponseTokenData;
+export interface ITokenDetailDataProps {
+  tokenItemData: ITokenDetailData;
 }

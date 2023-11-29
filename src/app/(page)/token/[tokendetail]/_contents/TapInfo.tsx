@@ -7,20 +7,25 @@ import HoldersList from "@app/_components/holdersTable";
 import DexList from "@app/_components/dexTradeTable";
 import TabButton from "@app/_components/tabComponent/Tab";
 import useHydration from "@app/_hooks/useHydration";
+import { ITokenDetailDataProps } from "../../Interface";
+import useFilterTx from "@app/_hooks/useFilterTx";
 
-const TokenTapInfo = () => {
+const TokenTapInfo: React.FC<ITokenDetailDataProps> = ({ tokenItemData }) => {
   const isRendered = useHydration();
-
-  const tempDataArr: ItxList[] = Array.from({ length: 105 }, (ele, index) => ({
-    age: "123",
-    block: "231234",
-    from: "0x213155151412312321",
-    to: "0x124124131312125513",
-    method: "Transfer",
-    txHash: "0x123123123fhfhsfhbb23",
-    value: index.toString(),
-  }));
-
+  const addressData:Array<string> = useFilterTx(tokenItemData.txs);
+  const tokenTransferDataList: ItxList[] = tokenItemData.txs.map(
+    ({ hash, Method, blocknumber, from, to, value, Timestamp }) => {
+      return {
+        txHash: hash,
+        method: Method,
+        blocknumber: blocknumber.toString(),
+        from,
+        to,
+        value,
+        age: Timestamp,
+      };
+    }
+  );
   const [toggleLabelNum, setToggleLabelNum] = useState<string | null>(
     "Transfers"
   );
@@ -32,15 +37,16 @@ const TokenTapInfo = () => {
   const componentHandler = (label: string) => {
     if (label === "Transfers") {
       console.log("Transfers");
-      return <TxListWrap txList={tempDataArr} lastThName="Item" />;
+      return <TxListWrap txList={tokenTransferDataList} lastThName="Item" />;
     } else if (label === "Info") {
       return (
         <div>
-        <InfoTapContent
-          VolumeContent="VolumeContent"
-          MarketContent="Market Contents"
-          CirculatingContent="Circulating Contents"
-        /></div>
+          <InfoTapContent
+            VolumeContent="VolumeContent"
+            MarketContent="Market Contents"
+            CirculatingContent="Circulating Contents"
+          />
+        </div>
       );
     } else if (label === "Dex Trades") {
       return (
@@ -62,22 +68,7 @@ const TokenTapInfo = () => {
     } else if (label === "holders") {
       return (
         <HoldersList
-          holdersList={[
-            {
-              rank: "1",
-              address: "sssssssssss",
-              quantity: "3,000,000,000.012501",
-              percentage: "7.4957% ",
-              value: "$3,000,000,000.01",
-            },
-            {
-              rank: "1",
-              address: "sssssssssss",
-              quantity: "3,000,000,000.012501",
-              percentage: "7.4957% ",
-              value: "$3,000,000,000.01",
-            },
-          ]}
+          holdersList={addressData}
         />
       );
     } else {
@@ -88,7 +79,7 @@ const TokenTapInfo = () => {
   return (
     <>
       {isRendered && (
-        <div >
+        <div>
           <div className="flex overflow-x-auto flex-nowrap py-3 mt-5 w-11/12 m-auto ">
             <TabButton
               label="Transfers"

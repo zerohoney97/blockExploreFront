@@ -1,22 +1,22 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import Title from "./_contents/Title";
 import OverviewCard from "./_contents/OverviewCard";
 import MarketCard from "./_contents/MarketCard";
 import OtherInfoCard from "./_contents/OtherInfoCard";
-import { ITokenDetailProps } from "../Interface";
+import {
+  ITokenDetail,
+  ITokenDetailData,
+  ITokenDetailProps,
+} from "../Interface";
 import TokenItemTable from "./_contents/TokenItemTable";
 import TokenTapInfo from "./_contents/TapInfo";
+import { getToken } from "@app/_api/token/getToken";
+import { getTokenDetail } from "@app/_api/token/getTokenDatail";
 
-const Page: React.FC<ITokenDetailProps> = ({ params }) => {
-  const [toggleLabelNum, setToggleLabelNum] = useState<string>("Transfers");
-
-  const toggleHandler = (label: string) => {
-    setToggleLabelNum(label);
-  };
-  useEffect(() => {
-    console.log(params);
-  }, []);
+const Page: React.FC<ITokenDetailProps> = async ({ params }) => {
+  const tokenItemData = (await getTokenDetail(
+    params.tokendetail
+  )) as ITokenDetailData;
 
   return (
     <div className="dark:bg-black/90">
@@ -29,9 +29,8 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
           <TokenItemTable>
             <OverviewCard
               title="Overview"
-              MaxTotalSupply="40,022,312,072.755921"
-              holders="4,695,126 "
-              totaltransfers="207,725,379"
+              name={tokenItemData.name}
+              symbol={tokenItemData.symbol}
             />
           </TokenItemTable>
         </div>
@@ -39,9 +38,9 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
           <TokenItemTable>
             <MarketCard
               title="Market"
-              price="1" // 달러
-              fully="40,062,334,384.83"
-              CIRCULATING="87,750,911,870.00"
+              circulatingSupply={tokenItemData.circulatingSupply}
+              contractAddress={tokenItemData.contractAddress}
+              ownerAddress={tokenItemData.ownerAddress}
             />
           </TokenItemTable>
         </div>
@@ -49,13 +48,14 @@ const Page: React.FC<ITokenDetailProps> = ({ params }) => {
           <TokenItemTable>
             <OtherInfoCard
               title="Other Info"
-              contract="TOKEN CONTRACT (WITH 6 DECIMALS)"
+              createdAt={tokenItemData.createdAt}
+              decimal={tokenItemData.decimal.toString()}
             />
           </TokenItemTable>
         </div>
       </div>
       <div className="w-11/12 m-auto">
-        <TokenTapInfo />
+        <TokenTapInfo tokenItemData={tokenItemData}  />
       </div>
     </div>
   );

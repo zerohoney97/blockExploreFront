@@ -1,11 +1,12 @@
 export interface ItxList {
   txHash: string;
   method: string;
-  block: string;
+  blocknumber: string;
   from: string;
   to: string;
   value: string;
   age: string;
+
 }
 export interface ItokenList {
   txHash: string;

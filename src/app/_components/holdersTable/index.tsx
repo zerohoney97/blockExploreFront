@@ -1,12 +1,12 @@
 import React from "react";
-import { HoldersListProps, IholdersList } from "./interface";
+import { HoldersListProps } from "./interface";
 import HoldersList from "./HoldersContainer";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "../pagination";
 
 const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
   const { maxPage, page, pageHandler, pageTxList } =
-    usePagination<IholdersList>(holdersList);
+    usePagination<string>(holdersList);
 
   return (
     <div className="mt-5 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px] max-w-[1250px]">
@@ -14,15 +14,12 @@ const HolderListWrap: React.FC<HoldersListProps> = ({ holdersList }) => {
         <table className="w-full">
           <thead>
             <tr className="h-[50px] border-b border-gray flex text-sm">
-              <th className="flex w-[100px] items-center  pl-[20px]">Rank</th>
+              <th className="flex w-[100px] items-center  pl-[20px]">id</th>
               <th className="flex min-w-[350px] items-center">Address</th>
-              <th className="flex min-w-[300px] items-center">Quantity</th>
-              <th className="flex min-w-[200px] items-center">Percentage</th>
-              <th className="flex min-w-[150px] items-center">Value</th>
             </tr>
           </thead>
           <tbody className="align-middle whitespace-no-wrap">
-            <HoldersList holdersList={holdersList} />
+            <HoldersList holdersList={pageTxList} />
           </tbody>
         </table>
       </div>
