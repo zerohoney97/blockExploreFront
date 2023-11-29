@@ -2,21 +2,22 @@ import React from "react";
 
 const CollectionTableTitle = () => {
   return (
-    <ul className="flex h-20 w-[1250px] border-b border-gray font-bold text-sm dark:text-white">
-      <li className=" flex justify-center items-center   w-[3%]">#</li>
-      <li className=" flex justify-center items-center   w-[15%]">
+    <ul className="flex h-20 w-[2000px]  border-b border-gray font-bold text-sm px-4 dark:text-white">
+      <li className=" flex justify-center items-center   w-[50px]">#</li>
+      <li className=" flex justify-center items-center   w-[350px]">
         Collection
       </li>
-      <li className=" flex justify-center items-center   w-[12%]">Type</li>
-      <li className=" flex justify-center items-center   w-[10%]">Volume</li>
-      <li className=" flex justify-center items-center   w-[9%]">Change</li>
-      <li className=" flex justify-center items-center   w-[8%]">MinPrice</li>
-      <li className=" flex justify-center items-center   w-[8%]">MaxPrice</li>
-      <li className=" flex justify-center items-center   w-[10%]">Sales</li>
-      <li className=" flex justify-center items-center   w-[10%]">Transfers</li>
-      <li className=" flex justify-center items-center   w-[10%]">Owners</li>
-      <li className=" flex justify-center items-center   w-[10%]">
-        TotalAssets
+      <li className=" flex justify-center items-center   w-[200px]">Type</li>
+      <li className=" flex justify-center items-center   w-[150px]">
+        Token ID
+      </li>
+      <li className=" flex justify-center items-center   w-[400px]">Owner</li>
+      <li className=" flex justify-center items-center   w-[400px]">Creator</li>
+      <li className=" flex justify-center items-center   w-[400px]">
+        Description
+      </li>
+      <li className=" flex justify-center items-center   w-[100px]">
+        Created Date
       </li>
     </ul>
   );

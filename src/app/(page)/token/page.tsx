@@ -1,33 +1,21 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import Title from "@app/_components/itemTitle";
 import ItemTable from "./_contents/ItemTable";
-import TokenHeader from "@app/(page)/token/_contents/Header";
-import TokenContent from "@app/(page)/token/_contents/Content";
-import usePagination from "@app/_hooks/usePagination";
-import Pagination from "@app/_components/pagination";
+
 import searchIcon from "../../../../public/search03.png";
 import Image from "next/image";
-import { TokenDataProps } from "./Interface";
+import TokenTable from "./_contents/Table";
+import { getToken } from "@app/_api/token/getToken";
+import { ITokenDetail, TokenDataProps } from "./Interface";
 
-const tokenData = [
-  {
-    number: "1",
-    tokenImage: "https://etherscan.io/token/images/tethernew_32.png",
-    tokenName: "Ethereum",
-    unit: "(ETH)",
-    ethPrice: "0.0012",
-    change: "+0.05%",
-    volume: "2,500",
-    holders: "1,000,000",
-  },
-];
-
-const Page = () => {
-  const pagination = usePagination<TokenDataProps>(tokenData);
+const Page = async () => {
+  const tokenListData: TokenDataProps[] = (await getToken()) as TokenDataProps[];
+  if (tokenListData===undefined) {
+    return <>에러 페이지</>
+  }
   return (
     <>
-      <div className="box-border flex flex-col p-3 bg-mainBackGroundColor items-center dark:bg-black/90">
+      <div className="box-border flex flex-col bg-mainBackGroundColor items-center dark:bg-black/90">
         <div className="w-full">
           <Title title="Token Tracker(ERC-20)" />
           <ItemTable>
@@ -40,26 +28,7 @@ const Page = () => {
                 width={25}
               />
             </div>
-            <div className="overflow-x-scroll">
-              <div className="min-w-[250px] max-w-[1250px] h-auto">
-                <table>
-                  <TokenHeader />
-                  <tbody className="items-center">
-                    {pagination.pageTxList &&
-                      (pagination.pageTxList as TokenDataProps[]).map(
-                        (data: TokenDataProps, index: number) => (
-                          <TokenContent key={index} data={data} />
-                        )
-                      )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <Pagination
-              maxPage={pagination.maxPage}
-              page={pagination.page}
-              pageHandler={pagination.pageHandler}
-            />
+            <TokenTable tokenListData={tokenListData} />
           </ItemTable>
         </div>
       </div>

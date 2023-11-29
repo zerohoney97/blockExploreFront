@@ -4,8 +4,6 @@ import React from "react";
 import { ITxItemProps } from "./interface";
 import { useRouter } from "next/navigation";
 import {
-  faCircleRight,
-  faCopy,
   faEye,
 } from "@fortawesome/free-regular-svg-icons";
 import Arrow from "public/arrow.png";
@@ -50,7 +48,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
         </span>
       </td>
       {/* 4 */}
-      <td className='min-w-[100px] items-center ml-[20px]'>{TxItem.block}</td>
+      <td className='min-w-[100px] items-center ml-[20px]'>{TxItem.blocknumber}</td>
       <td className='min-w-[110px] items-center '>{TxItem.age}</td>
       <td className='min-w-[120px] ml-[20px]'>
         <div className='w-full flex '>

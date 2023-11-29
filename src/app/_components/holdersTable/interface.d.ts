@@ -1,24 +1,12 @@
+export interface HoldersListProps {
+  holdersList: Array<string>;
+}
 
-  export interface IholdersList {
-    rank : string
-    address: string;
-    quantity: string;
-    percentage: string;
-    value: string;
+export interface HoldersWrapProps {
+  holdersList: IholdersList[] | null;
+}
 
-  }
-  
-  export interface HoldersListProps {
-    holdersList: IholdersList[];
-  }
-  
-  export interface HoldersWrapProps {
-    holdersList: IholdersList[] | null;
-
-  }
-  
-  export interface HoldersItemProps {
-    HoldersItem: IholdersList;
-    
-  }
-  
+export interface HoldersItemProps {
+  index:number
+  HoldersItem: string;
+}

@@ -2,16 +2,16 @@ import React from "react";
 
 interface TokenCardProps {
   title: string;
-  price: string;
-  fully: string;
-  CIRCULATING: string;
+  circulatingSupply: string;
+  ownerAddress: string;
+  contractAddress: string;
 }
 
 const index: React.FC<TokenCardProps> = ({
   title,
-  price,
-  fully,
-  CIRCULATING,
+  circulatingSupply,
+  ownerAddress,
+  contractAddress,
 }) => {
   return (
     <div className=" flex flex-col gap-5 text-sm">
@@ -19,16 +19,16 @@ const index: React.FC<TokenCardProps> = ({
         <h3 className="text-base font-semibold mb-0">{title}</h3>
       </div>
       <div>
-        <div >Price</div>
-        <div >${price}</div>
+        <div>TOTAL SUPPLY</div>
+        <div>{circulatingSupply}</div>
       </div>
       <div>
-        <div>FULLY DILUTED MARKET CAP</div>
-        <div>${fully}</div>
+        <div>OWNER</div>
+        <div>{ownerAddress}</div>
       </div>
       <div>
-        <div>CIRCULATING SUPPLY MARKET CAP</div>
-        <div>${CIRCULATING}</div>
+        <div>CA</div>
+        <div>${contractAddress}</div>
       </div>
     </div>
   );

@@ -33,10 +33,16 @@ export const getTxItemData = async (txHash: string) => {
       }/tx/find/${txHash}`,
       { cache: "no-cache" }
     );
-
+    console.log(
+      `${
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8080"
+          : "https://api.bouncexplorer.site"
+      }/tx/find/${txHash}`
+    );
     const responseTransactionData: ITransactionResponseItemData =
       await res.json();
-
+    console.log(responseTransactionData);
     const {
       Method,
       NFT_id,

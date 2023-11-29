@@ -1,9 +1,14 @@
 import React from "react";
-import { INftDetailsListProps } from "../../interface";
 import NftDetailsItemLink from "./DetailsItemLink";
 import NftDetailsItem from "./DetailsItem";
+import { INftDetailsProps } from "../../interface";
 
-const NftDetailsList: React.FC<INftDetailsListProps> = ({ stateProps }) => {
+
+export interface INftDetailsListProps extends INftDetailsProps {
+  stateProps: boolean;
+}
+
+const NftDetailsList: React.FC<INftDetailsListProps> = ({ stateProps, nftData }) => {
   return (
     <div
       className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -12,19 +17,19 @@ const NftDetailsList: React.FC<INftDetailsListProps> = ({ stateProps }) => {
       <ul className='w-11/12 m-auto py-5'>
         <NftDetailsItemLink
           name='Owner'
-          address='0xC67DB0dF922238979DA0fD00D46016E8Ae14ceCb'
+          address={nftData.Owner}
         />
         <NftDetailsItemLink
           name='Contract Address'
-          address='0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D'
+          address="?"
         />
         <NftDetailsItemLink
           name='Creator'
-          address='Bored Ape Yacht Club: Deployer'
+          address={nftData.creatorAddress}
         />
 
-        <NftDetailsItem name='Classification' address='off-Chain (IPFS)' />
-        <NftDetailsItem name='Token ID' address='9466' />
+        {/* <NftDetailsItem name='Classification' address='off-Chain (IPFS)' /> */}
+        <NftDetailsItem name='Token ID' address={nftData.tokenId} />
         <NftDetailsItem name='Token Standard' address='ERC-721' />
       </ul>
     </div>

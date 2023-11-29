@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
 
 import { INftAListOA } from "../../interface";
 import PageTxnList from "./PageTxnList";
 
+import { createPortal } from "react-dom";
+import { IAddInfo } from "@app/_components/transactionTable/interface";
+import AdditionalInfo from "./AdditionalInfo";
+
 const NftAList: React.FC<INftAListOA> = ({ pageTxList }) => {
+  const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
+  const [isToggled, setIsToggled] = useState<boolean>(false);
+  useEffect(() => {
+    setAddInfoModal(document.getElementById("portal"));
+  }, [isToggled]);
+  const toggleHandler = () => {
+    setIsToggled(!isToggled);
+  };
+  const [addInfoTempData, setAddInfoTempData] = useState<IAddInfo>({
+    status: "Success",
+    transactionFee: "0.0000000000231",
+    gasInfo: "293840",
+    gasLimit: "318840",
+    nonce: "0",
+    blockNum: "18497",
+    position: "18",
+  });
+
+
   return (
     <div className='overflow-x-scroll'>
       <table className='w-full'>
@@ -29,9 +52,18 @@ const NftAList: React.FC<INftAListOA> = ({ pageTxList }) => {
           </tr>
         </thead>
         <tbody>
-          <PageTxnList pageTxList={pageTxList} />
+          <PageTxnList pageTxList={pageTxList} toggleHandler={toggleHandler} />
         </tbody>
       </table>
+      {isToggled && addInfoModal
+          ? createPortal(
+              <AdditionalInfo
+                addInfoTempData={addInfoTempData}
+                toggleHandler={toggleHandler}
+              />,
+              addInfoModal
+            )
+          : ""}
     </div>
   );
 };

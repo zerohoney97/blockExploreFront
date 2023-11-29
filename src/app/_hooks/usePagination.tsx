@@ -1,8 +1,6 @@
 "use client"
 
 import React, { useEffect, useState } from "react";
-import { ItxList } from "@app/_components/transactionTable/interface";
-import { Iitem } from "@app/(page)/nft/interface";
 const usePagination = <T,>(txList: T[], pageStack = 25) => {
   const [page, setPage] = useState<number>(1);
   const [pageTxList, setPageTxList] = useState<T[]>([]);
