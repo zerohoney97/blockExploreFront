@@ -8,7 +8,7 @@ const Page = () => {
   const tempDataArr: IblockstxnList[] = Array.from({ length: 105 }, (ele, index) => ({
     txHash: "0x123fjafk231s",
     method: "Transfer",
-    block: "123124124",
+    blocknumber: "123124124",
     age: "asd",
     from: "0x12312kj312kjb3jk",
     to: "0xqweqwnekjads2asdk2",

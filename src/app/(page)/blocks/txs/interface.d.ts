@@ -1,12 +1,6 @@
-export interface IblockstxnList {
-  txHash: string;
-  method: string;
-  block: string;
-  from: string;
-  to: string;
-  value: string;
-  age: string;
-}
+import { ItxList } from "@app/_components/transactionTable/interface";
+
+export type IblockstxnList = ItxList;
 
 export interface IMordeDetailToggleProps {
   mordeDetailToggle: boolean;

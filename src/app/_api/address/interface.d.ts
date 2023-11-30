@@ -2,9 +2,9 @@ import { ItxList } from "@app/_components/transactionTable/interface";
 import { INftTransList } from "@app/(page)/nftTrans/interface";
 
 import { IAddressContent } from "@app/(page)/address/interface";
+import { IResponseTransactionData } from "../main/interface";
 
 export type IAddressItem = IAddressContent;
-
 
 export interface IAddressData {
   ethBalance: string;
@@ -15,9 +15,7 @@ export interface IAddressData {
   transactionsRoot: string;
   updatedAt: string;
   address: string;
-  txs: ItxList[];
-  firstTxnSentTimestamp:string;
-  lastTxnSentTimestamp:string
-  txs:string
-
+  firstTxnSentTimestamp: string;
+  lastTxnSentTimestamp: string;
+  txs: IResponseTransactionData[];
 }

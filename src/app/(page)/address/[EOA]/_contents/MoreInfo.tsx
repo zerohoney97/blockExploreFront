@@ -18,7 +18,7 @@ const AddressMoreInfo = () => {
 
   const tempDataArr: ItxList[] = Array.from({ length: 105 }, (ele, index) => ({
     age: "asd",
-    block: "123124124",
+    blocknumber: "123124124",
     from: "0x12312kj312kjb3jk",
     to: "0xqweqwnekjads2asdk2",
     method: "Transfer",
