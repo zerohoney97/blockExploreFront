@@ -15,16 +15,12 @@ const TxContentWrap: React.FC<ITransactionDetailProps> = ({
   const toggleHandler = (label: string) => {
     setToggleLabelName(label);
   };
-  useEffect(() => {
-    console.log(transactionItemData);
-  }, []);
+
   const componentHandler = (label: string) => {
     if (label === "Over View") {
       return <TxOverViewMain transactionItemData={transactionItemData} />;
     } else if (label === "Logs") {
-      return <TxLogsMain />;
-    } else if (label === "State") {
-      return <TxStateMain />;
+      return <TxLogsMain eventLogDataList={transactionItemData.eventLog} />;
     } else {
       return <></>;
     }

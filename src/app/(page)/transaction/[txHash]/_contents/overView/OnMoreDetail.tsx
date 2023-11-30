@@ -61,7 +61,7 @@ const TxOnMoreDetail: React.FC<IMordeDetailToggleProps> = ({
               Input Data:
             </div>
             <div className="  flex flex-col sm:w-full sm:m-auto lg:w-2/3 ">
-              <TxInputData />
+              <TxInputData transactionItemData={transactionItemData}/>
             </div>
           </div>
         </div>

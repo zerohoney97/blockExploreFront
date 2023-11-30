@@ -38,8 +38,27 @@ export interface ITransactionItemData {
   token_id: string | null;
   block_id: string;
   transactionFee: string;
-  gas:string
+  gas: string;
   gasPrice: string;
-  maxFeePerGas:string;
-  maxPriorityFeePerGas:string
+  maxFeePerGas: string;
+  maxPriorityFeePerGas: string;
+  eventLog: IEventLogData[];
+  input:string
+}
+export interface IEventLogData {
+  id: number;
+  address: string;
+  blockHash: string;
+  blockNumber: string;
+  data: string;
+  logIndex: string;
+  removed: boolean;
+  transactionHash: string;
+  transactionIndex: number;
+  event: string;
+  signature: string;
+  topics: string;
+  returnValues: string;
+  createdAt: string;
+  updatedAt: string;
 }

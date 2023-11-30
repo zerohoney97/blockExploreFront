@@ -1,4 +1,7 @@
-import { ITransactionItemData } from "@app/_api/txDetail/interface";
+import {
+  IEventLogData,
+  ITransactionItemData,
+} from "@app/_api/txDetail/interface";
 import { ItxList } from "@app/_components/transactionTable/interface";
 
 export interface IMordeDetailToggleProps {
@@ -14,4 +17,8 @@ export interface ITransactionListWrapProps {
 export type ITransactionDetailData = ITransactionItemData;
 export interface ITransactionDetailProps {
   transactionItemData: ITransactionDetailData;
+}
+
+export interface ITxDetailLogDataProps {
+  eventLogDataList: IEventLogData[];
 }
