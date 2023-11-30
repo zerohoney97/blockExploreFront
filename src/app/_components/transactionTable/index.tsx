@@ -16,7 +16,7 @@ import {
 
 const TxListWrap: React.FC<ITxListProps> = ({
   txList,
-  lastThName,
+  lastName,
   pageStack = 20,
 }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
@@ -75,7 +75,7 @@ const TxListWrap: React.FC<ITxListProps> = ({
               <th className="w-20 sm:w-[50px] md:w-[100px]  lg:w-[150px]"></th>
               <th className="min-w-[120px] lg:w-44 flex items-center">To</th>
               <th className="min-w-[100px] flex justify-start items-center ml-[20px]">
-                {lastThName}
+                {lastName}
               </th>
             </tr>
           </thead>

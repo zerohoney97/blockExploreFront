@@ -51,7 +51,7 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
       <td className="min-w-[120px]">
         <div className="w-full flex ">
           <div className="text-text-mainTextColor">
-            <Link href={`/transaction/${TxItem.from}`}>
+            <Link href={`/address/${TxItem.from}`}>
               {" "}
               {addressEncodeHandler(TxItem.from)}
             </Link>
@@ -67,7 +67,7 @@ const TokenTransferItem: React.FC<ITokenTransferItemProps> = ({
       <td className="min-w-[200px] lg:w-64">
         <div className="w-full flex ">
           <div className="text-text-mainTextColor">
-            <Link href={`/transaction/${TxItem.to}`}>
+            <Link href={`/address/${TxItem.to}`}>
               {" "}
               {addressEncodeHandler(TxItem.to)}
             </Link>

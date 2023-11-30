@@ -76,7 +76,7 @@ const NftTxListWrap: React.FC<INftTxListProps> = ({
                 Item
               </th>
               {/* <th className="min-w-[100px] flex justify-start items-center  font-medium">
-                {lastThName}
+                {lastName}
               </th> */}
             </tr>
           </thead>

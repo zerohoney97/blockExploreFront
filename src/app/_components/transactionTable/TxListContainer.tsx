@@ -7,6 +7,7 @@ import Pagination from "../pagination";
 import usePagiNation from "@app/_hooks/usePagination";
 
 const TxList: React.FC<ITxListWrapProps> = ({ pageTxList, toggleHandler }) => {
+  
   return (
     <>
       {pageTxList &&

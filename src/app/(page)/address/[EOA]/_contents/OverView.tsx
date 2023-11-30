@@ -7,6 +7,7 @@ import { DropDown } from "./DropDown";
 import { DropDownItem } from "./DropDowmItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const weiToEther = (wei: number): string => {
   const ether = (wei / 10 ** 18).toFixed(5); // Convert to ether with 5 decimal places
@@ -32,9 +33,9 @@ const AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({
     setIsDropdownVisible(!isDropdownVisible);
   };
   return (
-    <>
+    <div className="mt-10">
       <ItemTableWrap>
-        <div className="w-full h-auto flex flex-col  pb-5 ">
+        <div className="w-full h-auto flex flex-col  pb-5">
           <div className="font-semibold">Overview</div>
           <div className="flex flex-col">
             <div className="lg:flex lg:items-center">
@@ -50,11 +51,15 @@ const AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({
                 LAST TXN SENT:
               </div>
               <div className="p-2 h-auto text-sm flex  w-80 sm:break-words lg:ml-8 md:break-words">
-                <div className="text-blue-500 w-40 truncate">{lastTxHash}</div>
+                <Link href={`/transaction/${lastTxHash}`}>
+                  <div className="text-text-mainTextColor w-40 truncate">
+                    {lastTxHash}
+                  </div>
+                </Link>
                 <div className="text-itemDetail-textLabelColor">
                   {addressOverViewData.lastTxnSentTimestamp}
                 </div>
-              </div>{" "}
+              </div>
             </div>
 
             <div className="lg:flex lg:items-center">
@@ -62,11 +67,15 @@ const AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({
                 FRIST TXN SENT:
               </div>
               <div className="p-2 h-auto text-sm flex  sm:w-80 sm:break-words lg:ml-8  lg:w-96">
-                <div className="text-blue-500 w-40 truncate">{firstTxHash}</div>
+                <Link href={`/transaction/${firstTxHash}`}>
+                  <div className="text-text-mainTextColor w-40 truncate">
+                    {firstTxHash}
+                  </div>
+                </Link>
                 <div className="text-itemDetail-textLabelColor">
                   {addressOverViewData.lastTxnSentTimestamp}
                 </div>
-              </div>{" "}
+              </div>
             </div>
             <div className="">
               <div className="p-2 text-itemDetail-textLabelColor  text-sm">
@@ -95,7 +104,7 @@ const AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({
           />
         </DropDown>
       )}
-    </>
+    </div>
   );
 };
 

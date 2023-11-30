@@ -80,9 +80,9 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
                   openMenuNameHandler={openMenuNameHandler}
                 />
               </ul>
-              <DarkModeToggle />
             </div>
           </div>
+              <DarkModeToggle />
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { IResponseTransactionData } from "@app/_api/main/interface";
+
 export interface ItxList {
   txHash: string;
   method: string;
@@ -20,7 +22,7 @@ export interface ItokenList {
 
 export interface ITxListProps {
   txList: ItxList[];
-  lastThName: string;
+  lastName: string;
   pageStack?:number
 }
 

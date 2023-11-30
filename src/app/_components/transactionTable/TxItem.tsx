@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { ITxItemProps } from "./interface";
 import { useRouter } from "next/navigation";
 import {
@@ -15,7 +15,7 @@ import Image from "next/image";
 import WordBallon from "@app/_components/wordBallon";
 
 const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
-  
+
   const addressEncodeHandler = (address: string) => {
     return (
       address.substring(0, 4) + "...." + address.substring(address.length - 4)
@@ -53,7 +53,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       <td className='min-w-[120px] ml-[20px]'>
         <div className='w-full flex '>
           <div className='text-text-mainTextColor'>
-            <Link href={`/transaction/${TxItem.from}`}>
+            <Link href={`/address/${TxItem.from}`}>
               {addressEncodeHandler(TxItem.from)}
             </Link>
           </div>
@@ -68,7 +68,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       <td className='min-w-[120px] lg:w-44'>
         <div className='w-full flex '>
           <div className='text-text-mainTextColor'>
-            <Link href={`/transaction/${TxItem.to}`}>
+            <Link href={`/address/${TxItem.to}`}>
               {addressEncodeHandler(TxItem.to)}
             </Link>
           </div>
@@ -78,7 +78,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
           
         </div>
       </td>
-      <td className='min-w-[100px] items-center ml-[20px] '>{TxItem.value}</td>
+      <td className='min-w-[250px] items-center ml-[20px] '>{TxItem.value}</td>
     </tr>
   );
 };

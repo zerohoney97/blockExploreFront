@@ -13,7 +13,7 @@ const NftTxContainer: React.FC<INftTxListWrapProps> = ({ pageTxList, toggleHandl
             <NftTxsItem
               NftTxItem={ele}
               toggleHandler={toggleHandler}
-              key={ele.transcationInfo}
+              key={ele.hash}
             />
           ))}
     </div>

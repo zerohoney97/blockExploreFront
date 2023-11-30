@@ -22,7 +22,7 @@ const Page = () => {
       For Block{""}
         </TxnTitle>
       </div>
-      {isRendered && <TxListWrap txList={tempDataArr} lastThName="Value"  pageStack={50}/>}
+      {isRendered && <TxListWrap txList={tempDataArr} lastName="Value"  pageStack={50}/>}
     </div>
   );
 };
