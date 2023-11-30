@@ -5,8 +5,8 @@ import {
 } from "@app/_components/transactionTable/interface";
 import React from "react";
 
-const AddressTransfer: React.FC<ITxListProps> = ({ txList, lastThName }) => {
-  return <TxListWrap txList={txList} lastThName={lastThName} />;
+const AddressTransfer: React.FC<ITxListProps> = ({ txList, lastName }) => {
+  return <TxListWrap txList={txList} lastName={lastName} />;
 };
 
-export default AddressTransfer;
+export default AddressTransfer

@@ -14,7 +14,7 @@ const TransactionListWrap: React.FC<ITransactionListWrapProps> = ({
       {isRendered && (
         <TxListWrap
           txList={transactionList}
-          lastThName="Value"
+          lastName="Value"
           pageStack={50}
         />
       )}

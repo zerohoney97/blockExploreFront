@@ -44,10 +44,10 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
       <td
         className="min-w-[200px] text-text-mainTextColor    "
         onClick={() => {
-          txNavigation.push(`/transaction/${NftTxItem.transcationInfo}`);
+          txNavigation.push(`/transaction/${NftTxItem.hash}`);
         }}
       >
-        {NftTxItem.transcationInfo}
+        {NftTxItem.hash}
       </td>
       <td className="min-w-[120px]  items-center">
         <span className="bg-gray max-w-[95px] p-1 rounded dark:text-black">
@@ -92,7 +92,6 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
         </span>
       </td>
       <td className="min-w-[300px] flex items-start">
-        <img className="w-8" src={NftTxItem.itemImage} alt="" />
         <p className="ml-2">{NftTxItem.itemName}</p>
       </td>
     </tr>

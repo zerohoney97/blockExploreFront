@@ -5,9 +5,9 @@ import {
 } from "@app/_components/transactionTable/interface";
 import React from "react";
 
-const AddressTokenTransfer: React.FC<ITxListProps> = ({ txList, lastThName }) => {
+const AddressTokenTransfer: React.FC<ITxListProps> = ({ txList, lastName }) => {
   return (
-     <TxListWrap txList={txList} lastThName={lastThName} />
+     <TxListWrap txList={txList} lastName={lastName} />
   )
 }
 

@@ -1,3 +1,5 @@
+import { IAddressNFTTxList } from "../address/interface";
+
 export interface INftTransList {
   hash: string;
   method: string;
@@ -5,12 +7,13 @@ export interface INftTransList {
   from: string;
   to: string;
   type: string;
+  itemImage? : string
   itemName : string;
 }
 
 
 export interface INftTxListProps {
-  nftTxList: INftTransList[];
+  nftTxList: IAddressNFTTxList[];
   maxHeight?:string
   pageStack?:number
 }
