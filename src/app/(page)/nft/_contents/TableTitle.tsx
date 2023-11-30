@@ -5,7 +5,7 @@ const CollectionTableTitle = () => {
     <ul className="flex h-20 w-[2000px]  border-b border-gray font-bold text-sm px-4 dark:text-white">
       <li className=" flex justify-center items-center   w-[50px]">#</li>
       <li className=" flex justify-center items-center   w-[350px]">
-        Collection
+        NFTItem
       </li>
       <li className=" flex justify-center items-center   w-[200px]">Type</li>
       <li className=" flex justify-center items-center   w-[150px]">

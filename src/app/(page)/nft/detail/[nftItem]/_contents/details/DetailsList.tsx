@@ -21,7 +21,7 @@ const NftDetailsList: React.FC<INftDetailsListProps> = ({ stateProps, nftData })
         />
         <NftDetailsItemLink
           name='Contract Address'
-          address="?"
+          address="백엔드 pull후에 가져올 예정"
         />
         <NftDetailsItemLink
           name='Creator'

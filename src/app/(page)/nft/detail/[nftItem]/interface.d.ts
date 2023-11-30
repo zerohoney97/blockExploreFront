@@ -20,19 +20,6 @@ export interface INftDetailsItemProps {
 interface INftALTotalRecordProps {
   totalCount: number;
 }
-interface INftAListProps {
-  txnHash: string;
-  age: string;
-  action: string;
-  price: string;
-  from: string;
-  to: string;
-}
-interface INftAListOA {
-  pageTxList:INftAListProps[],
-  toggleHandler: () => void;
-}
-
 interface INftDetails{
   id : number,
   tokenId : string,
@@ -43,7 +30,24 @@ interface INftDetails{
   Owner : string,
   txs : object,
 }
-
 interface INftDetailsProps{
 nftData : INftDetails;
+}
+interface INftActivityData {
+  hash: string;
+  Timestamp: string;
+  Method: string;
+  from: string;
+  to: string;
+}
+interface INftActivityProps{
+  activityData : INftActivityData[];
+}
+interface INftAListOA {
+  pageTxList:INftActivityData[],
+  // toggleHandler: () => void;
+}
+interface INftPageTxnListProps{
+  pageTxList:INftActivityData[],
+  toggleHandler: () => void;
 }

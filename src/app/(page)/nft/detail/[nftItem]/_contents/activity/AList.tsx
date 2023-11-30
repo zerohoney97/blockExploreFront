@@ -9,6 +9,8 @@ import { createPortal } from "react-dom";
 import { IAddInfo } from "@app/_components/transactionTable/interface";
 import AdditionalInfo from "./AdditionalInfo";
 
+
+
 const NftAList: React.FC<INftAListOA> = ({ pageTxList }) => {
   const [addInfoModal, setAddInfoModal] = useState<Element | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
@@ -33,19 +35,16 @@ const NftAList: React.FC<INftAListOA> = ({ pageTxList }) => {
     <div className='overflow-x-scroll'>
       <table className='w-full'>
         <thead className='border-gray border-b-[1px]'>
-          <tr className='h-[50px] text-left text-sm'>
+          <tr className='h-[50px] text-left text-sm dark:text-white'>
             <th className='text-center'>
-              <button>
-                <FontAwesomeIcon
-                  className='border-transparent p-[10px] border-[1px]'
-                  icon={faCircleQuestion}
-                />
-              </button>
+              <FontAwesomeIcon
+                className='border-transparent p-[10px] border-[1px]'
+                icon={faCircleQuestion}
+              />
             </th>
             <th>Txn Hash</th>
             <th>Age</th>
             <th>Action</th>
-            <th>Price</th>
             <th>From</th>
             <th></th>
             <th>To</th>

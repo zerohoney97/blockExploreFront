@@ -2,47 +2,35 @@
 import React, { useState } from "react";
 import Pagination from "@app/_components/pagination";
 import usePagination from "@app/_hooks/usePagination";
-import { INftAListProps } from "../../interface";
 import ALTotalRecord from "./ALTotalRecord";
 import AList from "./AList";
+import { INftActivityProps } from "../../interface";
+import { INftActivityData } from "../../interface";
 
-// interface INftAListProps {
-//   txnHash: string;
-//   age: string;
-//   action: string;
-//   price: string;
-//   from: string;
-//   to: string;
-// }
 
-interface NftActivityContentsProps{
-  activityData: INftAListProps;
-}
-
-const NftActivityContents: React.FC<NftActivityContentsProps> = ({activityData}) => {
+const NftActivityContents: React.FC<INftActivityProps> = ({activityData}) => {
   // 페이지네이션
-  const tempDataArr: INftAListProps[] = Array.from(
+  const tempDataArr: INftActivityData[] = Array.from(
     { length: activityData.length },
     (ele, index) => {
       return {
-        txnHash: activityData[index].txnHash,
-        age: activityData[index].age,
-        action: activityData[index].action,
-        price: activityData[index].price,
+        hash: activityData[index].hash,
+        Timestamp: activityData[index].Timestamp,
+        Method: activityData[index].Method,
         from: activityData[index].from,
         to: activityData[index].to,
       };
     },
   );
   const { maxPage, page, pageHandler, pageTxList } =
-    usePagination<INftAListProps>(tempDataArr,10);
+    usePagination<INftActivityData>(tempDataArr,10);
     // console.log("pagetxlist",pageTxList);
 
   return (
     <>
       <div>
         <ALTotalRecord totalCount={tempDataArr.length} />
-        <AList pageTxList={pageTxList}  />
+        <AList pageTxList={pageTxList} />
         <Pagination page={page} pageHandler={pageHandler} maxPage={maxPage} />
       </div>
     </>
