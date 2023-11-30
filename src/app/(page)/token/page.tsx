@@ -9,9 +9,10 @@ import { getToken } from "@app/_api/token/getToken";
 import { ITokenDetail, TokenDataProps } from "./interface";
 
 const Page = async () => {
-  const tokenListData: TokenDataProps[] = (await getToken()) as TokenDataProps[];
-  if (tokenListData===undefined) {
-    return <>에러 페이지</>
+  const tokenListData: TokenDataProps[] =
+    (await getToken()) as TokenDataProps[];
+  if (tokenListData === undefined) {
+    return <>에러 페이지</>;
   }
   return (
     <>
