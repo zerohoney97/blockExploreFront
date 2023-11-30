@@ -31,9 +31,9 @@ export const getTransaction = async (pageName: string) => {
     } else if (pageName === "list") {
       return getAllTx(responseTransactionData);
     } else if (pageName === "NFT") {
-      return getNFTTransferTx(responseTransactionData);
+      return await getNFTTransferTx(responseTransactionData);
     } else if (pageName === "token") {
-      return getTokenTransferTx(responseTransactionData);
+      return await getTokenTransferTx(responseTransactionData);
     } else {
       return null;
     }

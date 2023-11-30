@@ -24,9 +24,7 @@ export const getBlock = async (pageName: string) => {
         ? "http://localhost:8080"
         : "https://api.bouncexplorer.site"
     }/block`,
-    {
-      cache: "no-cache",
-    }
+    { next: { revalidate: 30 } }
   );
   const now = new Date().getTime();
 

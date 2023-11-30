@@ -7,7 +7,7 @@ import HoldersList from "@app/_components/holdersTable";
 import DexList from "@app/_components/dexTradeTable";
 import TabButton from "@app/_components/tabComponent/Tab";
 import useHydration from "@app/_hooks/useHydration";
-import { ITokenDetailDataProps } from "../../Interface";
+import { ITokenDetailDataProps } from "../../interface";
 import useFilterTx from "@app/_hooks/useFilterTx";
 
 const TokenTapInfo: React.FC<ITokenDetailDataProps> = ({ tokenItemData }) => {

@@ -1,17 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import {
-  faEye,
-  faCopy,
-  faCircleRight,
-} from "@fortawesome/free-regular-svg-icons";
+import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { INftAListOA } from "../../interface";
 import WordBallon from "@app/_components/wordBallon";
 import Image from "next/image";
 import Arrow from "public/arrow.png";
 
-const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList, toggleHandler }) => {
+const NftPageTxnList: React.FC<INftAListOA> = ({
+  pageTxList,
+  toggleHandler,
+}) => {
   const truncate = (hash: string) => {
     return hash.substring(0, 19) + "...";
   };
@@ -21,9 +20,9 @@ const NftPageTxnList: React.FC<INftAListOA> = ({ pageTxList, toggleHandler }) =>
   const additionalClick = (index: number) => {
     console.log(index);
   };
-  const minWidth = (value:number) => {
+  const minWidth = (value: number) => {
     return `min-w-[${value}px]`;
-  } 
+  };
   return (
     <>
       {pageTxList.map((item, index) => (

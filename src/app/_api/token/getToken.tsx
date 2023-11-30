@@ -5,7 +5,6 @@ const filterT0 = (time: string) => {
   if (indexOfTOO !== -1) {
     time = time.substring(0, indexOfTOO);
   }
-  console.log(time);
   return time;
 };
 export const getToken = async () => {
@@ -18,11 +17,11 @@ export const getToken = async () => {
           ? "http://localhost:8080"
           : "https://api.bouncexplorer.site"
       }/token`,
-      { next: { revalidate: 600 } }
+      { next: { revalidate: 30 } }
     );
 
     const reponseTokenDataList: IResponseTokenData[] = await res.json();
-
+    console.log("asf");
     const tokenListData: ITokenListData[] = reponseTokenDataList.map(
       ({
         circulatingSupply,
@@ -45,7 +44,6 @@ export const getToken = async () => {
         };
       }
     );
-    console.log(tokenListData);
 
     return tokenListData;
   } catch (error) {

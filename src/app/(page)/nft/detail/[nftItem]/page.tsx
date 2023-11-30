@@ -18,7 +18,7 @@ const Page = async (props: INftItemProps) => {
   const nftData: INftDetails = await getNfts(param);
   
   const activityData = nftData.txs;
-  console.log("여기",activityData.length);
+  console.log("txs:",activityData);
   return (
     <>
       <div className='sm:p-4 md:p-8 lg:px-8 lg:my-10 m-auto'>
@@ -37,7 +37,7 @@ const Page = async (props: INftItemProps) => {
             <NftDetails nftData={nftData} />
           </div>
         </div>
-        <NftActivity activityData={activityData.length == 0 ? '321' : "123" }  />
+        <NftActivity activityData={activityData.length == 0 ? null : {activityData} }  />
         
       </div>
     </>

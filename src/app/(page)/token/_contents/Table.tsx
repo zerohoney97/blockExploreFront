@@ -4,7 +4,7 @@ import TokenHeader from "@app/(page)/token/_contents/Header";
 import TokenContent from "@app/(page)/token/_contents/Content";
 import usePagination from "@app/_hooks/usePagination";
 import Pagination from "@app/_components/pagination";
-import { ITokenTableProps, TokenDataProps } from "../Interface";
+import { ITokenTableProps, TokenDataProps } from "../interface";
 
 const TokenTable: React.FC<ITokenTableProps> = ({ tokenListData }) => {
   const pagination = usePagination<TokenDataProps>(tokenListData);

@@ -31,7 +31,7 @@ export const getTxItemData = async (txHash: string) => {
           ? "http://localhost:8080"
           : "https://api.bouncexplorer.site"
       }/tx/find/${txHash}`,
-      { cache: "no-cache" }
+      { next: { revalidate: 300 } }
     );
     console.log(
       `${

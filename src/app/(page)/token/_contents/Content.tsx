@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { TokenDataProps } from "../Interface";
+import { TokenDataProps } from "../interface";
 
 const TokenContent: React.FC<{ data: TokenDataProps }> = ({ data }) => {
   const tokenDetailPath = `/token/${encodeURIComponent(data.name)}`;
