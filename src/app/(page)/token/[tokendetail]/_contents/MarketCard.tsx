@@ -7,7 +7,7 @@ interface TokenCardProps {
   contractAddress: string;
 }
 
-const index: React.FC<TokenCardProps> = ({
+const TokenMarketCard: React.FC<TokenCardProps> = ({
   title,
   circulatingSupply,
   ownerAddress,
@@ -34,4 +34,4 @@ const index: React.FC<TokenCardProps> = ({
   );
 };
 
-export default index;
+export default TokenMarketCard;

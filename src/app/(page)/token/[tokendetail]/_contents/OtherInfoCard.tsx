@@ -7,7 +7,7 @@ interface TokenCardProps {
   createdAt: string;
 }
 
-const index: React.FC<TokenCardProps> = ({ title, createdAt, decimal }) => {
+const TokenOtherInfo: React.FC<TokenCardProps> = ({ title, createdAt, decimal }) => {
   return (
     <div className=" flex flex-col gap-5 text-sm break-words">
       <div>
@@ -21,4 +21,4 @@ const index: React.FC<TokenCardProps> = ({ title, createdAt, decimal }) => {
   );
 };
 
-export default index;
+export default TokenOtherInfo;
