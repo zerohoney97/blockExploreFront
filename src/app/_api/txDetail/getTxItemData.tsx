@@ -1,4 +1,5 @@
 import {
+  IEventLogData,
   ITransactionItemData,
   ITransactionResponseItemData,
 } from "./interface";
@@ -33,16 +34,19 @@ export const getTxItemData = async (txHash: string) => {
       }/tx/find/${txHash}`,
       { next: { revalidate: 300 } }
     );
-    console.log(
+
+    const resEventLog = await fetch(
       `${
         process.env.NODE_ENV === "development"
           ? "http://localhost:8080"
           : "https://api.bouncexplorer.site"
-      }/tx/find/${txHash}`
+      }/eventlog/find/${txHash}`,
+      { next: { revalidate: 300 } }
     );
+
     const responseTransactionData: ITransactionResponseItemData =
       await res.json();
-    console.log(responseTransactionData);
+    const responseEventLog: IEventLogData[] = await resEventLog.json();
     const {
       Method,
       NFT_id,
@@ -87,6 +91,8 @@ export const getTxItemData = async (txHash: string) => {
       block_id: block_id,
       NFT_id: NFT_id,
       token_id: token_id,
+      eventLog: responseEventLog,
+      input:input
     };
 
     return transactionData;

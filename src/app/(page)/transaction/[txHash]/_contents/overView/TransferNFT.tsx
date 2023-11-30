@@ -1,50 +1,92 @@
 import { ITransactionDetailProps } from "@app/(page)/transaction/interface";
+import { fromWeiToETH } from "@app/_api/main/getTxMethod/utils/fromWeiToETH";
 import React from "react";
 
-const TxTransferNFT: React.FC<ITransactionDetailProps> = ({transactionItemData}) => {
+const TxTransferNFT: React.FC<ITransactionDetailProps> = ({
+  transactionItemData,
+}) => {
   const addressEncodeHandler = (address: string) => {
     return (
       address.substring(0, 4) + "...." + address.substring(address.length - 4)
     );
   };
+  const filterT0 = (time: string) => {
+    let indexOfTOO = time.indexOf("T0");
+    if (indexOfTOO !== -1) {
+      time = time.substring(0, indexOfTOO);
+    }
+    return time;
+  };
 
+  const jsonToObj = (returnValues: string) => {
+    // console.log(returnValues)
+    return JSON.parse(returnValues);
+  };
+
+  const methodValidateFromHandler = (returnValues: string) => {
+    return {
+      title: transactionItemData.method === "transfer" ? "from" : "owner",
+      ca: addressEncodeHandler(
+        transactionItemData.method === "transfer"
+          ? jsonToObj(returnValues).from
+          : jsonToObj(returnValues).owner
+      ),
+    };
+  };
+  const methodValidateToHandler = (returnValues: string) => {
+    return {
+      title: transactionItemData.method === "transfer" ? "To" : "spender",
+      ca: addressEncodeHandler(
+        transactionItemData.method === "transfer"
+          ? jsonToObj(returnValues).to
+          : jsonToObj(returnValues).spender
+      ),
+    };
+  };
+
+  const methodValue = (returnValues: string) => {
+    return fromWeiToETH(jsonToObj(returnValues).value);
+  };
   return (
     <div className="w-full h-auto p-2 border-b border-gray pb-5 lg:flex lg:items-center dark:text-white">
       <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
         ERC-721 Tokens Transferred:
       </div>
       <div className="w-1/3 lg:ml-10">
-        <img
-          width={"80px"}
-          height={"80px"}
-          src="https://upload.wikimedia.org/wikipedia/ko/e/eb/%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0_%EB%A0%88%EB%93%9C%C2%B7%EA%B7%B8%EB%A6%B0%EC%9D%98_%ED%99%8D%EB%B3%B4_%EC%9E%91%ED%92%88%EC%97%90_%EB%AC%98%EC%82%AC_%EB%90%9C_%ED%94%BC%EC%B9%B4%EC%B8%84.png"
-          alt="피카츄"
-          className="m-6"
-        />
-        <p>
-          <span className="text-sm sm:inline-block">
-            <span className=" text-itemDetail-inventoryKeyColor">ERC-721</span>
-            <span className="ml-2">Token ID[</span>
-            <span className="text-text-mainTextColor truncate">9044</span>
-            <span>]</span>
-            <span className="text-text-mainTextColor truncate ml-2">Captaniz</span>
-          </span>
-          {/* <br /> */}
-          <span className="sm:inline-block">
-            <span className="font-medium text-sm lg:ml-1">From</span>
-            <span className="text-text-mainTextColor text-xs ml-2">
-              {addressEncodeHandler(
-                "0x37d0aadDB833d8B62a0d259c2B0BCd82dA871D85"
-              )}
-            </span>
-            <span className="font-medium  text-sm ml-2 ">To</span>
-          </span>
+        {transactionItemData.eventLog.map((el, index) => {
+          return (
+            <p key={index}>
+              <span className="text-sm sm:inline-block">
+                <span className=" text-itemDetail-inventoryKeyColor">
+                  ERC-721
+                </span>
+                <span className="ml-2">Block Number[</span>
+                <span className="text-text-mainTextColor truncate">
+                  {el.blockNumber}
+                </span>
+                <span>]</span>
+                <span className="text-text-mainTextColor truncate ml-2"></span>
+              </span>
+              {/* <br /> */}
+              <span className="sm:inline-block">
+                <span className="font-medium text-sm lg:ml-1">
+                  {methodValidateFromHandler(el.returnValues).title}
+                </span>
+                <span className="text-text-mainTextColor text-xs ml-2">
+                  {methodValidateFromHandler(el.returnValues).ca}
+                </span>
+                <span className="font-medium  text-sm ml-2 ">
+                  {methodValidateToHandler(el.returnValues).title}
+                </span>
+              </span>
 
-          {/* <br /> */}
-          <span className="text-text-mainTextColor text-xs lg:ml-1">
-            {addressEncodeHandler("0xb2ecfE4E4D61f8790bbb9DE2D1259B9e2410CEA5")}
-          </span>
-        </p>
+              {/* <br /> */}
+              <span className="text-text-mainTextColor text-xs lg:ml-1">
+                {methodValidateToHandler(el.returnValues).ca}
+              </span>
+            </p>
+          );
+        })}
       </div>
     </div>
   );

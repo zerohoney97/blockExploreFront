@@ -24,8 +24,13 @@ const TxOverViewMain: React.FC<ITransactionDetailProps> = ({
         <TxOverView transactionItemData={transactionItemData} />
         <TxAction transactionItemData={transactionItemData} />
         <TxTransfer transactionItemData={transactionItemData} />
-        <TxTransferToken transactionItemData={transactionItemData} />
-        <TxTransferNFT transactionItemData={transactionItemData} />
+        {transactionItemData.token_id && (
+          <TxTransferToken transactionItemData={transactionItemData} />
+        )}
+        {transactionItemData.NFT_id && (
+          <TxTransferNFT transactionItemData={transactionItemData} />
+        )}
+
         <TxGasInfo transactionItemData={transactionItemData} />
       </ItemTableWrap>
       <ItemTableWrap>
