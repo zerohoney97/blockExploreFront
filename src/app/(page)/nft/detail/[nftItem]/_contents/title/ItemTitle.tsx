@@ -8,7 +8,7 @@ import { faCircle } from "@fortawesome/free-regular-svg-icons";
 const NftItemTitle:React.FC<INftDetailsProps> = ({nftData}) => {
   return (
     <>
-      <div className='w-full my-[20px]'>
+      <div className='w-full my-[20px] dark:text-white'>
         <h1 className="text-[17px] font-bold">{nftData.name}</h1>
         <p className="text-text-mainTextColor">
           <FontAwesomeIcon icon={faCircle} />
