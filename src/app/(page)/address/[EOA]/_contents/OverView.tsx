@@ -78,7 +78,7 @@ const AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({
                   isDropdownVisible ? "bg-gray" : "hover:bg-gray"
                 } relative h-auto rounded text-sm p-2`}
               >
-                0.00ETH(26 Tokens) 
+                0.00ETH(26 Tokens)
                 <button className="absolute right-5">
                   <FontAwesomeIcon icon={faArrowDown} />
                 </button>
@@ -89,9 +89,10 @@ const AddressOverView: React.FC<{ addressOverViewData: IAddressContent }> = ({
       </ItemTableWrap>
       {isDropdownVisible && (
         <DropDown>
-          <DropDownItem 
-          title="0x5555.com()"
-          maxTotalSupply="55555555555555555555"/>
+          <DropDownItem
+            title="0x5555.com()"
+            maxTotalSupply="55555555555555555555"
+          />
         </DropDown>
       )}
     </>
