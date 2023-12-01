@@ -38,7 +38,7 @@ const PcDropDownMenu: React.FC<IPcDropMenu> = ({
               {dropDownMenuArr.map((ele: IDropDownMenuData, index: number) => {
                 return (
                   <li key={index} className=" hover:bg-black/10 cursor-pointer rounded p-1 mt-2 dark:hover:bg-gray/30">
-                    <Link onClick={()=>linkClick(ele.name)} href={`/${ele.href}`}>{ele.name}</Link>
+                    <Link  href={`/${ele.href}`}>{ele.name}</Link>
                   </li>
                 );
               })}
