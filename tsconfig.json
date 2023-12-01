@@ -37,7 +37,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/(yeonsu)/signup/page.tsx"
-, "server.js"  ],
+, "server.js", "src/app/_layout/header/content/Loading.js"  ],
   "exclude": [
     "node_modules"
   ]
