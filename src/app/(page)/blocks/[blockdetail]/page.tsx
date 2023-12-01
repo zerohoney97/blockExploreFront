@@ -7,12 +7,13 @@ import BlockDiffcultyInfo from "./_contents/DiffcultyInfo";
 import BlockGasInfo from "./_contents/GasInfo";
 import MoreInfo from "./_contents/MoreInfo";
 import { getBlockItemData } from "@app/_api/blockDetail/getBlockItemData";
+import Error from "@app/_components/error";
 const Page: React.FC<IBlocksDetailProps> = async ({ params }) => {
   const blockData: IBlockDetailData = (await getBlockItemData(
     params.blockdetail
   )) as IBlockDetailData;
   if (blockData === undefined) {
-    return "";
+    return <Error/>;
   }
   return (
     <div>

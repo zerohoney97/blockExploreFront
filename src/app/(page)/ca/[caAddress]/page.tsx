@@ -7,6 +7,7 @@ import CaOtherInfoCard from "./_contents/OtherInfoCard";
 import CaTapInfo from "./_contents/TapInfo";
 import CaTitle from "./_contents/Title";
 import { ICaDetailData } from "../interface";
+import Error from "@app/_components/error";
 
 const Page = async ({
   params,
@@ -18,6 +19,10 @@ const Page = async ({
   const caData: ICaDetailData = (await getCa(
     params.caAddress
   )) as ICaDetailData;
+
+  if(caData ===null){
+    return <Error/>
+  }
 
   return (
     <div className="dark:bg-black/90">
