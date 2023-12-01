@@ -1,3 +1,5 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
 
 export const getNfts = async (pageName: string) => {
   const res = await fetch(
@@ -10,6 +12,9 @@ export const getNfts = async (pageName: string) => {
       cache: "no-cache",
     },
   );
-  const responseNftData = await res.json();
+  const responseNftData: IResponseDataSequlErr = await res.json();
+  if(isResponseDataSequlErr(responseNftData)){
+    return null;
+  }
   return responseNftData;
 };

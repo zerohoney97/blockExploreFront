@@ -1,3 +1,5 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
 import { INFTListData, IResponseNFTListData } from "./interface";
 
 const filterTOO = (time: string) => {
@@ -21,7 +23,10 @@ export const getNFT = async () => {
       { next: { revalidate: 30 } }
     );
 
-    const responseNFTDataList: IResponseNFTListData[] = await res.json();
+    const responseNFTDataList: IResponseNFTListData[] | IResponseDataSequlErr = await res.json();
+    if(isResponseDataSequlErr(responseNFTDataList)){
+      return null;
+    }
     const NFTdataList: INFTListData[] = responseNFTDataList.map(
       (
         {

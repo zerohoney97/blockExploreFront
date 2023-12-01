@@ -7,6 +7,8 @@ import Footer from "./_layout/footer";
 import { getBlock } from "./_api/main/getBlock";
 import { getTransaction } from "./_api/main/getTransaction";
 import { IMainBlocksItem, IMainTransactionData } from "./_api/main/interface";
+import Error from "@app/_components/error";
+
 
 export default async function Main() {
   const blockData = await getBlock("main");
@@ -21,6 +23,9 @@ export default async function Main() {
     lastFinalizedBlock: 18562780,
     lastSafeBlock: 18562812,
   };
+  if(!blockData){
+    return  <Error/>
+  }
   // const blocksData = [
   //   {
   //     blockHeight: 1,

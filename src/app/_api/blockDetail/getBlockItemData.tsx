@@ -1,3 +1,5 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
 import { IBlockItemData, IResponseBLockItemData } from "./interface";
 
 const divideTimeIntoUnits = (now: number, blockTime: number) => {
@@ -32,7 +34,10 @@ export const getBlockItemData = async (blockNum: string) => {
       { cache: "no-cache" }
     );
 
-    const responseBlockData: IResponseBLockItemData = await res.json();
+    const responseBlockData: IResponseBLockItemData | IResponseDataSequlErr = await res.json();
+    if(isResponseDataSequlErr(responseBlockData)){
+      return null;
+    }
     if (responseBlockData === null) {
       throw new Error("Data is null");
     }

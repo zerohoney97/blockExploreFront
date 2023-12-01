@@ -19,7 +19,7 @@ const Page = async ({ params }: { params: { EOA: string } }) => {
   const addressData: IAddressDetailData = (await getAddress(
     params.EOA
   )) as IAddressDetailData;
-    if (addressData===null) {
+    if (!addressData) {
       return  <Error/>
     }
   const addressOverViewData: IAddressContent = {
