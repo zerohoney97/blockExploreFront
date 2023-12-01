@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -26,9 +22,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@app/*": [
-        "src/app/*"
-      ]
+      "@app/*": ["src/app/*"]
     }
   },
   "include": [
@@ -36,9 +30,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/(yeonsu)/signup/page.tsx"
-, "server.js", "src/app/_layout/header/content/Loading.js"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "src/app/(yeonsu)/signup/page.tsx",
+    "server.js"
+    
+  ],
+  "exclude": ["node_modules"]
 }
