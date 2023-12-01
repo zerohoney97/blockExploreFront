@@ -4,6 +4,8 @@ import TxListWrap from "@app/_components/transactionTable";
 import { IblockstxnList } from "./interface";
 import useHydration from "@app/_hooks/useHydration";
 import TxnTitle from "./_content/Title";
+import Error from "@app/_components/error";
+
 const Page = () => {
   const tempDataArr: IblockstxnList[] = Array.from({ length: 105 }, (ele, index) => ({
     txHash: "0x123fjafk231s",
@@ -14,6 +16,9 @@ const Page = () => {
     to: "0xqweqwnekjads2asdk2",
     value: index.toString(),
   }));
+  if(!tempDataArr){
+    return <Error/>
+  }
   const isRendered = useHydration();
   return (
     <div>

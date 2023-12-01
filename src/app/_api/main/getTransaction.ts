@@ -1,3 +1,5 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
 import { getAllTx } from "./getTxMethod/getAllTx";
 import { getMainTx } from "./getTxMethod/getMainTx";
 import { getNFTTransferTx } from "./getTxMethod/getNFTTransferTx";
@@ -18,9 +20,12 @@ export const getTransaction = async (pageName: string) => {
     { cache: "no-cache" }
   );
   try {
-    const responseTransactionData: IResponseTransactionData[] =
+    const responseTransactionData: IResponseTransactionData[] | IResponseDataSequlErr =
       await res.json();
-
+    if(isResponseDataSequlErr(responseTransactionData)){
+      return null
+    }
+    
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }

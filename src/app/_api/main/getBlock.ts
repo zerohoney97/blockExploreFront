@@ -1,3 +1,5 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
 import {
   IListBLocksItem,
   IMainBlocksItem,
@@ -24,12 +26,17 @@ export const getBlock = async (pageName: string) => {
         ? "http://localhost:8080"
         : "https://api.bouncexplorer.site"
     }/block`,
-    { next: { revalidate: 30 } }
+    { next: { revalidate: 30 } },
   );
   const now = new Date().getTime();
 
+  const responseBlockData: IResponseBlockData[] | IResponseDataSequlErr =
+    await res.json();
+  if (isResponseDataSequlErr(responseBlockData)) {
+    return null;
+  }
+
   if (pageName === "main") {
-    const responseBlockData: IResponseBlockData[] = await res.json();
     const blockData: IMainBlocksItem[] = responseBlockData.map((el) => {
       return {
         blockHeight: el.number,
@@ -46,7 +53,6 @@ export const getBlock = async (pageName: string) => {
 
     return blockData.slice(0, 5);
   } else if (pageName === "list") {
-    const responseBlockData: IResponseBlockData[] = await res.json();
     const blockData: IListBLocksItem[] = responseBlockData.map((el) => {
       return {
         block: el.number,

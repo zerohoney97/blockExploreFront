@@ -12,8 +12,8 @@ const Page: React.FC<IBlocksDetailProps> = async ({ params }) => {
   const blockData: IBlockDetailData = (await getBlockItemData(
     params.blockdetail
   )) as IBlockDetailData;
-  if (blockData === undefined) {
-    return <Error/>;
+  if (!blockData) {
+    return <Error />;
   }
   return (
     <div>

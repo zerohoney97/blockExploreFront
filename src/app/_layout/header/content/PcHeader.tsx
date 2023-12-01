@@ -11,29 +11,8 @@ import Link from "next/link";
 import DarkModeToggle from "@app/_components/darkToggle";
 import Image from "next/image";
 import Logo from "../../../../../public/Logo.png";
-import Loading from "./Loading";
-import { useRouter } from "next/router";
 
 const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
-  const [loading, setLoading] = useState(false);
-  // const router2 = useRouter();
-
-  // useEffect(()=>{
-  //   const handleStart = (url) => (url !== router2.asPath) && setLoading(true);
-  //   const handleComplete = (url) => (url == router2.asPath) && setLoading(false);
-
-  //   router2.events.on('routeChangeStart', handleStart);
-  //   router2.events.on('routeChangeComplete', handleComplete);
-  //   router2.events.on('routeChangeError', handleComplete);
-
-  //   return () => {
-  //     router2.events.off('routeChangeStart', handleStart);
-  //     router2.events.off('routeChangeComplete', handleComplete);
-  //     router2.events.off('routeChangeError', handleComplete);
-
-  //   }
-  // }, []);
-
   const [openMenuName, setOpenMenuName] = useState<string>("");
   const dropDownMenu: IDropDownMenuDataObj = {
     blockchain: [
@@ -61,7 +40,6 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
 
   return (
     <>
-    {/* {loading && <Loading />} */}
     <div className="bg-white dark:bg-black border-b-gray">
       <div className="max-w-[1400px] m-auto min-h-[60px] px-8 py-2 h-fit relative">
         <div className="min-h-[60px] h-full flex justify-between items-center relative z-10  m-auto  ">

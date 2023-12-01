@@ -65,3 +65,4 @@ export interface IResponseTransactionData {
   eoa_id: string;
   CA_id: string;
 }
+

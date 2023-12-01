@@ -1,3 +1,6 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
+
 export const getNftActivity = async () => {
     const res = await fetch(
         `${
@@ -9,6 +12,10 @@ export const getNftActivity = async () => {
             cache : "no-cache",
         }
     );
-    const resActivityData = await res.json();
+    const resActivityData:IResponseDataSequlErr = await res.json();
+    if(isResponseDataSequlErr(resActivityData)){
+        return null;
+    }
+    console.log("뜸?",resActivityData);
     // return resActivityData;
 }
