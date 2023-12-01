@@ -19,12 +19,14 @@ const Page: React.FC<ITokenDetailProps> = async ({ params }) => {
   )) as ITokenDetailData;
 
   return (
-    <div className="dark:bg-black/90">
+    <div className="">
+     
       <Title
         title={`Token`}
-        subtitle={<span className="text-sm">#{params.tokendetail}</span>}
+        subtitle={<span className="text-sm dark:text-white">#{params.tokendetail}</span>}
       />
-      <div className="dark:bg-datkMode-wrapBG flex flex-wrap min-w-[280px] mt-5 w-11/12 m-auto">
+
+      <div className=" flex flex-wrap min-w-[280px] mt-5 w-11/12 m-auto">
         <div className="w-full md:w-1/2 lg:w-1/3">
           <TokenItemTable>
             <OverviewCard

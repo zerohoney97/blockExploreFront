@@ -16,10 +16,9 @@ const Page = () => {
   }));
   const isRendered = useHydration();
   return (
-    <div className="dark:bg-black/90">
+    <div>
       <div>
       <TxnTitle title="Transactions">
-      For Block{""}
         </TxnTitle>
       </div>
       {isRendered && <TxListWrap txList={tempDataArr} lastName="Value"  pageStack={50}/>}

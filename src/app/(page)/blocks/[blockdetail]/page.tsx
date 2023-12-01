@@ -16,15 +16,13 @@ const Page: React.FC<IBlocksDetailProps> = async ({ params }) => {
     return "";
   }
   return (
-    <div className="dark:bg-black/90">
-      <div className="bg-mainBackGroundColor ">
-        <div className="w-full dark:bg-black/90">
+    <div>
+        <div className="w-full">
           <Title
             title={`Block `}
             subtitle={<span className="text-sm">#{blockData.blockNumber}</span>}
           />
         </div>
-      </div>
       <div className="py-5">
         <BlockCard>
           <BlockInfo
