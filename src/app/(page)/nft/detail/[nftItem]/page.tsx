@@ -99,11 +99,9 @@ const Page = async (props: INftItemProps) => {
       from: "0x0000000000000000000000000000000000000000",
       to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
     }];
-    // console.log("txs:",activityData);
   }else{
     // 데이터가 있으면. (현재는 데이터가 없는데 아마 데이터 들어오면 간단히 수정가능)
-    activityData = nftData.txs;
-    console.log("txs:",activityData);
+    // activityData = nftData.txs;
   }
   return (
     <>

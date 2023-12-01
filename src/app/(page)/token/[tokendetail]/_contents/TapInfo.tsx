@@ -36,7 +36,6 @@ const TokenTapInfo: React.FC<ITokenDetailDataProps> = ({ tokenItemData }) => {
 
   const componentHandler = (label: string) => {
     if (label === "Transfers") {
-      console.log("Transfers");
       return <TxListWrap txList={tokenTransferDataList} lastName="Item" />;
     } else if (label === "Info") {
       return (

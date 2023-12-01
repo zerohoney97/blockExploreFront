@@ -19,7 +19,6 @@ const WordBallon: React.FC<IBallonWord> = ({ copyValue }) => {
     navigator.clipboard
       .writeText(value)
       .then(() => {
-        console.log(value);
       })
       .catch((err) => {
         console.error(err);

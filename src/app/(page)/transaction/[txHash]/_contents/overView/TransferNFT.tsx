@@ -19,7 +19,6 @@ const TxTransferNFT: React.FC<ITransactionDetailProps> = ({
   };
 
   const jsonToObj = (returnValues: string) => {
-    // console.log(returnValues)
     return JSON.parse(returnValues);
   };
 

@@ -21,7 +21,6 @@ export const getToken = async () => {
     );
 
     const reponseTokenDataList: IResponseTokenData[] = await res.json();
-    console.log("asf");
     const tokenListData: ITokenListData[] = reponseTokenDataList.map(
       ({
         circulatingSupply,

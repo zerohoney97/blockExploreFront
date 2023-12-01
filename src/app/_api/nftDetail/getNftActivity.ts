@@ -10,6 +10,5 @@ export const getNftActivity = async () => {
         }
     );
     const resActivityData = await res.json();
-    console.log("뜸?",resActivityData);
     // return resActivityData;
 }

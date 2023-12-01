@@ -20,7 +20,6 @@ export const getTokenTransferTx = async (
     }/token`,
     { next: { revalidate: 30 } }
   );
-  console.log("asd");
   const tokenData: IResponseTokenData[] = await responseTokenData.json();
   const transactionData: IListTransactionData[] = filteredTransactionData.map(
     (el) => {

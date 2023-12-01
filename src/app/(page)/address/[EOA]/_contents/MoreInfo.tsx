@@ -80,7 +80,6 @@ const AddressMoreInfo: React.FC<{ addressTxList: IAddressMoreInfoTx[] }> = ({
           index
         ) => {
           if (tokenId !== null) {
-            console.log(tokenId);
             return {
               txHash,
               method,

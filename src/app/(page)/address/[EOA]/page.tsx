@@ -46,7 +46,6 @@ const Page = async ({ params }: { params: { EOA: string } }) => {
     }
   );
 
-  console.log("addressTxList", addressTxList);
 
   return (
     <div className="bg-mainBackGroundColor dark:bg-black/90">
