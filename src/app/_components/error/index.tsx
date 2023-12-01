@@ -20,7 +20,7 @@ const Error = () => {
       });
     }, 1000);
 
-    if (countdown === 0) {
+    if (countdown === 1) {
       clearInterval(timer);
       router.push('/');
     }
