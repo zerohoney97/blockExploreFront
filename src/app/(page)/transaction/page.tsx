@@ -8,7 +8,7 @@ import { getTransaction } from "@app/_api/main/getTransaction";
 const Page = async () => {
   const transactionData = await getTransaction("list");
   return (
-    <div className="dark:bg-black/90">
+    <div>
       <TxListTitle title="Transaction List" />
       <TransactionListWrap transactionList={transactionData as ItxList[]} />
     </div>

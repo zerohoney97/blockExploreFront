@@ -7,7 +7,7 @@ interface InfoTapContentProps {
 
 }
 
-const InfoTapContent: React.FC<InfoTapContentProps>  = ({VolumeContent,MarketContent,CirculatingContent}) => {
+const TokenInfoTapContent: React.FC<InfoTapContentProps>  = ({VolumeContent,MarketContent,CirculatingContent}) => {
   return (
     <div className="mt-5 w-11/12 m-auto rounded-lg shadow-md  h-auto bg-white  max-h-[600px] py-2 px-2">
       <div>
@@ -45,4 +45,4 @@ const InfoTapContent: React.FC<InfoTapContentProps>  = ({VolumeContent,MarketCon
   );
 };
 
-export default InfoTapContent;
+export default TokenInfoTapContent;

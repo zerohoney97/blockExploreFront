@@ -10,7 +10,7 @@ import {
   IAddresstxList,
 } from "../interface";
 import { divideTimeIntoUnits } from "@app/_api/main/getTxMethod/utils/divideTimeIntoUnits";
-import Error from "@app/_components/error";
+import Error from "@app/(page)/error/page";
 
 const Page = async ({ params }: { params: { EOA: string } }) => {
   //값1 obj interface 는 너가 만든 address interface 정의를 해주세요

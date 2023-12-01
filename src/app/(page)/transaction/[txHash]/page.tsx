@@ -2,15 +2,16 @@ import ItemTitle from "@app/_components/itemTitle";
 import TxContentWrap from "./_contents/ContentWrap";
 import { getTxItemData } from "@app/_api/txDetail/getTxItemData";
 import { ITransactionDetailData } from "../interface";
+import Error from "@app/(page)/error/page";
 const Page = async ({ params }: { params: { txHash: string } }) => {
   const transactionItemData: ITransactionDetailData = (await getTxItemData(
     params.txHash
   )) as ITransactionDetailData;
   if (transactionItemData === undefined) {
-    return <>에러 페이지</>;
+    return <Error/>;
   }
   return (
-    <div className="bg-mainBackGroundColor pb-5  max-w-[1250px] m-auto dark:bg-black/90">
+    <div className="pb-5  max-w-[1250px] m-auto ">
       <ItemTitle title="Transaction Details" />
       <TxContentWrap transactionItemData={transactionItemData} />
     </div>

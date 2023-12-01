@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, KeyboardEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import useSearch from "@app/_hooks/useSearch";
@@ -8,6 +8,13 @@ import searchIcon2 from "../../../../../../public/search06.png";
 
 const MainSearchBar = () => {
   const { value, setValue, handleSearch } = useSearch();
+
+  const handleKeyPress = (e : KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="bg-white flex h-[58px] leading-[58px] rounded-lg whitespace-nowrap m-auto sm:w-11/12 md:w-[500px] lg:w-[500px] dark:bg-black dark:border-gray">
       <input
@@ -15,6 +22,7 @@ const MainSearchBar = () => {
         placeholder="Search by Address / Txn Hash / Block / Token / Domain Name"
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        onKeyPress={handleKeyPress} // Listen for key press events
       />
       <span className="p-2 flex cursor-pointer" onClick={handleSearch}>
         <Image src={searchIcon} alt="Search Icon" width={40} height={40} />

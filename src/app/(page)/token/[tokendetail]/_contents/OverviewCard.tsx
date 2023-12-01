@@ -6,7 +6,7 @@ interface TokenCardProps {
   symbol: string;
 }
 
-const index: React.FC<TokenCardProps> = ({ title, name, symbol }) => {
+const TokenOverview: React.FC<TokenCardProps> = ({ title, name, symbol }) => {
   return (
     <div className=" flex flex-col gap-5 text-sm">
       <div>
@@ -24,4 +24,4 @@ const index: React.FC<TokenCardProps> = ({ title, name, symbol }) => {
   );
 };
 
-export default index;
+export default TokenOverview;

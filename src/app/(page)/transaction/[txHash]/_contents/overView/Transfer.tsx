@@ -5,6 +5,7 @@ import Image from "next/image";
 import copy from "public/copy.png";
 import React from "react";
 import Link from "next/link";
+import WordBallon from "@app/_components/wordBallon";
 
 const TxTransfer: React.FC<ITransactionDetailProps> = ({
   transactionItemData,
@@ -16,20 +17,17 @@ const TxTransfer: React.FC<ITransactionDetailProps> = ({
           <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             From:
           </div>
-          <div className="p-1 h-10 text-xs lg:ml-4   ">
-            <div className="p-1 h-auto text-xs   sm:w-80 md:w-80  sm:break-words md:break-words lg:w-auto">
+          <div className="p-1 h-10 text-xs lg:ml-4 ">
+            <div className="p-1 h-auto text-xs  sm:w-80 md:w-80  sm:break-words md:break-words lg:w-auto flex ">
               <Link href={`/address/${transactionItemData.from}`}>
                 <span className="text-text-mainTextColor">
                   {transactionItemData.from}
                 </span>
               </Link>
 
-              <FontAwesomeIcon
-                icon={faCopy}
-                className=" ml-2   "
-                width={15}
-                height={3}
-              />
+              <div className="ml-3">
+            <WordBallon copyValue={transactionItemData.from} />
+          </div>
             </div>
           </div>
         </div>
@@ -38,18 +36,15 @@ const TxTransfer: React.FC<ITransactionDetailProps> = ({
             To:
           </div>
           <div className="p-1 h-10 text-xs  lg:ml-4 ">
-            <div className="p-1 h-auto text-xs sm:w-80 md:w-80 sm:break-words md:break-words lg:w-auto ">
+            <div className="p-1 h-auto text-xs sm:w-80 md:w-80 sm:break-words md:break-words lg:w-auto flex ">
               <Link href={`/address/${transactionItemData.to}`}>
                 <span className="text-text-mainTextColor">
                   {transactionItemData.to}
                 </span>
               </Link>
-              <FontAwesomeIcon
-                icon={faCopy}
-                className=" ml-2  "
-                width={15}
-                height={3}
-              />
+              <div className="ml-3">
+            <WordBallon copyValue={transactionItemData.to} />
+          </div>
             </div>
           </div>
         </div>

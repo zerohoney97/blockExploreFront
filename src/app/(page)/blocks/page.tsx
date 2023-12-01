@@ -7,7 +7,7 @@ import { IBlocksDataProps } from "./interface";
 const Page = async () => {
   const blocksData = await getBlock("list");
   return (
-    <div className="box-border flex flex-col bg-mainBackGroundColor items-center dark:bg-black/90">
+    <div className="box-border flex flex-col items-center ">
       <div className="w-full ">
         <Title title="Blocks" />
         <div className="my-10">

@@ -20,7 +20,7 @@ const MoreInfo: React.FC<IBlocksMoreProps> = ({
     <div className="">
       <div
         className={`relative z-0 transition-all duration-500 flex flex-col justify-between ${
-          showMore ? "h-0" : "sm:h-[450px] md:h-[230px] lg:h-[230px]"
+          !showMore ? "h-0" : "sm:h-[450px] md:h-[230px] lg:h-[230px]"
         } overflow-hidden`}
       >
         <div
