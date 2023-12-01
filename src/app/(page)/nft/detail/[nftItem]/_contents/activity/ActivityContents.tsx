@@ -24,7 +24,6 @@ const NftActivityContents: React.FC<INftActivityProps> = ({activityData}) => {
   );
   const { maxPage, page, pageHandler, pageTxList } =
     usePagination<INftActivityData>(tempDataArr,10);
-    // console.log("pagetxlist",pageTxList);
 
   return (
     <>

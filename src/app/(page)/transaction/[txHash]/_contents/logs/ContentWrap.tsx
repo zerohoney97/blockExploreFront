@@ -20,7 +20,6 @@ const LogContentWrap: React.FC<{ eventLogData: IEventLogData }> = ({
   };
 
   const jsonToObj = (returnValues: string) => {
-    // console.log(returnValues)
     return JSON.parse(returnValues);
   };
 

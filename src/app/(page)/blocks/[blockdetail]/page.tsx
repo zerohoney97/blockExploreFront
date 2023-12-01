@@ -12,7 +12,6 @@ const Page: React.FC<IBlocksDetailProps> = async ({ params }) => {
     params.blockdetail
   )) as IBlockDetailData;
   if (blockData === undefined) {
-    console.log("asd");
     return "";
   }
   return (

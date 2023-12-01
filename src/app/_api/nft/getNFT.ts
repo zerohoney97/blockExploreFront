@@ -5,7 +5,6 @@ const filterTOO = (time: string) => {
   if (indexOfTOO !== -1) {
     time = time.substring(0, indexOfTOO);
   }
-  console.log(time)
   return time;
 };
 export const getNFT = async () => {

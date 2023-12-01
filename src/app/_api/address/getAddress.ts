@@ -16,7 +16,6 @@ const divideTimeIntoUnits = (now: number, addressTime: number) => {
 };
 
 export const getAddress = async (address: string) => {
-  console.log("확인", address);
 
   const res = await fetch(
     `${

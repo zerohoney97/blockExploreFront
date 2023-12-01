@@ -21,12 +21,8 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
   const AddressClick = (value: string) => {
     navigator.clipboard
       .writeText(value)
-      .then(() => {
-        console.log(value);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+      .then(() => {})
+      .catch((err) => {});
   };
   const txNavigation = useRouter();
   return (
@@ -42,19 +38,19 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
       </td>
 
       <td
-        className="min-w-[200px] text-text-mainTextColor    "
+        className="min-w-[200px] max-w-[200px] truncate  text-text-mainTextColor   "
         onClick={() => {
           txNavigation.push(`/transaction/${NftTxItem.hash}`);
         }}
-      >
+      > 
         {NftTxItem.hash}
       </td>
       <td className="min-w-[120px]  items-center">
-        <span className="bg-gray max-w-[95px] p-1 rounded dark:text-black">
+        <span className="bg-gray max-w-[95px] ml-2 p-1 rounded dark:text-black">
           {NftTxItem.method}
         </span>
       </td>
-      <td className="min-w-[100px] items-center">{NftTxItem.age} sec ago</td>
+      <td className="min-w-[200px] w-[200px] items-center">{NftTxItem.age} sec ago</td>
       <td className="min-w-[180px]   lg:w-44">
         <div className="w-full flex ">
           <div className="text-text-mainTextColor">
@@ -86,12 +82,10 @@ const NftTxItem: React.FC<INftTxItemProps> = ({ NftTxItem, toggleHandler }) => {
           </button>
         </div>
       </td>
-      <td className="min-w-[150px] items-center">
-        <span className="border border-black/50 rounded p-1">
-          ERC-721
-        </span>
+      <td className="min-w-[150px]">
+        <span className="border border-black/50 rounded p-1">ERC-721</span>
       </td>
-      <td className="min-w-[300px] flex items-start">
+      <td className="min-w-[300px] ">
         <p className="ml-2">{NftTxItem.itemName}</p>
       </td>
     </tr>

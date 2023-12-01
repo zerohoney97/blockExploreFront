@@ -9,7 +9,6 @@ const TxTransferToken: React.FC<ITransactionDetailProps> = ({
 }) => {
   const addressEncodeHandler = (address: string) => {
     if (!address) {
-      console.log(address);
       return "N/A"; // or any other default/fallback value
     }
     return (

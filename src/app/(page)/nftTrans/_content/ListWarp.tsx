@@ -40,9 +40,6 @@ const NftTxListWrap: React.FC<INftTxListProps> = ({
   const toggleHandler = () => {
     setIsToggled(!isToggled);
   };
-  useEffect(() => {
-    console.log(maxHeight);
-  }, [maxHeight]);
   return (
     <div
       className={`w-11/12 m-auto rounded-lg shadow-md min-w-[250px] max-w-[1250px] h-auto bg-white max-h-[3000px] dark:bg-black my-10 `}
@@ -55,12 +52,12 @@ const NftTxListWrap: React.FC<INftTxListProps> = ({
               <FontAwesomeIcon icon={faCircleQuestion} />
               </th>
               <th  className="min-w-[200px] flex justify-start items-center">
-                Transaction Info
+                Transaction Hash
               </th>
-              <th className="min-w-[120px] flex items-center">
+              <th className="min-w-[120px] ml-2 flex items-center">
                 Method
               </th>
-              <th className="min-w-[100px] flex items-center">
+              <th className="min-w-[100px] w-[200px]  flex items-center">
                 Age
               </th>
               <th className="min-w-[200px]  flex items-center">
@@ -72,7 +69,7 @@ const NftTxListWrap: React.FC<INftTxListProps> = ({
               <th className="min-w-[150px] flex items-center">
                 Type
               </th>
-              <th className="min-w-[300px]  flex items-center">
+              <th className="min-w-[300px] p-2 flex items-center">
                 Item
               </th>
               {/* <th className="min-w-[100px] flex justify-start items-center  font-medium">

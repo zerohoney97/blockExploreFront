@@ -16,6 +16,5 @@ export const getMainTx = (responseTransactionData: IResponseTransactionData[]) =
   );
 
   
-  console.log(transactionData[0]);
   return transactionData.slice(0, 5);
 };

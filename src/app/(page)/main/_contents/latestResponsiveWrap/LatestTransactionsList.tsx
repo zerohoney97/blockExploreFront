@@ -6,9 +6,6 @@ import { ITransactionsListProps } from "../../interface";
 const MainLatestTransactionsList: React.FC<ITransactionsListProps> = ({
   transactionslist,
 }) => {
-  useEffect(() => {
-    console.log(transactionslist);
-  }, [transactionslist]);
   return (
     <ul className="w-full">
       {transactionslist.map((item, index) => (

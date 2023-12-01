@@ -26,9 +26,6 @@ const CaTapInfo: React.FC<ICaTxListProps> = ({ caTxList }) => {
       };
     }
   );
-  useEffect(() => {
-    console.log(caTxList);
-  }, [caTxList]);
   return (
     <>
       {isRendered && (

@@ -9,7 +9,6 @@ import {
 } from "./interface";
 
 export const getTransaction = async (pageName: string) => {
-  console.log(process.env.NODE_ENV);
   const res = await fetch(
     `${
       process.env.NODE_ENV === "development"
