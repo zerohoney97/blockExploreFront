@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Logo from "public/Logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const PcFooter = () => {
   const topMove = () => {
@@ -13,13 +15,9 @@ const PcFooter = () => {
   return (
     <div className="bg-white dark:bg-black">
       <div className="max-w-[1400px] m-auto h-80  p-8 md:border-t border-gray  ">
-        <div className=" h-20 flex justify-end border-2 border-white border-b-gray">
-          <button onClick={topMove}>
-            <img
-              src="https://static.thenounproject.com/png/1590838-200.png"
-              alt="top"
-              className="w-10 h-10 cursor-pointer hover:bg-gray transition-all duration-500 rounded-lg"
-            />
+        <div className="h-20 flex justify-end border-2  border-b-gray border-x-white border-t-white dark:border-b-white dark:border-x-black/90 dark:border-t-black/90">
+          <button onClick={topMove} className="w-12 h-12 cursor-pointer hover:bg-[#E3F4F4] transition-all duration-500 rounded-lg">
+            <FontAwesomeIcon className="text-[30px] text-[#C4DFDF]"  icon={faCircleChevronUp} />
           </button>
         </div>
         <div className="w-full h-1/3 flex  items-center">
