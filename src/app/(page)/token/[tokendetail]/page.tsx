@@ -12,11 +12,15 @@ import TokenItemTable from "./_contents/TokenItemTable";
 import TokenTapInfo from "./_contents/TapInfo";
 import { getToken } from "@app/_api/token/getToken";
 import { getTokenDetail } from "@app/_api/token/getTokenDatail";
+import Error from "@app/_components/error";
 
 const Page: React.FC<ITokenDetailProps> = async ({ params }) => {
   const tokenItemData = (await getTokenDetail(
     params.tokendetail
   )) as ITokenDetailData;
+  if(!tokenItemData){
+    return <Error />
+  }
 
   return (
     <div className="dark:bg-black/90">

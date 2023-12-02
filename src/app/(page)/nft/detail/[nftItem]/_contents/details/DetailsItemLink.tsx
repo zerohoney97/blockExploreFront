@@ -22,7 +22,9 @@ const NftDetailsItemLink:React.FC<INftDetailsItemProps> = ({name,address}) => {
 
 
   const truncate = (hash: string) => {
-    return hash.substring(0, 18);
+    if(hash != undefined){
+      return hash.substring(0, 18);
+    }
   };
   let truncateHash = truncate(address) + "...";
 

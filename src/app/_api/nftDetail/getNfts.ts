@@ -16,5 +16,6 @@ export const getNfts = async (pageName: string) => {
   if(isResponseDataSequlErr(responseNftData)){
     return null;
   }
+  console.log("리스댓",responseNftData);
   return responseNftData;
 };

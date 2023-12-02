@@ -1,3 +1,5 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
 import { IResponseTokenData, ITokenListData } from "./interface";
 
 const filterT0 = (time: string) => {
@@ -20,7 +22,10 @@ export const getToken = async () => {
       { next: { revalidate: 30 } }
     );
 
-    const reponseTokenDataList: IResponseTokenData[] = await res.json();
+    const reponseTokenDataList: IResponseTokenData[] | IResponseDataSequlErr = await res.json();
+    if(isResponseDataSequlErr(reponseTokenDataList)){
+      return null;
+    }
     console.log("asf");
     const tokenListData: ITokenListData[] = reponseTokenDataList.map(
       ({

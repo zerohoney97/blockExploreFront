@@ -7,12 +7,13 @@ import Image from "next/image";
 import TokenTable from "./_contents/Table";
 import { getToken } from "@app/_api/token/getToken";
 import { ITokenDetail, TokenDataProps } from "./interface";
+import Error from "@app/_components/error";
 
 const Page = async () => {
   const tokenListData: TokenDataProps[] =
     (await getToken()) as TokenDataProps[];
-  if (tokenListData === undefined) {
-    return <>에러 페이지</>;
+  if (!tokenListData) {
+    return <Error />;
   }
   return (
     <>

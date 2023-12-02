@@ -27,6 +27,7 @@ interface INftDetails{
   description : string,
   imageUrl : string,
   creatorAddress : string,
+  address : string,
   Owner : string,
   txs : object,
 }

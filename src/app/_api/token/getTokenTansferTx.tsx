@@ -1,3 +1,5 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
 import { IResponseTokenData, ITokenListData } from "./interface";
 
 export const getTokenDetail = async (tokenName: string) => {
@@ -13,7 +15,11 @@ export const getTokenDetail = async (tokenName: string) => {
       { next: { revalidate: 30 } }
     );
 
-    const reponseTokenData: IResponseTokenData = await res.json();
+    const reponseTokenData: IResponseTokenData | IResponseDataSequlErr = await res.json();
+    if(isResponseDataSequlErr(reponseTokenData)){
+      return null;
+    }
+
     return reponseTokenData;
   } catch (error) {
     console.log(error);

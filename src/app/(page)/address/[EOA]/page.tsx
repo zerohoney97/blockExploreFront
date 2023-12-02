@@ -17,11 +17,11 @@ const Page = async ({ params }: { params: { EOA: string } }) => {
   //값2 해당 유저가 존재하는 모든 tx리스트 interface 는 IAddresstxList[]
 
   const addressData: IAddressDetailData = (await getAddress(
-    params.EOA
+    params.EOA,
   )) as IAddressDetailData;
-    if (!addressData) {
-      return  <Error/>
-    }
+  if (!addressData) {
+    return <Error />;
+  }
   const addressOverViewData: IAddressContent = {
     ethBalance: addressData.ethBalance,
     firstTxnSentTimestamp: addressData.firstTxnSentTimestamp,
@@ -30,27 +30,43 @@ const Page = async ({ params }: { params: { EOA: string } }) => {
   };
 
   const addressTxList: IAddressMoreInfoTx[] = addressData.txs.map(
-    ({ Timestamp,blocknumber,from,to,Method,hash,value,NFT_id,token_id,NFTName,tokenName }, index) => {
+    (
+      {
+        Timestamp,
+        blocknumber,
+        from,
+        to,
+        Method,
+        hash,
+        value,
+        NFT_id,
+        token_id,
+        NFTName,
+        tokenName,
+      },
+      index,
+    ) => {
       return {
         age: divideTimeIntoUnits(Number(Timestamp)),
-        blocknumber:blocknumber.toString(),
+        blocknumber: blocknumber.toString(),
         from,
-        method:Method,
+        method: Method,
         to,
         txHash: hash,
         value,
-        NFTId:NFT_id,
-        tokenId:token_id,
-        NFTName,tokenName
+        NFTId: NFT_id,
+        tokenId: token_id,
+        NFTName,
+        tokenName,
       };
-    }
+    },
   );
 
   console.log("addressTxList", addressTxList);
 
   return (
-    <div className="bg-mainBackGroundColor dark:bg-black/90">
-      <AddressTitle title="Address" />
+    <div className='bg-mainBackGroundColor dark:bg-black/90'>
+      <AddressTitle title='Address' />
       <AddressOverView addressOverViewData={addressOverViewData} />
       <AddressMoreInfo addressTxList={addressTxList} />
     </div>
