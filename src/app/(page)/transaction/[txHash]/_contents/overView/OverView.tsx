@@ -18,11 +18,13 @@ const TxOverView: React.FC<ITransactionDetailProps> = ({
           <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
             Transaction Hash:
           </div>
-          <div className="p-1 h-auto text-xs w-80 sm:break-words lg:ml-8 md:break-words dark:text-white flex break-words">
-            {transactionItemData.txHash}
+          <div className="p-1 h-10 text-xs w-80  dark:text-white  lg:ml-8 ">
+            <span className="w-72 break-words">
+              {transactionItemData.txHash}
+            </span>
             <div className="ml-3">
-            <WordBallon copyValue={transactionItemData.txHash} />
-          </div>
+              <WordBallon copyValue={transactionItemData.txHash} />
+            </div>
           </div>
         </div>
         <div className="lg:flex lg:items-center">

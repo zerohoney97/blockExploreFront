@@ -22,7 +22,7 @@ const CardText: React.FC<CardTextProps> = ({
       <div className="font-medium text-sm md:text-itemDetail-textLabelColor mr-2 w-36 lg:text-itemDetail-textLabelColor dark:text-itemDetail-textLabelColor">
         {title}
       </div>
-      <span className="text-xs dark:text-white">
+      <span className="text-xs truncate dark:text-white">
         {content}
         {content2}
         {children && <span className="text-xs">{children}</span>}
