@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCopy } from "@fortawesome/free-regular-svg-icons";
 import { ITransactionDetailProps } from "@app/(page)/transaction/interface";
 import WordBallon from "@app/_components/wordBallon";
+import Link from "next/link";
 const TxOverView: React.FC<ITransactionDetailProps> = ({
   transactionItemData,
 }) => {
@@ -39,6 +40,18 @@ const TxOverView: React.FC<ITransactionDetailProps> = ({
             } text-xs px-1 py-1   flex justify-center items-center rounded-lg border-2  sm:w-16 md:w-16 lg:ml-8  lg:h-7`}
           >
             {transactionItemData.status ? "Success" : "Fail"}
+          </div>{" "}
+        </div>
+        <div className="lg:flex lg:items-center">
+          <div className="text-sm font-medium p-2 lg:text-itemDetail-textLabelColor lg:w-[250px]">
+            Block Id:
+          </div>
+          <div
+            className={` text-xs px-1 py-1   flex justify-center items-center rounded-lg border-2  sm:w-16 md:w-16 lg:ml-8  lg:h-7`}
+          >
+            <Link href={`/blocks/${transactionItemData.blocknumber}`}>
+              {transactionItemData.blocknumber}
+            </Link>
           </div>{" "}
         </div>
 

@@ -46,10 +46,15 @@ export const getTxItemData = async (txHash: string) => {
       { next: { revalidate: 300 } }
     );
 
-    const responseTransactionData: ITransactionResponseItemData | IResponseDataSequlErr =
-      await res.json();
-    const responseEventLog: IEventLogData[] | IResponseDataSequlErr = await resEventLog.json();
-    if(isResponseDataSequlErr(responseTransactionData) || isResponseDataSequlErr(responseEventLog) ){
+    const responseTransactionData:
+      | ITransactionResponseItemData
+      | IResponseDataSequlErr = await res.json();
+    const responseEventLog: IEventLogData[] | IResponseDataSequlErr =
+      await resEventLog.json();
+    if (
+      isResponseDataSequlErr(responseTransactionData) ||
+      isResponseDataSequlErr(responseEventLog)
+    ) {
       return null;
     }
     const {
@@ -94,10 +99,11 @@ export const getTxItemData = async (txHash: string) => {
       timeStamp: divideTimeIntoUnits(now, Number(Timestamp)),
       value: weiToEth(value),
       block_id: block_id,
+      blocknumber,
       NFT_id: NFT_id,
       token_id: token_id,
       eventLog: responseEventLog,
-      input:input
+      input: input,
     };
 
     return transactionData;

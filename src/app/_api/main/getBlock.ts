@@ -20,13 +20,14 @@ const divideTimeIntoUnits = (now: number, blockTime: number) => {
 };
 
 export const getBlock = async (pageName: string) => {
-  const res = await fetch(
+  try {
+     const res = await fetch(
     `${
       process.env.NODE_ENV === "development"
         ? "http://localhost:8080"
         : "https://api.bouncexplorer.site"
     }/block`,
-    { next: { revalidate: 30 } },
+    { cache:'no-cache' }
   );
   const now = new Date().getTime();
 
@@ -61,7 +62,7 @@ export const getBlock = async (pageName: string) => {
         baseFee: el.baseFeePerGas,
         gasLimit: el.gasLimit,
         gasUsed: el.gasUsed,
-        Txn: "104",
+        Txn: "0",
       };
     });
     if (!res.ok) {
@@ -71,4 +72,9 @@ export const getBlock = async (pageName: string) => {
 
     return blockData;
   }
+  } catch (error) {
+    console.log(error);
+    return 'data exceed'
+  }
+ 
 };

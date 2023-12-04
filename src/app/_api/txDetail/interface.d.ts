@@ -43,6 +43,7 @@ export interface ITransactionItemData {
   maxFeePerGas: string;
   maxPriorityFeePerGas: string;
   eventLog: IEventLogData[];
+  blocknumber:string
   input:string
 }
 export interface IEventLogData {

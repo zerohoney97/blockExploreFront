@@ -9,7 +9,7 @@ import { getTransaction } from "./_api/main/getTransaction";
 import { IMainBlocksItem, IMainTransactionData } from "./_api/main/interface";
 import Loading from "./_components/loading";
 import Error from "@app/_components/error";
-
+import MainError from "./_components/\bmainError/indes";
 
 export default async function Main() {
   const blockData = await getBlock("main");
@@ -24,8 +24,8 @@ export default async function Main() {
     lastFinalizedBlock: 18562780,
     lastSafeBlock: 18562812,
   };
-  if(!blockData){
-    return  <Error/>
+  if (blockData === "data exceed" || transactionData === "data exceed") {
+    return <MainError />;
   }
   // const blocksData = [
   //   {
@@ -129,7 +129,6 @@ export default async function Main() {
   // ];
   return (
     <>
-
       <Header />
       <div className="max-w-[1400px] m-auto sm:px-0 md:px-0 pt-0 p-8 dark:bg-black">
         <MainSearchBarWrap />
