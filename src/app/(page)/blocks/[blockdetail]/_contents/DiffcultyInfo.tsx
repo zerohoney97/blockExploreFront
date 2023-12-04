@@ -17,7 +17,8 @@ const DiffcultyInfo: React.FC<IBlocksDifficultyProps> = ({
               className="text-text-mainTextColor"
               href={`/address/${feeRecipient}`}
             >
-              Fee Recipient {feeRecipient}
+              Fee Recipient {feeRecipient.slice(0, 4)} ... $
+              {feeRecipient.slice(-4)}
             </Link>
             <span> in sec</span>
           </>

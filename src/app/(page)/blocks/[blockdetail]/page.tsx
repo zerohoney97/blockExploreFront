@@ -32,10 +32,7 @@ const Page: React.FC<IBlocksDetailProps> = async ({ params }) => {
             transaction={blockData.txCount}
           />
           <BlockDiffcultyInfo
-            feeRecipient={`${blockData.feeRecipient.slice(
-              0,
-              4
-            )} ... ${blockData.feeRecipient.slice(-4)}`}
+            feeRecipient={`${blockData.feeRecipient}`}
             totalDifficulty={blockData.difficulty}
           />
           <BlockGasInfo
