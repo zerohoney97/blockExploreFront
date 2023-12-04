@@ -69,6 +69,6 @@ export const getBlock = async (pageName: string) => {
       throw new Error("Failed to fetch data");
     }
 
-    return blockData.slice(0, 5);
+    return blockData;
   }
 };
