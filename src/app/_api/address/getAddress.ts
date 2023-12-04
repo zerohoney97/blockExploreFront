@@ -18,7 +18,6 @@ const divideTimeIntoUnits = (now: number, addressTime: number) => {
 };
 
 export const getAddress = async (address: string) => {
-
   const res = await fetch(
     `${
       process.env.NODE_ENV === "development"
@@ -45,17 +44,28 @@ export const getAddress = async (address: string) => {
     { cache: "no-cache" }
   );
 
-  const tokenDataList: IResponseNFTListData[] | IResponseDataSequlErr = await resTokenData.json();
-  
-  const NFTDataList: IResponseTokenData[] | IResponseDataSequlErr = await resNFTData.json();
+  const tokenDataList: IResponseNFTListData[] | IResponseDataSequlErr =
+    await resTokenData.json();
 
-  const responseAddressData: IAddressData | IResponseDataSequlErr = await res.json();
+  const NFTDataList: IResponseTokenData[] | IResponseDataSequlErr =
+    await resNFTData.json();
 
-  if(isResponseDataSequlErr(tokenDataList) || isResponseDataSequlErr(NFTDataList) || isResponseDataSequlErr(responseAddressData)){
+  const responseAddressData: IAddressData | IResponseDataSequlErr | null =
+    await res.json();
+
+  if (
+    isResponseDataSequlErr(tokenDataList) ||
+    isResponseDataSequlErr(NFTDataList) ||
+    isResponseDataSequlErr(responseAddressData)
+  ) {
     return null;
   }
 
-  responseAddressData.txs = responseAddressData.txs.map((txData, index) => {
+  if (responseAddressData === null) {
+    return null;
+  }
+
+  responseAddressData.txs = responseAddressData?.txs.map((txData, index) => {
     const NFTObj = NFTDataList.find((el) => {
       return el.id === Number(txData.NFT_id);
     });
