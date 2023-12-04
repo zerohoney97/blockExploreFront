@@ -17,7 +17,7 @@ const PcHeader: React.FC<IDropMenuProps> = ({ router }) => {
   const dropDownMenu: IDropDownMenuDataObj = {
     blockchain: [
       { name: "Transactions", href: "transaction" },
-      { name: "Pending Transactions", href: "pendingTransaction" },
+      { name: "abi submit", href: "abi" },
       { name: "View Blocks", href: "blocks" },
     ],
     token: [

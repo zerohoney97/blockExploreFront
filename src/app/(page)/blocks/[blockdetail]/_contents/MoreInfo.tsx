@@ -51,7 +51,7 @@ const MoreInfo: React.FC<IBlocksMoreProps> = ({
           className="text-sm text-text-mainTextColor cursor-pointer"
           onClick={toggleMoreInfo}
         >
-          {showMore ? "+ Click to show more" : "- Click to show less"}
+          {showMore ? "- Click to show more" : "+ Click to show less"}
         </div>
       </div>
     </div>

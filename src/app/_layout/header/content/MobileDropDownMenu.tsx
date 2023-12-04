@@ -30,7 +30,7 @@ const MobileDropDownMenu: React.FC<IMobileDropMenuProps> = ({
   const subMenuArr: IsubMenu = {
     0: [
       { name: "Transactions", href: "transaction" },
-      { name: "Pending Transactions", href: "pendingTransaction" },
+      { name: "abi submit", href: "abi" },
       { name: "View Blocks", href: "blocks" },
     ],
     1: [
