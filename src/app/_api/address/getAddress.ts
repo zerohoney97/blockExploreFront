@@ -27,6 +27,7 @@ export const getAddress = async (address: string) => {
     { cache: "no-cache" }
   );
 
+
   const resTokenData = await fetch(
     `${
       process.env.NODE_ENV === "development"
@@ -46,12 +47,12 @@ export const getAddress = async (address: string) => {
 
   const tokenDataList: IResponseNFTListData[] | IResponseDataSequlErr =
     await resTokenData.json();
-
   const NFTDataList: IResponseTokenData[] | IResponseDataSequlErr =
     await resNFTData.json();
 
   const responseAddressData: IAddressData | IResponseDataSequlErr | null =
     await res.json();
+    console.log(responseAddressData)
 
   if (
     isResponseDataSequlErr(tokenDataList) ||

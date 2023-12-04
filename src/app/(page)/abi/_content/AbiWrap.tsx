@@ -54,8 +54,6 @@ const AbiWrap: React.FC = () => {
         // console.log(error);
       }
     }
-    console.log(arr);
-    console.log(namearr);
     const sendData = {
       address: ca,
       CAtype: "",

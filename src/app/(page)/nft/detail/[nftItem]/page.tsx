@@ -18,7 +18,6 @@ interface INftItemProps {
 const Page = async (props: INftItemProps) => {
   let param = props.params.nftItem;
   const nftData: any = await getNfts(param);
-  console.log("애인댓", nftData);
   if (!nftData) {
     return <Error />;
   }

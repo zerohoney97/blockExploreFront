@@ -24,7 +24,6 @@ export const getTokenTransferTx = async (
     { next: { revalidate: 30 } }
   );
 
-  console.log("asd");
   const tokenData: IResponseTokenData[] | IResponseDataSequlErr = await responseTokenData.json();
 
   if(isResponseDataSequlErr(tokenData)){
