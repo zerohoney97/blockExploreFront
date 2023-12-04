@@ -1,3 +1,5 @@
+import { IResponseDataSequlErr } from "../interface";
+import { isResponseDataSequlErr } from "../utils";
 import {
   IEventLogData,
   ITransactionItemData,
@@ -44,9 +46,12 @@ export const getTxItemData = async (txHash: string) => {
       { next: { revalidate: 300 } }
     );
 
-    const responseTransactionData: ITransactionResponseItemData =
+    const responseTransactionData: ITransactionResponseItemData | IResponseDataSequlErr =
       await res.json();
-    const responseEventLog: IEventLogData[] = await resEventLog.json();
+    const responseEventLog: IEventLogData[] | IResponseDataSequlErr = await resEventLog.json();
+    if(isResponseDataSequlErr(responseTransactionData) || isResponseDataSequlErr(responseEventLog) ){
+      return null;
+    }
     const {
       Method,
       NFT_id,

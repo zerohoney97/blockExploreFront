@@ -4,6 +4,8 @@ import { fromWeiToETH } from "./utils/fromWeiToETH";
 import { divideTimeIntoUnits } from "./utils/divideTimeIntoUnits";
 import { INftTransList } from "@app/(page)/nftTrans/interface";
 import { IResponseNFTListData } from "@app/_api/nft/interface";
+import { isResponseDataSequlErr } from "@app/_api/utils";
+import { IResponseDataSequlErr } from "@app/_api/interface";
 
 export const getNFTTransferTx = async (
   responseTransactionData: IResponseTransactionData[]
@@ -21,7 +23,10 @@ export const getNFTTransferTx = async (
     { next: { revalidate: 30 } }
   );
 
-  const NFTData: IResponseNFTListData[] = await responseNFTData.json();
+  const NFTData: IResponseNFTListData[] | IResponseDataSequlErr = await responseNFTData.json();
+  if(isResponseDataSequlErr(NFTData)){
+    return null;
+  }
 
   const transactionData: INftTransList[] = filteredTransactionData.map((el) => {
     const NFTObj: IResponseNFTListData = NFTData.find((obj) => {

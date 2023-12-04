@@ -3,6 +3,8 @@ import { IListTransactionData, IResponseTransactionData } from "../interface";
 import { fromWeiToETH } from "./utils/fromWeiToETH";
 import { divideTimeIntoUnits } from "./utils/divideTimeIntoUnits";
 import { IResponseTokenData } from "@app/_api/token/interface";
+import { isResponseDataSequlErr } from "@app/_api/utils";
+import { IResponseDataSequlErr } from "@app/_api/interface";
 
 export const getTokenTransferTx = async (
   responseTransactionData: IResponseTransactionData[]
@@ -20,7 +22,14 @@ export const getTokenTransferTx = async (
     }/token`,
     { next: { revalidate: 30 } }
   );
-  const tokenData: IResponseTokenData[] = await responseTokenData.json();
+
+  console.log("asd");
+  const tokenData: IResponseTokenData[] | IResponseDataSequlErr = await responseTokenData.json();
+
+  if(isResponseDataSequlErr(tokenData)){
+    return null;
+  }
+
   const transactionData: IListTransactionData[] = filteredTransactionData.map(
     (el) => {
       const tokenObj: IResponseTokenData = tokenData.find((obj) => {

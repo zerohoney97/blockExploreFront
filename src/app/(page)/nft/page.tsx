@@ -10,11 +10,12 @@ import Pagination from "@app/_components/pagination";
 import useHydration from "@app/_hooks/useHydration";
 import NFTTable from "./_contents/Table";
 import { getNFT } from "@app/_api/nft/getNFT";
+import Error from "@app/_components/error";
 
 const Page = async () => {
   const NFTListdata: INFTItem[] = (await getNFT()) as INFTItem[];
-  if (NFTListdata === undefined) {
-    return <>에러 메세지</>;
+  if (!NFTListdata) {
+    return <Error />;
   }
   return (
     <div className="bg-mainBackGroundColor min-h-screen dark:bg-black/90">
