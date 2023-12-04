@@ -10,12 +10,12 @@ export const getNfts = async (pageName: string) => {
     }/nft/${pageName}`,
     {
       cache: "no-cache",
-    },
+    }
   );
   const responseNftData: IResponseDataSequlErr = await res.json();
-  if(isResponseDataSequlErr(responseNftData)){
+  if (isResponseDataSequlErr(responseNftData)) {
     return null;
   }
-  console.log("리스댓",responseNftData);
+  console.log("리스댓", responseNftData);
   return responseNftData;
 };

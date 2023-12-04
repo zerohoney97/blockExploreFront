@@ -17,25 +17,26 @@ interface INftItemProps {
 
 const Page = async (props: INftItemProps) => {
   let param = props.params.nftItem;
-  const nftData: INftDetails = await getNfts(param);
+  const nftData: any = await getNfts(param);
   console.log("애인댓", nftData);
-  if(!nftData){
-    return <Error/>;
+  if (!nftData) {
+    return <Error />;
   }
-  
-  let activityData:INftActivityData[] = [];
+
+  let activityData: INftActivityData[] = [];
   activityData = nftData.txs;
   // console.log("txs:",activityData);
-  if(Object.keys(activityData).length == 0){
+  if (Object.keys(activityData).length == 0) {
     // 데이터 없으면
-    activityData = [{
-      hash:
-            "",
-      Timestamp: "",
-      Method: "",
-      from: "",
-      to: "",
-    }];
+    activityData = [
+      {
+        hash: "",
+        Timestamp: "",
+        Method: "",
+        from: "",
+        to: "",
+      },
+    ];
 
     // 데이터 한번 넣어보기
     // activityData = [{
@@ -107,31 +108,30 @@ const Page = async (props: INftItemProps) => {
     //   to: "0x10eD36eb9f1ED49599623e2DB4874f384462fd62",
     // }];
     // console.log("txs:",activityData);
-  }else{
+  } else {
     // 데이터가 있으면. (현재는 데이터가 없는데 아마 데이터 들어오면 간단히 수정가능)
     activityData = nftData.txs;
     // console.log("txs:",activityData);
   }
   return (
     <>
-      <div className='sm:p-4 md:p-8 lg:px-8 lg:my-10 m-auto'>
-        <div className='flex sm:flex-col md:gap-10 lg:gap-10 '>
-          <div className='md:hidden lg:hidden'>
+      <div className="sm:p-4 md:p-8 lg:px-8 lg:my-10 m-auto">
+        <div className="flex sm:flex-col md:gap-10 lg:gap-10 ">
+          <div className="md:hidden lg:hidden">
             <NftItemTitle nftData={nftData} />
           </div>
           <div>
-            <NftItemImage nftData = {nftData.imageUrl} />
+            <NftItemImage nftData={nftData.imageUrl} />
           </div>
-          <div className='md:w-full'>
-            <div className='sm:hidden'>
+          <div className="md:w-full">
+            <div className="sm:hidden">
               <NftItemTitle nftData={nftData} />
             </div>
             {/* <NftItemPrice /> */}
             <NftDetails nftData={nftData} />
           </div>
         </div>
-        <NftActivity activityData={activityData}  />
-        
+        <NftActivity activityData={activityData} />
       </div>
     </>
   );

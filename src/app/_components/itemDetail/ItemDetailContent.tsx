@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 import ToggleComponent from "../ToggleComponent";
-
+import qimg from 'public/qimg.png'
+import Image from "next/image";
 interface DetailWrapContentProps {
   toggleContent: string;
   label: string;
@@ -44,9 +45,9 @@ const DetailWrapContent: React.FC<DetailWrapContentProps> = ({
             <ToggleComponent toggleContent={toggleContent} />
           )}
         </div>
-        <img
+        <Image
           className="w-5 h-5 mr-2 cursor-pointer"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjlmciWhoigexQda3BnFqx0AB2w3GyCRNMbg&usqp=CAU"
+          src={qimg}
           alt=""
           onClick={handleClick}
         />
