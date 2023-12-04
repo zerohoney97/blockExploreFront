@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import AbiPreviewContent from "./AbiPreviewContent";
 import AbiContent from "./AbiContent";
 import AbiFlie from "./AbiFile";
@@ -10,13 +10,23 @@ import { putABIJson } from "@app/_api/abi/putABIJson";
 const AbiWrap: React.FC = () => {
   const [ca, setCa] = useState<string>("");
   const [abiJson, setAbiJson] = useState<string>("");
+  const [ABI, setAbi] = useState<any>("");
   const [showSuccess, setShowSuccess] = useState<boolean>(false);
   const router = useRouter();
   const web3 = useGetProvider();
   const handleCaChange = (e: ChangeEvent<HTMLInputElement>) => {
     setCa(e.target.value);
   };
-
+  const findABI = (obj: any) => {
+    for (const key in obj) {
+      if (key === "abi") {
+        setAbi(obj[key]);
+        return obj[key];
+      } else if (typeof obj[key] === "object") {
+        findABI(obj[key]);
+      }
+    }
+  };
   const handleAbiJsonChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
     if (file) {
@@ -30,12 +40,18 @@ const AbiWrap: React.FC = () => {
       reader.readAsText(file);
     }
   };
-  const ABIJsonHandler = async () => {
-    const jsonData = JSON.parse(abiJson);
-    const ABI = jsonData.abi;
 
+  useEffect(() => {
+    if (abiJson) {
+      const jsonData = JSON.parse(abiJson);
+      findABI(jsonData);
+    }
+  }, [abiJson]);
+
+  const ABIJsonHandler = async () => {
     const arr = [];
     const namearr = [];
+    console.log(ABI);
     for (let i: number = 0; i < ABI.length; i++) {
       try {
         if (

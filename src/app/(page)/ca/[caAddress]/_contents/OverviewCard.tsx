@@ -12,7 +12,7 @@ const CaOverviewCard: React.FC<ICaDetailOverViewProps> = ({
   caType,
 }) => {
   return (
-    <div className=" flex flex-col gap-5 text-sm">
+    <div className=" flex flex-col gap-5 text-sm overflow-auto">
       <div>
         <h3 className="text-base font-semibold mb-0">{title}</h3>
       </div>
