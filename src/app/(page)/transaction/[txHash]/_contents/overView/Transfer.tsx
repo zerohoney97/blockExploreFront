@@ -59,7 +59,7 @@ const TxTransfer: React.FC<ITransactionDetailProps> = ({
               <span
                 className="text-text-mainTextColor cursor-pointer"
                 onClick={() => {
-                  routeCaOrEoa(transactionItemData.from);
+                  routeCaOrEoa(transactionItemData.to);
                 }}
               >
                 {transactionItemData.to}

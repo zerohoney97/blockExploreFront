@@ -1,4 +1,5 @@
 import { IResponseDataSequlErr } from "../interface";
+import { fromWeiToETH } from "../main/getTxMethod/utils/fromWeiToETH";
 import { isResponseDataSequlErr } from "../utils";
 import { IBlockItemData, IResponseBLockItemData } from "./interface";
 
@@ -33,6 +34,7 @@ export const getBlockItemData = async (blockNum: string) => {
       }/block/find/${blockNum}`,
       { cache: "no-cache" }
     );
+    const now = new Date().getTime();
 
     const responseBlockData: IResponseBLockItemData | IResponseDataSequlErr =
       await res.json();
@@ -84,8 +86,18 @@ export const getBlockItemData = async (blockNum: string) => {
       status: createdAt ? true : false,
       txCount: txcount,
       withdrawalsRoot,
-      txs,
     };
+    blockData.txs = responseBlockData.txs.map((el, index) => {
+      return {
+        value: fromWeiToETH(el.value).toString(),
+        from: el.from,
+        to: el.to,
+        txHash: el.hash,
+        age: divideTimeIntoUnits(now, Number(el.Timestamp)),
+        blocknumber: el.blocknumber.toString(),
+        method: el.Method,
+      };
+    });
     return blockData;
   } catch (error) {
     console.log(error);

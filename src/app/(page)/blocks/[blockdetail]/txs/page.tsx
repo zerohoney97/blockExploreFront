@@ -6,6 +6,7 @@ import TxnTitle from "./_content/Title";
 import Error from "@app/_components/error";
 import { IBlockDetailData, IBlocksDetailProps } from "../../interface";
 import { getBlockItemData } from "@app/_api/blockDetail/getBlockItemData";
+import { ItxList } from "@app/_components/transactionTable/interface";
 
 const Page: React.FC<IBlocksDetailProps> = async ({ params }) => {
   const blockData: IBlockDetailData = (await getBlockItemData(
@@ -19,7 +20,11 @@ const Page: React.FC<IBlocksDetailProps> = async ({ params }) => {
       <div>
         <TxnTitle title="Transactions"></TxnTitle>
       </div>
-      <TxListWrap txList={blockData.txs} lastName="Value" pageStack={50} />
+      <TxListWrap
+        txList={blockData.txs as ItxList[]}
+        lastName="Value"
+        pageStack={50}
+      />
     </div>
   );
 };

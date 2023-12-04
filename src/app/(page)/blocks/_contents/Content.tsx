@@ -20,7 +20,7 @@ const BlockContent: React.FC<{ data: IBlocksDataProps }> = ({ data }) => {
         <Link href={addressPath}>{data.feeRecipient}</Link>
       </td>
       <td className="min-w-[200px] dark:text-white pl-3">
-        {data.gasUsed} <span>({data.gasUsedPercent}%)</span>
+        {data.gasUsed} <span>({data.gasUsedPercent})</span>
       </td>
       <td className="min-w-[200px] dark:text-white">{data.gasLimit}</td>
       <td className="dark:text-white">{data.baseFee}Gwei</td>

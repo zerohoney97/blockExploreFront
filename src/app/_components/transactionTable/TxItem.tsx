@@ -26,6 +26,10 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
       return "EOA";
     }
   };
+  useEffect(()=>{
+    console.log(TxItem.txHash)
+      },[TxItem])
+    
 
   const addressEncodeHandler = (address: string) => {
     return (
@@ -86,7 +90,7 @@ const TxItem: React.FC<ITxItemProps> = ({ TxItem, toggleHandler }) => {
           <div
             className="text-text-mainTextColor cursor-pointer"
             onClick={() => {
-              routeCaOrEoa(TxItem.from);
+              routeCaOrEoa(TxItem.to);
             }}
           >
             {addressEncodeHandler(TxItem.to)}
