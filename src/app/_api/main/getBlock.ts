@@ -21,60 +21,60 @@ const divideTimeIntoUnits = (now: number, blockTime: number) => {
 
 export const getBlock = async (pageName: string) => {
   try {
-     const res = await fetch(
-    `${
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:8080"
-        : "https://api.bouncexplorer.site"
-    }/block`,
-    { cache:'no-cache' }
-  );
-  const now = new Date().getTime();
+    const res = await fetch(
+      `${
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8080"
+          : "https://api.bouncexplorer.site"
+      }/block`,
+      { cache: "no-cache" }
+    );
+    const now = new Date().getTime();
 
-  const responseBlockData: IResponseBlockData[] | IResponseDataSequlErr =
-    await res.json();
-  if (isResponseDataSequlErr(responseBlockData)) {
-    return null;
-  }
-
-  if (pageName === "main") {
-    const blockData: IMainBlocksItem[] = responseBlockData.map((el) => {
-      return {
-        blockHeight: el.number,
-        blockTime: divideTimeIntoUnits(now, Number(el.timestamp)),
-        feeRecipient: el.miner,
-        transactionsInThisBlock: "없음",
-        transactionsTime: "없음 ago",
-      };
-    });
-    if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error("Failed to fetch data");
+    const responseBlockData: IResponseBlockData[] | IResponseDataSequlErr =
+      await res.json();
+    if (isResponseDataSequlErr(responseBlockData)) {
+      return null;
     }
 
-    return blockData.slice(0, 5);
-  } else if (pageName === "list") {
-    const blockData: IListBLocksItem[] = responseBlockData.map((el) => {
-      return {
-        block: el.number,
-        age: divideTimeIntoUnits(now, Number(el.timestamp)),
-        feeRecipient: el.miner,
-        baseFee: el.baseFeePerGas,
-        gasLimit: el.gasLimit,
-        gasUsed: el.gasUsed,
-        Txn: "0",
-      };
-    });
-    if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error("Failed to fetch data");
-    }
+    if (pageName === "main") {
+      const blockData: IMainBlocksItem[] = responseBlockData.map((el) => {
+        return {
+          blockHeight: el.number,
+          blockTime: divideTimeIntoUnits(now, Number(el.timestamp)),
+          feeRecipient: el.miner,
+          transactionsInThisBlock: "없음",
+          transactionsTime: "없음 ago",
+        };
+      });
+      if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error("Failed to fetch data");
+      }
 
-    return blockData;
-  }
+      return blockData.slice(0, 5);
+    } else if (pageName === "list") {
+
+      const blockData: IListBLocksItem[] = responseBlockData.map((el) => {
+        return {
+          block: el.number,
+          age: divideTimeIntoUnits(now, Number(el.timestamp)),
+          feeRecipient: el.miner,
+          baseFee: el.baseFeePerGas,
+          gasLimit: el.gasLimit,
+          gasUsed: el.gasUsed,
+          Txn: el.txcount.toString(),
+        };
+      });
+      if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error("Failed to fetch data");
+      }
+
+      return blockData;
+    }
   } catch (error) {
     console.log(error);
-    return 'data exceed'
+    return "data exceed";
   }
- 
 };

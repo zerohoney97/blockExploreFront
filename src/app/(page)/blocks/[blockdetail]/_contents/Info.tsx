@@ -72,7 +72,10 @@ const Info: React.FC<BlocksInfoProps> = ({
         title="Transaction:"
         content={
           <>
-            <Link className="text-text-mainTextColor" href={`/blocks/txs`}>
+            <Link
+              className="text-text-mainTextColor"
+              href={`/blocks/${blockHeight}/txs`}
+            >
               {transaction} transaction
             </Link>
             <span> in this block</span>

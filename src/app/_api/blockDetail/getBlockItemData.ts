@@ -34,9 +34,10 @@ export const getBlockItemData = async (blockNum: string) => {
       { cache: "no-cache" }
     );
 
-    const responseBlockData: IResponseBLockItemData | IResponseDataSequlErr = await res.json();
-    console.log(responseBlockData)
-    if(isResponseDataSequlErr(responseBlockData)){
+    const responseBlockData: IResponseBLockItemData | IResponseDataSequlErr =
+      await res.json();
+    console.log(responseBlockData);
+    if (isResponseDataSequlErr(responseBlockData)) {
       return null;
     }
     if (responseBlockData === null) {
@@ -65,6 +66,7 @@ export const getBlockItemData = async (blockNum: string) => {
       txcount,
       updatedAt,
       withdrawalsRoot,
+      txs,
     } = responseBlockData;
     const blockData: IBlockItemData = {
       blockNumber: number,
@@ -82,6 +84,7 @@ export const getBlockItemData = async (blockNum: string) => {
       status: createdAt ? true : false,
       txCount: txcount,
       withdrawalsRoot,
+      txs,
     };
     return blockData;
   } catch (error) {

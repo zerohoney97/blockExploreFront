@@ -28,6 +28,8 @@ export interface IResponseBlockData {
   transactionsRoot: string;
   updatedAt: string;
   withdrawalsRoot: string;
+  txcount:number
+  
 }
 
 export type IMainTransactionData = ITransactionsItem;

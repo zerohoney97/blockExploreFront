@@ -9,6 +9,7 @@ import BlockContent from "./Content";
 
 const BlocksTable: React.FC<IBlocksTableProps> = ({ blocksData }) => {
   const pagination = usePagination(blocksData);
+  
   return (
     <ItemTableWrap>
       <div className='text-sm dark:text-white m-4'>Total of blocks</div>

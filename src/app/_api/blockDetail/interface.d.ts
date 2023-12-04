@@ -1,3 +1,5 @@
+import { ItxList } from "@app/_components/transactionTable/interface";
+
 export interface IResponseBLockItemData {
   id: string;
   number: string;
@@ -21,6 +23,7 @@ export interface IResponseBLockItemData {
   txcount: string;
   createdAt: string;
   updatedAt: string;
+  txs:ItxList[]
 }
 
 export interface IBlockItemData {
@@ -39,5 +42,6 @@ export interface IBlockItemData {
     hash:string
     parentHash:string
     stateRoot:string
+    txs:ItxList[]
 
 }
