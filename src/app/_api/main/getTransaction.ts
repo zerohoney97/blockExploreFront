@@ -11,22 +11,21 @@ import {
 } from "./interface";
 
 export const getTransaction = async (pageName: string) => {
+  const res = await fetch(
+    `${
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:8080"
+        : "https://api.bouncexplorer.site"
+    }/tx`,
+    { cache: "no-cache" }
+  );
   try {
-    const res = await fetch(
-      `${
-        process.env.NODE_ENV === "development"
-          ? "http://localhost:8080"
-          : "https://api.bouncexplorer.site"
-      }/tx`,
-      { cache: "no-cache" }
-    );
-    const responseTransactionData:
-      | IResponseTransactionData[]
-      | IResponseDataSequlErr = await res.json();
-    if (isResponseDataSequlErr(responseTransactionData)) {
-      return null;
+    const responseTransactionData: IResponseTransactionData[] | IResponseDataSequlErr =
+      await res.json();
+    if(isResponseDataSequlErr(responseTransactionData)){
+      return null
     }
-
+    
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
