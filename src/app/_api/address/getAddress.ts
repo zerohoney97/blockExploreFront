@@ -18,66 +18,71 @@ const divideTimeIntoUnits = (now: number, addressTime: number) => {
 };
 
 export const getAddress = async (address: string) => {
-  const res = await fetch(
-    `${
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:8080"
-        : "https://api.bouncexplorer.site"
-    }/eoa/find/${address}`,
-    { cache: "no-cache" }
-  );
+  try {
+    const res = await fetch(
+      `${
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8080"
+          : "https://api.bouncexplorer.site"
+      }/eoa/find/${address}`,
+      { cache: "no-cache" }
+    );
 
-  const resTokenData = await fetch(
-    `${
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:8080"
-        : "https://api.bouncexplorer.site"
-    }/token`,
-    { cache: "no-cache" }
-  );
-  const resNFTData = await fetch(
-    `${
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:8080"
-        : "https://api.bouncexplorer.site"
-    }/nft`,
-    { cache: "no-cache" }
-  );
+    const resTokenData = await fetch(
+      `${
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8080"
+          : "https://api.bouncexplorer.site"
+      }/token`,
+      { cache: "no-cache" }
+    );
+    const resNFTData = await fetch(
+      `${
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8080"
+          : "https://api.bouncexplorer.site"
+      }/nft`,
+      { cache: "no-cache" }
+    );
 
-  const tokenDataList: IResponseNFTListData[] | IResponseDataSequlErr =
-    await resTokenData.json();
+    const tokenDataList: IResponseNFTListData[] | IResponseDataSequlErr =
+      await resTokenData.json();
 
-  const NFTDataList: IResponseTokenData[] | IResponseDataSequlErr =
-    await resNFTData.json();
+    const NFTDataList: IResponseTokenData[] | IResponseDataSequlErr =
+      await resNFTData.json();
 
-  const responseAddressData: IAddressData | IResponseDataSequlErr | null =
-    await res.json();
+    const responseAddressData: IAddressData | IResponseDataSequlErr | null =
+      await res.json();
 
-  if (
-    isResponseDataSequlErr(tokenDataList) ||
-    isResponseDataSequlErr(NFTDataList) ||
-    isResponseDataSequlErr(responseAddressData)
-  ) {
+    if (
+      isResponseDataSequlErr(tokenDataList) ||
+      isResponseDataSequlErr(NFTDataList) ||
+      isResponseDataSequlErr(responseAddressData)
+    ) {
+      return null;
+    }
+
+    if (responseAddressData === null) {
+      return null;
+    }
+
+    responseAddressData.txs = responseAddressData?.txs.map((txData, index) => {
+      const NFTObj = NFTDataList.find((el) => {
+        return el.id === Number(txData.NFT_id);
+      });
+
+      const tokenObj = tokenDataList.find((el) => {
+        return el.id === Number(txData.token_id);
+      });
+      return {
+        ...txData,
+        NFTName: NFTObj === undefined ? "" : NFTObj.name,
+        tokenName: tokenObj === undefined ? "" : tokenObj.name,
+      };
+    });
+    return responseAddressData;
+  } catch (error) {
+    console.log(error);
     return null;
   }
-
-  if (responseAddressData === null) {
-    return null;
-  }
-
-  responseAddressData.txs = responseAddressData?.txs.map((txData, index) => {
-    const NFTObj = NFTDataList.find((el) => {
-      return el.id === Number(txData.NFT_id);
-    });
-
-    const tokenObj = tokenDataList.find((el) => {
-      return el.id === Number(txData.token_id);
-    });
-    return {
-      ...txData,
-      NFTName: NFTObj === undefined ? "" : NFTObj.name,
-      tokenName: tokenObj === undefined ? "" : tokenObj.name,
-    };
-  });
-  return responseAddressData;
 };

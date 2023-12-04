@@ -10,7 +10,8 @@ import { IResponseDataSequlErr } from "@app/_api/interface";
 export const getNFTTransferTx = async (
   responseTransactionData: IResponseTransactionData[]
 ) => {
-  const filteredTransactionData: IResponseTransactionData[] =
+  try {
+     const filteredTransactionData: IResponseTransactionData[] =
     responseTransactionData.filter((el) => {
       return el.NFT_id !== null;
     });
@@ -43,4 +44,9 @@ export const getNFTTransferTx = async (
     };
   });
   return transactionData;
+  } catch (error) {
+    console.log(error)
+    return null
+  }
+ 
 };

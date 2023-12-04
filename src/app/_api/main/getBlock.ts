@@ -7,6 +7,7 @@ import {
 } from "./interface";
 
 const divideTimeIntoUnits = (now: number, blockTime: number) => {
+  
   const timestampInMilliseconds = blockTime * 1000;
 
   const difference = now - timestampInMilliseconds;
@@ -20,7 +21,8 @@ const divideTimeIntoUnits = (now: number, blockTime: number) => {
 };
 
 export const getBlock = async (pageName: string) => {
-  const res = await fetch(
+  try {
+    const res = await fetch(
     `${
       process.env.NODE_ENV === "development"
         ? "http://localhost:8080"
@@ -71,4 +73,10 @@ export const getBlock = async (pageName: string) => {
 
     return blockData;
   }
+  } catch (error) {
+
+    console.log(error)
+    return null
+  }
+  
 };
