@@ -24,11 +24,9 @@ export const getTransaction = async (pageName: string) => {
       | IResponseTransactionData[]
       | IResponseDataSequlErr = await res.json();
     if (isResponseDataSequlErr(responseTransactionData)) {
-      console.log(responseTransactionData ,'메인 데이터 문제')
+      console.log(responseTransactionData, "메인 데이터 문제");
       return null;
     }
-
-   
 
     if (pageName === "main") {
       return getMainTx(responseTransactionData);
@@ -43,6 +41,5 @@ export const getTransaction = async (pageName: string) => {
     }
   } catch (error) {
     console.log(error);
-    return 'data exceed'
   }
 };
