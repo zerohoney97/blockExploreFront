@@ -20,8 +20,8 @@ const Page = async ({
     params.caAddress
   )) as ICaDetailData;
 
-  if(caData ===null){
-    return <Error/>
+  if (caData === null) {
+    return <Error />;
   }
 
   return (
