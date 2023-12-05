@@ -25,7 +25,7 @@ export default async function Main() {
     lastSafeBlock: 18562812,
   };
 
-  if (blockData === "data exceed" || transactionData === "data exceed") {
+  if (!blockData  || !transactionData ) {
     return <MainError />;
   }
   // const blocksData = [
