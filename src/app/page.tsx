@@ -13,7 +13,7 @@ import MainError from "./_components/\bmainError/indes";
 
 export default async function Main() {
   const blockData = await getBlock("main");
-  // const transactionData = await getTransaction("main");
+  const transactionData = await getTransaction("main");
   const overviewTransactionsData = {
     totalTransactionsCounter: 2155.7,
     transactionsPerSecond: 12.7,
@@ -136,10 +136,10 @@ export default async function Main() {
           overviewTransactionsData={overviewTransactionsData}
           overviewLastFinalizedBlockData={overviewLastFinalizedBlockData}
         />
-        {/* <LatestResponsiveWrap
+        <LatestResponsiveWrap
           blocksData={blockData as IMainBlocksItem[]}
           transactionsData={transactionData as IMainTransactionData[]}
-        /> */}
+        />
       </div>
       <Footer />
     </>

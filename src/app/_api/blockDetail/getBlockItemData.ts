@@ -38,7 +38,6 @@ export const getBlockItemData = async (blockNum: string) => {
 
     const responseBlockData: IResponseBLockItemData | IResponseDataSequlErr =
       await res.json();
-    console.log(responseBlockData);
     if (isResponseDataSequlErr(responseBlockData)) {
       return null;
     }
