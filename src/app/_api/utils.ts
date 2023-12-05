@@ -1,7 +1,8 @@
 import { IResponseDataSequlErr } from "./interface";
 
 export const isResponseDataSequlErr = (
-  data: any
+  data: any,
 ): data is IResponseDataSequlErr => {
-  return data || data.status === "SequelizeConnectionError";
+  return data && data.status === "SequelizeConnectionError";
 };
+
