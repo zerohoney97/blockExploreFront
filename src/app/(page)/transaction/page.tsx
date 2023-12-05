@@ -10,8 +10,8 @@ import MainError from "@app/_components/\bmainError/indes";
 
 const Page = async () => {
   const transactionData = await getTransaction("list");
-  if(!transactionData){
-    return <MainError />
+  if (!transactionData) {
+    return <MainError />;
   }
   return (
     <div>

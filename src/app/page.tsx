@@ -24,9 +24,10 @@ export default async function Main() {
     lastFinalizedBlock: 18562780,
     lastSafeBlock: 18562812,
   };
-  // if (blockData === "data exceed" || transactionData === "data exceed") {
-  //   return <MainError />;
-  // }
+
+  if (blockData === "data exceed" || transactionData === "data exceed") {
+    return <MainError />;
+  }
   // const blocksData = [
   //   {
   //     blockHeight: 1,

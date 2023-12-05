@@ -7,7 +7,7 @@ import icon from "../../../../public/Logo.png";
 
 const MainError = () => {
   const router = useRouter();
-  const [countdown, setCountdown] = useState<number>(5);
+  const [countdown, setCountdown] = useState<number>(2);
 
   useEffect(() => {
     const timer = setInterval(() => {
