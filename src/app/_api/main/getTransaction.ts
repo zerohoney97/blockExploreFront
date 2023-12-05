@@ -39,6 +39,7 @@ export const getTransaction = async (pageName: string) => {
     } else if (pageName === "token") {
       return await getTokenTransferTx(responseTransactionData);
     } else {
+      console.log('널')
       return null;
     }
   } catch (error) {
