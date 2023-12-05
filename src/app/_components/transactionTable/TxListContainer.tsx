@@ -7,10 +7,9 @@ import Pagination from "../pagination";
 import usePagiNation from "@app/_hooks/usePagination";
 
 const TxList: React.FC<ITxListWrapProps> = ({ pageTxList, toggleHandler }) => {
-  
   return (
     <>
-      {pageTxList &&
+      {pageTxList ? (
         (pageTxList as ItxList[]).map((ele, index) => (
           <React.Fragment key={index}>
             <TxItem
@@ -19,7 +18,10 @@ const TxList: React.FC<ITxListWrapProps> = ({ pageTxList, toggleHandler }) => {
               key={ele.txHash}
             />
           </React.Fragment>
-        ))}
+        ))
+      ) : (
+        <></>
+      )}
     </>
   );
 };
